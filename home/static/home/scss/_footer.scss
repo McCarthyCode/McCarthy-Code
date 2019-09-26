@@ -1,0 +1,40 @@
+footer.footer {
+  padding: 1rem 0;
+  background-color: $background-color;
+
+  p {
+    margin: 0;
+    text-align: center;
+  }
+
+  p, a {
+    font-family: $font-body;
+    font-size: 0.75rem;
+  }
+
+  .footer-list {
+    max-width: 16rem;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+  
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0 0 0.5em -1px;
+      list-style: none;
+      padding-left: 0;
+    
+      li {
+        line-height: 0.75em;
+        flex: 1 0 auto;
+        margin: 0.25em 0;
+        padding: 0 0.5rem;
+        text-align: center;
+        border-left: 1px solid white;
+      }
+    }
+  }
+}

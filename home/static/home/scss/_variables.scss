@@ -1,0 +1,48 @@
+$background-color: #333333;
+$document-background-color: #7F7F7F;
+
+$text-color: white;
+$text-color-hover: rgba(255, 255, 255, 0.75);
+$link-color: #00ffff;
+
+$font-title: 'Varela Round', Helvetica, Arial, sans-serif;
+$font-body: 'Open Sans', Helvetica, Arial, sans-serif;
+
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+@mixin user-select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+@mixin gradient($direction, $colors...) {
+  background-image:
+    linear-gradient($direction, $colors...);
+  background-image:
+    -webkit-linear-gradient($direction, $colors...);
+  background-image:
+    -moz-linear-gradient($direction, $colors...);
+  background-image:
+    -ms-linear-gradient($direction, $colors...);
+  background-image:
+    -o-linear-gradient($direction, $colors...);
+}
+
+@mixin transform($parameters) {
+  -webkit-transform: $parameters;
+  -ms-transform: $parameters;
+  transform: $parameters;
+}
+
+@mixin preserve-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+}

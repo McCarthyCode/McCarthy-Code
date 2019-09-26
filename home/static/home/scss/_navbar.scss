@@ -1,0 +1,40 @@
+$nav-background-color: $background-color;
+
+nav {
+  font-family: $font-title;
+  background-color: $nav-background-color;
+
+  button {
+    border: none !important;
+    color: $text-color !important;
+  }
+
+  button:hover {
+    color: $text-color-hover !important;
+  }
+
+  .nav-item {
+    text-align: center;
+
+    a.nav-link {
+      background-color: $document-background-color;
+      border-radius: 0.25rem;
+      margin-top: 0.5rem;
+      color: $text-color !important;
+    }
+
+    a.nav-link:hover {
+      color: $text-color-hover !important;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  nav .nav-item a.nav-link {
+    background-color: $nav-background-color;
+    margin-top: 0;
+    padding: 0 0.5rem;
+    // line-height: 70px;
+    vertical-align: middle;
+  }
+}
