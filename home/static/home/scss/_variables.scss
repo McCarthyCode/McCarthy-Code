@@ -23,16 +23,7 @@ $breakpoint-xl: 1200px;
 }
 
 @mixin gradient($direction, $colors...) {
-  background-image:
-    linear-gradient($direction, $colors...);
-  background-image:
-    -webkit-linear-gradient($direction, $colors...);
-  background-image:
-    -moz-linear-gradient($direction, $colors...);
-  background-image:
-    -ms-linear-gradient($direction, $colors...);
-  background-image:
-    -o-linear-gradient($direction, $colors...);
+  background-image: linear-gradient($direction, $colors...);
 }
 
 @mixin transform($parameters) {
@@ -42,7 +33,7 @@ $breakpoint-xl: 1200px;
 }
 
 @mixin preserve-3d {
-  transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }

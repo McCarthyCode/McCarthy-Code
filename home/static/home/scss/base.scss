@@ -24,12 +24,17 @@ body {
   color: $text-color;
 }
 
-body.parallax {
-  overflow-x: hidden;
-  overflow-y: scroll;
+html.parallax {
+  overflow: hidden;
   height: 100%;
-  perspective: 1px;
-  transform-style: preserve-3d;
+
+  body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    perspective: 1px;
+    transform-style: preserve-3d;
+  }
 }
 
 .h1, .h3 {

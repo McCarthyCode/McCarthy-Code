@@ -15,6 +15,9 @@
   {% include 'home/footer.html' %}
 </section>
 <script>
-  $('body').addClass('parallax');
+  // if not mobile, add parallax
+  if (!/Mobi|Android/i.test(navigator.userAgent)) {
+    $('html').addClass('parallax');
+  }
 </script>
 {% endblock %}

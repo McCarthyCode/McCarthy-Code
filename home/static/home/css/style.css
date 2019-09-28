@@ -15,10 +15,6 @@ header::before {
   bottom: 0;
   display: block;
   background-image: linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
-  background-image: -webkit-linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
-  background-image: -moz-linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
-  background-image: -ms-linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
-  background-image: -o-linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
   background-size: cover;
   transform: translateZ(-2px) scale(3.1);
   min-height: 100%;
@@ -75,10 +71,6 @@ section:nth-child(2n+1) {
   bottom: 0;
   display: block;
   background-image: linear-gradient(to bottom left, #fa8c8c, #f1ee59, #65d9fc);
-  background-image: -webkit-linear-gradient(to bottom left, #fa8c8c, #f1ee59, #65d9fc);
-  background-image: -moz-linear-gradient(to bottom left, #fa8c8c, #f1ee59, #65d9fc);
-  background-image: -ms-linear-gradient(to bottom left, #fa8c8c, #f1ee59, #65d9fc);
-  background-image: -o-linear-gradient(to bottom left, #fa8c8c, #f1ee59, #65d9fc);
   background-size: cover;
   transform: translateZ(-0.5px) scale(1.6);
   z-index: -1;
@@ -180,7 +172,11 @@ body {
   color: white;
 }
 
-body.parallax {
+html.parallax {
+  overflow: hidden;
+  height: 100%;
+}
+html.parallax body {
   overflow-x: hidden;
   overflow-y: scroll;
   height: 100%;
