@@ -1,0 +1,19 @@
+@mixin user-select-none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -o-user-select: none
+  user-select: none
+
+@mixin gradient($direction, $colors...)
+  background-image: linear-gradient($direction, $colors...)
+
+@mixin transform($properties...)
+  -webkit-transform: $properties
+  -ms-transform: $properties
+  transform: $properties
+
+@mixin preserve-3d
+  -webkit-transform-style: preserve-3d
+  -moz-transform-style: preserve-3d
+  transform-style: preserve-3d
