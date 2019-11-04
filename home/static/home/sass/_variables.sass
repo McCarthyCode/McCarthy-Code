@@ -1,9 +1,11 @@
-$background-color: #333333
-$document-background-color: #7F7F7F
+$dark-gray: #333333
+$gray: #7f7f7f
 
-$text-color: white
-$text-color-hover: rgba(255, 255, 255, 0.75)
-$link-color: #00ffff
+$white: white
+$white-75: rgba(255, 255, 255, 0.75)
+$white-50: rgba(255, 255, 255, 0.50)
+
+$cyan: #00ffff
 
 $font-title: 'Varela Round', Helvetica, Arial, sans-serif
 $font-body: 'Open Sans', Helvetica, Arial, sans-serif
@@ -24,10 +26,10 @@ $breakpoint-xl: 1200px
 @mixin gradient($direction, $colors...)
   background-image: linear-gradient($direction, $colors...)
 
-@mixin transform($parameters)
-  -webkit-transform: $parameters
-  -ms-transform: $parameters
-  transform: $parameters
+@mixin transform($properties...)
+  -webkit-transform: $properties
+  -ms-transform: $properties
+  transform: $properties
 
 @mixin preserve-3d
   -webkit-transform-style: preserve-3d

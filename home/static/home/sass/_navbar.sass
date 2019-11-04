@@ -1,31 +1,29 @@
-$nav-background-color: $background-color
-
 nav
   font-family: $font-title
-  background-color: $nav-background-color
+  background-color: $dark-gray
 
   button
     border: none !important
-    color: $text-color !important
+    color: $white !important
 
   button:hover
-    color: $text-color-hover !important
+    color: $white-75 !important
 
   .nav-item
     text-align: center
 
     a.nav-link
-      background-color: $document-background-color
+      background-color: $gray
       border-radius: 0.25rem
       margin-top: 0.5rem
-      color: $text-color !important
+      color: $white !important
 
     a.nav-link:hover
-      color: $text-color-hover !important
+      color: $white-75 !important
 
 @media (min-width: $breakpoint-md)
   nav .nav-item a.nav-link
-    background-color: $nav-background-color
+    background-color: $dark-gray
     margin-top: 0
     padding: 0 0.5rem
     vertical-align: middle

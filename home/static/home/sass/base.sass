@@ -5,33 +5,6 @@
 @import 'navbar'
 @import 'footer'
 
-*,
-*::before,
-*::after,
-:root
-  margin: 0
-  padding: 0
-  box-sizing: border-box
-
-html
-  overflow: hidden
-  height: 100%
-
-body
-  background-color: $background-color
-  color: $text-color
-
-html.parallax
-  overflow: hidden
-  height: 100%
-
-  body
-    overflow-x: hidden
-    overflow-y: scroll
-    height: 100%
-    perspective: 1px
-    transform-style: preserve-3d
-
 .h1, .h3
   font-family: $font-title
 
@@ -46,13 +19,16 @@ p, ul
 a,
 a:hover,
 .fa-external-link-alt
-  color: $link-color
+  color: $cyan
 
 .fa-external-link-alt
   display: inline
   vertical-align: 1px
   font-size: 8px
   cursor: pointer
+
+small
+  font-size: 0.8rem
 
 .container
   padding: 0
