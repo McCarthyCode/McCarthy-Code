@@ -2,32 +2,39 @@ header
   max-width: 100vw
   @include gradient(to bottom right, rgb(140, 250, 176), rgb(89, 112, 241), rgb(204, 101, 252))
 
-header, section
-  position: relative
-  min-height: 100vh
-
   .h1
-    @include user-select-none
     position: absolute
     padding: 2rem
     margin: 0
-    text-align: center
-    text-align: center
-    position: absolute
     top: 50%
     left: 50%
     @include transform(translate(-50%, -50%))
+    color: $dark-gray
+    background-color: $white-50
+    box-shadow: 0 0 1rem $dark-gray
+    text-align: center
+
+  .h1::before, .h1::after
+    font-family: $font-monospace
+    font-size: 0.5em
+    vertical-align: 6px
+    color: $maroon
+
+  .h1::before
+    content: '<h1>'
+
+  .h1::after
+    content: '</h1>'
+
+header, section
+  position: relative
+  min-height: 100vh
 
 header, section:nth-child(even)
   background-attachment: fixed
   background-position: center
   background-repeat: no-repeat
   background-size: cover
-
-  .h1
-    color: $dark-gray
-    background-color: $white-50
-    box-shadow: 0 0 1rem $dark-gray
 
 section:nth-child(odd)
   background: $gray
