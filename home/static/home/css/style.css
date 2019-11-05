@@ -35,16 +35,16 @@ header, section {
   min-height: 100vh;
 }
 
+section:nth-child(odd) {
+  background: #333333;
+  color: white;
+}
+
 header, section:nth-child(even) {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-section:nth-child(odd) {
-  background: #333333;
-  color: white;
 }
 
 section:nth-child(4) {

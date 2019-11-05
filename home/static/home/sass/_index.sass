@@ -30,15 +30,15 @@ header, section
   position: relative
   min-height: 100vh
 
+section:nth-child(odd)
+  background: $gray
+  color: $white
+
 header, section:nth-child(even)
   background-attachment: fixed
   background-position: center
   background-repeat: no-repeat
   background-size: cover
-
-section:nth-child(odd)
-  background: $gray
-  color: $white
 
 section:nth-child(4)
   @include gradient(to bottom left, rgb(250, 140, 140), rgb(241, 238, 89), rgb(101, 217, 252))
