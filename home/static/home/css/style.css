@@ -34,9 +34,9 @@ header, section:nth-child(even) {
   background-size: cover;
 }
 header .h1, section:nth-child(even) .h1 {
-  color: #333333;
+  color: #1e1e1e;
   background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 1rem #333333;
+  box-shadow: 0 0 1rem #1e1e1e;
 }
 
 section:nth-child(odd) {
@@ -50,7 +50,7 @@ section:nth-child(4) {
 
 nav {
   font-family: "Varela Round", Helvetica, Arial, sans-serif;
-  background-color: #333333;
+  background-color: #1e1e1e;
 }
 nav button {
   border: none !important;
@@ -63,7 +63,7 @@ nav .nav-item {
   text-align: center;
 }
 nav .nav-item a.nav-link {
-  background-color: #7f7f7f;
+  background-color: #333333;
   border-radius: 0.25rem;
   margin-top: 0.5rem;
   color: white !important;
@@ -74,15 +74,15 @@ nav .nav-item a.nav-link:hover {
 
 @media (min-width: 768px) {
   nav .nav-item a.nav-link {
-    background-color: #333333;
+    background-color: #1e1e1e;
     margin-top: 0;
     padding: 0 0.5rem;
     vertical-align: middle;
   }
 }
 #footer {
-  padding: 1rem 0;
-  background-color: #333333;
+  padding: 0.625rem 0 1rem 0;
+  background-color: #1e1e1e;
   color: white;
 }
 #footer p {
@@ -107,7 +107,7 @@ nav .nav-item a.nav-link:hover {
   padding-left: 0;
 }
 #footer .footer-list ul li {
-  line-height: 0.75em;
+  line-height: 0.8;
   flex: 1 0 auto;
   margin: 0.25em 0;
   padding: 0 0.5rem;
