@@ -111,7 +111,7 @@ section:nth-child(4) > div {
   box-shadow: 0 0 1rem #1e1e1e;
 }
 section:nth-child(4) > div p {
-  margin: 0;
+  margin-bottom: 0.25rem;
 }
 section:nth-child(4) > div p i {
   margin-right: 0.5rem;
@@ -157,6 +157,14 @@ nav .nav-item a.nav-link:hover {
   background-color: #1e1e1e;
   color: white;
 }
+#footer a,
+#footer a:hover,
+#footer .fa-external-link-alt {
+  color: aqua;
+}
+#footer .fa-external-link-alt {
+  font-size: 8px;
+}
 #footer p {
   margin: 0;
   text-align: center;
@@ -187,6 +195,10 @@ nav .nav-item a.nav-link:hover {
   border-left: 1px solid white;
 }
 
+html, body {
+  color: #1e1e1e;
+}
+
 .h1, .h3 {
   font-family: "Varela Round", Helvetica, Arial, sans-serif;
 }
@@ -204,13 +216,13 @@ p, ul {
 a,
 a:hover,
 .fa-external-link-alt {
-  color: aqua;
+  color: #569cd6;
 }
 
 .fa-external-link-alt {
   display: inline;
   vertical-align: 1px;
-  font-size: 8px;
+  font-size: 0.625em;
   cursor: pointer;
 }
 
