@@ -3,21 +3,27 @@
 
 {% block content %}
 <header>
-  <h1 class="h1">McCarthy Web Design</h1>
+  <h1 class="h1">McCarthy&nbsp;Web&nbsp;Design</h1>
+  <div class="chevron text-center">
+    <i class="fas fa-chevron-down"></i>
+  </div>
 </header>
-<section class="section-1">
-  <h1 class="h1">Section w/o parallax effect</h1>
+<section>
+  <div class="container">
+    <h3 class="h3 text-center">Website Under Construction</h3>
+    <p class="text-center">This site will contain more information later, but for now, it serves only as a contact page. You will find the owner's phone number and email address in the section below.</p>
+  </div>
+  <div class="chevron text-center">
+    <i class="fas fa-chevron-down"></i>
+  </div>
 </section>
-<section class="section-2">
-    <h1 class="h1">Section w/ parallax effect</h1>
+<section>
+  <div>
+    <h3 class="h3 text-center">Contact</h3>
+    <h5 class="h5">Matt McCarthy (owner)</h5>
+    <p class="phone"><a href="tel:+17736123678">+1 (773) 612-3678</a></p>
+    <p class="email"><a href="mailto:mattmc318@gmail.com">mattmc318@gmail.com</a></p>
+  </div>
 </section>
-<section class="section-3">
-  {% include 'home/footer.html' %}
-</section>
-<script>
-  // if not mobile, add parallax
-  if (!/Mobi|Android/i.test(navigator.userAgent)) {
-    $('html').addClass('parallax');
-  }
-</script>
+{% include 'home/footer.html' %}
 {% endblock %}

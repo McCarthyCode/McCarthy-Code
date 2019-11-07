@@ -1,76 +1,108 @@
 header
   position: relative
-  width: 100%
-  transform-style: inherit
-  z-index: -1
-
-header::before
-  content: ''
-  position: absolute
-  top: 0
-  right: 0
-  bottom: 0
-  left: 0
-  display: block
+  max-width: 100vw
   @include gradient(to bottom right, rgb(140, 250, 176), rgb(89, 112, 241), rgb(204, 101, 252))
-  background-size: cover
-  transform: translateZ(-2px) scale(3.1)
-  min-height: 100%
-  z-index: -2
-
-header, section:nth-child(2n)
-  .h1
-    color: $background-color
-    background-color: #ffffff7f
-    box-shadow: 0 0 1rem $background-color
-
-header, section
-  min-height: 100vh
 
   .h1
+    position: absolute
     padding: 2rem
     margin: 0
+    top: 50%
+    left: 50%
+    @include transform(translate(-50%, -50%))
+    color: $dark-gray
+    background-color: $white-50
+    box-shadow: 0 0 1rem $dark-gray
     text-align: center
-    text-align: center
+
+  .h1::before, .h1::after
+    font-family: $font-monospace
+    font-size: 0.5em
+    vertical-align: 6px
+    color: $maroon
+
+  .h1::before
+    content: "<h1>"
+
+  .h1::after
+    content: "</h1>"
+
+header, section
+  position: relative
+  min-height: 100vh
+
+  .chevron
+    position: absolute
+    right: 0
+    bottom: 0
+    left: 0
+    padding: 0.5rem 0
+    font-size: 2rem
+
+    i
+      cursor: pointer
+
+section
+  min-height: calc(100vh - 46px)
+
+section:nth-child(odd)
+  position: relative
+  background: $gray
+  color: $white
+
+  .container
     position: absolute
     top: 50%
     left: 50%
-    transform: translateZ(-1px) scale(2) translate(-25%, -25%)
+    @include transform(translate(-50%, -50%))
+    margin-bottom: 49px
+    padding: 1rem
 
-section
-  position: relative
-  min-height: 100vh
-  width: 100%
-  position: relative
-  transform-style: inherit
+    .h3
+      color: $orange
 
-section:nth-child(2n + 1)
-  background: $background-color
+      sup
+        font-size: 0.75em
 
-.section-1
-  color: $text-color
-  z-index: 1
+  .chevron
+    color: $blue
 
-  .h1
-    z-index: 3
-    transform: translate(-50%, -50%)
-
-.section-2::before
-  content: ''
-  position: absolute
-  top: 0
-  right: 0
-  bottom: 0
-  left: 0
-  display: block
-  @include gradient(to bottom left, rgb(250, 140, 140), rgb(241, 238, 89), rgb(101, 217, 252))
+header, section:nth-child(even)
+  background-attachment: fixed
+  background-position: center
+  background-repeat: no-repeat
   background-size: cover
-  transform: translateZ(-.5px) scale(1.6)
-  z-index: -1
 
-.section-2 .h1
-  transform: translateZ(-0.3px) scale(1.3) translate(-39%, -39%)
-  z-index: 3
+  .chevron
+    color: $maroon
 
-.section-3
-  min-height: 0
+section:nth-child(4)
+  min-height: calc(100vh - 66.8px - 46px)
+  @include gradient(to bottom left, rgb(250, 140, 140), rgb(241, 238, 89), rgb(101, 217, 252))
+
+section:nth-child(4) > div
+  position: absolute
+  min-width: 320px - (2 * 16px)
+  padding: 2rem
+  margin: 0
+  top: 50%
+  left: 50%
+  @include transform(translate(-50%, -50%))
+  background-color: $white-50
+  box-shadow: 0 0 1rem $dark-gray
+
+  p
+    margin: 0
+
+    a
+      color: $blue
+
+  p.phone::before, p.email::before
+    font-family: "Font Awesome 5 Free"
+    padding-right: 0.5rem
+
+  // p.phone::before
+  //   content: "\f3cd"
+
+  // p.email::before
+  //   content: "\f2b6"
