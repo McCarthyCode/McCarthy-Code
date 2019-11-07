@@ -6,6 +6,9 @@
   user-select: none
 
 @mixin gradient($direction, $colors...)
+  background-image: -webkit-linear-gradient($direction, $colors...)
+  background-image: -moz-linear-gradient($direction, $colors...)
+  background-image: -o-linear-gradient($direction, $colors...)
   background-image: linear-gradient($direction, $colors...)
 
 @mixin transform($properties...)

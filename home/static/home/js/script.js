@@ -19,4 +19,17 @@ $(document).ready(() => {
 
   adjustTitle();
   $(window).on('resize orientationchange', adjustTitle);
+
+  let navHeight = $('nav').first().outerHeight();
+  $('header .chevron i').click(() => {
+    $('html, body').animate({
+      scrollTop: $('section:nth-child(3)').offset().top - navHeight,
+    }, 1000);
+  });
+
+  $('section:nth-child(3) .chevron i').click(() => {
+    $('html, body').animate({
+      scrollTop: $('section:nth-child(4)').offset().top - navHeight,
+    }, 1000);
+  });
 });
