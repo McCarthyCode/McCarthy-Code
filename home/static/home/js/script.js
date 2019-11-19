@@ -1,7 +1,4 @@
 $(document).ready(() => {
-  $('a.external-link')
-    .append(' <i class="fas fa-external-link-alt" title="External Link"></i>');
-  
   function adjustTitle() {
     let width = $(this).width();
     let $title = $('header .h1');
