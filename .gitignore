@@ -1,4 +1,7 @@
-db.sqlite3
 auth/*
+db.sqlite3
 env
+home/__pycache__
+mwd/__pycache__
+static
 .vscode
