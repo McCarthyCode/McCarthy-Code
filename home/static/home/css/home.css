@@ -90,11 +90,11 @@ header .chevron, section:nth-child(even) .chevron {
 }
 
 section:nth-child(4) {
-  min-height: calc(100vh - 66.8px - 46px);
-  background-image: -webkit-linear-gradient(to bottom left, #fa8c8c, #f1ee59, #65d9fc);
-  background-image: -moz-linear-gradient(to bottom left, #fa8c8c, #f1ee59, #65d9fc);
-  background-image: -o-linear-gradient(to bottom left, #fa8c8c, #f1ee59, #65d9fc);
-  background-image: linear-gradient(to bottom left, #fa8c8c, #f1ee59, #65d9fc);
+  min-height: calc(100vh - 66.8px - 56px);
+  background-image: -webkit-linear-gradient(to bottom left, #996f6f, #f1ee59, #65d9fc);
+  background-image: -moz-linear-gradient(to bottom left, #996f6f, #f1ee59, #65d9fc);
+  background-image: -o-linear-gradient(to bottom left, #996f6f, #f1ee59, #65d9fc);
+  background-image: linear-gradient(to bottom left, #996f6f, #f1ee59, #65d9fc);
 }
 
 section:nth-child(4) > div {
