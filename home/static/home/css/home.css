@@ -1,4 +1,70 @@
 @import url("https://fonts.googleapis.com/css?family=Baloo|Open+Sans|Roboto+Mono|Varela+Round");
+html, body {
+  color: #1e1e1e;
+}
+
+h1.h1, h3.h3 {
+  font-family: "Varela Round", Helvetica, Arial, sans-serif;
+}
+
+h5.h5 {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+p, ul {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+a,
+a:hover,
+.fa-external-link-alt {
+  color: #569cd6;
+}
+
+.fa-external-link-alt {
+  display: inline;
+  vertical-align: 1px;
+  font-size: 0.625em;
+  cursor: pointer;
+}
+
+small {
+  font-size: 0.8em;
+}
+
+.container {
+  padding: 0;
+}
+
+.content img.float-left-sm, .content img.float-right-sm {
+  display: block;
+  margin: 0 auto 1rem auto;
+  float: none;
+  width: 300px;
+}
+
+ul.ul {
+  list-style: disc;
+}
+ul.ul li {
+  margin-left: 20px;
+}
+
+@media (min-width: 576px) {
+  .content img.float-left-sm {
+    float: left;
+    padding-right: 2rem;
+  }
+  .content img.float-right-sm {
+    float: right;
+    padding-left: 2rem;
+  }
+  .content img.float-left-sm, .content img.float-right-sm {
+    margin: 0;
+  }
+}
 header {
   position: relative;
   max-width: 100vw;
@@ -193,73 +259,6 @@ nav .nav-item a.nav-link:hover {
   padding: 0 0.5rem;
   text-align: center;
   border-left: 1px solid white;
-}
-
-html, body {
-  color: #1e1e1e;
-}
-
-.h1, .h3 {
-  font-family: "Varela Round", Helvetica, Arial, sans-serif;
-}
-
-.h5 {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-}
-
-p, ul {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-
-a,
-a:hover,
-.fa-external-link-alt {
-  color: #569cd6;
-}
-
-.fa-external-link-alt {
-  display: inline;
-  vertical-align: 1px;
-  font-size: 0.625em;
-  cursor: pointer;
-}
-
-small {
-  font-size: 0.8em;
-}
-
-.container {
-  padding: 0;
-}
-
-.content img.float-left-sm, .content img.float-right-sm {
-  display: block;
-  margin: 0 auto 1rem auto;
-  float: none;
-  width: 300px;
-}
-
-ul.ul {
-  list-style: disc;
-}
-ul.ul li {
-  margin-left: 20px;
-}
-
-@media (min-width: 576px) {
-  .content img.float-left-sm {
-    float: left;
-    padding-right: 2rem;
-  }
-  .content img.float-right-sm {
-    float: right;
-    padding-left: 2rem;
-  }
-  .content img.float-left-sm, .content img.float-right-sm {
-    margin: 0;
-  }
 }
 
 /*# sourceMappingURL=home.css.map */

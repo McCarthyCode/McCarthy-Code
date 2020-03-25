@@ -1,18 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo|Open+Sans|Roboto+Mono|Varela+Round')
 
 @import 'variables'
-@import 'mixins'
-@import 'index'
-@import 'navbar'
-@import 'footer'
 
 html, body
   color: $dark-gray
 
-.h1, .h3
+h1.h1, h3.h3
   font-family: $font-title
 
-.h5
+h5.h5
   font-family: $font-body
 
 p, ul
@@ -62,3 +58,8 @@ ul.ul
 
     img.float-left-sm, img.float-right-sm
       margin: 0
+
+@import 'mixins'
+@import 'index'
+@import 'navbar'
+@import 'footer'
