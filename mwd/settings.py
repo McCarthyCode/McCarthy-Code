@@ -35,9 +35,9 @@ if DEBUG:
     ]
 else:
     ALLOWED_HOSTS = [
+        'localhost',
         'mccarthywebdesign.com',
         'www.mccarthywebdesign.com',
-        '167.172.132.210',
     ]
 
 
@@ -133,3 +133,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+
