@@ -1,8 +1,6 @@
-auth/*
-db.sqlite3
-env
-home/__pycache__
-home/migrations/__pycache__
-mwd/__pycache__
-staticfiles
+.env
 .vscode
+__pycache__
+auth
+db.sqlite3
+staticfiles
