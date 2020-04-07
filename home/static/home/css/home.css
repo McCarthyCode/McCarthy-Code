@@ -117,31 +117,60 @@ header .chevron i, section .chevron i {
 }
 
 section {
-  min-height: calc(100vh - 46px);
+  min-height: calc(100vh - 56px);
 }
 
-section:nth-child(odd) {
+section:nth-child(3) {
+  min-height: 682px;
   position: relative;
   background: #333333;
   color: white;
 }
-section:nth-child(odd) .container {
+section:nth-child(3) .container {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  margin-bottom: 49px;
-  padding: 1rem;
+  padding: 1rem 1rem 3rem 1rem;
 }
-section:nth-child(odd) .container .h3 {
+section:nth-child(3) .container #options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 0;
+}
+section:nth-child(3) .container #options li {
+  cursor: pointer;
+  display: inline;
+  width: 150px;
+  margin: 0 0.5rem 0.5rem 0.5rem;
+}
+section:nth-child(3) .container #options li .option-icon {
+  border-radius: 75px;
+  width: 150px;
+  height: 150px;
+  background-color: #569cd6;
+  position: relative;
+  margin-bottom: 1rem;
+}
+section:nth-child(3) .container #options li .option-icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #333333;
+}
+section:nth-child(3) .container #options li .h5 {
   color: #bb846e;
 }
-section:nth-child(odd) .container .h3 sup {
-  font-size: 0.75em;
+section:nth-child(3) .container #options li a:hover {
+  text-decoration-color: #bb846e;
 }
-section:nth-child(odd) .chevron {
+section:nth-child(3) .chevron {
   color: #569cd6;
 }
 
@@ -191,6 +220,11 @@ section:nth-child(4) > div p a {
     min-height: calc(100vh - 66.8px - 56px);
   }
 }
+@media screen and (min-width: 364px) {
+  section:nth-child(3) {
+    min-height: calc(100vh - 56px);
+  }
+}
 nav {
   font-family: "Baloo", Helvetica, Arial, sans-serif;
   background-color: #1e1e1e;
@@ -237,10 +271,15 @@ nav .nav-item a.nav-link:hover {
   font-size: 8px;
 }
 #footer p {
-  margin: 0;
   text-align: center;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1;
+}
+#footer p:not(:last-child) {
+  margin: 0 0 0.25em 0;
+}
+#footer p:last-child {
+  margin: 0;
 }
 #footer .footer-list {
   max-width: 16rem;
