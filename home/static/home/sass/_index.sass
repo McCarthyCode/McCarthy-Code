@@ -43,9 +43,10 @@ header, section
       cursor: pointer
 
 section
-  min-height: calc(100vh - 46px)
+  min-height: calc(100vh - 56px)
 
-section:nth-child(odd)
+section:nth-child(3)
+  min-height: 682px
   position: relative
   background: $gray
   color: $white
@@ -55,14 +56,40 @@ section:nth-child(odd)
     top: 50%
     left: 50%
     @include transform(translate(-50%, -50%))
-    margin-bottom: 49px
-    padding: 1rem
+    padding: 1rem 1rem 3rem 1rem
 
-    .h3
-      color: $orange
+    #options
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-evenly
+      margin-bottom: 0
 
-      sup
-        font-size: 0.75em
+      li
+        cursor: pointer
+        display: inline
+        width: 150px
+        margin: 0 .5rem .5rem .5rem
+
+        .option-icon
+          border-radius: 75px
+          width: 150px
+          height: 150px
+          background-color: $blue
+          position: relative
+          margin-bottom: 1rem
+
+          i
+            position: absolute
+            top: 50%
+            left: 50%
+            @include transform(translate(-50%, -50%))
+            color: $gray
+
+        .h5
+          color: $orange
+
+        a:hover
+          text-decoration-color: $orange
 
   .chevron
     color: $blue
@@ -103,3 +130,7 @@ section:nth-child(4) > div
 @media screen and (min-width: 339px)
   section:nth-child(4)
     min-height: calc(100vh - 66.8px - 56px)
+
+@media screen and (min-width: 364px)
+  section:nth-child(3)
+    min-height: calc(100vh - 56px)
