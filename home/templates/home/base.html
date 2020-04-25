@@ -81,21 +81,15 @@
   <!-- fancybox JS -->
   <script src="{% static 'home/js/jquery.fancybox.min.js' %}"></script>
 
-  <!-- Internal Scripts (compressed) -->
+  <!-- Internal Scripts -->
 
-  <!-- Cross-App JS -->
+  <!-- Cross-App JS (compressed) -->
   <script src="{% static 'home/js/global.min.js' %}"></script>
 
-  <!-- Home App JS -->
-  <script src="{% static 'home/js/home.min.js' %}"></script>
-
-  <!-- Internal Scripts (uncompressed) -->
-
-  <!-- Cross-App JS -->
+  <!-- Cross-App JS (uncompressed) -->
   <!-- <script src="{% static 'home/js/global.js' %}"></script> -->
 
-  <!-- Home App JS -->
-  <!-- <script src="{% static 'home/js/home.js' %}"></script> -->
+  {% block js %}{% endblock %}
 
   <!-- External Script Libraries (compressed) -->
 

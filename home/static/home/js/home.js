@@ -25,6 +25,42 @@ $(document).ready(() => {
     const height = $title.outerHeight();
     $('header').prop('min-height', `${height * scale + 32}px`);
   }
+
+  function adjustIcons() {
+    let windowWidth = $(window).width();
+    let windowHeight = $(window).height();
+    let $icons = $('#options li .option-icon');
+
+    let breakpoint = 0;
+    let scale = 1;
+    
+    if (windowWidth < 364) {
+      breakpoint = 754
+      scale = (windowHeight - 304) / 450 > 1 ? 1 : (windowHeight - 304) / 450;
+    } else if (windowWidth < 530) {
+      breakpoint = 548
+      scale = (windowHeight - 248) / 300 > 1 ? 1 : (windowHeight - 248) / 300;
+    } else {
+      breakpoint = 342
+      scale = (windowHeight - 192) / 150 > 1 ? 1 : (windowHeight - 192) / 150;
+    }
+
+    if (windowHeight < breakpoint) {
+      const circumference = 150 * scale;
+      
+      $icons.css({
+        'height': `${circumference}px`,
+        'width': `${circumference}px`,
+      });
+      
+      $icons.find('i').css({
+        'font-size': `${5 * scale}em`,
+      });
+    } else {
+      $('.option-icon, .option-icon i').prop('style', false);
+    }
+  }
+
   function adjustContact() {
     let width = $(this).width();
     let $contact = $('section:nth-child(4) > div');
@@ -59,6 +95,7 @@ $(document).ready(() => {
 
   function adjust() {
     adjustTitle();
+    adjustIcons();
     adjustContact();
   }
 

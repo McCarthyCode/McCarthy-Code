@@ -73,7 +73,7 @@ header {
   background-image: -o-linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
   background-image: linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
 }
-header .h1 {
+header h1.h1 {
   position: absolute;
   padding: 2rem;
   margin: 0;
@@ -87,16 +87,16 @@ header .h1 {
   box-shadow: 0 0 1rem #1e1e1e;
   text-align: center;
 }
-header .h1::before, header .h1::after {
+header h1.h1::before, header h1.h1::after {
   font-family: "Roboto Mono", Consolas, Lucida Console, Monaco, monospace;
   font-size: 0.5em;
   vertical-align: 6px;
   color: maroon;
 }
-header .h1::before {
+header h1.h1::before {
   content: "<h1>";
 }
-header .h1::after {
+header h1.h1::after {
   content: "</h1>";
 }
 
@@ -120,42 +120,50 @@ section {
   min-height: calc(100vh - 56px);
 }
 
-section:nth-child(3) {
-  min-height: 682px;
+#icons {
   position: relative;
   background: #333333;
-  color: white;
+  padding-top: 1rem;
 }
-section:nth-child(3) .container {
+#icons .container {
+  min-height: calc(100vh - 64px - 56px);
+  position: relative;
+  padding: 0 1rem;
+}
+#icons .container #options {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  padding: 1rem 1rem 3rem 1rem;
-}
-section:nth-child(3) .container #options {
+  width: 100%;
+  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: 0;
 }
-section:nth-child(3) .container #options li {
+#icons .container #options li {
+  position: relative;
   cursor: pointer;
   display: inline;
   width: 150px;
   margin: 0 0.5rem 0.5rem 0.5rem;
 }
-section:nth-child(3) .container #options li .option-icon {
+#icons .container #options li .option-icon {
   border-radius: 75px;
   width: 150px;
   height: 150px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   background-color: #569cd6;
   position: relative;
   margin-bottom: 1rem;
 }
-section:nth-child(3) .container #options li .option-icon i {
+#icons .container #options li .option-icon i {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -164,13 +172,13 @@ section:nth-child(3) .container #options li .option-icon i {
   transform: translate(-50%, -50%);
   color: #333333;
 }
-section:nth-child(3) .container #options li .h5 {
+#icons .container #options li h5.h5 {
   color: #bb846e;
 }
-section:nth-child(3) .container #options li a:hover {
+#icons .container #options li a:hover {
   text-decoration-color: #bb846e;
 }
-section:nth-child(3) .chevron {
+#icons .chevron {
   color: #569cd6;
 }
 
