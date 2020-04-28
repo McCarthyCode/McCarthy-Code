@@ -42,6 +42,24 @@ ul.ul
   li
     margin-left: 20px
 
+header, section
+  position: relative
+  min-height: 100vh
+
+  .chevron
+    position: absolute
+    right: 0
+    bottom: 0
+    left: 0
+    padding: 0.5rem 0
+    font-size: 2rem
+
+    i
+      cursor: pointer
+
+section
+  min-height: calc(100vh - 56px)
+
 @media (min-width: $breakpoint-sm)
   .content
     img.float-left-sm

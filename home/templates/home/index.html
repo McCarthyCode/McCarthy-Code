@@ -3,67 +3,68 @@
 
 {% block js %}
 <!-- Home App JS (compressed) -->
-<script src="{% static 'home/js/home.min.js' %}"></script>
+<script src="{% static 'home/js/index.min.js' %}"></script>
 
 <!-- Home App JS (uncompressed) -->
-<!-- <script src="{% static 'home/js/home.js' %}"></script> -->
+<!-- <script src="{% static 'home/js/index.js' %}"></script> -->
 {% endblock %}
 
 {% block content %}
-<header>
-  <h1 class="h1">McCarthy&nbsp;Web&nbsp;Design</h1>
-  <div class="chevron text-center">
-    <i class="fas fa-chevron-down"></i>
-  </div>
-</header>
-<section id="icons">
-  <div class="container">
-    <ul id="options">
-      <li>
-        <a href="javascript:void(0);">
-          <div class="option-icon">
-            <i class="fas fa-book-open fa-5x"></i>
-          </div>
-          <h5 class="h5 text-center">Portfolio</h5>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0);">
-          <div class="option-icon">
-            <i class="fas fa-file-alt fa-5x"></i>
-          </div>
-          <h5 class="h5 text-center">Resume</h5>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0);">
-          <div class="option-icon">
-            <i class="fas fa-address-card fa-5x"></i>
-          </div>
-          <h5 class="h5 text-center">Contact</h5>
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="chevron text-center">
-    <i class="fas fa-chevron-down"></i>
-  </div>
-</section>
-<section id="contact">
-  <div>
-    <h3 class="h3 text-center">Contact</h3>
-    <h5 class="h5 text-center">Matt McCarthy</h5>
-    <h6 class="h6 text-center">Owner, Full Stack Web Developer</h6>
-    <p class="text-center">
-      <i class="fas fa-mobile-alt"></i><a href="tel:+17736123678">+1 (773) 612-3678</a>
-    </p>
-    <p class="text-center">
-      <span class="text-nowrap"><i class="far fa-envelope-open"></i><a href="mailto:matt@mccarthywebdesign.com">matt@mccarthywebdesign.com</a></span>
-    </p>
-    <p class="text-center">
-      <i class="fas fa-map-marker-alt"></i><a class="external-link" href="https://www.google.com/maps/place/Rogers+Park,+Chicago,+IL">Rogers Park, Chicago, IL</a>
-    </p>
-  </div>
-</section>
-{% include 'home/footer.html' %}
+<div id="index">
+  <header>
+    <h1 class="h1">McCarthy&nbsp;Web&nbsp;Design</h1>
+    <div class="chevron text-center">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </header>
+  <section id="icons">
+    <div class="container">
+      <ul id="options">
+        <li>
+          <a href="{% url 'home:portfolio' %}">
+            <div class="option-icon">
+              <i class="fas fa-book-open fa-5x"></i>
+            </div>
+            <h5 class="h5 text-center">Portfolio</h5>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0);">
+            <div class="option-icon">
+              <i class="fas fa-file-alt fa-5x"></i>
+            </div>
+            <h5 class="h5 text-center">Resume</h5>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0);">
+            <div class="option-icon">
+              <i class="fas fa-address-card fa-5x"></i>
+            </div>
+            <h5 class="h5 text-center">Contact</h5>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="chevron text-center">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+  <section id="contact">
+    <div>
+      <h3 class="h3 text-center">Contact</h3>
+      <h5 class="h5 text-center">Matt McCarthy</h5>
+      <h6 class="h6 text-center">Owner, Full Stack Web Developer</h6>
+      <p class="text-center">
+        <i class="fas fa-mobile-alt"></i><a href="tel:+17736123678">+1 (773) 612-3678</a>
+      </p>
+      <p class="text-center">
+        <span class="text-nowrap"><i class="far fa-envelope-open"></i><a href="mailto:matt@mccarthywebdesign.com">matt@mccarthywebdesign.com</a></span>
+      </p>
+      <p class="text-center">
+        <i class="fas fa-map-marker-alt"></i><a class="external-link" href="https://www.google.com/maps/place/Rogers+Park,+Chicago,+IL">Rogers Park, Chicago, IL</a>
+      </p>
+    </div>
+  </section>
+</div>
 {% endblock %}

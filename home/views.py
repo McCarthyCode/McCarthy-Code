@@ -15,3 +15,12 @@ def index(request):
         'title': TITLE,
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })
+
+def portfolio(request):
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
+
+    return render(request, 'home/portfolio.html', {
+        'title': TITLE,
+        'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
+    })

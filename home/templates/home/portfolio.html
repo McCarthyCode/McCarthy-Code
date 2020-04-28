@@ -1,0 +1,47 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block js %}
+<!-- Home App JS (compressed) -->
+<!-- <script src="{% static 'home/js/portfolio.min.js' %}"></script> -->
+
+<!-- Home App JS (uncompressed) -->
+<script src="{% static 'home/js/portfolio.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div id="portfolio">
+  <section id="skka">
+    <div class="container">
+    </div>
+    <div class="chevron text-center">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+  <section id="cwc">
+    <div class="container">
+    </div>
+    <div class="chevron text-center">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+  <section id="pharm">
+    <div class="container">
+    </div>
+    <div class="chevron text-center">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+  <section id="oaw">
+    <div class="container">
+    </div>
+    <div class="chevron text-center">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+  <section id="mtmc">
+    <div class="container">
+    </div>
+  </section>
+</div>
+{% endblock %}

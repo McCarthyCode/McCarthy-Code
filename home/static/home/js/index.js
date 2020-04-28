@@ -33,7 +33,7 @@ $(document).ready(() => {
 
     let breakpoint = 0;
     let scale = 1;
-    
+
     if (windowWidth < 364) {
       breakpoint = 754
       scale = (windowHeight - 304) / 450 > 1 ? 1 : (windowHeight - 304) / 450;
@@ -47,12 +47,12 @@ $(document).ready(() => {
 
     if (windowHeight < breakpoint) {
       const circumference = 150 * scale;
-      
+
       $icons.css({
         'height': `${circumference}px`,
         'width': `${circumference}px`,
       });
-      
+
       $icons.find('i').css({
         'font-size': `${5 * scale}em`,
       });
@@ -109,7 +109,7 @@ $(document).ready(() => {
     }, 1000);
   });
 
-  $('section:nth-child(3) .chevron i').click(() => {
+  $('section:nth-child(3) .chevron i, #options li:nth-child(3) a').click(() => {
     $('html, body').animate({
       scrollTop: $('section:nth-child(4)').offset().top - navHeight,
     }, 1000);
