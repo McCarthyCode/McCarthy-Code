@@ -1,7 +1,8 @@
-#home
+#index
   header
     position: relative
-    max-width: 100vw
+    width: 100vw
+    height: 100vh
     @include gradient(to bottom right, rgb(140, 250, 176), rgb(89, 112, 241), rgb(204, 101, 252))
 
     h1.h1
@@ -32,6 +33,7 @@
     position: relative
     background: $gray
     padding-top: 1rem
+    min-height: calc(100vh - 56px)
 
     .container
       min-height: calc(100vh - 64px - 56px)
@@ -80,7 +82,7 @@
     .chevron
       color: $blue
 
-  header, section:nth-child(even)
+  > :nth-child(odd)
     background-attachment: fixed
     background-position: center
     background-repeat: no-repeat
@@ -89,11 +91,12 @@
     .chevron
       color: $maroon
 
-  section:nth-child(4)
-    min-height: calc(100vh - 82.8px - 56px)
+  #contact
+    min-height: calc(248.8px + 32px)
+    height: calc(100vh - 86.8px - 56px)
     @include gradient(to bottom left, rgb(153, 111, 111), rgb(241, 238, 89), rgb(101, 217, 252))
 
-  section:nth-child(4) > div
+  #contact > div
     position: absolute
     min-width: 320px - (2 * 16px)
     padding: 2rem
@@ -104,15 +107,25 @@
     background-color: $white-50
     box-shadow: 0 0 1rem $dark-gray
 
+    h3.h3
+      color: rgb(153, 111, 111)
+
+    h5.h5, h6.h6
+      color: $black
+
     p
       margin-bottom: 0.25rem
 
       i
-        margin-right: 0.5rem
+        margin-right: 0.5em
+        color: $blue
+
+      .fa-external-link-alt
+        margin-left: 0.5em
 
       a
         color: $blue
 
 @media screen and (min-width: 339px)
-  #home section:nth-child(4)
+  #index section:nth-child(4)
     min-height: calc(100vh - 66.8px - 56px)

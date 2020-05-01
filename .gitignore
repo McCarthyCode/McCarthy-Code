@@ -1,6 +1,7 @@
-.env
-.vscode
-__pycache__
 auth
 db.sqlite3
+.env
+media
+__pycache__
 staticfiles
+.vscode

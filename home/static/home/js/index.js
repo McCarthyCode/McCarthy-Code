@@ -105,13 +105,13 @@ $(document).ready(() => {
   let navHeight = $('#navbar').outerHeight();
   $('header .chevron i').click(() => {
     $('html, body').animate({
-      scrollTop: $('section:nth-child(3)').offset().top - navHeight,
+      scrollTop: $('#icons').offset().top - navHeight,
     }, 1000);
   });
 
-  $('section:nth-child(3) .chevron i, #options li:nth-child(3) a').click(() => {
+  $('#icons .chevron i, #options li:nth-child(3) a').click(() => {
     $('html, body').animate({
-      scrollTop: $('section:nth-child(4)').offset().top - navHeight,
+      scrollTop: $('#contact').offset().top - navHeight,
     }, 1000);
   });
 });

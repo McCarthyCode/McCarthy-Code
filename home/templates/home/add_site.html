@@ -1,0 +1,16 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="form">
+  <div class="container">
+    {% include 'home/messages.html' %}
+    <form method="POST" enctype="multipart/form-data">
+      <h2 class="h2">Add Site</h2>
+      {% csrf_token %}
+      {{ form }}
+      <input class="btn btn-primary form-control" type="submit" value="Submit">
+    </form>
+  </div>
+</section>
+{% endblock %}

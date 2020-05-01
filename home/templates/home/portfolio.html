@@ -3,45 +3,56 @@
 
 {% block js %}
 <!-- Home App JS (compressed) -->
-<!-- <script src="{% static 'home/js/portfolio.min.js' %}"></script> -->
+<script src="{% static 'home/js/portfolio.min.js' %}"></script>
 
 <!-- Home App JS (uncompressed) -->
-<script src="{% static 'home/js/portfolio.js' %}"></script>
+<!-- <script src="{% static 'home/js/portfolio.js' %}"></script> -->
 {% endblock %}
 
 {% block content %}
 <div id="portfolio">
-  <section id="skka">
+  {% for site in sites %}
+  <section>
     <div class="container">
+      <div class="mobile d-block d-md-none">
+        <h3 class="h3 text-center">{{ site.data.name }}</h3>
+        <ul class="screenshot-list">
+          {% for screenshot in site.screenshots %}
+          <li>
+            <a data-fancybox="gallery" href="{{ screenshot.image.url }}">
+              <img src="{{ screenshot.thumbnail.url }}">
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="desktop d-none d-md-block">
+        <div class="content">
+          <ul class="screenshot-list">
+            {% for screenshot in site.screenshots %}
+            <li>
+              <a data-fancybox="gallery" href="{{ screenshot.image.url }}">
+                <img src="{{ screenshot.thumbnail.url }}">
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+          <div class="text">
+            <h3 class="h3 text-center">{{ site.data.name }}</h3>
+            <h5 class="h5">Web Address</h5>
+            <h6 class="h6"><a href="{{ site.data.url }}" class="external-link">{{ site.data.url }}</a></h6>
+            <h5 class="h5">Description</h5>
+            <p>{{ site.data.description }}</p>
+          </div>
+        </div>
+      </div>
     </div>
+    {% if site != sites|last %}
     <div class="chevron text-center">
       <i class="fas fa-chevron-down"></i>
     </div>
+    {% endif %}
   </section>
-  <section id="cwc">
-    <div class="container">
-    </div>
-    <div class="chevron text-center">
-      <i class="fas fa-chevron-down"></i>
-    </div>
-  </section>
-  <section id="pharm">
-    <div class="container">
-    </div>
-    <div class="chevron text-center">
-      <i class="fas fa-chevron-down"></i>
-    </div>
-  </section>
-  <section id="oaw">
-    <div class="container">
-    </div>
-    <div class="chevron text-center">
-      <i class="fas fa-chevron-down"></i>
-    </div>
-  </section>
-  <section id="mtmc">
-    <div class="container">
-    </div>
-  </section>
+  {% endfor %}
 </div>
 {% endblock %}

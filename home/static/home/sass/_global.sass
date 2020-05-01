@@ -1,11 +1,13 @@
 html, body
   color: $dark-gray
 
-h1.h1, h3.h3
+h1.h1, h2.h2, h3.h3
   font-family: $font-title
+  color: $yellow
 
-h5.h5, h6.h6
+h4.h4, h5.h5, h6.h6
   font-family: $font-body
+  color: $orange
 
 p, ul
   font-family: $font-body
@@ -20,7 +22,8 @@ a:hover,
 .fa-external-link-alt
   display: inline
   vertical-align: 1px
-  font-size: 0.625em
+  font-size: 0.8em
+  margin-left: .5em
   cursor: pointer
 
 small
@@ -42,23 +45,20 @@ ul.ul
   li
     margin-left: 20px
 
-header, section
-  position: relative
-  min-height: 100vh
+#index, #portfolio
+  header, section
+    position: relative
 
-  .chevron
-    position: absolute
-    right: 0
-    bottom: 0
-    left: 0
-    padding: 0.5rem 0
-    font-size: 2rem
+    .chevron
+      position: absolute
+      right: 0
+      bottom: 0
+      left: 0
+      padding: 0.5rem 0
+      font-size: 2rem
 
-    i
-      cursor: pointer
-
-section
-  min-height: calc(100vh - 56px)
+      i
+        cursor: pointer
 
 @media (min-width: $breakpoint-sm)
   .content

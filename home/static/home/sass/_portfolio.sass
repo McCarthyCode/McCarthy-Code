@@ -1,15 +1,97 @@
 #portfolio
   section
-    background-color: $gray
+    height: calc(100vh - 56px)
+
+    .container
+      position: relative
+      min-height: calc(544px + 32px)
+      height: calc(100vh - 56px - 64px)
+      border: 1px dashed $orange
+      margin: 0 auto
+
+      .mobile, .desktop
+        position: absolute
+        top: 50%
+        left: 0
+        right: 0
+        @include transform(translateY(-50%))
+        border: 1px dashed $aqua-50
+
+        .content
+          display: grid
+          gap: 1rem
+          align-items: center
+
+          a
+            color: $aqua
+
+          .screenshot-list
+            margin-bottom: 0
+
+            li
+              margin-bottom: .5rem
+
+            li:first-child a img
+              border: .25rem solid $orange
+
+            li:nth-child(2) a img
+              border: .25rem solid $yellow
+
+            li:last-child
+              margin-bottom: 0
+
+              a img
+                border: .25rem solid $aqua
+
+          .text
+            color: $white
+
+            h6.h6
+              margin-bottom: 1rem
+
+              .external-link + i
+                color: $aqua
+
+            p
+              margin: 0
+
+      .mobile
+        .screenshot-list
+          margin: 0 auto
+
+      .desktop .content
+        grid-template-columns: 308px auto
+
+    .container:first-child:last-child
+      height: calc(100vh - 56px - 86.6px)
+
+    .container:first-child
+      height: calc(100vh - 56px - 64px)
+
+    .container:last-child
+      min-height: calc(100vh - 86.6px - 64px)
 
     .chevron
       color: $blue
 
+  section:first-child:last-child
+    min-height: calc(100vh - 56px - 86.8px)
+
   section:first-child
-    min-height: 100vh
+    margin-top: 56px
+    min-height: calc(100vh - 56px)
+
+  section:nth-child(odd)
+    background-color: $gray
+
+    .desktop .content
+      grid-template-columns: 308px auto
+
+      .text
+        border: 1px dashed $yellow
 
   section:nth-child(even)
     background-color: $light-gray
 
   section:last-child
-    min-height: calc(100vh - 86.8px - 56px)
+    height: calc(100vh - 86.8px - 56px)
