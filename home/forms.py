@@ -19,6 +19,15 @@ class SiteForm(forms.ModelForm):
             'placeholder': 'URL',
         }),
     )
+    github = forms.CharField(
+        label='',
+        max_length=200,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'value': 'https://github.com/mattmc318/',
+            'placeholder': 'GitHub URL',
+        }),
+    )
     description = forms.CharField(
         label='',
         max_length=200,
@@ -39,4 +48,4 @@ class SiteForm(forms.ModelForm):
 
     class Meta:
         model = Site
-        fields = ['name', 'url', 'description']
+        fields = ['name', 'url', 'github', 'description']

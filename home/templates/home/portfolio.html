@@ -16,11 +16,7 @@
   <section>
     <div class="container">
       <div class="mobile d-block d-md-none">
-        <h3 class="h3 text-center">{{ site.data.name }}</h3>
-        <h5 class="h5">Web Address</h5>
-        <h6 class="h6"><a href="{{ site.data.url }}" class="external-link">{{ site.data.url }}</a></h6>
-        <h5 class="h5">Description</h5>
-        <p>{{ site.data.description }}</p>
+        {% include 'home/site_info.html' %}
         <ul class="screenshot-list">
           {% for screenshot in site.screenshots %}
           <li>
@@ -35,11 +31,7 @@
         <div class="content">
           {% if forloop.counter|modulo:2 == 0 %}
           <div class="text">
-            <h3 class="h3 text-center">{{ site.data.name }}</h3>
-            <h5 class="h5">Web Address</h5>
-            <h6 class="h6"><a href="{{ site.data.url }}" class="external-link">{{ site.data.url }}</a></h6>
-            <h5 class="h5">Description</h5>
-            <p>{{ site.data.description }}</p>
+            {% include 'home/site_info.html' %}
           </div>
           {% endif %}
           <ul class="screenshot-list">
@@ -53,11 +45,7 @@
           </ul>
           {% if forloop.counter|modulo:2 == 1 %}
           <div class="text">
-            <h3 class="h3 text-center">{{ site.data.name }}</h3>
-            <h5 class="h5">Web Address</h5>
-            <h6 class="h6"><a href="{{ site.data.url }}" class="external-link">{{ site.data.url }}</a></h6>
-            <h5 class="h5">Description</h5>
-            <p>{{ site.data.description }}</p>
+            {% include 'home/site_info.html' %}
           </div>
           {% endif %}
         </div>

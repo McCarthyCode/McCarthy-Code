@@ -143,6 +143,7 @@ class ThumbnailedImage(TimestampedModel):
 class Site(TimestampedModel):
     name = models.CharField(max_length=50)
     url = models.URLField()
+    github = models.URLField()
     description = models.CharField(max_length=200)
 
     def __str__(self):
