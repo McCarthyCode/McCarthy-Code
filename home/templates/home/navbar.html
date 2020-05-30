@@ -1,15 +1,26 @@
 <nav id="navbar" class="navbar fixed-top navbar-expand-md navbar-dark">
   <div class="container">
     <a class="navbar-brand" href="{% load static %}{% url 'home:index' %}">McCarthy Web Design</a>
-    <!-- <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <button id="navbarMenuButton" class="d-md-none ml-auto" type="button">
       <i class="fas fa-bars"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'home:index' %}">Home</a>
-        </li>
-      </ul>
-    </div> -->
+  </div>
+  <div id="navbarCollapse" class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home:index' %}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{# url 'home:about' #}">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home:portfolio' %}">Portfolio</a>
+      </li>
+      {% if request.user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home:logout' %}">Logout</a>
+      </li>
+      {% endif %}
+    </ul>
   </div>
 </nav>
