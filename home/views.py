@@ -3,6 +3,7 @@ import pytz
 from datetime import datetime
 
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseBadRequest, HttpResponseForbidden
 from django.shortcuts import render, redirect
 
@@ -20,6 +21,41 @@ def index(request):
         'title': TITLE,
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })
+
+def login_view(request):
+    if request.method == 'GET':
+        return render(request, 'home/login.html', {
+            'title': TITLE,
+            'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
+        })
+    elif request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+
+            messages.success(request, 'Welcome!')
+
+            return redirect('home:login')
+        else:
+            messages.error(request, 'There was an error logging in with that username/password combination.')
+
+            return redirect('home:login')
+    else:
+        return HttpResponseBadRequest()
+
+def logout_view(request):
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
+
+    logout(request)
+
+    messages.success(request, 'You have successfully logged out.')
+
+    return redirect('home:login')
 
 def portfolio(request):
     if request.method != 'GET':
