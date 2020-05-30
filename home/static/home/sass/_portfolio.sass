@@ -6,7 +6,6 @@
       position: relative
       min-height: calc(544px + 32px)
       height: calc(100vh - 56px - 64px)
-      border: 1px dashed $orange
       margin: 0 auto
 
       .mobile, .desktop
@@ -15,52 +14,57 @@
         left: 0
         right: 0
         @include transform(translateY(-50%))
-        border: 1px dashed $aqua-50
+        color: $white
 
         .content
           display: grid
-          gap: 1rem
+          gap: 2rem
           align-items: center
 
-          a
-            color: $aqua
+        a, .fa-external-link-alt
+          color: $aqua
 
-          .screenshot-list
+        .screenshot-list
+          margin-bottom: 0
+
+          li
+            margin-bottom: .5rem
+
+          li:first-child a img
+            border: .25rem solid $orange
+
+          li:nth-child(2) a img
+            border: .25rem solid $yellow
+
+          li:last-child
             margin-bottom: 0
 
-            li
-              margin-bottom: .5rem
+            a img
+              border: .25rem solid $aqua
 
-            li:first-child a img
-              border: .25rem solid $orange
+        .text
+          border: 2px solid $lighter-gray-50
+          padding: 2rem
+          background-color: $dark-gray-50
 
-            li:nth-child(2) a img
-              border: .25rem solid $yellow
+          h6.h6
+            margin-bottom: 1rem
 
-            li:last-child
-              margin-bottom: 0
-
-              a img
-                border: .25rem solid $aqua
-
-          .text
-            color: $white
-
-            h6.h6
-              margin-bottom: 1rem
-
-              .external-link + i
-                color: $aqua
-
-            p
-              margin: 0
+          p
+            margin: 0
 
       .mobile
+        padding: 0 1rem
+
         .screenshot-list
           margin: 0 auto
 
-      .desktop .content
-        grid-template-columns: 308px auto
+          li
+            flex-grow: 1
+            text-align: center
+
+            a
+              display: inline-block
 
     .container:first-child:last-child
       height: calc(100vh - 56px - 86.6px)
@@ -87,11 +91,11 @@
     .desktop .content
       grid-template-columns: 308px auto
 
-      .text
-        border: 1px dashed $yellow
-
   section:nth-child(even)
     background-color: $light-gray
+
+    .desktop .content
+      grid-template-columns: auto 308px
 
   section:last-child
     height: calc(100vh - 86.8px - 56px)

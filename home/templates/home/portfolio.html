@@ -11,11 +11,16 @@
 
 {% block content %}
 <div id="portfolio">
+  {% load custom_tags %}
   {% for site in sites %}
   <section>
     <div class="container">
       <div class="mobile d-block d-md-none">
         <h3 class="h3 text-center">{{ site.data.name }}</h3>
+        <h5 class="h5">Web Address</h5>
+        <h6 class="h6"><a href="{{ site.data.url }}" class="external-link">{{ site.data.url }}</a></h6>
+        <h5 class="h5">Description</h5>
+        <p>{{ site.data.description }}</p>
         <ul class="screenshot-list">
           {% for screenshot in site.screenshots %}
           <li>
@@ -28,6 +33,15 @@
       </div>
       <div class="desktop d-none d-md-block">
         <div class="content">
+          {% if forloop.counter|modulo:2 == 0 %}
+          <div class="text">
+            <h3 class="h3 text-center">{{ site.data.name }}</h3>
+            <h5 class="h5">Web Address</h5>
+            <h6 class="h6"><a href="{{ site.data.url }}" class="external-link">{{ site.data.url }}</a></h6>
+            <h5 class="h5">Description</h5>
+            <p>{{ site.data.description }}</p>
+          </div>
+          {% endif %}
           <ul class="screenshot-list">
             {% for screenshot in site.screenshots %}
             <li>
@@ -37,6 +51,7 @@
             </li>
             {% endfor %}
           </ul>
+          {% if forloop.counter|modulo:2 == 1 %}
           <div class="text">
             <h3 class="h3 text-center">{{ site.data.name }}</h3>
             <h5 class="h5">Web Address</h5>
@@ -44,6 +59,7 @@
             <h5 class="h5">Description</h5>
             <p>{{ site.data.description }}</p>
           </div>
+          {% endif %}
         </div>
       </div>
     </div>

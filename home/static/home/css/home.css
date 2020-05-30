@@ -233,7 +233,6 @@ ul.ul li {
   position: relative;
   min-height: calc(544px + 32px);
   height: calc(100vh - 56px - 64px);
-  border: 1px dashed #bb846e;
   margin: 0 auto;
 }
 #portfolio section .container .mobile, #portfolio section .container .desktop {
@@ -244,51 +243,57 @@ ul.ul li {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  border: 1px dashed rgba(0, 255, 255, 0.5);
+  color: white;
 }
 #portfolio section .container .mobile .content, #portfolio section .container .desktop .content {
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
 }
-#portfolio section .container .mobile .content a, #portfolio section .container .desktop .content a {
+#portfolio section .container .mobile a, #portfolio section .container .mobile .fa-external-link-alt, #portfolio section .container .desktop a, #portfolio section .container .desktop .fa-external-link-alt {
   color: aqua;
 }
-#portfolio section .container .mobile .content .screenshot-list, #portfolio section .container .desktop .content .screenshot-list {
+#portfolio section .container .mobile .screenshot-list, #portfolio section .container .desktop .screenshot-list {
   margin-bottom: 0;
 }
-#portfolio section .container .mobile .content .screenshot-list li, #portfolio section .container .desktop .content .screenshot-list li {
+#portfolio section .container .mobile .screenshot-list li, #portfolio section .container .desktop .screenshot-list li {
   margin-bottom: 0.5rem;
 }
-#portfolio section .container .mobile .content .screenshot-list li:first-child a img, #portfolio section .container .desktop .content .screenshot-list li:first-child a img {
+#portfolio section .container .mobile .screenshot-list li:first-child a img, #portfolio section .container .desktop .screenshot-list li:first-child a img {
   border: 0.25rem solid #bb846e;
 }
-#portfolio section .container .mobile .content .screenshot-list li:nth-child(2) a img, #portfolio section .container .desktop .content .screenshot-list li:nth-child(2) a img {
+#portfolio section .container .mobile .screenshot-list li:nth-child(2) a img, #portfolio section .container .desktop .screenshot-list li:nth-child(2) a img {
   border: 0.25rem solid #dcdcaa;
 }
-#portfolio section .container .mobile .content .screenshot-list li:last-child, #portfolio section .container .desktop .content .screenshot-list li:last-child {
+#portfolio section .container .mobile .screenshot-list li:last-child, #portfolio section .container .desktop .screenshot-list li:last-child {
   margin-bottom: 0;
 }
-#portfolio section .container .mobile .content .screenshot-list li:last-child a img, #portfolio section .container .desktop .content .screenshot-list li:last-child a img {
+#portfolio section .container .mobile .screenshot-list li:last-child a img, #portfolio section .container .desktop .screenshot-list li:last-child a img {
   border: 0.25rem solid aqua;
 }
-#portfolio section .container .mobile .content .text, #portfolio section .container .desktop .content .text {
-  color: white;
+#portfolio section .container .mobile .text, #portfolio section .container .desktop .text {
+  border: 2px solid #8181817f;
+  padding: 2rem;
+  background-color: #1e1e1e7f;
 }
-#portfolio section .container .mobile .content .text h6.h6, #portfolio section .container .desktop .content .text h6.h6 {
+#portfolio section .container .mobile .text h6.h6, #portfolio section .container .desktop .text h6.h6 {
   margin-bottom: 1rem;
 }
-#portfolio section .container .mobile .content .text h6.h6 .external-link + i, #portfolio section .container .desktop .content .text h6.h6 .external-link + i {
-  color: aqua;
-}
-#portfolio section .container .mobile .content .text p, #portfolio section .container .desktop .content .text p {
+#portfolio section .container .mobile .text p, #portfolio section .container .desktop .text p {
   margin: 0;
+}
+#portfolio section .container .mobile {
+  padding: 0 1rem;
 }
 #portfolio section .container .mobile .screenshot-list {
   margin: 0 auto;
 }
-#portfolio section .container .desktop .content {
-  grid-template-columns: 308px auto;
+#portfolio section .container .mobile .screenshot-list li {
+  flex-grow: 1;
+  text-align: center;
+}
+#portfolio section .container .mobile .screenshot-list li a {
+  display: inline-block;
 }
 #portfolio section .container:first-child:last-child {
   height: calc(100vh - 56px - 86.6px);
@@ -315,11 +320,11 @@ ul.ul li {
 #portfolio section:nth-child(odd) .desktop .content {
   grid-template-columns: 308px auto;
 }
-#portfolio section:nth-child(odd) .desktop .content .text {
-  border: 1px dashed #dcdcaa;
-}
 #portfolio section:nth-child(even) {
   background-color: #444444;
+}
+#portfolio section:nth-child(even) .desktop .content {
+  grid-template-columns: auto 308px;
 }
 #portfolio section:last-child {
   height: calc(100vh - 86.8px - 56px);
