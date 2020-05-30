@@ -85,8 +85,7 @@ ul.ul li {
 }
 #index header {
   position: relative;
-  min-height: 100vh;
-  max-width: 100vw;
+  height: 100vh;
   background-image: -webkit-linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
   background-image: -moz-linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
   background-image: -o-linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
@@ -207,6 +206,7 @@ ul.ul li {
 }
 #index #contact > div h3.h3 {
   color: #996f6f;
+  font-weight: bold;
 }
 #index #contact > div h5.h5, #index #contact > div h6.h6 {
   color: black;
@@ -214,15 +214,11 @@ ul.ul li {
 #index #contact > div p {
   margin-bottom: 0.25rem;
 }
-#index #contact > div p i {
-  margin-right: 0.5em;
-  color: #569cd6;
+#index #contact > div p a, #index #contact > div p .fa-external-link-alt {
+  color: #007fff;
 }
 #index #contact > div p .fa-external-link-alt {
   margin-left: 0.5em;
-}
-#index #contact > div p a {
-  color: #569cd6;
 }
 
 @media screen and (min-width: 339px) {

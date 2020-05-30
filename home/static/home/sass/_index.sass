@@ -1,9 +1,8 @@
 #index
   header
     position: relative
-    width: 100vw
     height: 100vh
-    @include gradient(to bottom right, rgb(140, 250, 176), rgb(89, 112, 241), rgb(204, 101, 252))
+    @include gradient(to bottom right, $mint-green, $cornflower-blue, $heliotrope)
 
     h1.h1
       position: absolute
@@ -94,7 +93,7 @@
   #contact
     min-height: calc(248.8px + 32px)
     height: calc(100vh - 86.8px - 56px)
-    @include gradient(to bottom left, rgb(153, 111, 111), rgb(241, 238, 89), rgb(101, 217, 252))
+    @include gradient(to bottom left, $copper-rose, $starship, $malibu)
 
   #contact > div
     position: absolute
@@ -108,7 +107,8 @@
     box-shadow: 0 0 1rem $dark-gray
 
     h3.h3
-      color: rgb(153, 111, 111)
+      color: $copper-rose
+      font-weight: bold
 
     h5.h5, h6.h6
       color: $black
@@ -116,15 +116,11 @@
     p
       margin-bottom: 0.25rem
 
-      i
-        margin-right: 0.5em
-        color: $blue
+      a, .fa-external-link-alt
+        color: $azure-radiance
 
       .fa-external-link-alt
         margin-left: 0.5em
-
-      a
-        color: $blue
 
 @media screen and (min-width: 339px)
   #index section:nth-child(4)
