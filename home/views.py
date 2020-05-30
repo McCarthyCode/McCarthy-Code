@@ -4,8 +4,12 @@ from datetime import datetime
 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponseBadRequest, HttpResponseForbidden
-from django.shortcuts import render, redirect
+from django.http import (
+    HttpResponseBadRequest,
+    HttpResponseForbidden,
+    HttpResponseRedirect,
+)
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 from .forms import SiteForm
 from .models import Site, Screenshot
@@ -62,10 +66,10 @@ def portfolio(request):
         return HttpResponseBadRequest()
 
     sites = []
-    for site in Site.objects.all().order_by('date_created'):
+    for site in Site.objects.all().order_by('-date_updated'):
         sites.append({
             'data': site,
-            'screenshots': Screenshot.objects.filter(site=site).order_by('-date_updated'),
+            'screenshots': Screenshot.objects.filter(site=site).order_by('-date_updated')[:3],
         })
 
     return render(request, 'home/portfolio.html', {
@@ -75,8 +79,8 @@ def portfolio(request):
     })
 
 def add_site(request):
-    # if not request.user.is_superuser:
-    #     return HttpResponseForbidden()
+    if not request.user.is_superuser:
+        return HttpResponseForbidden()
 
     if request.method == 'GET':
         return render(request, 'home/add_site.html', {
@@ -101,5 +105,43 @@ def add_site(request):
         messages.error(request, 'There was an error adding a site.')
 
         return redirect('home:add-site')
+
+    return HttpResponseBadRequest()
+
+def edit_site(request, site_id):
+    if not request.user.is_superuser:
+        return HttpResponseForbidden()
+
+    site = get_object_or_404(Site, id=site_id)
+
+    if request.method == 'GET':
+        return render(request, 'home/edit_site.html', {
+            'site': site,
+            'screenshots': Screenshot.objects.filter(site=site).order_by('-date_updated'),
+            'form': SiteForm(instance=site),
+            'title': TITLE,
+            'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
+        })
+    elif request.method == 'POST':
+        form = SiteForm(request.POST, request.FILES, instance=site)
+
+        if form.is_valid():
+            site = form.save()
+
+            for image in request.FILES.getlist('screenshots'):
+                screenshot = Screenshot.create(image=image, site=site)
+                screenshot.save()
+
+            messages.success(request, 'You have successfully edited "%s."' % site.name)
+
+            return HttpResponseRedirect(
+                reverse('home:edit-site', site_id)
+            )
+
+        messages.error(request, 'There was an error editing the site.')
+
+        return HttpResponseRedirect(
+            reverse('home:edit-site', site_id)
+        )
 
     return HttpResponseBadRequest()

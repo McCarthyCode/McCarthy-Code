@@ -30,17 +30,17 @@
           li
             margin-bottom: .5rem
 
-          li:first-child a img
+          li:nth-child(3n + 1) a img
             border: .25rem solid $orange
 
-          li:nth-child(2) a img
+          li:nth-child(3n + 2) a img
             border: .25rem solid $yellow
+
+          li:nth-child(3n) a img
+            border: .25rem solid $aqua
 
           li:last-child
             margin-bottom: 0
-
-            a img
-              border: .25rem solid $aqua
 
         .text
           border: 2px solid $lighter-gray-50
@@ -86,7 +86,7 @@
     min-height: calc(100vh - 56px)
 
   section:nth-child(odd)
-    background-color: $gray
+    background-color: $mid-gray
 
     .desktop .content
       grid-template-columns: 308px auto

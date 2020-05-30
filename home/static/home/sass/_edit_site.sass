@@ -1,0 +1,75 @@
+form
+  margin-bottom: 1rem
+
+  .screenshot-list
+    padding: 0
+
+    li
+      list-style: none
+      display: flex
+      position: relative
+      background-color: $mid-gray
+      width: 100%
+      min-width: 290px
+      max-width: 400px
+      border-radius: .25rem
+      margin: 0 auto .5rem auto
+      padding: .5rem 0
+      justify-content: space-evenly
+
+      .controls
+        display: flex
+        flex-wrap: wrap
+        align-content: space-around
+        height: 96px
+        width: 30px
+        margin-top: 4.5px
+
+        i
+          display: inline-block
+          cursor: pointer
+          color: $light-gray
+          @include transition(color)
+
+        i, i::before
+          height: 48px
+          line-height: 1
+
+        i:hover
+          color: $azure-radiance
+
+        i:last-child
+          margin-top: 1px
+
+      img
+        height: 108px
+
+      .btn-container
+        position: relative
+        width: 75px
+        height: 108px
+
+        .btn
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+
+    li:nth-child(3n + 1) a img
+      border: .25rem solid $orange
+
+    li:nth-child(3n + 2) a img
+      border: .25rem solid $yellow
+
+    li:nth-child(3n) a img
+      border: .25rem solid $aqua
+
+    li:last-child a img
+      margin-bottom: 0
+
+    li:first-child .controls i:first-child,
+    li:last-child .controls i:last-child
+      visibility: hidden
+
+  input[type="submit"]
+    margin-bottom: 1rem !important

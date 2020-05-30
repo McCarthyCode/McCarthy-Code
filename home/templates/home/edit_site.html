@@ -1,0 +1,34 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="form">
+  <div class="container">
+    {% include 'home/messages.html' %}
+    <form method="POST" enctype="multipart/form-data">
+      <h2 class="h2">Edit Site<br>{{ site.name }}</h2>
+      {% csrf_token %}
+      {{ form }}
+      <ul class="screenshot-list">
+        {% for screenshot in screenshots %}
+        <li data-id="{{ screenshot.id }}">
+          <div class="controls">
+            <i class="fas fa-caret-up fa-3x"></i>
+            <i class="fas fa-caret-down fa-3x"></i>
+          </div>
+          <div class="thumbnail-container">
+            <a data-fancybox="gallery" href="{{ screenshot.image.url }}">
+              <img src="{{ screenshot.thumbnail.url }}" alt="Thumbnail">
+            </a>
+          </div>
+          <div class="btn-container">
+            <a href="{# url 'home:screenshot-delete' screenshot.id #}" class="btn btn-danger">Delete</a>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      <input class="btn btn-primary form-control" type="submit" value="Submit">
+    </form>
+  </div>
+</section>
+{% endblock %}

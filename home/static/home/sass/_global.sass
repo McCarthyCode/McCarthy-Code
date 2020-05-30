@@ -1,11 +1,25 @@
 html, body
   color: $dark-gray
 
-h1.h1, h2.h2, h3.h3
+h1.h1, h1.h1 > a,
+h2.h2, h2.h2 > a,
+h3.h3, h3.h3 > a
   font-family: $font-title
   color: $yellow
 
-h4.h4, h5.h5, h6.h6
+h1.h1 > a,
+h2.h2 > a,
+h3.h3 > a
+  text-decoration: underline
+
+h1.h1 > a:hover,
+h2.h2 > a:hover,
+h3.h3 > a:hover
+  color: $aqua
+
+h4.h4, h4.h4 > a,
+h5.h5, h5.h5 > a,
+h6.h6, h6.h6 > a
   font-family: $font-body
   color: $orange
 
@@ -17,7 +31,8 @@ p, ul
 a,
 a:hover,
 .fa-external-link-alt
-  color: $blue
+  @include transition(color)
+  color: $aqua
 
 .fa-external-link-alt
   display: inline

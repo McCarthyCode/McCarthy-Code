@@ -16,6 +16,10 @@
   -ms-transform: $properties
   transform: $properties
 
+@mixin transition($property, $duration: .15s, $ease: ease-in-out)
+  -webkit-transition: $property $duration $ease
+  transition: $property $duration $ease
+
 @mixin preserve-3d
   -webkit-transform-style: preserve-3d
   -moz-transform-style: preserve-3d
