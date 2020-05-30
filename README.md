@@ -28,17 +28,15 @@ Go back to the virtual environment and install project dependencies.
 
     (env) $ pip install -r requirements.txt
 
-## Running
-
 Generate a secret key and pipe the output to a file. Change the newly created file's permissions to `rw-------`, or `600`. Note that you will need to add the file to `.gitignore` if you name it something other than `secret.txt` (or change the directory in which it is located, or both) and choose to keep it in the repository. If you save the file somewhere other than `BASE_DIR/auth` and/or name the file something other than `secret.txt`, change the value of `SECRET_KEY_FILE` in `mwd/settings.py` to match your system's directory structure.
 
     $ mkdir auth
-    $ python generate_secret_key.py > auth/secret.txt
+    $ python bin/generate_secret_key.py > auth/secret.txt
     $ sudo chmod 600 auth/secret.txt
 
 Alternatively, export it as an environment variable and edit `mwd/settings.py` to read the string that way.
 
-    $ export SECRET_KEY=$(python generate_secret_key.py)
+    $ export SECRET_KEY=$(python bin/generate_secret_key.py)
 
 In `settings.py`, change
 
@@ -57,6 +55,8 @@ Make and apply migrations.
 
     (env) $ python manage.py makemigrations
     (env) $ python manage.py migrate
+
+## Running
 
 ### Development Mode
 
