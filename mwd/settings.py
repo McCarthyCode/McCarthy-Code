@@ -32,6 +32,7 @@ if DEBUG:
     ALLOWED_HOSTS = [
         'localhost',
         '10.0.0.100',
+        '10.0.0.101',
     ]
 else:
     ALLOWED_HOSTS = [
