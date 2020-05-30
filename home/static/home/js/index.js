@@ -63,7 +63,7 @@ $(document).ready(() => {
 
   function adjustContact() {
     let width = $(this).width();
-    let $contact = $('section:nth-child(4) > div');
+    let $contact = $('#contact > div');
 
     const breakpoint = 359;
     const scale = width / breakpoint;
@@ -102,7 +102,7 @@ $(document).ready(() => {
   adjust();
   $(window).on('resize orientationchange', adjust);
 
-  let navHeight = $('#navbar').outerHeight();
+  let navHeight = 56;
   $('header .chevron i').click(() => {
     $('html, body').animate({
       scrollTop: $('#icons').offset().top - navHeight,
