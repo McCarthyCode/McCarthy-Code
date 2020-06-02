@@ -39,6 +39,7 @@ class SiteForm(forms.ModelForm):
     )
     screenshots = forms.ImageField(
         label='Screenshots',
+        required=False,
         widget=forms.ClearableFileInput(attrs={'multiple': True}),
     )
 

@@ -1,3 +1,4 @@
+import json
 import pytz
 
 from datetime import datetime
@@ -69,7 +70,7 @@ def portfolio(request):
     for site in Site.objects.all().order_by('-date_updated'):
         sites.append({
             'data': site,
-            'screenshots': Screenshot.objects.filter(site=site).order_by('-date_updated')[:3],
+            'screenshots': Screenshot.objects.filter(site=site).order_by('date_updated')[:3],
         })
 
     return render(request, 'home/portfolio.html', {
@@ -117,7 +118,7 @@ def edit_site(request, site_id):
     if request.method == 'GET':
         return render(request, 'home/edit_site.html', {
             'site': site,
-            'screenshots': Screenshot.objects.filter(site=site).order_by('-date_updated'),
+            'screenshots': Screenshot.objects.filter(site=site).order_by('date_updated'),
             'form': SiteForm(instance=site),
             'title': TITLE,
             'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
@@ -128,6 +129,12 @@ def edit_site(request, site_id):
         if form.is_valid():
             site = form.save()
 
+            order = json.loads(request.POST.get('order'))
+
+            for screenshot_id in order:
+                screenshot = get_object_or_404(Screenshot, id=screenshot_id)
+                screenshot.save()
+
             for image in request.FILES.getlist('screenshots'):
                 screenshot = Screenshot.create(image=image, site=site)
                 screenshot.save()
@@ -135,13 +142,13 @@ def edit_site(request, site_id):
             messages.success(request, 'You have successfully edited "%s."' % site.name)
 
             return HttpResponseRedirect(
-                reverse('home:edit-site', site_id)
+                reverse('home:edit-site', args=[site_id])
             )
 
         messages.error(request, 'There was an error editing the site.')
 
         return HttpResponseRedirect(
-            reverse('home:edit-site', site_id)
+            reverse('home:edit-site', args=[site_id])
         )
 
     return HttpResponseBadRequest()

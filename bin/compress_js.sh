@@ -6,6 +6,7 @@ declare -a files=(
   "home/static/home/js/global"
   "home/static/home/js/index"
   "home/static/home/js/portfolio"
+  "home/static/home/js/reorder_screenshots"
 )
 
 for i in "${files[@]}" ; do

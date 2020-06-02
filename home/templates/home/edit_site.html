@@ -1,6 +1,14 @@
 {% extends 'home/base.html' %}
 {% load static %}
 
+{% block js %}
+<!-- Home App JS (compressed) -->
+<script src="{% static 'home/js/reorder_screenshots.min.js' %}"></script>
+
+<!-- Home App JS (uncompressed) -->
+<!-- <script src="{% static 'home/js/reorder_screenshots.js' %}"></script> -->
+{% endblock %}
+
 {% block content %}
 <section class="form">
   <div class="container">
@@ -9,6 +17,7 @@
       <h2 class="h2">Edit Site<br>{{ site.name }}</h2>
       {% csrf_token %}
       {{ form }}
+      <input type="hidden" name="order" value="[{% for screenshot in screenshots %}{{ screenshot.id}}{% if screenshot != screenshots|last %}, {% endif %}{% endfor %}]">
       <ul class="screenshot-list">
         {% for screenshot in screenshots %}
         <li data-id="{{ screenshot.id }}">
