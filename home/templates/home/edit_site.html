@@ -14,7 +14,8 @@
   <div class="container">
     {% include 'home/messages.html' %}
     <form method="POST" enctype="multipart/form-data">
-      <h2 class="h2">Edit Site<br>{{ site.name }}</h2>
+      <h3 class="h3">Edit Site</h3>
+      <h5 class="h5">{{ site.name }}</h5>
       {% csrf_token %}
       {{ form }}
       <input type="hidden" name="order" value="[{% for screenshot in screenshots %}{{ screenshot.id}}{% if screenshot != screenshots|last %}, {% endif %}{% endfor %}]">
@@ -31,7 +32,7 @@
             </a>
           </div>
           <div class="btn-container">
-            <a href="{# url 'home:screenshot-delete' screenshot.id #}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'home:delete-screenshot' screenshot.id %}" class="btn btn-danger">Delete</a>
           </div>
         </li>
         {% endfor %}

@@ -79,6 +79,23 @@ def portfolio(request):
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })
 
+def sites(request):
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
+
+    sites = []
+    for site in Site.objects.all().order_by('-date_updated'):
+        sites.append({
+            'data': site,
+            'screenshots': Screenshot.objects.filter(site=site).order_by('date_updated')[:3],
+        })
+
+    return render(request, 'home/sites.html', {
+        'sites': sites,
+        'title': TITLE,
+        'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
+    })
+
 def add_site(request):
     if not request.user.is_superuser:
         return HttpResponseForbidden()
@@ -101,7 +118,7 @@ def add_site(request):
 
             messages.success(request, 'You have successfully added "%s."' % site.name)
 
-            return redirect('home:add-site')
+            return redirect('home:sites')
 
         messages.error(request, 'There was an error adding a site.')
 
@@ -141,9 +158,7 @@ def edit_site(request, site_id):
 
             messages.success(request, 'You have successfully edited "%s."' % site.name)
 
-            return HttpResponseRedirect(
-                reverse('home:edit-site', args=[site_id])
-            )
+            return redirect('home:sites')
 
         messages.error(request, 'There was an error editing the site.')
 
@@ -152,3 +167,9 @@ def edit_site(request, site_id):
         )
 
     return HttpResponseBadRequest()
+
+def delete_site(request, site_id):
+    pass
+
+def delete_screenshot(request, screenshot_id):
+    pass

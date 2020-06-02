@@ -10,9 +10,9 @@ h3.h3, h3.h3 > a {
   color: #dcdcaa;
 }
 
-h1.h1 > a,
-h2.h2 > a,
-h3.h3 > a {
+h1.h1 > a:not(.btn),
+h2.h2 > a:not(.btn),
+h3.h3 > a:not(.btn) {
   text-decoration: underline;
 }
 
@@ -245,7 +245,7 @@ ul.ul li {
   }
 }
 #portfolio section {
-  height: calc(100vh - 56px);
+  min-height: calc(100vh - 56px);
 }
 #portfolio section .container {
   position: relative;
@@ -348,7 +348,38 @@ ul.ul li {
   height: calc(100vh - 91px - 56px);
 }
 
+#sites {
+  min-height: calc(100vh - 56px - 91px);
+  margin-top: 56px;
+  padding: 1rem 0;
+  background-color: #444444;
+}
+#sites .container:last-child {
+  max-width: 400px;
+}
+#sites .container:last-child .header {
+  margin-bottom: 0.5rem;
+}
+#sites .container:last-child .header > * {
+  display: inline-block;
+}
+#sites .container:last-child li {
+  background-color: #333333;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+#sites .container:last-child li:last-child {
+  margin-bottom: 0;
+}
+
 form {
+  margin-bottom: 1rem;
+}
+form h3.h3 {
+  margin-bottom: 0;
+}
+form h5.h5 {
   margin-bottom: 1rem;
 }
 form .screenshot-list {

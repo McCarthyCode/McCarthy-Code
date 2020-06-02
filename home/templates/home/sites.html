@@ -1,0 +1,29 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block js %}{% endblock %}
+
+{% block content %}
+<section id="sites">
+  <div class="container">
+    {% include 'home/messages.html' %}
+  </div>
+  <div class="container">
+    <div class="header">
+      <h3 class="h3">Edit Sites</h3>
+      <a class="btn btn-primary float-right" href="{% url 'home:add-site' %}">Add Site</a>
+    </div>
+    <ul>
+      {% for site in sites %}
+      <li>
+        <h5 class="h5 text-center">{{ site.data.name }}</h5>
+        <div class="btn-container text-center">
+          <a class="btn btn-secondary" href="{% url 'home:edit-site' site.data.id %}">Edit</a>
+          <a class="btn btn-danger" href="{% url 'home:delete-site' site.data.id %}">Delete</a>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}
