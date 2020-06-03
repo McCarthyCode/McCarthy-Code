@@ -32,7 +32,7 @@
             </a>
           </div>
           <div class="btn-container">
-            <a href="{% url 'home:delete-screenshot' screenshot.id %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'home:delete-screenshot' site.id screenshot.id %}" class="btn btn-danger">Delete</a>
           </div>
         </li>
         {% endfor %}

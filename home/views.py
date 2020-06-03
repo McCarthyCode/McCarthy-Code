@@ -193,5 +193,19 @@ def delete_site(request, site_id):
 
     return redirect('home:sites')
 
-def delete_screenshot(request, screenshot_id):
-    pass
+def delete_screenshot(request, site_id, screenshot_id):
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
+
+    site = get_object_or_404(Site, id=site_id)
+    screenshot = get_object_or_404(Screenshot, id=screenshot_id)
+
+    assert site == screenshot.site
+
+    screenshot.delete()
+
+    messages.success(request, 'Screenshot successfully deleted.')
+
+    return HttpResponseRedirect(
+        reverse('home:edit-site', args=[site_id])
+    )
