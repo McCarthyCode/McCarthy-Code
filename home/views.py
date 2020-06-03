@@ -54,9 +54,11 @@ def login_view(request):
         if user is not None:
             login(request, user)
 
-            messages.success(request, 'Welcome!')
+            messages.success(request, 'Welcome, %s!' %
+                (user.first_name if user.first_name else user.username)
+            )
 
-            return redirect('home:login')
+            return redirect('home:sites')
         else:
             messages.error(request, 'There was an error logging in with that username/password combination.')
 
