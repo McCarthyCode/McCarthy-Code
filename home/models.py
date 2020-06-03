@@ -149,5 +149,11 @@ class Site(TimestampedModel):
     def __str__(self):
         return self.name
 
+    def delete(self, *args, **kwargs):
+        for screenshot in Screenshot.objects.filter(site=self):
+            screenshot.delete(*args, **kwargs)
+
+        return super().delete(*args, **kwargs)
+
 class Screenshot(ThumbnailedImage):
     site = models.ForeignKey(Site, on_delete=models.CASCADE)
