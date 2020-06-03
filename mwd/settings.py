@@ -28,15 +28,12 @@ SECRET_KEY = content[:-1]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if DEBUG:
+ALLOWED_HOSTS = [
+    'localhost',
+]
+
+if not DEBUG:
     ALLOWED_HOSTS = [
-        'localhost',
-        '10.0.0.100',
-        '10.0.0.101',
-    ]
-else:
-    ALLOWED_HOSTS = [
-        'localhost',
         'mccarthywebdesign.com',
         'www.mccarthywebdesign.com',
     ]

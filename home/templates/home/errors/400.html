@@ -1,0 +1,6 @@
+{% extends 'home/errors/errors.html' %}
+
+{% block content %}
+<h1 class="h1">HTTP 400 <span class="text-nowrap">(Bad Request) <i class="fas fa-desktop"></i></span></h1>
+<p>The request could not be processed due to a front end error. You may return to the home page by <a href="{% url 'home:index' %}">clicking here</a>.</p>
+{% endblock %}

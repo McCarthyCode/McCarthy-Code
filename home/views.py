@@ -18,6 +18,18 @@ from mwd.settings import TIME_ZONE
 
 TITLE = 'McCarthy Web Design'
 
+def view_400(request, exception=None):
+    return render(request, 'home/errors/400.html', status=200)
+
+def view_403(request, exception=None):
+    return render(request, 'home/errors/403.html', status=200)
+
+def view_404(request, exception=None):
+    return render(request, 'home/errors/404.html', status=200)
+
+def view_500(request, exception=None):
+    return render(request, 'home/errors/500.html', status=200)
+
 def index(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()

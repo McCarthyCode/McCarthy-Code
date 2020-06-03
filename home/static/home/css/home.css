@@ -35,9 +35,9 @@ p, ul {
   margin-bottom: 1rem;
 }
 
-a,
-a:hover,
-.fa-external-link-alt {
+body a,
+body a:hover,
+body .fa-external-link-alt {
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
   color: aqua;
@@ -718,6 +718,24 @@ form .errorlist {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
+}
+#page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #333333;
+}
+#page .container {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: white;
 }
 
 /*# sourceMappingURL=home.css.map */

@@ -1,0 +1,6 @@
+{% extends 'home/errors/errors.html' %}
+
+{% block content %}
+<h1 class="h1">HTTP 404 <span class="text-nowrap">(Not Found) <i class="fas fa-search"></i></span></h1>
+<p>The requested page could not be found. You may return to the home page by <a href="{% url 'home:index' %}">clicking here</a>.</p>
+{% endblock %}
