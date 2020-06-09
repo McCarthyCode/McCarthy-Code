@@ -314,10 +314,10 @@ ul.ul li {
   display: inline-block;
 }
 #portfolio section .container:first-child:last-child {
-  height: calc(100vh - 56px - 91px);
+  min-height: calc(100vh - 56px - 91px);
 }
 #portfolio section .container:first-child {
-  height: calc(100vh - 56px - 64px);
+  min-height: calc(100vh - 56px - 64px);
 }
 #portfolio section .container:last-child {
   min-height: calc(100vh - 91px - 64px);
@@ -345,7 +345,7 @@ ul.ul li {
   grid-template-columns: auto 308px;
 }
 #portfolio section:last-child {
-  height: calc(100vh - 91px - 56px);
+  min-height: calc(100vh - 91px - 56px);
 }
 
 #sites {
