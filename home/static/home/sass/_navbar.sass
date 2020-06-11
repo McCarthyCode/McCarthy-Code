@@ -9,12 +9,12 @@ nav
     background-color: $dark-gray
     cursor: pointer
 
+    &:hover
+      color: $white-75 !important
+
     i
       font-size: 1.8em
       vertical-align: -5px
-
-  button:hover
-    color: $white-75 !important
 
   .nav-item
     text-align: center
@@ -25,8 +25,8 @@ nav
       margin-top: 0.5rem
       color: $white !important
 
-    a.nav-link:hover
-      color: $white-75 !important
+      &:hover
+        color: $white-75 !important
 
 @media (min-width: $breakpoint-md)
   nav .nav-item a.nav-link
