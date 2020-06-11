@@ -33,7 +33,7 @@ ALLOWED_HOSTS = [
 ]
 
 if not DEBUG:
-    ALLOWED_HOSTS = [
+    ALLOWED_HOSTS += [
         'mccarthywebdesign.com',
         'www.mccarthywebdesign.com',
     ]
