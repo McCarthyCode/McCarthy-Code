@@ -238,6 +238,13 @@ input[type=submit] {
     min-height: calc(100vh - 66.8px - 56px);
   }
 }
+#about {
+  min-height: calc(100vh - 56px - 91px);
+  margin-top: 56px;
+  padding: 1rem 0;
+  background-color: #333333;
+}
+
 #portfolio section {
   min-height: calc(100vh - 56px);
 }
