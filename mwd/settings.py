@@ -26,18 +26,12 @@ with open(SECRET_KEY_FILE, 'r', encoding='utf8') as f:
 SECRET_KEY = content[:-1]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
+    'dev.mccarthywebdesign.com',
 ]
-
-if not DEBUG:
-    ALLOWED_HOSTS += [
-        'mccarthywebdesign.com',
-        'www.mccarthywebdesign.com',
-    ]
-
 
 # Application definition
 
