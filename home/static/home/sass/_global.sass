@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo|Open+Sans|Roboto+Mono|Varela+Round')
+@import '../../../../node_modules/bootstrap/scss/bootstrap.scss'
+
+@import 'variables'
+@import 'mixins'
+
 h1.h1, h2.h2, h3.h3
   &, & > a
     font-family: $font-title
@@ -28,8 +34,10 @@ body
   display: inline
   vertical-align: 1px
   font-size: 0.8em
-  margin-left: .5em
   cursor: pointer
+
+a[data-fancybox="gallery"]
+  cursor: zoom-in
 
 small
   font-size: 0.8em
@@ -73,7 +81,7 @@ input[type="submit"]
       i
         cursor: pointer
 
-@media (min-width: $breakpoint-sm)
+@include media-breakpoint-up(sm)
   .content
     img.float-left-sm
       float: left

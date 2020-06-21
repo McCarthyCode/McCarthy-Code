@@ -2,6 +2,7 @@ auth
 db.sqlite3
 .env
 media
+node_modules/
 __pycache__
 staticfiles
 .vscode
