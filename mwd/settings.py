@@ -74,12 +74,16 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mwd.wsgi.application'
+if "DEV_DB" in os.environ:
+    DEV_DB = True
+else:
+    DEV_DB = False
 
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-if DEBUG:
+if DEV_DB:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',

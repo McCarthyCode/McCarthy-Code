@@ -3,7 +3,6 @@
 - Titles
 - Footer date
 - margin-bottom: 1rem to h1-h3
-- Create DEV_DB environment variable
 - SSH keys
 - Data transfer
     pg_dumpall | gzip > db.sql.gz
