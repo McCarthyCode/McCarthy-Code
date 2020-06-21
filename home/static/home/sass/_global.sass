@@ -1,27 +1,18 @@
-html, body
-  color: $dark-gray
+h1.h1, h2.h2, h3.h3
+  &, & > a
+    font-family: $font-title
+    color: $yellow
 
-h1.h1, h1.h1 > a,
-h2.h2, h2.h2 > a,
-h3.h3, h3.h3 > a
-  font-family: $font-title
-  color: $yellow
+  & > a:not(.btn)
+    text-decoration: underline
 
-h1.h1 > a:not(.btn),
-h2.h2 > a:not(.btn),
-h3.h3 > a:not(.btn)
-  text-decoration: underline
+  & > a:hover
+    color: $aqua
 
-h1.h1 > a:hover,
-h2.h2 > a:hover,
-h3.h3 > a:hover
-  color: $aqua
-
-h4.h4, h4.h4 > a,
-h5.h5, h5.h5 > a,
-h6.h6, h6.h6 > a
-  font-family: $font-body
-  color: $orange
+h4.h4, h5.h5, h6.h6
+  &, & > a
+    font-family: $font-body
+    color: $orange
 
 p, ul
   font-family: $font-body
@@ -29,9 +20,7 @@ p, ul
   margin-bottom: 1rem
 
 body
-  a,
-  a:hover,
-  .fa-external-link-alt
+  a, a:hover, .fa-external-link-alt
     @include transition(color)
     color: $aqua
 
@@ -59,7 +48,15 @@ ul.ul
   list-style: disc
 
   li
-    margin-left: 20px
+    margin-left: 1.25rem
+
+body .btn
+  height: 2.25rem
+  line-height: 1
+
+input[type="submit"]
+  padding-top: 12px
+  padding-bottom: 6px
 
 #index, #portfolio
   header, section

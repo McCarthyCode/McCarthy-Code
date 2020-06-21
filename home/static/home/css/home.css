@@ -1,30 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Baloo|Open+Sans|Roboto+Mono|Varela+Round");
-html, body {
-  color: #1e1e1e;
-}
-
-h1.h1, h1.h1 > a,
-h2.h2, h2.h2 > a,
-h3.h3, h3.h3 > a {
+h1.h1, h1.h1 > a, h2.h2, h2.h2 > a, h3.h3, h3.h3 > a {
   font-family: "Varela Round", Helvetica, Arial, sans-serif;
   color: #dcdcaa;
 }
-
-h1.h1 > a:not(.btn),
-h2.h2 > a:not(.btn),
-h3.h3 > a:not(.btn) {
+h1.h1 > a:not(.btn), h2.h2 > a:not(.btn), h3.h3 > a:not(.btn) {
   text-decoration: underline;
 }
-
-h1.h1 > a:hover,
-h2.h2 > a:hover,
-h3.h3 > a:hover {
+h1.h1 > a:hover, h2.h2 > a:hover, h3.h3 > a:hover {
   color: aqua;
 }
 
-h4.h4, h4.h4 > a,
-h5.h5, h5.h5 > a,
-h6.h6, h6.h6 > a {
+h4.h4, h4.h4 > a, h5.h5, h5.h5 > a, h6.h6, h6.h6 > a {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   color: #bb846e;
 }
@@ -35,9 +21,7 @@ p, ul {
   margin-bottom: 1rem;
 }
 
-body a,
-body a:hover,
-body .fa-external-link-alt {
+body a, body a:hover, body .fa-external-link-alt {
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
   color: aqua;
@@ -70,7 +54,17 @@ ul.ul {
   list-style: disc;
 }
 ul.ul li {
-  margin-left: 20px;
+  margin-left: 1.25rem;
+}
+
+body .btn {
+  height: 2.25rem;
+  line-height: 1;
+}
+
+input[type=submit] {
+  padding-top: 12px;
+  padding-bottom: 6px;
 }
 
 #index header, #index section, #portfolio header, #portfolio section {
@@ -244,6 +238,13 @@ ul.ul li {
     min-height: calc(100vh - 66.8px - 56px);
   }
 }
+#about {
+  min-height: calc(100vh - 56px - 91px);
+  margin-top: 56px;
+  padding: 1rem 0;
+  background-color: #333333;
+}
+
 #portfolio section {
   min-height: calc(100vh - 56px);
 }
@@ -358,16 +359,28 @@ ul.ul li {
   max-width: 400px;
 }
 #sites .container:last-child .header {
-  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 #sites .container:last-child .header > * {
   display: inline-block;
+  margin-bottom: 1rem;
+}
+#sites .container:last-child .header > .btn {
+  padding: 11px 11px 0px 11px;
 }
 #sites .container:last-child li {
   background-color: #333333;
   border-radius: 0.25rem;
   padding: 1rem;
   margin-bottom: 0.5rem;
+}
+#sites .container:last-child li h5.h5 {
+  margin: -5px 0 12px 0;
+}
+#sites .container:last-child li .btn {
+  padding: 8px 11px 2px 10px;
 }
 #sites .container:last-child li:last-child {
   margin-bottom: 0;
@@ -427,15 +440,12 @@ form .screenshot-list li img {
   height: 108px;
 }
 form .screenshot-list li .btn-container {
-  position: relative;
-  width: 75px;
+  display: flex;
+  align-items: center;
   height: 108px;
 }
-form .screenshot-list li .btn-container .btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+form .screenshot-list li .btn-container > .btn {
+  padding: 9px 11px 9px 9px;
 }
 form .screenshot-list li:nth-child(3n+1) a img {
   border: 0.25rem solid #bb846e;
@@ -468,12 +478,12 @@ nav button {
   background-color: #1e1e1e;
   cursor: pointer;
 }
+nav button:hover {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
 nav button i {
   font-size: 1.8em;
   vertical-align: -5px;
-}
-nav button:hover {
-  color: rgba(255, 255, 255, 0.75) !important;
 }
 nav .nav-item {
   text-align: center;
@@ -500,11 +510,6 @@ nav .nav-item a.nav-link:hover {
   padding: 0.625rem 0 1rem 0;
   background-color: #1e1e1e;
   color: white;
-}
-#footer a,
-#footer a:hover,
-#footer .fa-external-link-alt {
-  color: aqua;
 }
 #footer p {
   text-align: center;

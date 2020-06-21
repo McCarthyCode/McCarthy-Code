@@ -16,17 +16,17 @@
       box-shadow: 0 0 1rem $dark-gray
       text-align: center
 
-    h1.h1::before, h1.h1::after
-      font-family: $font-monospace
-      font-size: 0.5em
-      vertical-align: 6px
-      color: $maroon
+      &::before, &::after
+        font-family: $font-monospace
+        font-size: 0.5em
+        vertical-align: 6px
+        color: $maroon
 
-    h1.h1::before
-      content: "<h1>"
+      &::before
+        content: "<h1>"
 
-    h1.h1::after
-      content: "</h1>"
+      &::after
+        content: "</h1>"
 
   #icons
     position: relative
@@ -81,7 +81,7 @@
     .chevron
       color: $blue
 
-  > :nth-child(odd)
+  & > :nth-child(odd)
     background-attachment: fixed
     background-position: center
     background-repeat: no-repeat

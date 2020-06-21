@@ -37,29 +37,26 @@ form
           color: $light-gray
           @include transition(color)
 
-        i, i::before
-          height: 48px
-          line-height: 1
+          &, &::before
+            height: 48px
+            line-height: 1
 
-        i:hover
-          color: $azure-radiance
+          &:hover
+            color: $azure-radiance
 
-        i:last-child
-          margin-top: 1px
+          &:last-child
+            margin-top: 1px
 
       img
         height: 108px
 
       .btn-container
-        position: relative
-        width: 75px
+        display: flex
+        align-items: center
         height: 108px
 
-        .btn
-          position: absolute
-          top: 50%
-          left: 50%
-          transform: translate(-50%, -50%)
+        & > .btn
+          padding: 9px 11px 9px 9px
 
     li:nth-child(3n + 1) a img
       border: .25rem solid $orange

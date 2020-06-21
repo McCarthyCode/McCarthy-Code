@@ -104,21 +104,21 @@ form
   .address,
   .password-confirm,
   .name
-    > :not(:last-child)
+    & > :not(:last-child)
       border-bottom-right-radius: 0
       border-bottom-left-radius: 0
       margin-bottom: -1px
 
-    > :not(:first-child)
+    & > :not(:first-child)
       border-top-right-radius: 0
       border-top-left-radius: 0
 
   .city-state-zip
-    > :nth-child(2)
+    & > :nth-child(2)
       border-top-right-radius: 0
       border-bottom-right-radius: 0
 
-    > :last-child
+    & > :last-child
       border-top-left-radius: 0
       border-bottom-left-radius: 0
 
@@ -133,10 +133,10 @@ form
 @media screen and (min-width: $breakpoint-md)
   .city-state-zip,
   .number
-    > :not(:last-child)
+    & > :not(:last-child)
       border-top-right-radius: 0
       border-bottom-right-radius: 0
 
-    > :not(:first-child)
+    & > :not(:first-child)
       border-top-left-radius: 0
       border-bottom-left-radius: 0

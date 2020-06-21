@@ -93,6 +93,15 @@ def portfolio(request):
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })
 
+def about(request):
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
+
+    return render(request, 'home/about.html', {
+        'title': TITLE,
+        'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
+    })
+
 def sites(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
