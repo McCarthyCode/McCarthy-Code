@@ -30,6 +30,12 @@ class ThumbnailedImage(TimestampedModel):
 
         return image
 
+    def delete(self, *args, **kwargs):
+        self.image.delete()
+        self.thumbnail.delete()
+
+        return super().delete(*args, **kwargs)
+
     def __str__(self):
         return self.image.name
 
