@@ -1,6 +1,8 @@
 {% extends 'home/base.html' %}
 {% load static %}
 
+{% block title %}Edit {{ site.name }}{% endblock %}
+
 {% block js %}
 <!-- Home App JS (compressed) -->
 <script src="{% static 'home/js/reorder_screenshots.min.js' %}"></script>

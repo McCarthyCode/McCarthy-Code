@@ -1,6 +1,8 @@
 {% extends 'home/base.html' %}
 {% load static %}
 
+{% block title %}Home and Contact{% endblock %}
+
 {% block js %}
 <!-- Home App JS (compressed) -->
 <script src="{% static 'home/js/index.min.js' %}"></script>
@@ -12,7 +14,7 @@
 {% block content %}
 <div id="index">
   <header>
-    <h1 class="h1">McCarthy&nbsp;Web&nbsp;Design</h1>
+    <h1 class="h1 text-nowrap">McCarthy Web Design</h1>
     <div class="chevron text-center">
       <i class="fas fa-chevron-down"></i>
     </div>

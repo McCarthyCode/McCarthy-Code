@@ -16,8 +16,6 @@ from .forms import SiteForm
 from .models import Site, Screenshot
 from mwd.settings import TIME_ZONE
 
-TITLE = 'McCarthy Web Design'
-
 def view_400(request, exception=None):
     return render(request, 'home/errors/400.html', status=200)
 
@@ -35,14 +33,12 @@ def index(request):
         return HttpResponseBadRequest()
 
     return render(request, 'home/index.html', {
-        'title': TITLE,
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })
 
 def login_view(request):
     if request.method == 'GET':
         return render(request, 'home/login.html', {
-            'title': TITLE,
             'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
         })
     elif request.method == 'POST':
@@ -89,7 +85,6 @@ def portfolio(request):
 
     return render(request, 'home/portfolio.html', {
         'sites': sites,
-        'title': TITLE,
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })
 
@@ -98,7 +93,6 @@ def about(request):
         return HttpResponseBadRequest()
 
     return render(request, 'home/about.html', {
-        'title': TITLE,
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })
 
@@ -115,7 +109,6 @@ def sites(request):
 
     return render(request, 'home/sites.html', {
         'sites': sites,
-        'title': TITLE,
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })
 
@@ -126,7 +119,6 @@ def add_site(request):
     if request.method == 'GET':
         return render(request, 'home/add_site.html', {
             'form': SiteForm(),
-            'title': TITLE,
             'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
         })
     elif request.method == 'POST':
@@ -160,7 +152,6 @@ def edit_site(request, site_id):
             'site': site,
             'screenshots': Screenshot.objects.filter(site=site).order_by('date_updated'),
             'form': SiteForm(instance=site),
-            'title': TITLE,
             'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
         })
     elif request.method == 'POST':
