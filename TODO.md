@@ -1,8 +1,6 @@
 # To-Do
 
-- Titles
-- Footer date
-- margin-bottom: 1rem to h1-h3
+- Separate dev/prod heads
 - SSH keys
 - Data transfer
     pg_dumpall | gzip > db.sql.gz
@@ -11,3 +9,4 @@
     rm db.sql
 - Set timezone on production
     sudo timedatectl set-timezone America/Chicago
+- Separate dev/prod heads
