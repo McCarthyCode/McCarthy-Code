@@ -9910,6 +9910,9 @@ h3 {
     border-color: #dee2e6;
   }
 }
+h1.h1, h2.h2, h3.h3 {
+  margin-bottom: 1rem;
+}
 h1.h1, h1.h1 > a, h2.h2, h2.h2 > a, h3.h3, h3.h3 > a {
   font-family: "Varela Round", Helvetica, Arial, sans-serif;
   color: #dcdcaa;
@@ -10131,6 +10134,7 @@ input[type=submit] {
   box-shadow: 0 0 1rem #1e1e1e;
 }
 #index #contact > div h3.h3 {
+  margin-bottom: 0.5rem;
   color: #996f6f;
   font-weight: bold;
 }
@@ -10152,9 +10156,6 @@ input[type=submit] {
   margin-top: 56px;
   padding: 1rem 0;
   background-color: #333333;
-}
-#about h3.h3 {
-  margin-bottom: 1rem;
 }
 #about .img-container {
   width: 100%;
@@ -10230,7 +10231,7 @@ input[type=submit] {
   margin-bottom: 0;
 }
 #portfolio section .container .mobile .text, #portfolio section .container .desktop .text {
-  border: 2px solid #8181817f;
+  border-radius: 0.5rem;
   padding: 2rem;
   background-color: #1e1e1e7f;
 }
@@ -10327,9 +10328,6 @@ input[type=submit] {
 
 form {
   margin-bottom: 1rem;
-}
-form h3.h3 {
-  margin-bottom: 0;
 }
 form h5.h5 {
   margin-bottom: 1rem;
@@ -10532,9 +10530,6 @@ section.form .container form {
   margin: 0 auto;
   max-width: 400px;
 }
-section.form .container form h2.h2 {
-  color: #dcdcaa;
-}
 
 form input[type=text], form input[type=number], form input[type=password], form input[type=submit], form input[type=file], form textarea, form select, form label {
   margin-bottom: 0.5rem;
@@ -10570,7 +10565,6 @@ form select.form-control:focus option {
 }
 form input[type=file] {
   width: 100%;
-  height: 38px;
   color: white;
 }
 form .input-group label {
