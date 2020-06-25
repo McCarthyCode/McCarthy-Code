@@ -85,7 +85,7 @@ def portfolio(request):
         sites.append({
             'data': site,
             'screenshots_preview': screenshots[:3],
-            'screenshots_extended': screenshots[4:],
+            'screenshots_extended': screenshots[3:],
         })
 
     return render(request, 'home/portfolio.html', {
