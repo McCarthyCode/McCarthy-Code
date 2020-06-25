@@ -29,9 +29,7 @@
       <div class="desktop d-none d-md-block">
         <div class="content">
           {% if forloop.counter|modulo:2 == 0 %}
-          <div class="text">
-            {% include 'home/site_info.html' %}
-          </div>
+          {% include 'home/site_info.html' %}
           {% endif %}
           <ul class="screenshot-list">
             {% for screenshot in site.screenshots %}
@@ -43,9 +41,7 @@
             {% endfor %}
           </ul>
           {% if forloop.counter|modulo:2 == 1 %}
-          <div class="text">
-            {% include 'home/site_info.html' %}
-          </div>
+          {% include 'home/site_info.html' %}
           {% endif %}
         </div>
       </div>

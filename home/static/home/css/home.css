@@ -9996,6 +9996,7 @@ input[type=submit] {
   font-size: 2rem;
 }
 #index header .chevron i, #index section .chevron i, #portfolio header .chevron i, #portfolio section .chevron i {
+  vertical-align: -4px;
   cursor: pointer;
 }
 
@@ -10185,86 +10186,94 @@ input[type=submit] {
     margin: 31px 2rem;
   }
 }
-#portfolio section {
+#portfolio header, #portfolio section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: calc(100vh - 56px);
 }
-#portfolio section .container {
-  position: relative;
+#portfolio header .container, #portfolio section .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: calc(544px + 32px);
-  height: calc(100vh - 56px - 64px);
-  margin: 0 auto;
+  margin: 1rem auto 4rem auto;
 }
-#portfolio section .container .mobile, #portfolio section .container .desktop {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+#portfolio header .container:first-child:last-child, #portfolio section .container:first-child:last-child {
+  min-height: calc(100vh - 56px - 91px);
+}
+#portfolio header .container:first-child, #portfolio section .container:first-child {
+  min-height: calc(100vh - 56px - 64px);
+}
+#portfolio header .container:last-child, #portfolio section .container:last-child {
+  min-height: calc(100vh - 91px - 64px);
+}
+#portfolio header .container .mobile, #portfolio header .container .desktop, #portfolio section .container .mobile, #portfolio section .container .desktop {
   color: white;
 }
-#portfolio section .container .mobile .content, #portfolio section .container .desktop .content {
+#portfolio header .container .mobile .content, #portfolio header .container .desktop .content, #portfolio section .container .mobile .content, #portfolio section .container .desktop .content {
   display: grid;
   gap: 2rem;
   align-items: center;
 }
-#portfolio section .container .mobile a, #portfolio section .container .mobile .fa-external-link-alt, #portfolio section .container .desktop a, #portfolio section .container .desktop .fa-external-link-alt {
+#portfolio header .container .mobile a, #portfolio header .container .mobile .fa-external-link-alt, #portfolio header .container .desktop a, #portfolio header .container .desktop .fa-external-link-alt, #portfolio section .container .mobile a, #portfolio section .container .mobile .fa-external-link-alt, #portfolio section .container .desktop a, #portfolio section .container .desktop .fa-external-link-alt {
   color: aqua;
 }
-#portfolio section .container .mobile .screenshot-list, #portfolio section .container .desktop .screenshot-list {
+#portfolio header .container .mobile .screenshot-list, #portfolio header .container .desktop .screenshot-list, #portfolio section .container .mobile .screenshot-list, #portfolio section .container .desktop .screenshot-list {
   margin-bottom: 0;
 }
-#portfolio section .container .mobile .screenshot-list li, #portfolio section .container .desktop .screenshot-list li {
+#portfolio header .container .mobile .screenshot-list li, #portfolio header .container .desktop .screenshot-list li, #portfolio section .container .mobile .screenshot-list li, #portfolio section .container .desktop .screenshot-list li {
   margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
 }
-#portfolio section .container .mobile .screenshot-list li:nth-child(3n+1) a img, #portfolio section .container .desktop .screenshot-list li:nth-child(3n+1) a img {
+#portfolio header .container .mobile .screenshot-list li:nth-child(3n+1) a img, #portfolio header .container .desktop .screenshot-list li:nth-child(3n+1) a img, #portfolio section .container .mobile .screenshot-list li:nth-child(3n+1) a img, #portfolio section .container .desktop .screenshot-list li:nth-child(3n+1) a img {
   border: 0.25rem solid #bb846e;
 }
-#portfolio section .container .mobile .screenshot-list li:nth-child(3n+2) a img, #portfolio section .container .desktop .screenshot-list li:nth-child(3n+2) a img {
+#portfolio header .container .mobile .screenshot-list li:nth-child(3n+2) a img, #portfolio header .container .desktop .screenshot-list li:nth-child(3n+2) a img, #portfolio section .container .mobile .screenshot-list li:nth-child(3n+2) a img, #portfolio section .container .desktop .screenshot-list li:nth-child(3n+2) a img {
   border: 0.25rem solid #dcdcaa;
 }
-#portfolio section .container .mobile .screenshot-list li:nth-child(3n) a img, #portfolio section .container .desktop .screenshot-list li:nth-child(3n) a img {
+#portfolio header .container .mobile .screenshot-list li:nth-child(3n) a img, #portfolio header .container .desktop .screenshot-list li:nth-child(3n) a img, #portfolio section .container .mobile .screenshot-list li:nth-child(3n) a img, #portfolio section .container .desktop .screenshot-list li:nth-child(3n) a img {
   border: 0.25rem solid aqua;
 }
-#portfolio section .container .mobile .screenshot-list li:last-child, #portfolio section .container .desktop .screenshot-list li:last-child {
+#portfolio header .container .mobile .screenshot-list li:last-child, #portfolio header .container .desktop .screenshot-list li:last-child, #portfolio section .container .mobile .screenshot-list li:last-child, #portfolio section .container .desktop .screenshot-list li:last-child {
   margin-bottom: 0;
 }
-#portfolio section .container .mobile .text, #portfolio section .container .desktop .text {
+#portfolio header .container .mobile .text, #portfolio header .container .desktop .text, #portfolio section .container .mobile .text, #portfolio section .container .desktop .text {
   border-radius: 0.5rem;
   padding: 2rem;
   background-color: #1e1e1e7f;
 }
-#portfolio section .container .mobile .text h6.h6, #portfolio section .container .desktop .text h6.h6 {
+#portfolio header .container .mobile .text h6.h6, #portfolio header .container .desktop .text h6.h6, #portfolio section .container .mobile .text h6.h6, #portfolio section .container .desktop .text h6.h6 {
   margin-bottom: 1rem;
 }
-#portfolio section .container .mobile .text p, #portfolio section .container .desktop .text p {
+#portfolio header .container .mobile .text p, #portfolio header .container .desktop .text p, #portfolio section .container .mobile .text p, #portfolio section .container .desktop .text p {
   margin: 0;
 }
-#portfolio section .container .mobile {
+#portfolio header .container .mobile, #portfolio section .container .mobile {
   padding: 0 1rem;
 }
-#portfolio section .container .mobile .screenshot-list {
+#portfolio header .container .mobile .screenshot-list, #portfolio section .container .mobile .screenshot-list {
   margin: 0 auto;
 }
-#portfolio section .container .mobile .screenshot-list li {
+#portfolio header .container .mobile .screenshot-list li, #portfolio section .container .mobile .screenshot-list li {
   flex-grow: 1;
   text-align: center;
 }
-#portfolio section .container .mobile .screenshot-list li a {
+#portfolio header .container .mobile .screenshot-list li a, #portfolio section .container .mobile .screenshot-list li a {
   display: inline-block;
 }
-#portfolio section .container:first-child:last-child {
-  min-height: calc(100vh - 56px - 91px);
+#portfolio header .container .mobile .text, #portfolio section .container .mobile .text {
+  margin-bottom: 1rem;
 }
-#portfolio section .container:first-child {
-  min-height: calc(100vh - 56px - 64px);
+#portfolio header .container .desktop .screenshot-list img, #portfolio section .container .desktop .screenshot-list img {
+  max-height: 176px;
 }
-#portfolio section .container:last-child {
-  min-height: calc(100vh - 91px - 64px);
-}
-#portfolio section .chevron {
+#portfolio header .chevron, #portfolio section .chevron {
   color: #569cd6;
+}
+#portfolio header:last-child .container, #portfolio section:last-child .container {
+  margin-bottom: 1rem;
 }
 #portfolio section:first-child:last-child {
   min-height: calc(100vh - 56px - 91px);
@@ -10289,6 +10298,11 @@ input[type=submit] {
   min-height: calc(100vh - 91px - 56px);
 }
 
+@media (min-width: 768px) {
+  #portfolio header .container, #portfolio section .container {
+    margin: 0 auto;
+  }
+}
 #sites {
   min-height: calc(100vh - 56px - 91px);
   margin-top: 56px;

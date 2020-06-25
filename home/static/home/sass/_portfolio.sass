@@ -1,19 +1,27 @@
 #portfolio
-  section
+  header, section
+    display: flex
+    align-items: center
+    justify-content: center
     min-height: calc(100vh - 56px)
 
     .container
-      position: relative
+      display: flex
+      align-items: center
+      justify-content: center
       min-height: calc(544px + 32px)
-      height: calc(100vh - 56px - 64px)
-      margin: 0 auto
+      margin: 1rem auto 4rem auto
+
+      &:first-child:last-child
+        min-height: calc(100vh - 56px - 91px)
+
+      &:first-child
+        min-height: calc(100vh - 56px - 64px)
+
+      &:last-child
+        min-height: calc(100vh - 91px - 64px)
 
       .mobile, .desktop
-        position: absolute
-        top: 50%
-        left: 0
-        right: 0
-        @include transform(translateY(-50%))
         color: $white
 
         .content
@@ -29,6 +37,8 @@
 
           li
             margin-bottom: .5rem
+            display: flex
+            justify-content: center
 
             &:nth-child(3n + 1) a img
               border: .25rem solid $orange
@@ -66,17 +76,17 @@
             a
               display: inline-block
 
-    .container:first-child:last-child
-      min-height: calc(100vh - 56px - 91px)
+        .text
+          margin-bottom: 1rem
 
-    .container:first-child
-      min-height: calc(100vh - 56px - 64px)
-
-    .container:last-child
-      min-height: calc(100vh - 91px - 64px)
+      .desktop .screenshot-list img
+        max-height: 176px
 
     .chevron
       color: $blue
+    
+    &:last-child .container
+      margin-bottom: 1rem
 
   section:first-child:last-child
     min-height: calc(100vh - 56px - 91px)
@@ -99,3 +109,9 @@
 
   section:last-child
     min-height: calc(100vh - 91px - 56px)
+
+@include media-breakpoint-up(md)
+  #portfolio
+    header, section
+      .container
+        margin: 0 auto
