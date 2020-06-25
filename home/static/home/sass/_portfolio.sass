@@ -5,6 +5,32 @@
     justify-content: center
     min-height: calc(100vh - 56px)
 
+    &:first-child:last-child
+      min-height: calc(100vh - 56px - 91px)
+      margin-bottom: 0
+
+    &:first-child
+      margin-top: 56px
+      min-height: calc(100vh - 56px)
+
+    &:nth-child(odd)
+      background-color: $mid-gray
+
+      .content
+        grid-template-columns: 308px auto
+
+    &:nth-child(even)
+      background-color: $light-gray
+
+      .content
+        grid-template-columns: auto 308px
+
+    &:last-child
+      min-height: calc(100vh - 91px - 56px)
+
+      .container
+        margin-bottom: 1rem
+
     .container
       display: flex
       align-items: center
@@ -21,23 +47,21 @@
       &:last-child
         min-height: calc(100vh - 91px - 64px)
 
-      .mobile, .desktop
+      .content
         color: $white
-
-        .content
-          display: grid
-          gap: 2rem
-          align-items: center
+        width: 100%
+        align-items: center
 
         a, .fa-external-link-alt
           color: $aqua
 
         .screenshot-list
-          margin-bottom: 0
+          margin: 0 auto 1rem auto
 
           li
             margin-bottom: .5rem
             display: flex
+            flex-grow: 1
             justify-content: center
 
             &:nth-child(3n + 1) a img
@@ -52,10 +76,17 @@
             &:last-child
               margin-bottom: 0
 
+            a
+              display: inline-block
+
         .text
           border-radius: .5rem
           padding: 2rem
           background-color: $dark-gray-50
+          margin-bottom: 1rem
+
+          &:last-of-type
+            margin-bottom: 0
 
           h6.h6
             margin-bottom: 1rem
@@ -63,55 +94,27 @@
           p
             margin: 0
 
-      .mobile
-        padding: 0 1rem
-
-        .screenshot-list
-          margin: 0 auto
-
-          li
-            flex-grow: 1
-            text-align: center
-
-            a
-              display: inline-block
-
-        .text
-          margin-bottom: 1rem
-
-      .desktop .screenshot-list img
-        max-height: 176px
-
     .chevron
       color: $blue
-    
-    &:last-child .container
-      margin-bottom: 1rem
-
-  section:first-child:last-child
-    min-height: calc(100vh - 56px - 91px)
-
-  section:first-child
-    margin-top: 56px
-    min-height: calc(100vh - 56px)
-
-  section:nth-child(odd)
-    background-color: $mid-gray
-
-    .desktop .content
-      grid-template-columns: 308px auto
-
-  section:nth-child(even)
-    background-color: $light-gray
-
-    .desktop .content
-      grid-template-columns: auto 308px
-
-  section:last-child
-    min-height: calc(100vh - 91px - 56px)
 
 @include media-breakpoint-up(md)
   #portfolio
     header, section
+      &:last-child
+        min-height: calc(100vh - 91px - 56px)
+
+        .container
+          margin-bottom: 0
+
       .container
         margin: 0 auto
+
+        .content
+          display: grid
+          gap: 2rem
+
+          .screenshot-list
+            margin: 0 auto
+
+            img
+              max-height: 176px

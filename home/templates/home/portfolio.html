@@ -14,35 +14,28 @@
   {% for site in sites %}
   <section>
     <div class="container">
-      <div class="mobile d-block d-md-none">
-        {% include 'home/site_info.html' %}
+      <div class="content">
+        <div class="text{% if forloop.counter|modulo:2 == 1 %} d-none{% endif %}">
+          {% include 'home/site_info.html' %}
+        </div>
         <ul class="screenshot-list">
-          {% for screenshot in site.screenshots %}
+          {% for screenshot in site.screenshots_preview %}
           <li>
             <a data-fancybox="gallery" href="{{ screenshot.image.url }}">
               <img src="{{ screenshot.thumbnail.url }}">
             </a>
           </li>
           {% endfor %}
+          {% for screenshot in site.screenshots_extended %}
+          <li>
+            <a class="d-none" data-fancybox="gallery" href="{{ screenshot.image.url }}">
+              <img src="{{ screenshot.thumbnail.url }}">
+            </a>
+          </li>
+          {% endfor %}
         </ul>
-      </div>
-      <div class="desktop d-none d-md-block">
-        <div class="content">
-          {% if forloop.counter|modulo:2 == 0 %}
+        <div class="text{% if forloop.counter|modulo:2 == 0 %} d-none{% endif %}">
           {% include 'home/site_info.html' %}
-          {% endif %}
-          <ul class="screenshot-list">
-            {% for screenshot in site.screenshots %}
-            <li>
-              <a data-fancybox="gallery" href="{{ screenshot.image.url }}">
-                <img src="{{ screenshot.thumbnail.url }}">
-              </a>
-            </li>
-            {% endfor %}
-          </ul>
-          {% if forloop.counter|modulo:2 == 1 %}
-          {% include 'home/site_info.html' %}
-          {% endif %}
         </div>
       </div>
     </div>

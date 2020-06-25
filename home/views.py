@@ -80,9 +80,12 @@ def portfolio(request):
 
     sites = []
     for site in Site.objects.all().order_by('-date_updated'):
+        screenshots = Screenshot.objects.filter(site=site).order_by('date_updated')
+
         sites.append({
             'data': site,
-            'screenshots': Screenshot.objects.filter(site=site).order_by('date_updated')[:3],
+            'screenshots_preview': screenshots[:3],
+            'screenshots_extended': screenshots[4:],
         })
 
     return render(request, 'home/portfolio.html', {

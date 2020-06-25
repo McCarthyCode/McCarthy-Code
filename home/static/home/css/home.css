@@ -10192,6 +10192,32 @@ input[type=submit] {
   justify-content: center;
   min-height: calc(100vh - 56px);
 }
+#portfolio header:first-child:last-child, #portfolio section:first-child:last-child {
+  min-height: calc(100vh - 56px - 91px);
+  margin-bottom: 0;
+}
+#portfolio header:first-child, #portfolio section:first-child {
+  margin-top: 56px;
+  min-height: calc(100vh - 56px);
+}
+#portfolio header:nth-child(odd), #portfolio section:nth-child(odd) {
+  background-color: #333333;
+}
+#portfolio header:nth-child(odd) .content, #portfolio section:nth-child(odd) .content {
+  grid-template-columns: 308px auto;
+}
+#portfolio header:nth-child(even), #portfolio section:nth-child(even) {
+  background-color: #444444;
+}
+#portfolio header:nth-child(even) .content, #portfolio section:nth-child(even) .content {
+  grid-template-columns: auto 308px;
+}
+#portfolio header:last-child, #portfolio section:last-child {
+  min-height: calc(100vh - 91px - 56px);
+}
+#portfolio header:last-child .container, #portfolio section:last-child .container {
+  margin-bottom: 1rem;
+}
 #portfolio header .container, #portfolio section .container {
   display: flex;
   align-items: center;
@@ -10208,99 +10234,76 @@ input[type=submit] {
 #portfolio header .container:last-child, #portfolio section .container:last-child {
   min-height: calc(100vh - 91px - 64px);
 }
-#portfolio header .container .mobile, #portfolio header .container .desktop, #portfolio section .container .mobile, #portfolio section .container .desktop {
+#portfolio header .container .content, #portfolio section .container .content {
   color: white;
-}
-#portfolio header .container .mobile .content, #portfolio header .container .desktop .content, #portfolio section .container .mobile .content, #portfolio section .container .desktop .content {
-  display: grid;
-  gap: 2rem;
+  width: 100%;
   align-items: center;
 }
-#portfolio header .container .mobile a, #portfolio header .container .mobile .fa-external-link-alt, #portfolio header .container .desktop a, #portfolio header .container .desktop .fa-external-link-alt, #portfolio section .container .mobile a, #portfolio section .container .mobile .fa-external-link-alt, #portfolio section .container .desktop a, #portfolio section .container .desktop .fa-external-link-alt {
+#portfolio header .container .content a, #portfolio header .container .content .fa-external-link-alt, #portfolio section .container .content a, #portfolio section .container .content .fa-external-link-alt {
   color: aqua;
 }
-#portfolio header .container .mobile .screenshot-list, #portfolio header .container .desktop .screenshot-list, #portfolio section .container .mobile .screenshot-list, #portfolio section .container .desktop .screenshot-list {
-  margin-bottom: 0;
+#portfolio header .container .content .screenshot-list, #portfolio section .container .content .screenshot-list {
+  margin: 0 auto 1rem auto;
 }
-#portfolio header .container .mobile .screenshot-list li, #portfolio header .container .desktop .screenshot-list li, #portfolio section .container .mobile .screenshot-list li, #portfolio section .container .desktop .screenshot-list li {
+#portfolio header .container .content .screenshot-list li, #portfolio section .container .content .screenshot-list li {
   margin-bottom: 0.5rem;
   display: flex;
+  flex-grow: 1;
   justify-content: center;
 }
-#portfolio header .container .mobile .screenshot-list li:nth-child(3n+1) a img, #portfolio header .container .desktop .screenshot-list li:nth-child(3n+1) a img, #portfolio section .container .mobile .screenshot-list li:nth-child(3n+1) a img, #portfolio section .container .desktop .screenshot-list li:nth-child(3n+1) a img {
+#portfolio header .container .content .screenshot-list li:nth-child(3n+1) a img, #portfolio section .container .content .screenshot-list li:nth-child(3n+1) a img {
   border: 0.25rem solid #bb846e;
 }
-#portfolio header .container .mobile .screenshot-list li:nth-child(3n+2) a img, #portfolio header .container .desktop .screenshot-list li:nth-child(3n+2) a img, #portfolio section .container .mobile .screenshot-list li:nth-child(3n+2) a img, #portfolio section .container .desktop .screenshot-list li:nth-child(3n+2) a img {
+#portfolio header .container .content .screenshot-list li:nth-child(3n+2) a img, #portfolio section .container .content .screenshot-list li:nth-child(3n+2) a img {
   border: 0.25rem solid #dcdcaa;
 }
-#portfolio header .container .mobile .screenshot-list li:nth-child(3n) a img, #portfolio header .container .desktop .screenshot-list li:nth-child(3n) a img, #portfolio section .container .mobile .screenshot-list li:nth-child(3n) a img, #portfolio section .container .desktop .screenshot-list li:nth-child(3n) a img {
+#portfolio header .container .content .screenshot-list li:nth-child(3n) a img, #portfolio section .container .content .screenshot-list li:nth-child(3n) a img {
   border: 0.25rem solid aqua;
 }
-#portfolio header .container .mobile .screenshot-list li:last-child, #portfolio header .container .desktop .screenshot-list li:last-child, #portfolio section .container .mobile .screenshot-list li:last-child, #portfolio section .container .desktop .screenshot-list li:last-child {
+#portfolio header .container .content .screenshot-list li:last-child, #portfolio section .container .content .screenshot-list li:last-child {
   margin-bottom: 0;
 }
-#portfolio header .container .mobile .text, #portfolio header .container .desktop .text, #portfolio section .container .mobile .text, #portfolio section .container .desktop .text {
+#portfolio header .container .content .screenshot-list li a, #portfolio section .container .content .screenshot-list li a {
+  display: inline-block;
+}
+#portfolio header .container .content .text, #portfolio section .container .content .text {
   border-radius: 0.5rem;
   padding: 2rem;
   background-color: #1e1e1e7f;
-}
-#portfolio header .container .mobile .text h6.h6, #portfolio header .container .desktop .text h6.h6, #portfolio section .container .mobile .text h6.h6, #portfolio section .container .desktop .text h6.h6 {
   margin-bottom: 1rem;
 }
-#portfolio header .container .mobile .text p, #portfolio header .container .desktop .text p, #portfolio section .container .mobile .text p, #portfolio section .container .desktop .text p {
+#portfolio header .container .content .text:last-of-type, #portfolio section .container .content .text:last-of-type {
+  margin-bottom: 0;
+}
+#portfolio header .container .content .text h6.h6, #portfolio section .container .content .text h6.h6 {
+  margin-bottom: 1rem;
+}
+#portfolio header .container .content .text p, #portfolio section .container .content .text p {
   margin: 0;
-}
-#portfolio header .container .mobile, #portfolio section .container .mobile {
-  padding: 0 1rem;
-}
-#portfolio header .container .mobile .screenshot-list, #portfolio section .container .mobile .screenshot-list {
-  margin: 0 auto;
-}
-#portfolio header .container .mobile .screenshot-list li, #portfolio section .container .mobile .screenshot-list li {
-  flex-grow: 1;
-  text-align: center;
-}
-#portfolio header .container .mobile .screenshot-list li a, #portfolio section .container .mobile .screenshot-list li a {
-  display: inline-block;
-}
-#portfolio header .container .mobile .text, #portfolio section .container .mobile .text {
-  margin-bottom: 1rem;
-}
-#portfolio header .container .desktop .screenshot-list img, #portfolio section .container .desktop .screenshot-list img {
-  max-height: 176px;
 }
 #portfolio header .chevron, #portfolio section .chevron {
   color: #569cd6;
 }
-#portfolio header:last-child .container, #portfolio section:last-child .container {
-  margin-bottom: 1rem;
-}
-#portfolio section:first-child:last-child {
-  min-height: calc(100vh - 56px - 91px);
-}
-#portfolio section:first-child {
-  margin-top: 56px;
-  min-height: calc(100vh - 56px);
-}
-#portfolio section:nth-child(odd) {
-  background-color: #333333;
-}
-#portfolio section:nth-child(odd) .desktop .content {
-  grid-template-columns: 308px auto;
-}
-#portfolio section:nth-child(even) {
-  background-color: #444444;
-}
-#portfolio section:nth-child(even) .desktop .content {
-  grid-template-columns: auto 308px;
-}
-#portfolio section:last-child {
-  min-height: calc(100vh - 91px - 56px);
-}
 
 @media (min-width: 768px) {
+  #portfolio header:last-child, #portfolio section:last-child {
+    min-height: calc(100vh - 91px - 56px);
+  }
+  #portfolio header:last-child .container, #portfolio section:last-child .container {
+    margin-bottom: 0;
+  }
   #portfolio header .container, #portfolio section .container {
     margin: 0 auto;
+  }
+  #portfolio header .container .content, #portfolio section .container .content {
+    display: grid;
+    gap: 2rem;
+  }
+  #portfolio header .container .content .screenshot-list, #portfolio section .container .content .screenshot-list {
+    margin: 0 auto;
+  }
+  #portfolio header .container .content .screenshot-list img, #portfolio section .container .content .screenshot-list img {
+    max-height: 176px;
   }
 }
 #sites {
