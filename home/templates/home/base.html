@@ -10,115 +10,18 @@
   <title>{% block title %}{% endblock %} - McCarthy Web Design</title>{% load static %}
   <link rel="icon" type="image/png" href="{% static 'home/img/favicon.png' %}">
 
-  <!--------------->
-  <!--Stylesheets-->
-  <!--------------->
-
-  <!-- Internal Stylesheets (compressed) -->
-
-  <!-- Reset CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/reset.min.css' %}">
-
-  <!-- Home App CSS -->
-  <!-- <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.min.css' %}"> -->
-
-  <!-- Internal Stylesheets (uncompressed) -->
-
-  <!-- Reset CSS -->
-  <!-- <link rel="stylesheet" type="text/css" href="{% static 'home/css/reset.css' %}"> -->
-
-  <!-- Home App CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
-
-  <!-- Internal Stylesheet Libraries (compressed) -->
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/bootstrap.min.css' %}">
-
-  <!-- Font Awesome CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/font-awesome.min.css' %}">
-
-  <!-- fancybox CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/jquery.fancybox.min.css' %}">
-
-  <!-- External Stylesheet Libraries (compressed) -->
-
-  <!-- Bootstrap CSS -->
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous">
-
-  <!-- Font Awesome CSS -->
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <!-- fancybox CSS -->
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-
-  <!----------->
-  <!--Scripts-->
-  <!----------->
-
-  <!-- Internal Script Libraries (compressed) -->
-
-  <!-- jQuery JS -->
-  <script src="{% static 'home/js/jquery-3.3.1.min.js' %}"></script>
-
-  <!-- Popper JS -->
-  <script src="{% static 'home/js/popper.min.js' %}"></script>
-
-  <!-- Bootstrap JS -->
-  <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
-
-  <!-- Font Awesome JS -->
-  <script src="{% static 'home/js/3c68f13de5.js' %}"></script>
-
-  <!-- fancybox JS -->
-  <script src="{% static 'home/js/jquery.fancybox.min.js' %}"></script>
+  {% if stage == 'development' %}
+  {% include 'home/head_development.html' %}
+  {% else %}
+  {% include 'home/head_production.html' %}
+  {% endif %}
 
   <!-- Internal Scripts -->
 
-  <!-- Cross-App JS (compressed) -->
+  <!-- Cross-App JS -->
   <script src="{% static 'home/js/global.min.js' %}"></script>
 
-  <!-- Cross-App JS (uncompressed) -->
-  <!-- <script src="{% static 'home/js/global.js' %}"></script> -->
-
   {% block js %}{% endblock %}
-
-  <!-- External Script Libraries (compressed) -->
-
-  <!-- jQuery JS -->
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-
-  <!-- Popper JS -->
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-
-  <!-- Bootstrap JS -->
-  <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-
-  <!-- Font Awesome JS -->
-  <script src="https://kit.fontawesome.com/3c68f13de5.js"></script>
-
-  <!-- fancybox JS -->
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 </head>
 <body>
   {% block body %}
