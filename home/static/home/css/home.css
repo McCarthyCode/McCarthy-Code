@@ -10260,8 +10260,11 @@ input[type=submit] {
 #portfolio header .container .content .screenshot-list li:nth-child(3n) a img, #portfolio section .container .content .screenshot-list li:nth-child(3n) a img {
   border: 0.25rem solid aqua;
 }
-#portfolio header .container .content .screenshot-list li:last-child, #portfolio section .container .content .screenshot-list li:last-child {
+#portfolio header .container .content .screenshot-list li:nth-child(n+3), #portfolio section .container .content .screenshot-list li:nth-child(n+3) {
   margin-bottom: 0;
+}
+#portfolio header .container .content .screenshot-list li:nth-child(n+4), #portfolio section .container .content .screenshot-list li:nth-child(n+4) {
+  display: none;
 }
 #portfolio header .container .content .screenshot-list li a, #portfolio section .container .content .screenshot-list li a {
   display: inline-block;

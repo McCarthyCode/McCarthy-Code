@@ -19,16 +19,9 @@
           {% include 'home/site_info.html' %}
         </div>
         <ul class="screenshot-list">
-          {% for screenshot in site.screenshots_preview %}
+          {% for screenshot in site.screenshots %}
           <li>
             <a data-fancybox="gallery" href="{{ screenshot.image.url }}">
-              <img src="{{ screenshot.thumbnail.url }}">
-            </a>
-          </li>
-          {% endfor %}
-          {% for screenshot in site.screenshots_extended %}
-          <li>
-            <a class="d-none" data-fancybox="gallery" href="{{ screenshot.image.url }}">
               <img src="{{ screenshot.thumbnail.url }}">
             </a>
           </li>
