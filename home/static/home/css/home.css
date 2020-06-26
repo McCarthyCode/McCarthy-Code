@@ -10176,9 +10176,6 @@ input[type=submit] {
   color: white;
   text-align: justify;
 }
-#about p br {
-  margin-bottom: 1rem;
-}
 
 @media (min-width: 768px) {
   #about .img-container {

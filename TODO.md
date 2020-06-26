@@ -1,6 +1,6 @@
 # To-Do
 
-- Change color of first panel chevron on homepage
+- Check integrity
 - Data transfer
   - Staging
 
