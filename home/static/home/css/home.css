@@ -10321,10 +10321,13 @@ input[type=submit] {
   #portfolio header .container .content .screenshot-list img, #portfolio section .container .content .screenshot-list img {
     max-height: 176px;
   }
-  #portfolio header .contents, #portfolio header p {
+  #portfolio header .content {
+    flex-wrap: nowrap;
+  }
+  #portfolio header .content .contents, #portfolio header .content p {
     margin-bottom: 0;
   }
-  #portfolio header .contents a {
+  #portfolio header .content .contents a {
     white-space: nowrap;
   }
   #portfolio section .text {
