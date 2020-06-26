@@ -4,6 +4,7 @@
     align-items: center
     justify-content: center
     min-height: calc(100vh - 56px)
+    padding: 1rem 0 4rem 0
 
     &:first-child:last-child
       min-height: calc(100vh - 56px - 91px)
@@ -27,16 +28,14 @@
 
     &:last-child
       min-height: calc(100vh - 91px - 56px)
-
-      .container
-        margin-bottom: 1rem
+      padding-bottom: 1rem
 
     .container
       display: flex
       align-items: center
       justify-content: center
       min-height: calc(544px + 32px)
-      margin: 1rem auto 4rem auto
+      margin: 0 auto
 
       &:first-child:last-child
         min-height: calc(100vh - 56px - 91px)
@@ -51,7 +50,6 @@
         border-radius: .5rem
         padding: 2rem
         background-color: $dark-gray-50
-        margin-bottom: 1rem
 
         &:last-of-type
           margin-bottom: 0
@@ -103,6 +101,7 @@
   header
     .text
       max-width: 690px
+      margin: 0
 
     .content
       display: flex !important
@@ -114,18 +113,26 @@
       & > :last-child
         margin-left: .5rem
 
+  section
+    .text
+      margin-bottom: 1rem
+
+    a
+      overflow-wrap: break-word
+      word-wrap: break-word
+      -ms-word-break: break-all
+      word-break: break-all
+      word-break: break-word
+
 @include media-breakpoint-up(md)
   #portfolio
     header, section
       &:last-child
         min-height: calc(100vh - 91px - 56px)
 
-        .container
-          margin-bottom: 0
-
       .container
         margin: 0 auto
-
+        
         .content
           display: grid
           gap: 2rem
@@ -133,8 +140,12 @@
           .screenshot-list img
             max-height: 176px
 
-    header .content
-        flex-wrap: nowrap
+    header
+      .contents, p
+        margin-bottom: 0
 
-        .contents, p
-          margin-bottom: 0
+      .contents a
+        white-space: nowrap
+
+    section .text
+      margin: 0

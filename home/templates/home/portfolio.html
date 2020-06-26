@@ -20,7 +20,7 @@
             <h5 class="h5">Table of Contents</h5>
             <ul class="ul contents">
               {% for site in sites %}
-              <li><a class="text-nowrap" href="#{{ site.data.slug }}" data-slug="{{ site.data.slug }}">{{ site.data.name }}</a></li>
+              <li><a href="#{{ site.data.slug }}" data-slug="{{ site.data.slug }}">{{ site.data.name }}</a></li>
               {% endfor %}
             </ul>
           </div>
