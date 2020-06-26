@@ -2,7 +2,7 @@ $(document).ready(() => {
   const navHeight = $('#navbar').outerHeight();
 
   // scroll buttons
-  $('#portfolio > section:not(:last-of-type)').each(function () {
+  $('#portfolio > header:not(:last-child), #portfolio > section:not(:last-child)').each(function () {
     let $next = $(this).next();
 
     $(this).find('.chevron').click(function () {

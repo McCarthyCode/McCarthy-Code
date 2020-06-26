@@ -5,6 +5,7 @@ from base64 import b16encode
 from functools import partial
 from io import BytesIO
 from PIL import Image
+from slugify import slugify
 
 from django.db import models
 
@@ -147,13 +148,19 @@ class ThumbnailedImage(TimestampedModel):
         abstract = True
 
 class Site(TimestampedModel):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=80)
+    slug = models.SlugField(default='', max_length=80, null=True, blank=True)
     url = models.URLField()
     github = models.URLField()
     description = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+
+        super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
         for screenshot in Screenshot.objects.filter(site=self):

@@ -11,11 +11,34 @@
 {% block content %}
 <div id="portfolio">
   {% load custom_tags %}
+  <header>
+    <div class="container">
+      <div class="text">
+        <h3 class="h3 text-center">Portfolio</h3>
+        <div class="content">
+          <div>
+            <h5 class="h5">Table of Contents</h5>
+            <ul class="ul contents">
+              {% for site in sites %}
+              <li><a class="text-nowrap" href="#{{ site.data.slug }}">{{ site.data.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <p>Below are sites that MWD has developed and maintained over the past couple of years. Clicking on a screenshot will allow you view it fullscreen, and once in that view, clicking the left and right arrows or the gallery icon <span class="text-nowrap">( <i class="fas fa-th"></i> )</span> in the top right will allow you to view screenshots not shown in the preview. To get started, scroll down, click the down arrow, or choose a site from the table of contents.</p>
+        </div>
+      </div>
+      {% if sites %}
+      <div class="chevron text-center">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      {% endif %}
+    </div>
+  </header>
   {% for site in sites %}
-  <section>
+  <section id="{{ site.data.slug }}">
     <div class="container">
       <div class="content">
-        <div class="text{% if forloop.counter|modulo:2 == 1 %} d-none{% endif %}">
+        <div class="text{% if forloop.counter|modulo:2 == 0 %} d-md-none{% endif %}">
           {% include 'home/site_info.html' %}
         </div>
         <ul class="screenshot-list">
@@ -27,7 +50,7 @@
           </li>
           {% endfor %}
         </ul>
-        <div class="text{% if forloop.counter|modulo:2 == 0 %} d-none{% endif %}">
+        <div class="text d-none{% if forloop.counter|modulo:2 == 0 %} d-md-block{% endif %}">
           {% include 'home/site_info.html' %}
         </div>
       </div>

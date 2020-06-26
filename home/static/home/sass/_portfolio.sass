@@ -14,13 +14,13 @@
       min-height: calc(100vh - 56px)
 
     &:nth-child(odd)
-      background-color: $mid-gray
+      background-color: $light-gray
 
       .content
         grid-template-columns: 308px auto
 
     &:nth-child(even)
-      background-color: $light-gray
+      background-color: $mid-gray
 
       .content
         grid-template-columns: auto 308px
@@ -47,6 +47,21 @@
       &:last-child
         min-height: calc(100vh - 91px - 64px)
 
+      .text
+        border-radius: .5rem
+        padding: 2rem
+        background-color: $dark-gray-50
+        margin-bottom: 1rem
+
+        &:last-of-type
+          margin-bottom: 0
+
+        h6.h6
+          margin-bottom: 1rem
+
+        p
+          margin: 0
+
       .content
         color: $white
         width: 100%
@@ -56,7 +71,7 @@
           color: $aqua
 
         .screenshot-list
-          margin: 0 auto 1rem auto
+          margin: 0 auto
 
           li
             margin-bottom: .5rem
@@ -82,23 +97,22 @@
             a
               display: inline-block
 
-        .text
-          border-radius: .5rem
-          padding: 2rem
-          background-color: $dark-gray-50
-          margin-bottom: 1rem
-
-          &:last-of-type
-            margin-bottom: 0
-
-          h6.h6
-            margin-bottom: 1rem
-
-          p
-            margin: 0
-
     .chevron
       color: $blue
+
+  header
+    .text
+      max-width: 690px
+
+    .content
+      display: flex !important
+      flex-wrap: wrap
+
+      & > :first-child
+        margin-right: .5rem
+
+      & > :last-child
+        margin-left: .5rem
 
 @include media-breakpoint-up(md)
   #portfolio
@@ -116,8 +130,11 @@
           display: grid
           gap: 2rem
 
-          .screenshot-list
-            margin: 0 auto
+          .screenshot-list img
+            max-height: 176px
 
-            img
-              max-height: 176px
+    header .content
+        flex-wrap: nowrap
+
+        .contents, p
+          margin-bottom: 0

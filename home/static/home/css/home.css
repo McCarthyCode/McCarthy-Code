@@ -10201,13 +10201,13 @@ input[type=submit] {
   min-height: calc(100vh - 56px);
 }
 #portfolio header:nth-child(odd), #portfolio section:nth-child(odd) {
-  background-color: #333333;
+  background-color: #444444;
 }
 #portfolio header:nth-child(odd) .content, #portfolio section:nth-child(odd) .content {
   grid-template-columns: 308px auto;
 }
 #portfolio header:nth-child(even), #portfolio section:nth-child(even) {
-  background-color: #444444;
+  background-color: #333333;
 }
 #portfolio header:nth-child(even) .content, #portfolio section:nth-child(even) .content {
   grid-template-columns: auto 308px;
@@ -10234,6 +10234,21 @@ input[type=submit] {
 #portfolio header .container:last-child, #portfolio section .container:last-child {
   min-height: calc(100vh - 91px - 64px);
 }
+#portfolio header .container .text, #portfolio section .container .text {
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: #1e1e1e7f;
+  margin-bottom: 1rem;
+}
+#portfolio header .container .text:last-of-type, #portfolio section .container .text:last-of-type {
+  margin-bottom: 0;
+}
+#portfolio header .container .text h6.h6, #portfolio section .container .text h6.h6 {
+  margin-bottom: 1rem;
+}
+#portfolio header .container .text p, #portfolio section .container .text p {
+  margin: 0;
+}
 #portfolio header .container .content, #portfolio section .container .content {
   color: white;
   width: 100%;
@@ -10243,7 +10258,7 @@ input[type=submit] {
   color: aqua;
 }
 #portfolio header .container .content .screenshot-list, #portfolio section .container .content .screenshot-list {
-  margin: 0 auto 1rem auto;
+  margin: 0 auto;
 }
 #portfolio header .container .content .screenshot-list li, #portfolio section .container .content .screenshot-list li {
   margin-bottom: 0.5rem;
@@ -10269,23 +10284,21 @@ input[type=submit] {
 #portfolio header .container .content .screenshot-list li a, #portfolio section .container .content .screenshot-list li a {
   display: inline-block;
 }
-#portfolio header .container .content .text, #portfolio section .container .content .text {
-  border-radius: 0.5rem;
-  padding: 2rem;
-  background-color: #1e1e1e7f;
-  margin-bottom: 1rem;
-}
-#portfolio header .container .content .text:last-of-type, #portfolio section .container .content .text:last-of-type {
-  margin-bottom: 0;
-}
-#portfolio header .container .content .text h6.h6, #portfolio section .container .content .text h6.h6 {
-  margin-bottom: 1rem;
-}
-#portfolio header .container .content .text p, #portfolio section .container .content .text p {
-  margin: 0;
-}
 #portfolio header .chevron, #portfolio section .chevron {
   color: #569cd6;
+}
+#portfolio header .text {
+  max-width: 690px;
+}
+#portfolio header .content {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+#portfolio header .content > :first-child {
+  margin-right: 0.5rem;
+}
+#portfolio header .content > :last-child {
+  margin-left: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -10302,11 +10315,14 @@ input[type=submit] {
     display: grid;
     gap: 2rem;
   }
-  #portfolio header .container .content .screenshot-list, #portfolio section .container .content .screenshot-list {
-    margin: 0 auto;
-  }
   #portfolio header .container .content .screenshot-list img, #portfolio section .container .content .screenshot-list img {
     max-height: 176px;
+  }
+  #portfolio header .content {
+    flex-wrap: nowrap;
+  }
+  #portfolio header .content .contents, #portfolio header .content p {
+    margin-bottom: 0;
   }
 }
 #sites {

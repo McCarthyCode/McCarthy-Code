@@ -1,7 +1,22 @@
 # To-Do
 
+- Change color of first panel chevron on homepage
 - Data transfer
-    pg_dumpall | gzip > db.sql.gz
-    scp db.sql.gz matt@mccarthywebdesign.com:~
-    psql -f db.sql postgres
-    rm db.sql
+  - Staging
+
+    ```sh
+    sudo -u postgres pg_dumpall | gzip > /tmp/db.sql.gz
+    ```
+
+  - Local
+
+    ```sh
+    scp matt@staging.mccarthywebdesign.com:~/db.sql.gz /tmp
+    scp /tmp/db.sql.gz matt@mccarthywebdesign.com:~
+    ```
+
+  - Production
+
+    ```sh
+    psql -f /tmp/db.sql postgres
+    ```
