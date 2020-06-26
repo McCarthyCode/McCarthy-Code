@@ -103,13 +103,13 @@ $(document).ready(() => {
   $(window).on('resize orientationchange', adjust);
 
   let navHeight = 56;
-  $('header .chevron i').click(() => {
+  $('header .chevron').click(() => {
     $('html, body').animate({
       scrollTop: $('#icons').offset().top - navHeight,
     }, 1000);
   });
 
-  $('#icons .chevron i, #options li:nth-child(3) a').click(() => {
+  $('#icons .chevron, #options li:nth-child(3) a').click(() => {
     $('html, body').animate({
       scrollTop: $('#contact').offset().top - navHeight,
     }, 1000);
