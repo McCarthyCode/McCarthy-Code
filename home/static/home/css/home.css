@@ -10013,39 +10013,30 @@ input[type=submit] {
     margin: 0;
   }
 }
-#index header {
-  position: relative;
-  height: 100vh;
-  background-image: -webkit-linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
-  background-image: -moz-linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
-  background-image: -o-linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
-  background-image: linear-gradient(to bottom right, #8cfab0, #5970f1, #cc65fc);
-}
-#index header h1.h1 {
+#index header h1.h1, #index #contact > div {
   position: absolute;
-  padding: 2rem;
-  margin: 0;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  color: #1e1e1e;
+  min-width: 288px;
+  padding: 2rem;
+  margin: 0;
   background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 1rem #1e1e1e;
+  border-radius: 0.5rem;
   text-align: center;
 }
-#index header h1.h1::before, #index header h1.h1::after {
-  font-family: "Roboto Mono", Consolas, Lucida Console, Monaco, monospace;
-  font-size: 0.5em;
-  vertical-align: 6px;
-  color: maroon;
+#index header {
+  position: relative;
+  height: 100vh;
+  background-image: -webkit-linear-gradient(to bottom right, #8cfab0, #7887d7, #cc65fc);
+  background-image: -moz-linear-gradient(to bottom right, #8cfab0, #7887d7, #cc65fc);
+  background-image: -o-linear-gradient(to bottom right, #8cfab0, #7887d7, #cc65fc);
+  background-image: linear-gradient(to bottom right, #8cfab0, #7887d7, #cc65fc);
 }
-#index header h1.h1::before {
-  content: "<h1>";
-}
-#index header h1.h1::after {
-  content: "</h1>";
+#index header h1.h1 {
+  color: #1e1e1e;
 }
 #index #icons {
   position: relative;
@@ -10116,23 +10107,13 @@ input[type=submit] {
 #index #contact {
   min-height: calc(248.8px + 32px);
   height: calc(100vh - 91px - 56px);
-  background-image: -webkit-linear-gradient(to bottom left, #996f6f, #f1ee59, #65d9fc);
-  background-image: -moz-linear-gradient(to bottom left, #996f6f, #f1ee59, #65d9fc);
-  background-image: -o-linear-gradient(to bottom left, #996f6f, #f1ee59, #65d9fc);
-  background-image: linear-gradient(to bottom left, #996f6f, #f1ee59, #65d9fc);
+  background-image: -webkit-linear-gradient(to bottom left, #996f6f, #d2d06a, #65d9fc);
+  background-image: -moz-linear-gradient(to bottom left, #996f6f, #d2d06a, #65d9fc);
+  background-image: -o-linear-gradient(to bottom left, #996f6f, #d2d06a, #65d9fc);
+  background-image: linear-gradient(to bottom left, #996f6f, #d2d06a, #65d9fc);
 }
 #index #contact > div {
-  position: absolute;
   min-width: 288px;
-  padding: 2rem;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 1rem #1e1e1e;
 }
 #index #contact > div h3.h3 {
   margin-bottom: 0.5rem;

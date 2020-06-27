@@ -3,7 +3,7 @@ $(document).ready(() => {
     let width = $(this).width();
     let $title = $('header .h1');
 
-    const breakpoint = 624;
+    const breakpoint = 488 + 32;
     const scale = width / breakpoint;
     if (width < breakpoint) {
       $title.css({
