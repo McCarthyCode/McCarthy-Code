@@ -111,7 +111,7 @@ if STAGE == 'development':
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-elif STAGE == 'staging' or STAGE == 'production':
+else:
     PGPASSWORD_FILE = '%s/auth/.pgpass' % BASE_DIR
     with open(PGPASSWORD_FILE, 'r', encoding='utf8') as f:
         content = f.readline()
