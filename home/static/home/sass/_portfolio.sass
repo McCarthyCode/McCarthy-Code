@@ -10,9 +10,15 @@
       min-height: calc(100vh - 56px - 91px)
       margin-bottom: 0
 
+      .container
+        min-height: calc(100vh - 56px - 91px - 2rem)
+
     &:first-child
       margin-top: 56px
       min-height: calc(100vh - 56px)
+
+      .container
+        min-height: calc(100vh - 56px - 5rem)
 
     &:nth-child(odd)
       background-color: $light-gray
@@ -27,24 +33,18 @@
         grid-template-columns: auto 308px
 
     &:last-child
-      min-height: calc(100vh - 91px - 56px)
+      min-height: calc(100vh - 56px - 91px)
       padding-bottom: 1rem
+
+      .container
+        min-height: calc(100vh - 56px - 91px - 2rem)
 
     .container
       display: flex
       align-items: center
       justify-content: center
-      min-height: calc(544px + 32px)
+      min-height: calc(544px + 2rem)
       margin: 0 auto
-
-      &:first-child:last-child
-        min-height: calc(100vh - 56px - 91px)
-
-      &:first-child
-        min-height: calc(100vh - 56px - 64px)
-
-      &:last-child
-        min-height: calc(100vh - 91px - 64px)
 
       .text
         border-radius: .5rem
@@ -128,7 +128,7 @@
   #portfolio
     header, section
       &:last-child
-        min-height: calc(100vh - 91px - 56px)
+        min-height: calc(100vh - 56px - 91px)
 
       .container
         margin: 0 auto

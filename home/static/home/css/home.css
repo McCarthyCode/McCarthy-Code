@@ -10194,9 +10194,15 @@ input[type=submit] {
   min-height: calc(100vh - 56px - 91px);
   margin-bottom: 0;
 }
+#portfolio header:first-child:last-child .container, #portfolio section:first-child:last-child .container {
+  min-height: calc(100vh - 56px - 91px - 2rem);
+}
 #portfolio header:first-child, #portfolio section:first-child {
   margin-top: 56px;
   min-height: calc(100vh - 56px);
+}
+#portfolio header:first-child .container, #portfolio section:first-child .container {
+  min-height: calc(100vh - 56px - 5rem);
 }
 #portfolio header:nth-child(odd), #portfolio section:nth-child(odd) {
   background-color: #444444;
@@ -10211,24 +10217,18 @@ input[type=submit] {
   grid-template-columns: auto 308px;
 }
 #portfolio header:last-child, #portfolio section:last-child {
-  min-height: calc(100vh - 91px - 56px);
+  min-height: calc(100vh - 56px - 91px);
   padding-bottom: 1rem;
+}
+#portfolio header:last-child .container, #portfolio section:last-child .container {
+  min-height: calc(100vh - 56px - 91px - 2rem);
 }
 #portfolio header .container, #portfolio section .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(544px + 32px);
+  min-height: calc(544px + 2rem);
   margin: 0 auto;
-}
-#portfolio header .container:first-child:last-child, #portfolio section .container:first-child:last-child {
-  min-height: calc(100vh - 56px - 91px);
-}
-#portfolio header .container:first-child, #portfolio section .container:first-child {
-  min-height: calc(100vh - 56px - 64px);
-}
-#portfolio header .container:last-child, #portfolio section .container:last-child {
-  min-height: calc(100vh - 91px - 64px);
 }
 #portfolio header .container .text, #portfolio section .container .text {
   border-radius: 0.5rem;
@@ -10309,7 +10309,7 @@ input[type=submit] {
 
 @media (min-width: 768px) {
   #portfolio header:last-child, #portfolio section:last-child {
-    min-height: calc(100vh - 91px - 56px);
+    min-height: calc(100vh - 56px - 91px);
   }
   #portfolio header .container, #portfolio section .container {
     margin: 0 auto;
