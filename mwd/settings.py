@@ -15,6 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
 # Retrieve production stage environment variable
 class MissingEnvironmentVariable(Exception):
     pass
@@ -34,6 +35,7 @@ elif STAGE == 'production':
     DEBUG = False
 else:
     raise InvalidEnvironmentVariable('The value of environment variable STAGE is not valid.')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -57,6 +59,7 @@ elif STAGE == 'production':
         'mccarthywebdesign.com',
         'www.mccarthywebdesign.com',
     ]
+
 
 # Application definition
 

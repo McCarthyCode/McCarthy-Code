@@ -10,11 +10,7 @@
   <title>{% block title %}{% endblock %} - McCarthy Web Design</title>{% load static %}
   <link rel="icon" type="image/png" href="{% static 'home/img/favicon.png' %}">
 
-  {% if stage == 'development' %}
-  {% include 'home/head_development.html' %}
-  {% else %}
-  {% include 'home/head_production.html' %}
-  {% endif %}
+{% if stage == 'development' %}{% include 'home/head_development.html' %}{% else %}{% include 'home/head_production.html' %}{% endif %}
 
   <!-- Internal Scripts -->
 
