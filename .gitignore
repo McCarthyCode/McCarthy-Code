@@ -4,5 +4,5 @@ db.sqlite3
 media
 node_modules/
 __pycache__
-staticfiles
+/static
 .vscode
