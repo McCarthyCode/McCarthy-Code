@@ -14,13 +14,17 @@ h1.h1, h2.h2, h3.h3
   & > a:not(.btn)
     text-decoration: underline
 
-  & > a:hover
-    color: $aqua
-
 h4.h4, h5.h5, h6.h6
   &, & > a
     font-family: $font-body
+
+h4.h4, h5.h5
+  &, & > a
     color: $orange
+
+h6.h6
+  &, & > a
+    color: $cyan
 
 p, ul
   font-family: $font-body
@@ -30,7 +34,7 @@ p, ul
 body
   a, a:hover, .fa-external-link-alt
     @include transition(color)
-    color: $aqua
+    color: $cyan
 
 .fa-external-link-alt
   display: inline

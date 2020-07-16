@@ -9920,13 +9920,17 @@ h1.h1, h1.h1 > a, h2.h2, h2.h2 > a, h3.h3, h3.h3 > a {
 h1.h1 > a:not(.btn), h2.h2 > a:not(.btn), h3.h3 > a:not(.btn) {
   text-decoration: underline;
 }
-h1.h1 > a:hover, h2.h2 > a:hover, h3.h3 > a:hover {
-  color: aqua;
-}
 
 h4.h4, h4.h4 > a, h5.h5, h5.h5 > a, h6.h6, h6.h6 > a {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+h4.h4, h4.h4 > a, h5.h5, h5.h5 > a {
   color: #bb846e;
+}
+
+h6.h6, h6.h6 > a {
+  color: #97d5f7;
 }
 
 p, ul {
@@ -9938,7 +9942,7 @@ p, ul {
 body a, body a:hover, body .fa-external-link-alt {
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
-  color: aqua;
+  color: #97d5f7;
 }
 
 .fa-external-link-alt {
@@ -10230,9 +10234,6 @@ input[type=submit] {
   width: 100%;
   align-items: center;
 }
-#portfolio header .container .content a, #portfolio header .container .content .fa-external-link-alt, #portfolio section .container .content a, #portfolio section .container .content .fa-external-link-alt {
-  color: aqua;
-}
 #portfolio header .container .content .screenshot-list, #portfolio section .container .content .screenshot-list {
   margin: 0 auto;
 }
@@ -10249,7 +10250,7 @@ input[type=submit] {
   border: 0.25rem solid #dcdcaa;
 }
 #portfolio header .container .content .screenshot-list li:nth-child(3n) a img, #portfolio section .container .content .screenshot-list li:nth-child(3n) a img {
-  border: 0.25rem solid aqua;
+  border: 0.25rem solid #97d5f7;
 }
 #portfolio header .container .content .screenshot-list li:nth-child(n+3), #portfolio section .container .content .screenshot-list li:nth-child(n+3) {
   margin-bottom: 0;
@@ -10394,7 +10395,7 @@ form .screenshot-list li .controls i, form .screenshot-list li .controls i::befo
   line-height: 1;
 }
 form .screenshot-list li .controls i:hover {
-  color: #007bff;
+  color: #569cd6;
 }
 form .screenshot-list li .controls i:last-child {
   margin-top: 1px;
@@ -10417,7 +10418,7 @@ form .screenshot-list li:nth-child(3n+2) a img {
   border: 0.25rem solid #dcdcaa;
 }
 form .screenshot-list li:nth-child(3n) a img {
-  border: 0.25rem solid aqua;
+  border: 0.25rem solid #97d5f7;
 }
 form .screenshot-list li:last-child a img {
   margin-bottom: 0;
@@ -10473,6 +10474,9 @@ nav .nav-item a.nav-link:hover {
   padding: 0.625rem 0 1rem 0;
   background-color: #1e1e1e;
   color: white;
+}
+#footer a, #footer .fa-external-link-alt {
+  color: aqua;
 }
 #footer p {
   text-align: center;
