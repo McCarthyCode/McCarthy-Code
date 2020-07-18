@@ -37,11 +37,11 @@ def index(request):
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })
 
-def privacy(request):
+def legal(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
 
-    return render(request, 'home/privacy.html', {
+    return render(request, 'legal/index.html', {
         'stage': STAGE,
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })

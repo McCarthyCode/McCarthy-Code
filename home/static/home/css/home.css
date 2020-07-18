@@ -10077,7 +10077,7 @@ nav .nav-item a.nav-link:hover {
 }
 #footer .footer-list {
   height: 25px;
-  max-width: 17rem;
+  max-width: 18rem;
   position: relative;
   margin: auto;
   overflow: hidden;
@@ -10417,6 +10417,15 @@ form .errorlist {
   margin-top: 56px;
   background-color: #333333;
   color: white;
+  min-height: calc(100vh - 56px - 91px);
+}
+.legal .empty {
+  color: #818181;
+  font-style: italic;
+  text-align: center;
+}
+.legal #privacy {
+  display: none;
 }
 
 #about {

@@ -5,7 +5,7 @@ from mwd.settings import STAGE
 
 urlpatterns = [
     re_path(r'^$', views.index, name='index'),
-    re_path(r'^privacy/$', views.privacy, name='privacy'),
+    re_path(r'^legal/$', views.legal, name='legal'),
     re_path(r'^login/$', views.login_view, name='login'),
     re_path(r'^logout/$', views.logout_view, name='logout'),
     re_path(r'^about/$', views.about, name='about'),
