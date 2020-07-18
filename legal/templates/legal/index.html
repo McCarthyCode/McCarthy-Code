@@ -1,0 +1,31 @@
+{% extends 'legal/base.html' %}
+{% load static %}
+
+{% block title %}Terms of Service{% endblock %}
+
+{% block css %}  <!-- Legal App CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'legal/css/legal.min.css' %}" />
+
+{% endblock %}
+
+{% block js %}  <!-- Tabs JS -->
+  <script src="{% load static %}{% static 'legal/js/tabs.min.js' %}"></script>
+
+{% endblock %}
+
+{% block content %}
+<div class="legal">
+  <div class="container">
+    <ul class="tabs tabs-2">
+      <li class="text-center" id="tabs_tos" data-href="#tos">Terms of Service</li>
+      <li class="text-center" id="tabs_privacy" data-href="#privacy">Privacy Policy</li>
+    </ul>
+    <section id="tos">
+      {% include 'legal/tos.html' %}
+    </section>
+    <section id="privacy">
+      {% include 'legal/privacy.html' %}
+    </section>
+  </div>
+</div>
+{% endblock %}

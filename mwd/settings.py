@@ -65,6 +65,7 @@ elif STAGE == 'production':
 
 INSTALLED_APPS = [
     'home',
+    'legal',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

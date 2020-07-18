@@ -1,5 +1,6 @@
 # To-Do
 
+- Context processor for STAGE and YEAR variables
 - Change staticfiles to simply static
   - nginx config
   - run collectstatic

@@ -26,6 +26,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     re_path(r'^', include(('home.urls', 'home'), namespace='home')),
+    re_path(r'^legal/', include(('legal.urls', 'legal'), namespace='legal')),
     re_path(r'^admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

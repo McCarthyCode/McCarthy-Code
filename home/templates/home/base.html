@@ -10,15 +10,26 @@
   <title>{% block title %}{% endblock %} - McCarthy Web Design</title>{% load static %}
   <link rel="icon" type="image/png" href="{% static 'home/img/favicon.png' %}">
 
-{% if stage == 'development' %}{% include 'home/head_development.html' %}{% else %}{% include 'home/head_production.html' %}{% endif %}
+  <!-- ############### -->
+  <!-- # Stylesheets # -->
+  <!-- ############### -->
+
+  <!-- Internal Stylesheets -->{% load static %}
+
+  <!-- Reset CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/reset.min.css' %}" />
+
+{% block css %}  <!-- Home App CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.min.css' %}" />
+
+{% endblock %}{% if stage == 'development' %}{% include 'home/head_development.html' %}{% else %}{% include 'home/head_production.html' %}{% endif %}
 
   <!-- Internal Scripts -->
 
   <!-- Cross-App JS -->
   <script src="{% static 'home/js/global.min.js' %}"></script>
 
-  {% block js %}{% endblock %}
-</head>
+{% block js %}{% endblock %}</head>
 <body>
   {% block body %}
   {% include 'home/navbar.html' %}
