@@ -1,7 +1,4 @@
 import json
-import pytz
-
-from datetime import datetime
 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -14,7 +11,6 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 from .forms import SiteForm
 from .models import Site, Screenshot
-from mwd.settings import STAGE, TIME_ZONE
 
 def view_400(request, exception=None):
     return render(request, 'errors/400.html', status=400)
@@ -32,26 +28,18 @@ def index(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
 
-    return render(request, 'home/index.html', {
-        'stage': STAGE,
-        'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
-    })
+    return render(request, 'home/index.html')
 
 def legal(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
 
-    return render(request, 'legal/index.html', {
-        'stage': STAGE,
-        'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
-    })
+    return render(request, 'legal/index.html')
 
 def login_view(request):
     if request.method == 'GET':
-        return render(request, 'home/login.html', {
-            'stage': STAGE,
-            'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
-        })
+        return render(request, 'home/login.html')
+
     elif request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -94,20 +82,13 @@ def portfolio(request):
             'screenshots': Screenshot.objects.filter(site=site).order_by('date_updated'),
         })
 
-    return render(request, 'home/portfolio.html', {
-        'sites': sites,
-        'stage': STAGE,
-        'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
-    })
+    return render(request, 'home/portfolio.html', {'sites': sites})
 
 def about(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
 
-    return render(request, 'home/about.html', {
-        'stage': STAGE,
-        'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
-    })
+    return render(request, 'home/about.html')
 
 def sites(request):
     if request.method != 'GET':
@@ -120,11 +101,7 @@ def sites(request):
             'screenshots': Screenshot.objects.filter(site=site).order_by('date_updated')[:3],
         })
 
-    return render(request, 'home/sites.html', {
-        'sites': sites,
-        'stage': STAGE,
-        'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
-    })
+    return render(request, 'home/sites.html', {'sites': sites})
 
 def add_site(request):
     if not request.user.is_superuser:
@@ -133,8 +110,6 @@ def add_site(request):
     if request.method == 'GET':
         return render(request, 'home/add_site.html', {
             'form': SiteForm(),
-            'stage': STAGE,
-            'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
         })
     elif request.method == 'POST':
         form = SiteForm(request.POST, request.FILES)
@@ -167,8 +142,6 @@ def edit_site(request, site_id):
             'site': site,
             'screenshots': Screenshot.objects.filter(site=site).order_by('date_updated'),
             'form': SiteForm(instance=site),
-            'stage': STAGE,
-            'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
         })
     elif request.method == 'POST':
         form = SiteForm(request.POST, request.FILES, instance=site)

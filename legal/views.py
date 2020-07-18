@@ -9,7 +9,4 @@ def index(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
 
-    return render(request, 'legal/index.html', {
-        'stage': STAGE,
-        'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
-    })
+    return render(request, 'legal/index.html')
