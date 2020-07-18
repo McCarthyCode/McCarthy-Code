@@ -37,6 +37,15 @@ def index(request):
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })
 
+def privacy(request):
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
+
+    return render(request, 'home/privacy.html', {
+        'stage': STAGE,
+        'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
+    })
+
 def login_view(request):
     if request.method == 'GET':
         return render(request, 'home/login.html', {
