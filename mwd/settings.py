@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import re
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -66,6 +67,7 @@ elif STAGE == 'production':
 INSTALLED_APPS = [
     'home',
     'legal',
+    'quotes',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -179,4 +181,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+# Project variables
+PHONE_REGEX = re.compile(
+    r'^(\+?0?1\s)?\(?(\d{3})\)?[\s.-]?(\d{3})[\s.-]?(\d{4})$'
+)
 

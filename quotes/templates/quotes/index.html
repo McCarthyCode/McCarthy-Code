@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Request a Quote{% endblock %}
+
+{% block content %}
+<section class="form">
+  <div class="container">
+    {% include 'home/messages.html' %}
+    <form method="POST">
+      <h2 class="h2">Request a Quote</h2>
+      {% csrf_token %}
+      {{ form }}
+      <input class="btn btn-primary form-control" type="submit" value="Submit Request">
+    </form>
+  </div>
+</section>
+{% endblock %}
