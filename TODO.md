@@ -2,7 +2,6 @@
 
 ## High priorities
 
-- Current/maximum character count in textarea
 - Adjust padding on buttons
 - Flex-positioned alerts
 

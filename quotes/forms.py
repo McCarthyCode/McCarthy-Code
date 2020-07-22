@@ -41,7 +41,7 @@ class QuoteRequestForm(forms.ModelForm):
     )
     description = forms.CharField(
         label='',
-        max_length=1500,
+        max_length=500,
         widget=forms.Textarea(attrs={
             'class': 'form-control',
             'placeholder': 'Summary of Site Contents (please be detailed)\nE.g. an attractive home page, an about page, a quote request form, and a portfolio with private submission form and management page.',

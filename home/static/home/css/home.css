@@ -10159,6 +10159,14 @@ form input[type=text], form input[type=number], form input[type=password], form 
   border-color: #333333;
   background-color: #333333;
 }
+form textarea {
+  margin-bottom: 0.25rem;
+}
+form textarea + small {
+  color: #999999;
+  float: right;
+  margin-bottom: 0.25rem;
+}
 form .form-control::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
