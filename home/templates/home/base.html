@@ -15,7 +15,7 @@
   <!-- # Stylesheets # -->
   <!-- ############### -->
 
-  <!-- Internal Stylesheets -->{% load static %}
+  <!-- Internal Stylesheets -->
 
   <!-- Reset CSS -->
   <link rel="stylesheet" type="text/css" href="{% static 'home/css/reset.min.css' %}" />
@@ -23,7 +23,134 @@
 {% block css %}  <!-- Home App CSS -->
   <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.min.css' %}" />
 
-{% endblock %}{% if stage == 'development' %}{% include 'home/head_development.html' %}{% else %}{% include 'home/head_production.html' %}{% endif %}
+{% endblock %}  {% if stage == 'development' %}<!-- Internal Stylesheet Libraries -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/bootstrap.min.css' %}">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/font-awesome.min.css' %}">
+
+  <!-- fancybox CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/jquery.fancybox.min.css' %}">
+
+  <!-- External Stylesheet Libraries (compressed) -->
+
+  <!-- ########### -->
+  <!-- # Scripts # -->
+  <!-- ########### -->
+
+  <!-- Internal Script Libraries (compressed) -->
+
+  <!-- jQuery JS -->
+  <script src="{% static 'home/js/jquery-3.3.1.min.js' %}"></script>
+
+  <!-- Popper JS -->
+  <script src="{% static 'home/js/popper.min.js' %}"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+
+  <!-- Font Awesome JS -->
+  <script src="{% static 'home/js/fe4606e930.js' %}"></script>
+
+  <!-- fancybox JS -->
+  <script src="{% static 'home/js/jquery.fancybox.min.js' %}"></script>{% else %}<!-- External Stylesheet Libraries -->
+
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous" />
+
+  <!-- fancybox CSS -->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    integrity="sha384-Q8BgkilbsFGYNNiDqJm69hvDS7NCJWOodvfK/cwTyQD4VQA0qKzuPpvqNER1UC0F"
+    crossorigin="anonymous" />
+
+  <!-- ########### -->
+  <!-- # Scripts # -->
+  <!-- ########### -->
+
+  <!-- External Script Libraries -->
+
+  <!-- jQuery JS -->
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
+
+  <!-- Popper JS -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous">
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous">
+  </script>
+
+  <!-- Font Awesome JS -->
+  <script
+    src="https://kit.fontawesome.com/fe4606e930.js"
+    referrerpolicy="origin">
+  </script>
+
+  <!-- fancybox JS -->
+  <script
+    src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"
+    integrity="sha384-Zm+UU4tdcfAm29vg+MTbfu//q5B/lInMbMCr4T8c9rQFyOv6PlfQYpB5wItcXWe7"
+    crossorigin="anonymous">
+  </script>
+
+  <!-- ############ -->
+  <!-- # Trackers # -->
+  <!-- ############ -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=UA-167965592-1"
+    referrerpolicy="origin"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-167965592-1');
+  </script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '735802347207846');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img
+      width="1" height="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=735802347207846&ev=PageView&noscript=1"
+    />
+  </noscript>{% endif %}
 
   <!-- Internal Scripts -->
 
@@ -32,11 +159,63 @@
 
 {% block js %}{% endblock %}</head>
 <body>
-  {% block body %}
-  {% include 'home/navbar.html' %}
-  {% block content %}
-  {% endblock %}
-  {% include 'home/footer.html' %}
-  {% endblock %}
+{% block body %}
+  <nav id="navbar" class="navbar fixed-top navbar-expand-md navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home:index' %}">McCarthy Web Design</a>
+      <button id="navbarMenuButton" class="d-md-none ml-auto" type="button">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home:index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home:about' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home:portfolio' %}">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <span class="text-nowrap"><a class="nav-link" href="{% url 'quotes:index' %}">Request a Quote</a></span>
+        </li>
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <span class="text-nowrap"><a class="nav-link" href="{% url 'home:sites' %}">Edit Sites</a></span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home:logout' %}">Logout</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+{% block content %}{% endblock %}
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-list">
+        <ul>
+          <li>
+            <small><a href="{% url 'legal:index' %}">Terms & Privacy</a></small>
+          </li>
+          <li>
+            <small><a href="{% url 'home:login' %}">Admin Login</a></small>
+          </li>
+          <li>
+            <small><a class="external-link" href="https://github.com/mattmc318/McCarthy-Web-Design">GitHub</a></small>
+          </li>
+        </ul>
+      </div>
+      <p>
+        <small>&copy; 2018&ndash;{{ year }} McCarthy Web Design. <span class="text-nowrap"><a href="https://github.com/mattmc318/McCarthy-Web-Design/blob/master/LICENSE.md" class="external-link">MIT Licensed.</a></span></small>
+      </p>
+      <p>
+        <small>Icons by <a href="https://fontawesome.com/" class="external-link">Font Awesome</a></small>
+      </p>
+    </div>
+  </footer>
+{% endblock %}
 </body>
 </html>
