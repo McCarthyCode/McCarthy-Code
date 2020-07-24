@@ -10604,7 +10604,7 @@ form .errorlist {
   min-height: calc(100vh - 56px - 91px);
   margin-top: 56px;
   padding: 1rem 0;
-  background-color: #444444;
+  background-color: #333333;
 }
 #sites .container:last-child {
   max-width: 400px;
@@ -10622,10 +10622,11 @@ form .errorlist {
   padding: 9px 10px 0px 11px;
 }
 #sites .container:last-child li {
-  background-color: #333333;
-  border-radius: 0.25rem;
-  padding: 1rem;
   margin-bottom: 0.5rem;
+  border: 1px solid #525252;
+  border-radius: 3px;
+  padding: 1rem;
+  background-color: #222222;
 }
 #sites .container:last-child li h5.h5 {
   margin: -5px 0 12px 0;
