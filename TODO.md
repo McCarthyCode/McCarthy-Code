@@ -2,13 +2,14 @@
 
 ## High priorities
 
-- Fix character counter
+*None*
 
 ## Medium priorities
 
-- Create ad graphics
+- Update "Edit Sites" Sass
 - Head includes to blocks
 - Move container outside content block
+- Create ad graphics
 
 ## Low priorities
 

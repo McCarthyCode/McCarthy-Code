@@ -21,21 +21,23 @@ $(document).ready(() => {
   // textarea character counter
   $('textarea').each(function () {
     const $this = $(this);
-    const maxlength = $this.attr('maxlength');
     const currentLength = $this.val().length;
+    const maxlength = $this.attr('maxlength');
 
     if ($this.is(':visible')) {
       const $div = $('<div>');
       const $small = $('<small>').html(`${currentLength}/${maxlength}`);
+
       $this.after($div.append($small));
     }
   });
 
   $('textarea').on('input', function () {
     const $this = $(this);
-    const maxlength = $this.attr('maxlength');
+    const $small = $this.next('div').children('small');
     const currentLength = $this.val().length;
+    const maxlength = $this.attr('maxlength');
 
-    $this.next('small').html(`${currentLength}/${maxlength}`)
+    $small.html(`${currentLength}/${maxlength}`);
   });
 });
