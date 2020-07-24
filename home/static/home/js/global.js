@@ -20,16 +20,22 @@ $(document).ready(() => {
 
   // textarea character counter
   $('textarea').each(function () {
-    const maxlength = $(this).attr('maxlength');
-    const currentLength = $(this).val().length;
+    const $this = $(this);
+    const maxlength = $this.attr('maxlength');
+    const currentLength = $this.val().length;
 
-    $(this).after($('<small>').html(`${currentLength}/${maxlength}`));
+    if ($this.is(':visible')) {
+      const $div = $('<div>');
+      const $small = $('<small>').html(`${currentLength}/${maxlength}`);
+      $this.after($div.append($small));
+    }
   });
 
   $('textarea').on('input', function () {
-    const maxlength = $(this).attr('maxlength');
-    const currentLength = $(this).val().length;
+    const $this = $(this);
+    const maxlength = $this.attr('maxlength');
+    const currentLength = $this.val().length;
 
-    $(this).next('small').html(`${currentLength}/${maxlength}`)
+    $this.next('small').html(`${currentLength}/${maxlength}`)
   });
 });

@@ -10137,7 +10137,7 @@ nav .nav-item a.nav-link:hover {
 section.form {
   margin-top: 56px;
   min-height: calc(100vh - 56px - 91px);
-  background-color: #444444;
+  background-color: #333333;
 }
 section.form .container {
   padding-top: 2rem;
@@ -10155,17 +10155,22 @@ form label, form label:focus {
   border-color: #333333;
 }
 form input[type=text], form input[type=number], form input[type=password], form textarea.form-control, form select, form input[type=text]:focus, form input[type=number]:focus, form input[type=password]:focus, form textarea.form-control:focus, form select:focus {
+  border-radius: 3px;
   color: white;
-  border-color: #333333;
-  background-color: #333333;
+  border-color: #525252;
+  background-color: #222222;
 }
 form textarea {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0;
 }
-form textarea + small {
+form textarea + div {
   color: #999999;
-  float: right;
-  margin-bottom: 0.25rem;
+  text-align: right;
+}
+form .g-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
 }
 form .form-control::placeholder {
   color: rgba(255, 255, 255, 0.5);
@@ -10195,8 +10200,8 @@ form .input-group label {
   cursor: pointer;
 }
 form .input-group .input-group-append {
-  border-color: #444444;
-  background-color: #444444;
+  border-color: #525252;
+  background-color: #525252;
   width: 40px;
   height: 38px;
   border-top-right-radius: 0.25rem;
@@ -10213,8 +10218,8 @@ form .input-group .input-group-append input[type=radio] {
 }
 form .input-group .input-group-append .input-group-text {
   color: white;
-  border-color: #444444;
-  background-color: #444444;
+  border-color: #525252;
+  background-color: #525252;
 }
 form .input-group .input-group-append .input-group-text i {
   min-width: 14px;
@@ -10649,11 +10654,12 @@ form .screenshot-list li {
   list-style: none;
   display: flex;
   position: relative;
-  background-color: #333333;
+  background-color: #222222;
   width: 100%;
   min-width: 290px;
   max-width: 400px;
-  border-radius: 0.25rem;
+  border: 1px solid #525252;
+  border-radius: 3px;
   margin: 0 auto 0.5rem auto;
   padding: 0.5rem 0;
   justify-content: space-evenly;

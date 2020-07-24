@@ -101,6 +101,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'home.context_processors.stage',
                 'home.context_processors.year',
+                'home.context_processors.recaptcha_site_key',
             ],
         },
     },
@@ -188,3 +189,9 @@ PHONE_REGEX = re.compile(
     r'^(\+?0?1\s)?\(?(\d{3})\)?[\s.-]?(\d{3})[\s.-]?(\d{4})$'
 )
 
+
+# reCAPTCHA secret key
+RECAPTCHA_FILE = '%s/auth/recaptcha.txt' % BASE_DIR
+with open(RECAPTCHA_FILE, 'r', encoding='utf8') as f:
+    content = f.readline()
+RECAPTCHA_SECRET_KEY = content[:-1]

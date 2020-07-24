@@ -1,7 +1,7 @@
 section.form
   margin-top: 56px
   min-height: calc(100vh - 56px - 91px)
-  background-color: $light-gray
+  background-color: $mid-gray
 
   .container
     padding-top: 2rem
@@ -19,17 +19,22 @@ form
     border-color: $mid-gray
 
   input[type="text"], input[type="number"], input[type="password"], textarea.form-control, select, input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:focus, textarea.form-control:focus, select:focus
+    border-radius: 3px
     color: $white
-    border-color: $mid-gray
-    background-color: $mid-gray
+    border-color: $lighter-gray
+    background-color: $dark-gray
 
   textarea
-    margin-bottom: .25rem
+    margin-bottom: 0
 
-    & + small
-      color: $lighter-gray
-      float: right
-      margin-bottom: .25rem
+    & + div
+      color: $lightest-gray
+      text-align: right
+
+  .g-recaptcha
+    display: flex
+    justify-content: center
+    margin-bottom: .5rem
 
   .form-control::placeholder
     color: $white-50
@@ -59,8 +64,8 @@ form
       cursor: pointer
 
     .input-group-append
-      border-color: $light-gray
-      background-color: $light-gray
+      border-color: $lighter-gray
+      background-color: $lighter-gray
       width: 40px
       height: 38px
       border-top-right-radius: .25rem
@@ -77,8 +82,8 @@ form
 
       .input-group-text
         color: $white
-        border-color: $light-gray
-        background-color: $light-gray
+        border-color: $lighter-gray
+        background-color: $lighter-gray
 
         i
           min-width: 14px
