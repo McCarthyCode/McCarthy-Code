@@ -2,7 +2,6 @@
 
 ## High priorities
 
-- Adjust padding on buttons
 - Flex-positioned alerts
 
 ## Medium priorities

@@ -9983,11 +9983,6 @@ body .btn {
   line-height: 1;
 }
 
-input[type=submit] {
-  padding-top: 12px;
-  padding-bottom: 6px;
-}
-
 #index header, #index section, #portfolio header, #portfolio section {
   position: relative;
 }
@@ -10623,7 +10618,7 @@ form .errorlist {
   margin-bottom: 1rem;
 }
 #sites .container:last-child .header > .btn {
-  padding: 11px 11px 0px 11px;
+  padding: 9px 10px 0px 11px;
 }
 #sites .container:last-child li {
   background-color: #333333;
