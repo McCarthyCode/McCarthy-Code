@@ -2,7 +2,7 @@
 
 ## High priorities
 
-- Flex-positioned alerts
+- Fix character counter
 
 ## Medium priorities
 

@@ -1,27 +1,27 @@
 .alert
+  display: flex
+  gap: 1rem
+  justify-content: space-between
+
+  & > div:first-child
+    display: flex
+    align-items: center
+
   p
+    flex-grow: 1
     margin: 0
 
-  a:not(.close)
-    text-decoration: underline
+    a:not(.close)
+      text-decoration: underline
 
 .alert-danger
-  p
+  p, a
     color: #721c24
 
-    a
-      color: #721c24
-
 .alert-success
-  p
+  p, a
     color: #155724
 
-    a
-      color: #155724
-
 .alert-info
-  p
+  p, a
     color: #0c5460
-
-    a
-      color: #0c5460

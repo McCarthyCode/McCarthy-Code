@@ -10101,31 +10101,32 @@ nav .nav-item a.nav-link:hover {
   vertical-align: 3px;
 }
 
+.alert {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.alert > div:first-child {
+  display: flex;
+  align-items: center;
+}
 .alert p {
+  flex-grow: 1;
   margin: 0;
 }
-.alert a:not(.close) {
+.alert p a:not(.close) {
   text-decoration: underline;
 }
 
-.alert-danger p {
-  color: #721c24;
-}
-.alert-danger p a {
+.alert-danger p, .alert-danger a {
   color: #721c24;
 }
 
-.alert-success p {
-  color: #155724;
-}
-.alert-success p a {
+.alert-success p, .alert-success a {
   color: #155724;
 }
 
-.alert-info p {
-  color: #0c5460;
-}
-.alert-info p a {
+.alert-info p, .alert-info a {
   color: #0c5460;
 }
 
