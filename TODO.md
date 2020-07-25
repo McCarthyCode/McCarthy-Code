@@ -7,7 +7,7 @@
   - View
   - Template/Sass
   - Change navbar "Edit Sites" option to "Dashboard"
-- Quote Manager
+- Create Quote Manager
   - Create (done)
   - Read
     - URL
@@ -20,6 +20,7 @@
   - Delete
     - URL
     - View
+- Add reCAPTCHA v3 to login form
 
 ## Medium priorities
 
@@ -33,9 +34,16 @@
     - Update positional values
       - URL
       - View
+- Make home code segments their own app
+  - Dashboard
+    - Quotes
+    - Sites
+  - Errors
+- Scale/wrap thumbnail in Edit Site .screenshot-list
 
 ## Low priorities
 
 - Rebuild front end in Angular
 - Create ad graphics
 - Create code background graphic on homepage
+- Replace transform(translate(-50%, -50%)) with flex centering

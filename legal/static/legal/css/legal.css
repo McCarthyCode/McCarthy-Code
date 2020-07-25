@@ -9963,6 +9963,9 @@ small {
 .container {
   padding: 0;
 }
+.container > :last-child {
+  margin-bottom: 0;
+}
 
 .content img.float-left-sm, .content img.float-right-sm {
   display: block;
@@ -9997,6 +10000,17 @@ body .btn {
 }
 #index header .chevron i, #index section .chevron i, #portfolio header .chevron i, #portfolio section .chevron i {
   vertical-align: -4px;
+}
+
+.page {
+  min-height: calc(100vh - 56px - 91px);
+  margin-top: 56px;
+  padding: 2rem 0;
+  background-color: #333333;
+}
+
+.max-w-480px {
+  max-width: 480px !important;
 }
 
 @media (min-width: 576px) {
@@ -10136,11 +10150,7 @@ nav .nav-item a.nav-link:hover {
 }
 
 .legal {
-  padding: 1rem 0;
-  margin-top: 56px;
-  background-color: #333333;
   color: white;
-  min-height: calc(100vh - 56px - 91px);
 }
 .legal section {
   display: none;

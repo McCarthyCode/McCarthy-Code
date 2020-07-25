@@ -51,6 +51,9 @@ small
 .container
   padding: 0
 
+  & > :last-child
+    margin-bottom: 0
+
 .content
   img.float-left-sm, img.float-right-sm
     display: block
@@ -83,6 +86,16 @@ body .btn
 
       i
         vertical-align: -4px
+
+.page
+  min-height: calc(100vh - 56px - 91px)
+  margin-top: 56px
+  padding: 2rem 0
+  background-color: $mid-gray
+
+.max-w
+  &-480px
+    max-width: 480px !important
 
 @include media-breakpoint-up(sm)
   .content

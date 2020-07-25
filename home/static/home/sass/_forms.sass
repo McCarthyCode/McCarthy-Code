@@ -1,14 +1,5 @@
-section.form
-  margin-top: 56px
-  min-height: calc(100vh - 56px - 91px)
-  background-color: $mid-gray
-
-  .container
-    padding-top: 2rem
-
-    form
-      margin: 0 auto
-      max-width: 400px
+section.form form
+    margin: 0 auto
 
 form
   input[type="text"], input[type="number"], input[type="password"], input[type="submit"], input[type="file"], textarea, select, label
@@ -138,6 +129,9 @@ form
   .errorlist
     color: $light-red
     margin-bottom: .5rem
+
+  & > :last-child
+    margin-bottom: 0 !important
 
 @include media-breakpoint-up(md)
   .city-state-zip,
