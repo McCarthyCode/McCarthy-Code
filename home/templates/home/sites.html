@@ -3,9 +3,11 @@
 
 {% block content %}
 <section id="sites">
+  {% if messages %}
   <div class="container">
     {% include 'home/messages.html' %}
   </div>
+  {% endif %}
   <div class="container">
     <div class="header">
       <h3 class="h3">{% block title %}Edit Sites{% endblock %}</h3>
