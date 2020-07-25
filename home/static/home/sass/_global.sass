@@ -93,9 +93,11 @@ body .btn
   padding: 2rem 0
   background-color: $mid-gray
 
-.max-w
-  &-480px
-    max-width: 480px !important
+$max-widths: 480, 320
+@for $i from 1 through length($max-widths)
+  $width: nth($max-widths, $i)
+  .max-w-#{$width}px
+    max-width: #{$width}px !important
 
 @include media-breakpoint-up(sm)
   .content

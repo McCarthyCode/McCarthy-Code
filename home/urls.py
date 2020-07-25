@@ -9,6 +9,7 @@ urlpatterns = [
     re_path(r'^logout/$', views.logout_view, name='logout'),
     re_path(r'^about/$', views.about, name='about'),
     re_path(r'^portfolio/$', views.portfolio, name='portfolio'),
+    re_path(r'^dashboard/$', views.dashboard, name='dashboard'),
     re_path(r'^sites/$', views.sites, name='sites'),
     re_path(r'^sites/add/$', views.add_site, name='add-site'),
     re_path(r'^sites/(?P<site_id>[1-9]\d*)/edit/$', views.edit_site, name='edit-site'),

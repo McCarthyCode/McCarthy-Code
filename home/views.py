@@ -90,6 +90,12 @@ def about(request):
 
     return render(request, 'home/about.html')
 
+def dashboard(request):
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
+
+    return render(request, 'home/dashboard.html')
+
 def sites(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()

@@ -1,0 +1,14 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<section class="page">
+  <div class="container max-w-320px">
+    <h3 class="h3">{% block title %}Dashboard{% endblock %}</h3>
+    <h5 class="h5">Managers</h5>
+    <ul>
+      <li><a href="{% url 'home:sites' %}">Sites</a></li>
+      <li><a href="{#{% url 'quotes:sites' %}#}">Quotes</a></li>
+    </ul>
+  </div>
+</section>
+{% endblock %}

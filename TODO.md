@@ -2,11 +2,6 @@
 
 ## High priorities
 
-- Dashboard
-  - URL
-  - View
-  - Template/Sass
-  - Change navbar "Edit Sites" option to "Dashboard"
 - Create Quote Manager
   - Create (done)
   - Read
@@ -36,7 +31,7 @@
       - View
 - Make home code segments their own app
   - Dashboard
-    - Quotes
+    - Quotes (done)
     - Sites
   - Errors
 - Scale/wrap thumbnail in Edit Site .screenshot-list
