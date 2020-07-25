@@ -1,7 +1,5 @@
 {% extends 'home/base.html' %}
 
-{% block title %}Request a Quote{% endblock %}
-
 {% block js %}  <!-- reCAPTCHA v2 JS -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 {% endblock %}
@@ -11,7 +9,7 @@
   <div class="container">
     {% include 'home/messages.html' %}
     <form method="POST">
-      <h2 class="h2">Request a Quote</h2>
+      <h3 class="h3">{% block title %}Request a Quote{% endblock %}</h3>
       {% csrf_token %}
       {{ form }}
       <div

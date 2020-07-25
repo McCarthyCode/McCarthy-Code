@@ -1,8 +1,6 @@
 {% extends 'home/base.html' %}
 {% load static %}
 
-{% block title %}Portfolio{% endblock %}
-
 {% block js %}
 <!-- Home App JS -->
 <script src="{% static 'home/js/portfolio.min.js' %}"></script>
@@ -14,7 +12,7 @@
   <header>
     <div class="container">
       <div class="text">
-        <h3 class="h3 text-center">Portfolio</h3>
+        <h3 class="h3 text-center">{% block title %}Portfolio{% endblock %}</h3>
         <div class="content">
           <div>
             <h5 class="h5">Table of Contents</h5>

@@ -1,8 +1,6 @@
 {% extends 'home/base.html' %}
 {% load static %}
 
-{% block title %}Edit Sites{% endblock %}
-
 {% block content %}
 <section id="sites">
   <div class="container">
@@ -10,7 +8,7 @@
   </div>
   <div class="container">
     <div class="header">
-      <h3 class="h3">Edit Sites</h3>
+      <h3 class="h3">{% block title %}Edit Sites{% endblock %}</h3>
       <a class="btn btn-primary" href="{% url 'home:add-site' %}">Add Site</a>
     </div>
     <ul>
