@@ -9963,7 +9963,7 @@ small {
 .container {
   padding: 0;
 }
-.container > :last-child {
+.container > :not(.alert):last-child {
   margin-bottom: 0;
 }
 

@@ -2,6 +2,11 @@
 
 {% block content %}
 <section class="page">
+  {% if messages %}
+  <div class="container">
+    {% include 'home/messages.html' %}
+  </div>
+  {% endif %}
   <div class="container max-w-320px">
     <h3 class="h3">{% block title %}Dashboard{% endblock %}</h3>
     <h5 class="h5">Managers</h5>

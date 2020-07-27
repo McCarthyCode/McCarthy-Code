@@ -38,8 +38,12 @@ def legal(request):
 
 def login_view(request):
     if request.method == 'GET':
-        return render(request, 'home/login.html')
+        if request.user is not None:
+            messages.info(request, 'You are already logged in. You have been redirected to the dashboard.')
 
+            return redirect('home:dashboard')
+
+        return render(request, 'home/login.html')
     elif request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
