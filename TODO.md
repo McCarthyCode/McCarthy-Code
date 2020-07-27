@@ -5,20 +5,21 @@
 - Create Quote Manager
   - Create (done)
   - Read
-    - URL
-    - View
-    - Template/Sass/JS
+    - Define URL
+    - Create view
+    - Create template, Sass, and JS
   - Update
-    - URL
-    - View
-    - Template/Sass
+    - Define URL
+    - Create view
+    - Create template, and Sass
   - Delete
-    - URL
-    - View
+    - Define URL
+    - Create view
 - Add reCAPTCHA v3 to login form
 
 ## Medium priorities
 
+- Adjust footer dependencies for smaller viewports
 - Order Sites by positional value
   - Create front end for ordering system
     - Copy JS from reorder_screenshots.js and edit
@@ -42,3 +43,4 @@
 - Create ad graphics
 - Create code background graphic on homepage
 - Replace transform(translate(-50%, -50%)) with flex centering
+- Change .nav-item background to none

@@ -99,8 +99,7 @@ $(document).ready(() => {
     adjustContact();
   }
 
-  adjust();
-  $(window).on('resize orientationchange', adjust);
+  $(window).on('load resize orientationchange', adjust);
 
   let navHeight = 56;
   $('header .chevron').click(() => {

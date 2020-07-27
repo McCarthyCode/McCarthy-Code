@@ -9944,6 +9944,15 @@ body a, body a:hover, body .fa-external-link-alt {
   transition: color 0.15s ease-in-out;
   color: #97d5f7;
 }
+body .card {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #222222;
+}
+body .card > :last-child {
+  margin-bottom: 0;
+}
 
 .fa-external-link-alt {
   display: inline;
@@ -10028,6 +10037,10 @@ body .btn {
   }
   .content img.float-left-sm, .content img.float-right-sm {
     margin: 0;
+  }
+
+  body .card {
+    padding: 2rem;
   }
 }
 nav {
@@ -10458,12 +10471,16 @@ form > :last-child {
     margin: 31px 2rem;
   }
 }
+#portfolio {
+  background-color: #525252;
+}
 #portfolio header, #portfolio section {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 56px);
   padding: 1rem 0 4rem 0;
+  background-color: #333333;
 }
 #portfolio header:first-child:last-child, #portfolio section:first-child:last-child {
   min-height: calc(100vh - 56px - 91px);
@@ -10479,14 +10496,8 @@ form > :last-child {
 #portfolio header:first-child .container, #portfolio section:first-child .container {
   min-height: calc(100vh - 56px - 5rem);
 }
-#portfolio header:nth-child(odd), #portfolio section:nth-child(odd) {
-  background-color: #444444;
-}
 #portfolio header:nth-child(odd) .content, #portfolio section:nth-child(odd) .content {
   grid-template-columns: 308px auto;
-}
-#portfolio header:nth-child(even), #portfolio section:nth-child(even) {
-  background-color: #333333;
 }
 #portfolio header:nth-child(even) .content, #portfolio section:nth-child(even) .content {
   grid-template-columns: auto 308px;
@@ -10496,7 +10507,10 @@ form > :last-child {
   padding-bottom: 1rem;
 }
 #portfolio header:last-child .container, #portfolio section:last-child .container {
-  min-height: calc(100vh - 56px - 91px - 2rem);
+  min-height: calc(100vh - 56px - 91px - 2rem - .25rem);
+}
+#portfolio header:not(:last-child), #portfolio section:not(:last-child) {
+  margin-bottom: 0.25rem;
 }
 #portfolio header .container, #portfolio section .container {
   display: flex;
@@ -10505,12 +10519,7 @@ form > :last-child {
   min-height: calc(544px + 2rem);
   margin: 0 auto;
 }
-#portfolio header .container .text, #portfolio section .container .text {
-  border-radius: 0.5rem;
-  padding: 2rem;
-  background-color: #1e1e1e7f;
-}
-#portfolio header .container .text:last-of-type, #portfolio section .container .text:last-of-type {
+#portfolio header .container .text:last-child, #portfolio section .container .text:last-child {
   margin-bottom: 0;
 }
 #portfolio header .container .text h6.h6, #portfolio section .container .text h6.h6 {
@@ -10564,6 +10573,9 @@ form > :last-child {
 #portfolio header .content {
   display: flex !important;
   flex-wrap: wrap;
+}
+#portfolio section {
+  margin-top: 0.25rem;
 }
 #portfolio section .text {
   margin-bottom: 1rem;

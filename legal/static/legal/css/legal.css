@@ -9944,6 +9944,15 @@ body a, body a:hover, body .fa-external-link-alt {
   transition: color 0.15s ease-in-out;
   color: #97d5f7;
 }
+body .card {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #222222;
+}
+body .card > :last-child {
+  margin-bottom: 0;
+}
 
 .fa-external-link-alt {
   display: inline;
@@ -10028,6 +10037,10 @@ body .btn {
   }
   .content img.float-left-sm, .content img.float-right-sm {
     margin: 0;
+  }
+
+  body .card {
+    padding: 2rem;
   }
 }
 nav {

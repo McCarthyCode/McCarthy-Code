@@ -11,7 +11,7 @@
   {% load custom_tags %}
   <header>
     <div class="container">
-      <div class="text">
+      <div class="text card">
         <h3 class="h3 text-center">{% block title %}Portfolio{% endblock %}</h3>
         <div class="content">
           <div>
@@ -36,7 +36,7 @@
   <section id="{{ site.data.slug }}">
     <div class="container">
       <div class="content">
-        <div class="text{% if forloop.counter|modulo:2 == 0 %} d-md-none{% endif %}">
+        <div class="text card{% if forloop.counter|modulo:2 == 0 %} d-md-none{% endif %}">
           {% include 'home/site_info.html' %}
         </div>
         <ul class="screenshot-list">
@@ -48,9 +48,11 @@
           </li>
           {% endfor %}
         </ul>
-        <div class="text d-none{% if forloop.counter|modulo:2 == 0 %} d-md-block{% endif %}">
+        {% if forloop.counter|modulo:2 == 0 %}
+        <div class="text card d-none d-md-block">
           {% include 'home/site_info.html' %}
         </div>
+        {% endif %}
       </div>
     </div>
     {% if site != sites|last %}

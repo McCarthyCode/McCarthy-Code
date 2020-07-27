@@ -36,6 +36,15 @@ body
     @include transition(color)
     color: $cyan
 
+  .card
+    border: none
+    border-radius: .5rem
+    padding: 1rem
+    background-color: $dark-gray
+
+    & > :last-child
+      margin-bottom: 0
+
 .fa-external-link-alt
   display: inline
   vertical-align: 1px
@@ -111,3 +120,6 @@ $max-widths: 480, 320
 
     img.float-left-sm, img.float-right-sm
       margin: 0
+
+  body .card
+    padding: 2rem
