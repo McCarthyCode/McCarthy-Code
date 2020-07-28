@@ -181,7 +181,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'quotes:index' %}"><span class="text-nowrap">Request a Quote</span></a>
         </li>
-        {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'home:dashboard' %}">Dashboard</a></span>
         </li>

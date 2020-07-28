@@ -38,7 +38,7 @@ def legal(request):
 
 def login_view(request):
     if request.method == 'GET':
-        if request.user is not None:
+        if request.user.is_superuser:
             messages.info(request, 'You are already logged in. You have been redirected to the dashboard.')
 
             return redirect('home:dashboard')
@@ -57,7 +57,7 @@ def login_view(request):
                 (user.first_name if user.first_name else user.username)
             )
 
-            return redirect('home:sites')
+            return redirect('home:dashboard')
         else:
             messages.error(request, 'There was an error logging in with that username/password combination.')
 
@@ -98,11 +98,17 @@ def dashboard(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
 
+    if not request.user.is_superuser:
+        return HttpResponseForbidden()
+
     return render(request, 'home/dashboard.html')
 
 def sites(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
+
+    if not request.user.is_superuser:
+        return HttpResponseForbidden()
 
     sites = []
     for site in Site.objects.all().order_by('-date_updated'):
