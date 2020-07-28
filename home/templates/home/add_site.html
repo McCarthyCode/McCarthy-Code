@@ -3,8 +3,12 @@
 
 {% block content %}
 <section class="page">
-  <div class="container max-w-480px">
+  {% if messages %}
+  <div class="container">
     {% include 'home/messages.html' %}
+  </div>
+  {% endif %}
+  <div class="container max-w-480px">
     <form method="POST" enctype="multipart/form-data">
       <h3 class="h3">{% block title %}Add Site{% endblock %}</h3>
       {% csrf_token %}
