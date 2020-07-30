@@ -15,7 +15,25 @@
     <form method="POST">
       <h3 class="h3">{% block title %}Request a Quote{% endblock %}</h3>
       {% csrf_token %}
-      {{ form }}
+      {{ form.non_field_errors }}
+      {% for field in form.visible_fields %}
+      {% if field.name == 'title' %}
+      {{ form.title.errors }}
+      {{ form.first_name.errors }}
+      {{ form.last_name.errors }}
+      {{ form.family_first.errors }}
+      <div class="name">
+        {{ form.title }}
+        {{ form.first_name }}
+        {{ form.last_name }}
+        {{ form.family_first.widget }}
+        {% include 'fields/custom_checkbox.html' with field=form.family_first %}
+      </div>
+      {% elif field.name != 'first_name' and field.name != 'last_name' and field.name != 'family_first' %}
+      {{ field.errors }}
+      {{ field }}
+      {% endif %}
+      {% endfor %}
       <div
         class="g-recaptcha"
         data-sitekey="{{ recaptcha_site_key }}"

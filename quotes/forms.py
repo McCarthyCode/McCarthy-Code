@@ -2,10 +2,21 @@ from django import forms
 from django.core.validators import RegexValidator
 from django.utils.translation import gettext_lazy as _
 
-from .models import QuoteRequest
+from .models import Contact, QuoteRequest
+from home.widgets import CustomSelect
 from mwd.settings import PHONE_REGEX
 
 class QuoteRequestForm(forms.ModelForm):
+    title = forms.MultipleChoiceField(
+        label='',
+        choices=Contact.title_choices,
+        widget=CustomSelect(
+            attrs={
+                'class': 'form-control',
+                'data-label': 'Title',
+            },
+        ),
+    )
     first_name = forms.CharField(
         label='',
         max_length=35,
@@ -22,9 +33,14 @@ class QuoteRequestForm(forms.ModelForm):
             'placeholder': 'Last Name',
         }),
     )
+    family_first = forms.BooleanField(
+        required=False,
+        label='Family Name Is First',
+        widget=forms.CheckboxInput(),
+    )
     phone = forms.CharField(
         label='',
-        max_length=15,
+        max_length=20,
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'placeholder': 'Phone',
@@ -62,10 +78,22 @@ class QuoteRequestForm(forms.ModelForm):
             # error handled in field verification
             pass
 
+        contact = Contact.objects.create(
+            first_name=cleaned_data['first_name'],
+            last_name=cleaned_data['last_name'],
+            email=cleaned_data['email'],
+            phone=cleaned_data['phone'],
+        )
+
+        cleaned_data['contact']
+
+        del cleaned_data['title'], cleaned_data['first_name'], cleaned_data['last_name'], cleaned_data['email'], cleaned_data['phone']
+
         return cleaned_data
 
     class Meta:
         model = QuoteRequest
         fields = [
-            'first_name', 'last_name', 'email', 'phone', 'description',
+            'title', 'first_name', 'last_name', 'family_first',
+            'email', 'phone', 'description',
         ]

@@ -1,0 +1,6 @@
+<select name="{{ widget.name }}" {% if widget.required %}required{% endif %}{% include "widgets/django/attrs.html" %}>
+  <option value="" disabled selected hidden>{% for name, value in widget.attrs.items %}{% if name == 'data-label' %}{{ value }}{% endif %}{% endfor %}</option>{% for group_name, group_choices, group_index in widget.optgroups %}{% if group_name %}
+  <optgroup label="{{ group_name }}">{% endif %}{% for option in group_choices %}
+  {% include option.template_name with widget=option %}{% endfor %}{% if group_name %}
+  </optgroup>{% endif %}{% endfor %}
+</select>

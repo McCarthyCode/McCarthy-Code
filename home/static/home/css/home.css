@@ -10168,13 +10168,15 @@ section.form form {
 form input[type=text], form input[type=number], form input[type=password], form input[type=submit], form input[type=file], form textarea, form select, form label {
   margin-bottom: 0.5rem;
 }
-form label, form label:focus {
-  color: white;
-  border-color: #333333;
-}
-form input[type=text], form input[type=number], form input[type=password], form textarea.form-control, form select, form input[type=text]:focus, form input[type=number]:focus, form input[type=password]:focus, form textarea.form-control:focus, form select:focus {
+form input[type=text], form input[type=number], form input[type=password], form textarea.form-control, form select, form input[type=text]:focus, form input[type=number]:focus, form input[type=password]:focus, form textarea.form-control:focus, form select:focus, form label, form label:focus {
   border-radius: 3px;
   color: white;
+  border-color: #525252;
+  background-color: #222222;
+}
+form label.form-control, form label.form-control:focus {
+  border-radius: 3px;
+  color: rgba(255, 255, 255, 0.5);
   border-color: #525252;
   background-color: #222222;
 }
@@ -10199,20 +10201,29 @@ form .form-control::-ms-input-placeholder {
 form label.form-control {
   cursor: pointer;
 }
-form select.form-control,
-form select.form-control:focus {
-  padding: 0 0.5rem;
-  color: white;
-  border-color: #333333;
-  background-color: #333333;
-}
-form select.form-control option,
-form select.form-control:focus option {
+form select option {
   padding: 0;
+}
+form select:invalid, form select option[value=""] {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+form select.form-control, form select.form-control:focus {
+  padding: 0 0.5rem;
+  border-radius: 3px;
+  color: white;
+  border-color: #525252;
+  background-color: #222222;
 }
 form input[type=file] {
   width: 100%;
   color: white;
+}
+form .input-group {
+  border-radius: 3px;
+  color: white;
+  border-color: #525252;
+  background-color: #222222;
+  margin-bottom: 0.5rem;
 }
 form .input-group label {
   cursor: pointer;
@@ -10222,8 +10233,8 @@ form .input-group .input-group-append {
   background-color: #525252;
   width: 40px;
   height: 38px;
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
   z-index: 3;
 }
 form .input-group .input-group-append input[type=radio], form .input-group .input-group-append input[type=checkbox], form .input-group .input-group-append .calendar {
@@ -10265,21 +10276,33 @@ form .radio li:not(:last-child) .input-group-append {
 form .address > :not(:last-child),
 form .password-confirm > :not(:last-child),
 form .name > :not(:last-child) {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
   margin-bottom: -1px;
 }
-form .address > :not(:first-child),
+form .address > :not(:last-child), form .address > :not(:last-child) label, form .address > :not(:last-child) .input-group-append,
+form .password-confirm > :not(:last-child),
+form .password-confirm > :not(:last-child) label,
+form .password-confirm > :not(:last-child) .input-group-append,
+form .name > :not(:last-child),
+form .name > :not(:last-child) label,
+form .name > :not(:last-child) .input-group-append {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+form .address > :not(:first-child), form .address > :not(:first-child) label, form .address > :not(:first-child) .input-group-append,
 form .password-confirm > :not(:first-child),
-form .name > :not(:first-child) {
+form .password-confirm > :not(:first-child) label,
+form .password-confirm > :not(:first-child) .input-group-append,
+form .name > :not(:first-child),
+form .name > :not(:first-child) label,
+form .name > :not(:first-child) .input-group-append {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
-form .city-state-zip > :nth-child(2) {
+form .city-state-zip > :nth-child(2), form .city-state-zip > :nth-child(2) label, form .city-state-zip > :nth-child(2) .input-group-append {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-form .city-state-zip > :last-child {
+form .city-state-zip > :last-child, form .city-state-zip > :last-child label, form .city-state-zip > :last-child .input-group-append {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
