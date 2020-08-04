@@ -13,7 +13,7 @@ class Contact(TimestampedModel):
     title = models.PositiveSmallIntegerField(choices=title_choices)
     first_name = models.CharField(max_length=35)
     last_name = models.CharField(max_length=70)
-    family_first = models.BooleanField()
+    surname_first = models.BooleanField()
     phone = models.CharField(max_length=10)
     email = models.EmailField(max_length=100)
 

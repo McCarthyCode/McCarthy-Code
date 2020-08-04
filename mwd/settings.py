@@ -186,7 +186,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Project variables
 PHONE_REGEX = re.compile(
-    r'^(\+?0?1\s)?\(?(\d{3})\)?[\s.-]?(\d{3})[\s.-]?(\d{4})$'
+    r'^(\+?1)?[\s\.-]?\(?(\d{3})\)?[\s\.-]?(\d{3})[\s\.-]?(\d{4})$'
 )
 
 
