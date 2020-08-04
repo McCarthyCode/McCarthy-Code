@@ -17,8 +17,10 @@ declare -a args=(
   "--style=compressed $sass_input_legal:$sass_output_legal_compressed"
 )
 
+cd $project_dir
+
 for i in "${args[@]}"; do
-  sass --watch $i &
+  sass --watch -I home/static/lib/sass -I node_modules/bootstrap/scss $i &
 done
 
 clear

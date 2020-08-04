@@ -9,7 +9,7 @@
 
   <!-- Title & Favicon -->
   <title>{% block title %}{% endblock %} - McCarthy Web Design</title>{% load static %}
-  <link rel="icon" type="image/png" href="{% static 'home/img/favicon.png' %}">
+  <link rel="icon" type="image/png" href="{% static 'lib/img/favicon.png' %}">
 
   <!-- ############### -->
   <!-- # Stylesheets # -->
@@ -18,7 +18,7 @@
   <!-- Internal Stylesheets -->
 
   <!-- Reset CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/reset.min.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'lib/css/reset.min.css' %}" />
 
 {% block css %}  <!-- Home App CSS -->
   <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.min.css' %}" />
@@ -26,13 +26,13 @@
 {% endblock %}  {% if stage == 'development' %}<!-- Internal Stylesheet Libraries -->
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'lib/css/bootstrap.min.css' %}">
 
   <!-- Font Awesome CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'lib/css/font-awesome.min.css' %}">
 
   <!-- fancybox CSS -->
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'lib/css/jquery.fancybox.min.css' %}">
 
   <!-- External Stylesheet Libraries (compressed) -->
 
@@ -43,19 +43,19 @@
   <!-- Internal Script Libraries (compressed) -->
 
   <!-- jQuery JS -->
-  <script src="{% static 'home/js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'lib/js/jquery-3.3.1.min.js' %}"></script>
 
   <!-- Popper JS -->
-  <script src="{% static 'home/js/popper.min.js' %}"></script>
+  <script src="{% static 'lib/js/popper.min.js' %}"></script>
 
   <!-- Bootstrap JS -->
-  <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'lib/js/bootstrap.min.js' %}"></script>
 
   <!-- Font Awesome JS -->
-  <script src="{% static 'home/js/fe4606e930.js' %}"></script>
+  <script src="{% static 'lib/js/fe4606e930.js' %}"></script>
 
   <!-- fancybox JS -->
-  <script src="{% static 'home/js/jquery.fancybox.min.js' %}"></script>{% else %}<!-- External Stylesheet Libraries -->
+  <script src="{% static 'lib/js/jquery.fancybox.min.js' %}"></script>{% else %}<!-- External Stylesheet Libraries -->
 
   <!-- Bootstrap CSS -->
   <link
@@ -155,7 +155,7 @@
   <!-- Internal Scripts -->
 
   <!-- Cross-App JS -->
-  <script src="{% static 'home/js/global.min.js' %}"></script>
+  <script src="{% static 'lib/js/global.min.js' %}"></script>
 
 {% block js %}{% endblock %}</head>
 <body>
