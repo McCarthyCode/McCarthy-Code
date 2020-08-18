@@ -9939,6 +9939,10 @@ p, ul {
   margin-bottom: 1rem;
 }
 
+em {
+  font-style: italic;
+}
+
 body a, body a:hover, body .fa-external-link-alt {
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
@@ -10033,6 +10037,12 @@ ul.grid {
   ul.grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+ul.grid .empty {
+  text-align: center;
+  color: #999999;
+  grid-column-start: 1;
+  grid-column-end: -1;
 }
 
 #index header, #index section, #portfolio header, #portfolio section {
@@ -10690,7 +10700,7 @@ form > :last-child {
 #sites .container:last-child .header > .btn {
   padding: 9px 10px 0px 11px;
 }
-#sites .container:last-child li {
+#sites .container:last-child li:not(.empty) {
   margin-bottom: 0.5rem;
   border: 1px solid #525252;
   border-radius: 3px;
@@ -10705,6 +10715,10 @@ form > :last-child {
 }
 #sites .container:last-child li:last-child {
   margin-bottom: 0;
+}
+#sites .container:last-child li.empty {
+  text-align: center;
+  color: #999999;
 }
 
 #edit_site form h5.h5 {

@@ -95,20 +95,20 @@ def about(request):
     return render(request, 'home/about.html')
 
 def dashboard(request):
-    if request.method != 'GET':
-        return HttpResponseBadRequest()
-
     if not request.user.is_superuser:
         return HttpResponseForbidden()
+
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
 
     return render(request, 'home/dashboard.html')
 
 def sites(request):
-    if request.method != 'GET':
-        return HttpResponseBadRequest()
-
     if not request.user.is_superuser:
         return HttpResponseForbidden()
+
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
 
     sites = []
     for site in Site.objects.all().order_by('-date_updated'):

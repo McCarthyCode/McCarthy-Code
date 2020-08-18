@@ -12,11 +12,12 @@
       padding: 9px 10px 0px 11px
 
   li
-    margin-bottom: .5rem
-    border: 1px solid $lighter-gray
-    border-radius: 3px
-    padding: 1rem
-    background-color: $dark-gray
+    &:not(.empty)
+      margin-bottom: .5rem
+      border: 1px solid $lighter-gray
+      border-radius: 3px
+      padding: 1rem
+      background-color: $dark-gray
 
     h5.h5
       margin: -5px 0 12px 0
@@ -26,3 +27,7 @@
 
     &:last-child
       margin-bottom: 0
+
+    &.empty
+      text-align: center
+      color: $lightest-gray

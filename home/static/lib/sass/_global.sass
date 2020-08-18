@@ -31,6 +31,9 @@ p, ul
   line-height: 1.5
   margin-bottom: 1rem
 
+em
+  font-style: italic
+
 body
   a, a:hover, .fa-external-link-alt
     @include transition(color)
@@ -116,6 +119,12 @@ ul
 
     @include media-breakpoint-up(lg)
       grid-template-columns: 1fr 1fr 1fr
+
+    .empty
+      text-align: center
+      color: $lightest-gray
+      grid-column-start: 1
+      grid-column-end: -1
 
 #index, #portfolio
   header, section

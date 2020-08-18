@@ -5,7 +5,7 @@ from django.http import (
     HttpResponseBadRequest,
     HttpResponseForbidden,
 )
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import QuoteRequestForm
 from .models import QuoteRequest
@@ -53,12 +53,26 @@ def index(request):
     return HttpResponseBadRequest()
 
 def manager(request):
-    if request.method != 'GET':
-        return HttpResponseBadRequest()
-
     if not request.user.is_superuser:
         return HttpResponseForbidden()
+
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
 
     return render(request, 'quotes/manager.html', {
         'quote_requests': QuoteRequest.objects.all().order_by('date_created')
     })
+
+def delete(request, quote_id):
+    if not request.user.is_superuser:
+        return HttpResponseForbidden()
+
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
+
+    quote_request = get_object_or_404(QuoteRequest, id=quote_id)
+    quote_request.delete()
+
+    messages.success(request, 'You have successfully deleted the quote request.')
+
+    return redirect('quotes:manager')

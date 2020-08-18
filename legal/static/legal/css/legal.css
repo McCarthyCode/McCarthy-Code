@@ -9939,6 +9939,10 @@ p, ul {
   margin-bottom: 1rem;
 }
 
+em {
+  font-style: italic;
+}
+
 body a, body a:hover, body .fa-external-link-alt {
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
@@ -10033,6 +10037,12 @@ ul.grid {
   ul.grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+ul.grid .empty {
+  text-align: center;
+  color: #999999;
+  grid-column-start: 1;
+  grid-column-end: -1;
 }
 
 #index header, #index section, #portfolio header, #portfolio section {

@@ -2,15 +2,8 @@
 
 ## High priorities
 
-- Create Quote Manager
-  - Create (done)
-  - Read (done)
-  - Update (unneeded)
-  - Delete
-    - Define URL
-    - Create view
+- Add reCAPTCHA v3 to login form
 - Create Contact Manager
-  - Move Contact model to new app
   - Create
     - Create form
     - Define URL
@@ -27,7 +20,6 @@
   - Delete
     - Define URL
     - Create view
-- Add reCAPTCHA v3 to login form
 
 ## Medium priorities
 
@@ -51,6 +43,7 @@
 
 ## Low priorities
 
+- Move Contact model to new app
 - Rebuild front end in Angular
 - Create ad graphics
 - Create code background graphic on homepage

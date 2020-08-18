@@ -22,6 +22,8 @@
           <a class="btn btn-danger" href="{% url 'home:delete-site' site.data.id %}">Delete</a>
         </div>
       </li>
+      {% empty %}
+      <li class="empty"><em>No sites to display.</em></li>
       {% endfor %}
     </ul>
   </div>
