@@ -3,13 +3,18 @@ import json
 from django.contrib import messages
 from django.http import (
     HttpResponseBadRequest,
+    HttpResponseForbidden,
 )
 from django.shortcuts import render, redirect
 
 from .forms import QuoteRequestForm
+from .models import QuoteRequest
 from home.recaptcha import get_client_ip, verify
 
 def index(request):
+    if not request.user.is_superuser:
+        return HttpResponseForbidden()
+
     if request.method == 'GET':
         return render(request, 'quotes/index.html', {
             'form': QuoteRequestForm(),
@@ -46,3 +51,14 @@ def index(request):
         })
 
     return HttpResponseBadRequest()
+
+def manager(request):
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
+
+    if not request.user.is_superuser:
+        return HttpResponseForbidden()
+
+    return render(request, 'quotes/manager.html', {
+        'quote_requests': QuoteRequest.objects.all().order_by('date_created')
+    })

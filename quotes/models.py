@@ -17,6 +17,12 @@ class Contact(TimestampedModel):
     phone = models.CharField(max_length=10)
     email = models.EmailField(max_length=100)
 
+    @property
+    def display_phone(self):
+        return '%s %s %s' % (
+            self.phone[:3], self.phone[3:6], self.phone[6:]
+        )
+
 class QuoteRequest(TimestampedModel):
     contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
     description = models.TextField(max_length=500)

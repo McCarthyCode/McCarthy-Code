@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<section class="page">
+  <div class="container">
+    <h3 class="h3">{% block title %}Quote Requests Manager{% endblock %}</h3>
+    <ul class="grid">
+      {% for quote_request in quote_requests %}
+      <li class="card">
+        <a class="close float-right" href="javascript:void(0)">&times;</a>
+        <h5 class="h5">{{ quote_request.contact.get_title_display }} {{ quote_request.contact.first_name }} {{ quote_request.contact.last_name }}</h5>
+        <h6 class="h6">{{ quote_request.date_created|date:"N j g:i a" }}</h6>
+        <p><a href="tel:+1{{ quote_request.contact.phone }}">{{ quote_request.contact.display_phone }}</a></p>
+        <p><a href="mailto:{{ quote_request.contact.email }}?subject=Thank+you+for+your+interest+in+McCarthy+Web+Design!&body=">{{ quote_request.contact.email }}</a></p>
+        {{ quote_request.description|linebreaks|truncatewords:50 }}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}

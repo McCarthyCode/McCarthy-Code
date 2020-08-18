@@ -4,6 +4,18 @@
 
 - Create Quote Manager
   - Create (done)
+  - Read (done)
+  - Update (unneeded)
+  - Delete
+    - Define URL
+    - Create view
+- Create Contact Manager
+  - Move Contact model to new app
+  - Create
+    - Create form
+    - Define URL
+    - Create view
+    - Create template, Sass, and JS
   - Read
     - Define URL
     - Create view

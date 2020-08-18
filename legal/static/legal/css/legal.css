@@ -9944,14 +9944,40 @@ body a, body a:hover, body .fa-external-link-alt {
   transition: color 0.15s ease-in-out;
   color: #97d5f7;
 }
+body .btn {
+  height: 2.25rem;
+  line-height: 1;
+}
 body .card {
   border: none;
   border-radius: 0.5rem;
   padding: 1rem;
   background-color: #222222;
+  color: white;
+  position: relative;
+}
+body .card p {
+  margin-bottom: 0.5rem;
 }
 body .card > :last-child {
   margin-bottom: 0;
+}
+body .card .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 1rem;
+  height: 1rem;
+  color: #999999;
+  text-shadow: unset;
+  -webkit-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+}
+body .card .close:hover, body .card .close:focus {
+  color: white !important;
+}
+body .card .close ~ h5 {
+  margin-right: 1rem;
 }
 
 .fa-external-link-alt {
@@ -9989,10 +10015,24 @@ ul.ul {
 ul.ul li {
   margin-left: 1.25rem;
 }
-
-body .btn {
-  height: 2.25rem;
-  line-height: 1;
+ul.ul li::marker {
+  color: #999999;
+}
+ul.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 576px) {
+  ul.grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 992px) {
+  ul.grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 #index header, #index section, #portfolio header, #portfolio section {
