@@ -2,7 +2,6 @@
 
 ## High priorities
 
-- Add reCAPTCHA v3 to login form
 - Create Contact Manager
   - Create
     - Create form

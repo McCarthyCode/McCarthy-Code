@@ -10076,6 +10076,10 @@ ul.grid .empty {
   max-width: 320px !important;
 }
 
+.grecaptcha-badge {
+  bottom: 105px !important;
+}
+
 @media (min-width: 576px) {
   .content img.float-left-sm {
     float: left;
@@ -10237,7 +10241,7 @@ form textarea + div {
   color: #999999;
   text-align: right;
 }
-form .g-recaptcha {
+form .g-recaptcha-container {
   display: flex;
   justify-content: center;
   margin-bottom: 0.5rem;

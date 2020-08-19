@@ -9,23 +9,15 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import QuoteRequestForm
 from .models import QuoteRequest
-from home.recaptcha import get_client_ip, verify
+from home.recaptcha import verify_v2
 
 def index(request):
-    if not request.user.is_superuser:
-        return HttpResponseForbidden()
-
     if request.method == 'GET':
         return render(request, 'quotes/index.html', {
             'form': QuoteRequestForm(),
         })
     elif request.method == 'POST':
-        form = QuoteRequestForm(request.POST)
-
-        g_recaptcha_response = request.POST.get('g-recaptcha-response')
-        ip = get_client_ip(request)
-
-        api_response = verify(g_recaptcha_response, ip)
+        api_response = verify_v2(request)
         api_response_content = json.loads(str(api_response.content, encoding='utf-8'))
 
         if not api_response_content['success'] or api_response.status_code != 200:
@@ -33,6 +25,8 @@ def index(request):
             messages.error(request, 'Please prove you are human by checking the checkbox labeled "I\'m not a robot" and possibly completing a security challenge.')
 
             return render(request, 'quotes/index.html', {'form': form})
+
+        form = QuoteRequestForm(request.POST)
 
         if form.is_valid():
             quote_request = form.save(commit=False)

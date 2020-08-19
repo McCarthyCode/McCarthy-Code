@@ -192,6 +192,9 @@ PHONE_REGEX = re.compile(
 
 # reCAPTCHA secret key
 RECAPTCHA_FILE = '%s/auth/recaptcha.txt' % BASE_DIR
+RECAPTCHA_V2_SECRET_KEY = RECAPTCHA_V3_SECRET_KEY = ''
 with open(RECAPTCHA_FILE, 'r', encoding='utf8') as f:
     content = f.readline()
-RECAPTCHA_SECRET_KEY = content[:-1]
+    RECAPTCHA_V2_SECRET_KEY = content[:-1]
+    content = f.readline()
+    RECAPTCHA_V3_SECRET_KEY = content[:-1]

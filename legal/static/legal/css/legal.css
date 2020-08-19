@@ -10076,6 +10076,10 @@ ul.grid .empty {
   max-width: 320px !important;
 }
 
+.grecaptcha-badge {
+  bottom: 105px !important;
+}
+
 @media (min-width: 576px) {
   .content img.float-left-sm {
     float: left;
