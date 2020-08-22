@@ -24,16 +24,16 @@
         min-height: calc(100vh - 56px - 5rem)
 
     &:nth-child(odd)
-      @include gradient(to bottom right, $cold-colors-dark)
+      @include gradient(150deg, $cold-colors-dark)
 
       .content
-        grid-template-columns: 308px auto
+        grid-template-columns: 300px auto
 
     &:nth-child(even)
-      @include gradient(to bottom left, $warm-colors-dark)
+      @include gradient(210deg, $warm-colors-dark)
 
       .content
-        grid-template-columns: auto 308px
+        grid-template-columns: auto 300px
 
     &:last-child
       min-height: calc(100vh - 56px - 91px)
@@ -49,7 +49,7 @@
       display: flex
       align-items: center
       justify-content: center
-      min-height: calc(544px + 2rem)
+      min-height: calc(520px + 2rem)
       margin: 0 auto
 
       .text
@@ -79,14 +79,8 @@
             flex-grow: 1
             justify-content: center
 
-            &:nth-child(3n + 1) a img
-              border: .25rem solid $orange
-
-            &:nth-child(3n + 2) a img
-              border: .25rem solid $yellow
-
-            &:nth-child(3n) a img
-              border: .25rem solid $cyan
+            img
+              border-radius: .5rem
 
             &:nth-child(n + 3)
               margin-bottom: 0
