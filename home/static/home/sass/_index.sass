@@ -14,7 +14,7 @@
   header
     position: relative
     height: 100vh
-    @include gradient(to bottom right, $mint-green, $chetwode-blue, $heliotrope)
+    @include gradient(to bottom right, $cold-colors-light)
 
     h1.h1
       color: $darker-gray
@@ -73,10 +73,7 @@
       color: $blue
 
   & > :nth-child(odd)
-    background-attachment: fixed
-    background-position: center
-    background-repeat: no-repeat
-    background-size: cover
+    @include fixed-background
 
     .chevron
       color: $maroon
@@ -84,7 +81,7 @@
   #contact
     min-height: calc(248.8px + 32px)
     height: calc(100vh - 91px - 56px)
-    @include gradient(to bottom left, $copper-rose, $tacha, $malibu)
+    @include gradient(to bottom left, $warm-colors-light)
 
     & > div
       min-width: 320px - (2 * 16px)

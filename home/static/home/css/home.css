@@ -10551,7 +10551,7 @@ form > :last-child {
   }
 }
 #portfolio {
-  background-color: #525252;
+  background: radial-gradient(#7f7f7f, #525252);
 }
 #portfolio header, #portfolio section {
   display: flex;
@@ -10559,7 +10559,10 @@ form > :last-child {
   justify-content: center;
   min-height: calc(100vh - 56px);
   padding: 1rem 0 4rem 0;
-  background-color: #333333;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #portfolio header:first-child:last-child, #portfolio section:first-child:last-child {
   min-height: calc(100vh - 56px - 91px);
@@ -10575,8 +10578,20 @@ form > :last-child {
 #portfolio header:first-child .container, #portfolio section:first-child .container {
   min-height: calc(100vh - 56px - 5rem);
 }
+#portfolio header:nth-child(odd), #portfolio section:nth-child(odd) {
+  background-image: -webkit-linear-gradient(to bottom right, #004a0f, #1c397e, #670098);
+  background-image: -moz-linear-gradient(to bottom right, #004a0f, #1c397e, #670098);
+  background-image: -o-linear-gradient(to bottom right, #004a0f, #1c397e, #670098);
+  background-image: linear-gradient(to bottom right, #004a0f, #1c397e, #670098);
+}
 #portfolio header:nth-child(odd) .content, #portfolio section:nth-child(odd) .content {
   grid-template-columns: 308px auto;
+}
+#portfolio header:nth-child(even), #portfolio section:nth-child(even) {
+  background-image: -webkit-linear-gradient(to bottom left, #00333f, #5e4b12, #64243b);
+  background-image: -moz-linear-gradient(to bottom left, #00333f, #5e4b12, #64243b);
+  background-image: -o-linear-gradient(to bottom left, #00333f, #5e4b12, #64243b);
+  background-image: linear-gradient(to bottom left, #00333f, #5e4b12, #64243b);
 }
 #portfolio header:nth-child(even) .content, #portfolio section:nth-child(even) .content {
   grid-template-columns: auto 308px;

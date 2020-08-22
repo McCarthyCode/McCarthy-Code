@@ -1,5 +1,5 @@
 #portfolio
-  background-color: $lighter-gray
+  background: radial-gradient($even-lighter-gray, $lighter-gray)
 
   header, section
     display: flex
@@ -7,7 +7,7 @@
     justify-content: center
     min-height: calc(100vh - 56px)
     padding: 1rem 0 4rem 0
-    background-color: $mid-gray
+    @include fixed-background
 
     &:first-child:last-child
       min-height: calc(100vh - 56px - 91px)
@@ -23,11 +23,17 @@
       .container
         min-height: calc(100vh - 56px - 5rem)
 
-    &:nth-child(odd) .content
-      grid-template-columns: 308px auto
+    &:nth-child(odd)
+      @include gradient(to bottom right, $cold-colors-dark)
 
-    &:nth-child(even) .content
-      grid-template-columns: auto 308px
+      .content
+        grid-template-columns: 308px auto
+
+    &:nth-child(even)
+      @include gradient(to bottom left, $warm-colors-dark)
+
+      .content
+        grid-template-columns: auto 308px
 
     &:last-child
       min-height: calc(100vh - 56px - 91px)
