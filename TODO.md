@@ -2,6 +2,9 @@
 
 ## High priorities
 
+- Staging to Development
+  - pip upgrade
+  - scp recaptcha.txt
 - Create Contact Manager
   - Create
     - Create form
