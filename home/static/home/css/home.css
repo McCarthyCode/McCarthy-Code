@@ -10222,17 +10222,22 @@ section.form form {
 form input[type=text], form input[type=number], form input[type=password], form input[type=submit], form input[type=file], form textarea, form select, form label {
   margin-bottom: 0.5rem;
 }
-form input[type=text], form input[type=number], form input[type=password], form textarea.form-control, form select, form input[type=text]:focus, form input[type=number]:focus, form input[type=password]:focus, form textarea.form-control:focus, form select:focus, form label, form label:focus {
+form input[type=text].form-control, form input[type=text].form-control:focus, form input[type=number].form-control, form input[type=number].form-control:focus, form input[type=password].form-control, form input[type=password].form-control:focus, form textarea.form-control, form textarea.form-control:focus, form select.form-control, form select.form-control:focus, form label.form-control, form label.form-control:focus {
   border-radius: 3px;
-  color: white;
   border-color: #525252;
   background-color: #222222;
 }
-form label.form-control, form label.form-control:focus {
-  border-radius: 3px;
+form input[type=text].form-control, form input[type=text].form-control:focus, form input[type=number].form-control, form input[type=number].form-control:focus, form input[type=password].form-control, form input[type=password].form-control:focus, form textarea.form-control, form textarea.form-control:focus, form select.form-control, form select.form-control:focus {
+  color: white;
+}
+form label, form label:focus {
+  color: white;
+}
+form label.form-control, form label:focus.form-control {
+  cursor: pointer;
+}
+form label.form-control, form label.form-control:focus, form label:focus.form-control, form label:focus.form-control:focus {
   color: rgba(255, 255, 255, 0.5);
-  border-color: #525252;
-  background-color: #222222;
 }
 form textarea {
   margin-bottom: 0;
@@ -10251,9 +10256,6 @@ form .form-control::placeholder {
 }
 form .form-control::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
-}
-form label.form-control {
-  cursor: pointer;
 }
 form select option {
   padding: 0;

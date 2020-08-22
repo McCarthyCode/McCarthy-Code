@@ -1,22 +1,28 @@
 section.form form
-    margin: 0 auto
+  margin: 0 auto
 
 form
   input[type="text"], input[type="number"], input[type="password"], input[type="submit"], input[type="file"], textarea, select, label
     margin-bottom: .5rem
 
-  input[type="text"], input[type="number"], input[type="password"], textarea.form-control, select, input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:focus, textarea.form-control:focus, select:focus, label, label:focus
-    border-radius: 3px
-    color: $white
-    border-color: $lighter-gray
-    background-color: $dark-gray
-
-  label.form-control
-    &, &:focus
+  input[type="text"], input[type="number"], input[type="password"], textarea, select, label
+    &.form-control, &.form-control:focus
       border-radius: 3px
-      color: $white-50
       border-color: $lighter-gray
       background-color: $dark-gray
+
+  input[type="text"], input[type="number"], input[type="password"], textarea, select
+    &.form-control, &.form-control:focus
+      color: $white
+
+  label, label:focus
+    color: $white
+
+    &.form-control
+      cursor: pointer
+
+      &, &:focus
+        color: $white-50
 
   textarea
     margin-bottom: 0
@@ -35,9 +41,6 @@ form
 
   .form-control::-ms-input-placeholder
     color: $white-50
-
-  label.form-control
-    cursor: pointer
 
   select
     option
