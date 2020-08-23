@@ -1,0 +1,23 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<section class="page">
+  {% if messages %}
+  <div class="container">
+    {% include 'home/messages.html' %}
+  </div>
+  {% endif %}
+  <div class="container max-w-320px">
+    <h3 class="h3">{% block title %}Dashboard{% endblock %}</h3>
+    <div class="card">
+      <h5 class="h5">Manage:</h5>
+      <ul class="ul">
+        <li><a href="{% url 'home:sites' %}{% comment %}
+          Change to: {% url 'sites:manager' %}{% endcomment %}">Sites</a></li>
+        <li><a href="{% url 'quotes:manager' %}">Quote Requests</a></li>
+        {# <li><a href="{% url 'quotes:contacts' %}">Contacts</a></li> #}
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

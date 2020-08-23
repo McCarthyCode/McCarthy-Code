@@ -14,16 +14,16 @@
 {% endblock %}
 
 {% block content %}
-<div class="legal">
+<div class="legal page">
   <div class="container">
     <ul class="tabs tabs-2">
       <li class="text-center" id="tabs_tos" data-href="#tos">Terms of Service</li>
       <li class="text-center" id="tabs_privacy" data-href="#privacy">Privacy Policy</li>
     </ul>
-    <section id="tos">
+    <section id="tos" class="card">
       {% include 'legal/tos.html' %}
     </section>
-    <section id="privacy">
+    <section id="privacy" class="card">
       {% include 'legal/privacy.html' %}
     </section>
   </div>

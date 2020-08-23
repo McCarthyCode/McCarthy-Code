@@ -1,35 +1,33 @@
-#sites
-  min-height: calc(100vh - 56px - 91px)
-  margin-top: 56px
-  padding: 1rem 0
-  background-color: $light-gray
+#sites .container:last-child
+  .header
+    display: flex
+    justify-content: space-between
+    align-items: center
 
-  .container:last-child
-    max-width: 400px
+    & > *
+      display: inline-block
+      margin-bottom: 1rem
 
-    .header
-      display: flex
-      justify-content: space-between
-      align-items: center
+    & > .btn
+      padding: 9px 10px 0px 11px
 
-      & > *
-        display: inline-block
-        margin-bottom: 1rem
-
-      & > .btn
-        padding: 11px 11px 0px 11px
-
-    li
-      background-color: $mid-gray
-      border-radius: .25rem
-      padding: 1rem
+  li
+    &:not(.empty)
       margin-bottom: .5rem
+      border: 1px solid $lighter-gray
+      border-radius: 3px
+      padding: 1rem
+      background-color: $dark-gray
 
-      h5.h5
-        margin: -5px 0 12px 0
+    h5.h5
+      margin: -5px 0 12px 0
 
-      .btn
-        padding: 8px 11px 2px 10px
+    .btn
+      padding: 8px 11px 2px 10px
 
-    li:last-child
+    &:last-child
       margin-bottom: 0
+
+    &.empty
+      text-align: center
+      color: $lightest-gray

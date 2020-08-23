@@ -1,0 +1,46 @@
+{% extends 'home/base.html' %}
+
+{% block js %}  <!-- reCAPTCHA v2 JS -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}
+
+{% block content %}
+<section class="page">
+  {% if messages %}
+  <div class="container">
+    {% include 'home/messages.html' %}
+  </div>
+  {% endif %}
+  <div class="container max-w-480px">
+    <form method="POST">
+      <h3 class="h3">{% block title %}Request a Quote{% endblock %}</h3>
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      {% for field in form.visible_fields %}
+      {% if field.name == 'title' %}
+      {{ form.title.errors }}
+      {{ form.first_name.errors }}
+      {{ form.last_name.errors }}
+      {{ form.surname_first.errors }}
+      <div class="name">
+        {{ form.title }}
+        {{ form.first_name }}
+        {{ form.last_name }}
+        {{ form.surname_first.widget }}
+        {% include 'fields/custom_checkbox.html' with field=form.surname_first %}
+      </div>
+      {% elif field.name != 'first_name' and field.name != 'last_name' and field.name != 'surname_first' %}
+      {{ field.errors }}
+      {{ field }}
+      {% endif %}
+      {% endfor %}
+      <div class="g-recaptcha-container">
+        <div class="g-recaptcha"
+          data-sitekey="{{ reCAPTCHA_v2_site_key }}"
+          data-theme="dark"></div>
+      </div>
+      <input class="btn btn-primary form-control" type="submit" value="Submit Request">
+    </form>
+  </div>
+</section>
+{% endblock %}

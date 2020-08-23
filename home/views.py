@@ -11,6 +11,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 from .forms import SiteForm
 from .models import Site, Screenshot
+from .recaptcha import verify_v3
 
 def view_400(request, exception=None):
     return render(request, 'errors/400.html', status=400)
@@ -38,11 +39,23 @@ def legal(request):
 
 def login_view(request):
     if request.method == 'GET':
-        return render(request, 'home/login.html')
+        if request.user.is_superuser:
+            messages.info(request, 'You are already logged in. You have been redirected to the dashboard.')
 
+            return redirect('home:dashboard')
+
+        return render(request, 'home/login.html')
     elif request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        api_response = verify_v3(request)
+        api_response_content = json.loads(str(api_response.content, encoding='utf-8'))
+
+        if not api_response_content['success'] or api_response.status_code != 200:
+            messages.error(request, 'There was an error with reCAPTCHA v3.')
+
+            return redirect('quotes:index')
+
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
         user = authenticate(username=username, password=password)
 
@@ -53,7 +66,7 @@ def login_view(request):
                 (user.first_name if user.first_name else user.username)
             )
 
-            return redirect('home:sites')
+            return redirect('home:dashboard')
         else:
             messages.error(request, 'There was an error logging in with that username/password combination.')
 
@@ -90,7 +103,19 @@ def about(request):
 
     return render(request, 'home/about.html')
 
+def dashboard(request):
+    if not request.user.is_superuser:
+        return HttpResponseForbidden()
+
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
+
+    return render(request, 'home/dashboard.html')
+
 def sites(request):
+    if not request.user.is_superuser:
+        return HttpResponseForbidden()
+
     if request.method != 'GET':
         return HttpResponseBadRequest()
 

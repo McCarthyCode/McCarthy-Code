@@ -1,11 +1,9 @@
 {% extends 'home/base.html' %}{% load static %}
 
-{% block title %}About{% endblock %}
-
 {% block content %}
-<section id="about">
+<section id="about" class="page">
   <div class="container">
-    <h3 class="h3">About Matt McCarthy and McCarthy Web Design</h3>
+    <h3 class="h3">{% block title %}About{% endblock %} Matt McCarthy and McCarthy Web Design</h3>
     <div class="img-container float-md-left d-inline-block">
       <a data-fancybox="gallery" href="{% static 'home/img/Canadas_Wonderland.png' %}">
         <img src="{% static 'home/img/Canadas_Wonderland_thumbnail.png' %}">

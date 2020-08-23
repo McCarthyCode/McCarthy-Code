@@ -9939,10 +9939,49 @@ p, ul {
   margin-bottom: 1rem;
 }
 
+em {
+  font-style: italic;
+}
+
 body a, body a:hover, body .fa-external-link-alt {
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
   color: #97d5f7;
+}
+body .btn {
+  height: 2.25rem;
+  line-height: 1;
+}
+body .card {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #222222;
+  color: white;
+  position: relative;
+}
+body .card p {
+  margin-bottom: 0.5rem;
+}
+body .card > :last-child {
+  margin-bottom: 0;
+}
+body .card .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 1rem;
+  height: 1rem;
+  color: #999999;
+  text-shadow: unset;
+  -webkit-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+}
+body .card .close:hover, body .card .close:focus {
+  color: white !important;
+}
+body .card .close ~ h5 {
+  margin-right: 1rem;
 }
 
 .fa-external-link-alt {
@@ -9963,6 +10002,9 @@ small {
 .container {
   padding: 0;
 }
+.container > :not(.alert):last-child {
+  margin-bottom: 0;
+}
 
 .content img.float-left-sm, .content img.float-right-sm {
   display: block;
@@ -9977,15 +10019,30 @@ ul.ul {
 ul.ul li {
   margin-left: 1.25rem;
 }
-
-body .btn {
-  height: 2.25rem;
-  line-height: 1;
+ul.ul li::marker {
+  color: #999999;
 }
-
-input[type=submit] {
-  padding-top: 12px;
-  padding-bottom: 6px;
+ul.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 576px) {
+  ul.grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 992px) {
+  ul.grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+ul.grid .empty {
+  text-align: center;
+  color: #999999;
+  grid-column-start: 1;
+  grid-column-end: -1;
 }
 
 #index header, #index section, #portfolio header, #portfolio section {
@@ -10004,6 +10061,25 @@ input[type=submit] {
   vertical-align: -4px;
 }
 
+.page {
+  min-height: calc(100vh - 56px - 91px);
+  margin-top: 56px;
+  padding: 2rem 0;
+  background-color: #333333;
+}
+
+.max-w-480px {
+  max-width: 480px !important;
+}
+
+.max-w-320px {
+  max-width: 320px !important;
+}
+
+.grecaptcha-badge {
+  bottom: 105px !important;
+}
+
 @media (min-width: 576px) {
   .content img.float-left-sm {
     float: left;
@@ -10015,6 +10091,10 @@ input[type=submit] {
   }
   .content img.float-left-sm, .content img.float-right-sm {
     margin: 0;
+  }
+
+  body .card {
+    padding: 2rem;
   }
 }
 nav {
@@ -10109,22 +10189,25 @@ nav .nav-item a.nav-link:hover {
 .tabs {
   display: grid;
   gap: 0.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: black;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  -o-user-select: none;
   user-select: none;
 }
 .tabs-2 {
-  grid-template-columns: 49.8% 49.8%;
+  grid-template-columns: 1fr 1fr;
   grid-template-columns: calc((100% - 0.25rem)/2) calc((100% - 0.25rem)/2);
+  grid-template-columns: 49.8% 49.8%;
 }
 .tabs-3 {
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-columns: calc((100% - 0.5rem)/3) calc((100% - 0.5rem)/3) calc((100% - 0.5rem)/3);
+  grid-template-columns: 33% 33% 33%;
 }
 .tabs li {
   cursor: pointer;
@@ -10141,11 +10224,7 @@ nav .nav-item a.nav-link:hover {
 }
 
 .legal {
-  padding: 1rem 0;
-  margin-top: 56px;
-  background-color: #333333;
   color: white;
-  min-height: calc(100vh - 56px - 91px);
 }
 .legal section {
   display: none;

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import re
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -66,6 +67,7 @@ elif STAGE == 'production':
 INSTALLED_APPS = [
     'home',
     'legal',
+    'quotes',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -99,6 +101,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'home.context_processors.stage',
                 'home.context_processors.year',
+                'home.context_processors.recaptcha_site_key',
             ],
         },
     },
@@ -180,3 +183,18 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
+
+# Project variables
+PHONE_REGEX = re.compile(
+    r'^(\+?1)?[\s\.-]?\(?(\d{3})\)?[\s\.-]?(\d{3})[\s\.-]?(\d{4})$'
+)
+
+
+# reCAPTCHA secret key
+RECAPTCHA_FILE = '%s/auth/recaptcha.txt' % BASE_DIR
+RECAPTCHA_V2_SECRET_KEY = RECAPTCHA_V3_SECRET_KEY = ''
+with open(RECAPTCHA_FILE, 'r', encoding='utf8') as f:
+    content = f.readline()
+    RECAPTCHA_V2_SECRET_KEY = content[:-1]
+    content = f.readline()
+    RECAPTCHA_V3_SECRET_KEY = content[:-1]

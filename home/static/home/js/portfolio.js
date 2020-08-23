@@ -13,12 +13,25 @@ $(document).ready(() => {
 
   // scroll buttons
   $('#portfolio > header:not(:last-child), #portfolio > section:not(:last-child)').each(function () {
-    const $next = $(this).next();
+    const $this = $(this);
+    const $next = $this.next();
 
-    $(this).find('.chevron').click(function () {
+    // decimal heights throw off positioning. GET. RIIIIID.
+    $next.height(Math.ceil($next.height()));
+
+    $this.find('.chevron').click(function () {
       $('html, body').animate({
         scrollTop: $next.offset().top - navHeight,
       }, 1000);
     });
   });
+
+  // remove heights added by scroll buttons
+  function removeHeights() {
+    $('#portfolio > header, #portfolio > section').each(function () {
+      $(this).css({'height': ''});
+    });
+  }
+
+  $(window).on('resize orientationchange', removeHeights);
 });
