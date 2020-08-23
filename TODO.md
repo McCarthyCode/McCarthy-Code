@@ -22,7 +22,6 @@
   - Delete
     - Define URL
     - Create view
-- Fix 404 on Edit Site submission
 
 ## Medium priorities
 
