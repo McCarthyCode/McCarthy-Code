@@ -25,6 +25,7 @@
 
 ## Medium priorities
 
+- Fix duplicate screenshot deletion bug
 - Adjust footer dependencies for smaller viewports
 - Order Sites by positional value
   - Create front end for ordering system
