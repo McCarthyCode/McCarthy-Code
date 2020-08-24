@@ -2,9 +2,26 @@
 
 ## High priorities
 
-- Staging to Development
-  - pip upgrade
-  - scp recaptcha.txt
+- Fix duplicate screenshot deletion bug
+
+## Medium priorities
+
+- Order Sites by positional value
+  - Create front end for ordering system
+    - Copy JS from reorder_screenshots.js and edit
+    - Copy HTML and Sass from Edit Site page and edit
+  - Order by/update positional values
+    - Add position field to model
+    - Order by positional values in sites view
+    - Update positional values
+      - URL
+      - View
+- Make home code segments their own app
+  - Dashboard
+    - Quotes (done)
+    - Sites
+  - Errors
+- Scale/wrap thumbnail in Edit Site .screenshot-list
 - Create Contact Manager
   - Create
     - Create form
@@ -22,27 +39,6 @@
   - Delete
     - Define URL
     - Create view
-
-## Medium priorities
-
-- Fix duplicate screenshot deletion bug
-- Adjust footer dependencies for smaller viewports
-- Order Sites by positional value
-  - Create front end for ordering system
-    - Copy JS from reorder_screenshots.js and edit
-    - Copy HTML and Sass from Edit Site page and edit
-  - Order by/update positional values
-    - Add position field to model
-    - Order by positional values in sites view
-    - Update positional values
-      - URL
-      - View
-- Make home code segments their own app
-  - Dashboard
-    - Quotes (done)
-    - Sites
-  - Errors
-- Scale/wrap thumbnail in Edit Site .screenshot-list
 
 ## Low priorities
 
