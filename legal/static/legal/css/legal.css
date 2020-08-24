@@ -10080,6 +10080,10 @@ ul.grid .empty {
   bottom: 105px !important;
 }
 
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
 @media (min-width: 576px) {
   .content img.float-left-sm {
     float: left;

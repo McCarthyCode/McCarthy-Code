@@ -10080,6 +10080,10 @@ ul.grid .empty {
   bottom: 105px !important;
 }
 
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
 @media (min-width: 576px) {
   .content img.float-left-sm {
     float: left;
@@ -10531,26 +10535,35 @@ form > :last-child {
   background-color: #222222;
   color: white;
 }
-#about .img-container {
+#about .body p {
+  text-align: justify;
+}
+#about .body p:last-child {
+  margin-bottom: 0;
+}
+#about .body .img-container {
   width: 100%;
   margin: 0 auto 1rem auto;
   text-align: center;
   display: inline-block;
 }
-#about .img-container img {
+#about .body .img-container:first-child {
+  margin-top: 0;
+}
+#about .body .img-container img {
   width: 100%;
   max-width: 266px;
   border: 0.5rem solid #617275;
   border-radius: 50%;
 }
-#about p {
-  text-align: justify;
-}
 
 @media (min-width: 768px) {
-  #about .img-container {
+  #about .body .img-container {
     width: 266px;
     margin: 31px 2rem;
+  }
+  #about .body .img-container:first-child {
+    margin-top: 31px;
   }
 }
 #portfolio {
