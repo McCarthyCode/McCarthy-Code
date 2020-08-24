@@ -10525,22 +10525,25 @@ form > :last-child {
   margin-bottom: 0;
 }
 
+#about .body {
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: #222222;
+  color: white;
+}
 #about .img-container {
   width: 100%;
-  height: 266px;
   margin: 0 auto 1rem auto;
   text-align: center;
-}
-#about .img-container a {
   display: inline-block;
-  height: 266px;
 }
-#about .img-container a img {
+#about .img-container img {
+  width: 100%;
+  max-width: 266px;
   border: 0.5rem solid #617275;
   border-radius: 50%;
 }
 #about p {
-  color: white;
   text-align: justify;
 }
 
