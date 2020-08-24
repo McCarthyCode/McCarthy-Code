@@ -5,22 +5,31 @@
     background-color: $dark-gray
     color: $white
 
-  .img-container
-    width: 100%
-    margin: 0 auto 1rem auto
-    text-align: center
-    display: inline-block
+    p
+      text-align: justify
 
-    img
+      &:last-child
+        margin-bottom: 0
+
+    .img-container
       width: 100%
-      max-width: 266px
-      border: .5rem solid #617275
-      border-radius: 50%
+      margin: 0 auto 1rem auto
+      text-align: center
+      display: inline-block
 
-  p
-    text-align: justify
+      &:first-child
+        margin-top: 0
+
+      img
+        width: 100%
+        max-width: 266px
+        border: .5rem solid #617275
+        border-radius: 50%
 
 @include media-breakpoint-up(md)
-  #about .img-container
+  #about .body .img-container
     width: 266px
     margin: 31px 2rem
+
+    &:first-child
+      margin-top: 31px
