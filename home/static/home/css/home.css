@@ -10080,10 +10080,6 @@ ul.grid .empty {
   bottom: 105px !important;
 }
 
-.cursor-pointer {
-  cursor: pointer !important;
-}
-
 @media (min-width: 576px) {
   .content img.float-left-sm {
     float: left;
@@ -10531,7 +10527,7 @@ form > :last-child {
 
 #about .body {
   border-radius: 0.5rem;
-  padding: 2rem;
+  padding: 1rem;
   background-color: #222222;
   color: white;
 }
@@ -10558,6 +10554,9 @@ form > :last-child {
 }
 
 @media (min-width: 768px) {
+  #about .body {
+    padding: 2rem;
+  }
   #about .body .img-container {
     width: 266px;
     margin: 31px 2rem;
