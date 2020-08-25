@@ -1,7 +1,7 @@
 #about
   .body
     border-radius: .5rem
-    padding: 2rem
+    padding: 1rem
     background-color: $dark-gray
     color: $white
 
@@ -27,9 +27,12 @@
         border-radius: 50%
 
 @include media-breakpoint-up(md)
-  #about .body .img-container
-    width: 266px
-    margin: 31px 2rem
+  #about .body
+    padding: 2rem
 
-    &:first-child
-      margin-top: 31px
+    .img-container
+      width: 266px
+      margin: 31px 2rem
+
+      &:first-child
+        margin-top: 31px
