@@ -2,35 +2,85 @@ nav
   font-family: $font-display
   background-color: $darker-gray
 
+  .container
+    padding: 0 !important
+    margin: 0 auto
+
+  .navbar-brand
+    &:hover
+      color: $blue !important
+
+    &::after
+      display: inline
+      line-height: 28px
+      vertical-align: -1px
+      content: 'MWD'
+
+  .profiles
+    display: flex
+    -ms-flex-direction: row
+    flex-direction: row
+    font-size: 1.5em
+
+    li
+      display: inline
+      padding: 0 .5rem
+
+      a
+        color: $emerald !important
+        @include transition(color)
+
+        &:hover
+          color: $heliotrope !important
+
   button
     width: 44px
     border: none !important
     color: $white !important
     background-color: $darker-gray
     cursor: pointer
+    @include transition(color)
 
     &:hover
-      color: $white-75 !important
+      color: $blue !important
 
     i
       font-size: 1.8em
       vertical-align: -5px
 
-  .nav-item
-    text-align: center
-
+  #navbarCollapse
     a.nav-link
+      text-align: center
       background-color: $mid-gray
       border-radius: 0.25rem
-      margin-top: 0.5rem
+      margin-top: .5rem
+      @include transition(color)
       color: $white !important
 
       &:hover
-        color: $white-75 !important
+        color: $blue !important
 
-@include media-breakpoint-up(md)
-  nav .nav-item a.nav-link
-    background-color: $darker-gray
+      .nav-item
+        display: inline
+        line-height: 22px
+        vertical-align: 1px
+
+@media (min-width: 458px)
+  nav .navbar-brand::after
+    content: 'McCarthy Web Design'
+
+@include media-breakpoint-up(lg)
+  nav #navbarCollapse a.nav-link
     margin-top: 0
-    padding: 0 0.5rem
-    vertical-align: middle
+    padding: 0
+    background-color: $darker-gray
+
+    .nav-item
+      display: inline
+      line-height: 28px
+      padding: 0 0.5rem
+      vertical-align: 3px
+
+@include media-breakpoint-up(lg)
+  nav .container
+    margin: 0 auto
