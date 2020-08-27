@@ -4,14 +4,14 @@ $(document).ready(() => {
     .after(' <i class="fas fa-external-link-alt" title="External Link"></i>');
 
   // navbar menu
-  const breakpointMd = 768;
+  const breakpointLg = 992;
 
   $('#navbarMenuButton').click(() => {
     $('#navbarCollapse').slideToggle();
   });
 
   $(window).on('resize orientationchange', () => {
-    if ($(this).width() >= breakpointMd) {
+    if ($(this).width() >= breakpointLg) {
       $('#navbarCollapse').css('display', 'inline');
     } else {
       $('#navbarCollapse').hide();

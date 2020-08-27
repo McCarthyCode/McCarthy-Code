@@ -10000,7 +10000,7 @@ small {
 }
 
 .container {
-  padding: 0;
+  padding: 0 1rem !important;
 }
 .container > :not(.alert):last-child {
   margin-bottom: 0;
@@ -10101,39 +10101,92 @@ nav {
   font-family: "Baloo", Helvetica, Arial, sans-serif;
   background-color: #1e1e1e;
 }
+nav .container {
+  padding: 0 !important;
+  margin: 0 auto;
+}
+nav .navbar-brand:hover {
+  color: #569cd6 !important;
+}
+nav .navbar-brand::after {
+  display: inline;
+  line-height: 28px;
+  vertical-align: -1px;
+  content: "MWD";
+}
+nav .profiles {
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 1.5em;
+}
+nav .profiles li {
+  display: inline;
+  padding: 0 0.5rem;
+}
+nav .profiles li a {
+  color: #34c865 !important;
+  -webkit-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+}
+nav .profiles li a:hover {
+  color: #cc65fc !important;
+}
 nav button {
   width: 44px;
   border: none !important;
   color: white !important;
   background-color: #1e1e1e;
   cursor: pointer;
+  -webkit-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
 }
 nav button:hover {
-  color: rgba(255, 255, 255, 0.75) !important;
+  color: #569cd6 !important;
 }
 nav button i {
   font-size: 1.8em;
   vertical-align: -5px;
 }
-nav .nav-item {
+nav #navbarCollapse a.nav-link {
   text-align: center;
-}
-nav .nav-item a.nav-link {
   background-color: #333333;
   border-radius: 0.25rem;
   margin-top: 0.5rem;
+  -webkit-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
   color: white !important;
 }
-nav .nav-item a.nav-link:hover {
-  color: rgba(255, 255, 255, 0.75) !important;
+nav #navbarCollapse a.nav-link:hover {
+  color: #569cd6 !important;
+}
+nav #navbarCollapse a.nav-link .nav-item {
+  display: inline;
+  line-height: 22px;
+  vertical-align: 1px;
 }
 
-@media (min-width: 768px) {
-  nav .nav-item a.nav-link {
-    background-color: #1e1e1e;
+@media (min-width: 458px) {
+  nav .navbar-brand::after {
+    content: "McCarthy Web Design";
+  }
+}
+@media (min-width: 992px) {
+  nav #navbarCollapse a.nav-link {
     margin-top: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+  }
+  nav #navbarCollapse a.nav-link .nav-item {
+    display: inline;
+    line-height: 28px;
     padding: 0 0.5rem;
-    vertical-align: middle;
+    vertical-align: 3px;
+  }
+}
+@media (min-width: 992px) {
+  nav .container {
+    margin: 0 auto;
   }
 }
 #footer {
