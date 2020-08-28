@@ -4,9 +4,20 @@ nav
 
   .container
     padding: 0 !important
-    margin: 0 auto
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    flex: 1 0 auto
+    gap: .5rem
+
+    @media (min-width: 376px)
+      gap: 1rem
 
   .navbar-brand
+    margin-right: 0
+    display: none
+    padding-right: .5rem
+
     &:hover
       color: $blue !important
 
@@ -14,17 +25,46 @@ nav
       display: inline
       line-height: 28px
       vertical-align: -1px
-      content: 'MWD'
+
+    @media (min-width: 360px)
+      display: inline
+
+      &::after
+        content: 'MWD'
+
+    @media (min-width: 519px)
+      &::after
+        content: 'McCarthy Web Design'
 
   .profiles
     display: flex
     -ms-flex-direction: row
     flex-direction: row
+    justify-content: space-evenly
+    padding: 2px 0
     font-size: 1.5em
+    flex: 0 0 auto
+
+    @media (min-width: $md)
+      color: red !important
+      justify-content: flex-start
+      flex-grow: 1
+
+    @media (min-width: $lg)
+      justify-content: center
+
+    @media (min-width: $xl)
+      justify-content: flex-start
 
     li
       display: inline
       padding: 0 .5rem
+
+      &:first-child
+        padding-left: 0
+
+      &:last-child
+        padding-right: 0
 
       a
         color: $emerald !important
@@ -33,8 +73,9 @@ nav
         &:hover
           color: $heliotrope !important
 
-  button
+  #navbarMenuButton
     width: 44px
+    margin-right: -8px
     border: none !important
     color: $white !important
     background-color: $darker-gray
@@ -49,6 +90,8 @@ nav
       vertical-align: -5px
 
   #navbarCollapse
+    flex-grow: 0
+
     a.nav-link
       text-align: center
       background-color: $mid-gray
@@ -65,10 +108,6 @@ nav
         line-height: 22px
         vertical-align: 1px
 
-@media (min-width: 458px)
-  nav .navbar-brand::after
-    content: 'McCarthy Web Design'
-
 @include media-breakpoint-up(lg)
   nav #navbarCollapse a.nav-link
     margin-top: 0
@@ -80,7 +119,3 @@ nav
       line-height: 28px
       padding: 0 0.5rem
       vertical-align: 3px
-
-@include media-breakpoint-up(lg)
-  nav .container
-    margin: 0 auto

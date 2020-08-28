@@ -10103,7 +10103,21 @@ nav {
 }
 nav .container {
   padding: 0 !important;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1 0 auto;
+  gap: 0.5rem;
+}
+@media (min-width: 376px) {
+  nav .container {
+    gap: 1rem;
+  }
+}
+nav .navbar-brand {
+  margin-right: 0;
+  display: none;
+  padding-right: 0.5rem;
 }
 nav .navbar-brand:hover {
   color: #569cd6 !important;
@@ -10112,17 +10126,55 @@ nav .navbar-brand::after {
   display: inline;
   line-height: 28px;
   vertical-align: -1px;
-  content: "MWD";
+}
+@media (min-width: 360px) {
+  nav .navbar-brand {
+    display: inline;
+  }
+  nav .navbar-brand::after {
+    content: "MWD";
+  }
+}
+@media (min-width: 519px) {
+  nav .navbar-brand::after {
+    content: "McCarthy Web Design";
+  }
 }
 nav .profiles {
   display: flex;
   -ms-flex-direction: row;
   flex-direction: row;
+  justify-content: space-evenly;
+  padding: 2px 0;
   font-size: 1.5em;
+  flex: 0 0 auto;
+}
+@media (min-width: 768px) {
+  nav .profiles {
+    color: red !important;
+    justify-content: flex-start;
+    flex-grow: 1;
+  }
+}
+@media (min-width: 992px) {
+  nav .profiles {
+    justify-content: center;
+  }
+}
+@media (min-width: 1200px) {
+  nav .profiles {
+    justify-content: flex-start;
+  }
 }
 nav .profiles li {
   display: inline;
   padding: 0 0.5rem;
+}
+nav .profiles li:first-child {
+  padding-left: 0;
+}
+nav .profiles li:last-child {
+  padding-right: 0;
 }
 nav .profiles li a {
   color: #34c865 !important;
@@ -10132,8 +10184,9 @@ nav .profiles li a {
 nav .profiles li a:hover {
   color: #cc65fc !important;
 }
-nav button {
+nav #navbarMenuButton {
   width: 44px;
+  margin-right: -8px;
   border: none !important;
   color: white !important;
   background-color: #1e1e1e;
@@ -10141,12 +10194,15 @@ nav button {
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
 }
-nav button:hover {
+nav #navbarMenuButton:hover {
   color: #569cd6 !important;
 }
-nav button i {
+nav #navbarMenuButton i {
   font-size: 1.8em;
   vertical-align: -5px;
+}
+nav #navbarCollapse {
+  flex-grow: 0;
 }
 nav #navbarCollapse a.nav-link {
   text-align: center;
@@ -10166,11 +10222,6 @@ nav #navbarCollapse a.nav-link .nav-item {
   vertical-align: 1px;
 }
 
-@media (min-width: 458px) {
-  nav .navbar-brand::after {
-    content: "McCarthy Web Design";
-  }
-}
 @media (min-width: 992px) {
   nav #navbarCollapse a.nav-link {
     margin-top: 0;
@@ -10182,11 +10233,6 @@ nav #navbarCollapse a.nav-link .nav-item {
     line-height: 28px;
     padding: 0 0.5rem;
     vertical-align: 3px;
-  }
-}
-@media (min-width: 992px) {
-  nav .container {
-    margin: 0 auto;
   }
 }
 #footer {

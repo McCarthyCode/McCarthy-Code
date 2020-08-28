@@ -1,25 +1,31 @@
   <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="{% url 'home:index' %}" title="McCarthy Web Design"></a>
-      <ul class="profiles navbar-nav mr-auto">
+      <ul class="profiles navbar-nav">
         <li class="nav-item">
-          <a href="https://www.facebook.com/McCarthyWebDesign"><i class="fab fa-facebook" title="Facebook"></i></a>
+          <a href="https://www.facebook.com/McCarthyWebDesign"><i class="fab fa-facebook" title="Facebook" target="_blank"></i></a>
         </li>
         <li class="nav-item">
-          <a href="https://www.linkedin.com/in/mattmc318"><i class="fab fa-linkedin" title="LinkedIn"></i></a>
+          <a href="https://github.com/mattmc318"><i class="fab fa-github" title="GitHub" target="_blank"></i></a>
         </li>
         <li class="nav-item">
-          <a href="https://www.hackerrank.com/mattmc318"><i class="fab fa-hackerrank" title="HackerRank"></i></a>
+          <a href="https://g.page/mccarthy-web-design?share" title="Google Maps" target="_blank"><i class="fab fa-google"></i></a>
         </li>
         <li class="nav-item">
-          <a href="https://github.com/mattmc318"><i class="fab fa-github" title="GitHub"></i></a>
+          <a href="https://www.hackerrank.com/mattmc318"><i class="fab fa-hackerrank" title="HackerRank" target="_blank"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="https://www.linkedin.com/in/mattmc318"><i class="fab fa-linkedin" title="LinkedIn" target="_blank"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="https://www.yelp.com/biz/mccarthy-web-design-chicago" title="Yelp" target="_blank"><i class="fab fa-yelp"></i></a>
         </li>
       </ul>
       <button id="navbarMenuButton" class="d-lg-none" type="button">
         <i class="fas fa-bars"></i>
       </button>
-      <div id="navbarCollapse" class="collapse navbar-collapse ml-auto">
-        <ul class="navbar-nav ml-auto">
+      <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="navbar-nav">
           <a class="nav-link" href="{% url 'home:index' %}">
             <li class="nav-item">Home/Contact</li>
           </a>
@@ -35,9 +41,6 @@
           {% if request.user.is_superuser %}
           <a class="nav-link" href="{% url 'home:dashboard' %}">
             <li class="nav-item">Dashboard</li>
-          </a>
-          <a class="nav-link" href="{% url 'home:logout' %}">
-            <li class="nav-item">Logout</li>
           </a>
           {% endif %}
         </ul>
