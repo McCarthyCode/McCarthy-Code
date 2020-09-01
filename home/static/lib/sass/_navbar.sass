@@ -8,39 +8,32 @@ nav
     flex-direction: row
     justify-content: space-between
     flex: 1 0 auto
-    gap: .5rem
+    gap: 1rem
 
-    @media (min-width: 376px)
-      gap: 1rem
+    @media (min-width: $md)
+      gap: 1.5rem
 
   .navbar-brand
-    margin-right: 0
     display: none
-    padding-right: .5rem
+    margin-right: -.5rem
+    margin-left: -.5rem
+    padding: 0 .5rem
 
     &:hover
       color: $blue !important
 
-    &::after
+    &:after
       display: inline
       line-height: 28px
       vertical-align: -1px
-
-    @media (min-width: 360px)
-      display: inline
-
-      &::after
-        content: 'MWD'
-
-    @media (min-width: 519px)
-      &::after
-        content: 'McCarthy Web Design'
+      content: attr(data-content)
 
   .profiles
     display: flex
     -ms-flex-direction: row
     flex-direction: row
     justify-content: space-evenly
+    margin: 0 -.5rem
     padding: 2px 0
     font-size: 1.5em
     flex: 0 0 auto
@@ -56,26 +49,20 @@ nav
     @media (min-width: $xl)
       justify-content: flex-start
 
-    li
-      display: inline
-      padding: 0 .5rem
+    a
+      color: $emerald !important
+      @include transition(color)
 
-      &:first-child
-        padding-left: 0
+      &:hover
+        color: $heliotrope !important
 
-      &:last-child
-        padding-right: 0
-
-      a
-        color: $emerald !important
-        @include transition(color)
-
-        &:hover
-          color: $heliotrope !important
+      li
+        display: inline
+        padding: 0 .5rem
 
   #navbarMenuButton
     width: 44px
-    margin-right: -8px
+    margin: 0 -8px
     border: none !important
     color: $white !important
     background-color: $darker-gray
