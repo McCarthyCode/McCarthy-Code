@@ -3,20 +3,62 @@ $(document).ready(() => {
   $('a.external-link')
     .after(' <i class="fas fa-external-link-alt" title="External Link"></i>');
 
-  // navbar menu
-  const breakpointLg = 992;
+  // adjust .navbarBrand breakpoints with scrollbar
+  let breakpointsBrand = {
+    'min': 360,
+    'full': 519,
+  };
 
+  const scrollBarWidth = (function () {
+    const $outer = $('<div>').css({
+      visibility: 'hidden',
+      width: 100,
+      overflow: 'scroll'
+    }).appendTo('body')
+    const widthWithScroll =
+      $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
+
+    $outer.remove();
+    return 100 - widthWithScroll;
+  })();
+
+  Object.keys(breakpointsBrand).forEach(function (key) {
+    breakpointsBrand[key] += scrollBarWidth;
+  });
+
+  // adjust navbar menu visibility and dynamic brand length/visibility
   $('#navbarMenuButton').click(() => {
     $('#navbarCollapse').slideToggle();
   });
 
-  $(window).on('resize orientationchange', () => {
-    if ($(this).width() >= breakpointLg) {
-      $('#navbarCollapse').css('display', 'inline');
+  function adjustNavbar() {
+    const windowWidth = $(this).width();
+    const $navbarBrand = $('.navbar-brand');
+    const $navbarCollapse = $('#navbarCollapse');
+
+    if (windowWidth < breakpointsBrand['min']) {
+      $navbarBrand.hide();
     } else {
-      $('#navbarCollapse').hide();
+      $navbarBrand.css('display', 'inline');
     }
-  });
+
+    if (windowWidth < 992) {
+      $navbarCollapse.hide();
+    } else {
+      $navbarCollapse.css('display', 'inline');
+    }
+
+    if (windowWidth < breakpointsBrand['min']) {
+      $navbarBrand.hide();
+    } else if (windowWidth < breakpointsBrand['full']) {
+      $navbarBrand.css('display', 'inline').attr('data-content', 'MWD');
+    } else {
+      $navbarBrand.css('display', 'inline').attr('data-content', 'McCarthy Web Design');
+    }
+  }
+
+  $(window).on('resize orientationchange', adjustNavbar);
+  adjustNavbar();
 
   // textarea character counter
   $('textarea').each(function () {
