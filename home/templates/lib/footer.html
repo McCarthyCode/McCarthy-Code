@@ -6,7 +6,7 @@
             <small><a href="{% url 'legal:index' %}">Terms & Privacy</a></small>
           </li>
           <li>
-            <small><a href="{% url 'home:login' %}">Admin Login</a></small>
+            <small>{% if request.user.is_superuser %}<a href="{% url 'home:logout' %}">Logout</a>{% else %}<a href="{% url 'home:login' %}">Admin Login</a>{% endif %}</small>
           </li>
           <li>
             <small><a class="external-link" href="https://github.com/mattmc318/McCarthy-Web-Design">GitHub</a></small>
