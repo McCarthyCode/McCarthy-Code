@@ -1,13 +1,13 @@
-$(document).ready(() => {
+$(() => {
   // reorder screenshots by clicking arrows
-  let $up = $('.screenshot-list .controls :first-child');
-  let $down = $('.screenshot-list .controls :last-child');
+  const $up = $('.screenshot-list .controls :first-child');
+  const $down = $('.screenshot-list .controls :last-child');
 
-  $up.click(function () {
-    let $li = $(this).parents('li');
+  $up.on('click', () => {
+    const $li = $(this).parents('li');
 
     if (!$li.is(':first-of-type')) {
-      let $prev = $li.prev();
+      const $prev = $li.prev();
 
       $li.animate({'bottom': `${$prev.outerHeight() + 8}px`}, 500, function () {
         $(this).after($prev.detach()).prop('style', '');
@@ -19,11 +19,11 @@ $(document).ready(() => {
     }
   });
 
-  $down.click(function () {
-    let $li = $(this).parents('li');
+  $down.on('click', () => {
+    const $li = $(this).parents('li');
 
     if (!$li.is(':last-of-type')) {
-      let $next = $li.next();
+      const $next = $li.next();
 
       $li.animate({'top': `${$next.outerHeight() + 8}px`}, 500, function () {
         $(this).before($next.detach()).prop('style', '');

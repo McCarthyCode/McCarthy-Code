@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(() => {
   // show appropriate view based on document hash
   if (document.location.hash) {
     setTimeout(function () {
@@ -8,7 +8,7 @@ $(document).ready(function () {
 
   function updateTitle(href) {
     let title;
-    const suffix = ' - McCarthy Web Design'
+    const suffix = ' - McCarthy Web Design';
 
     switch (href) {
       case '#tos':
@@ -52,11 +52,9 @@ $(document).ready(function () {
     const href = $(this).data('href');
 
     if (event.type === 'click') {
-      $tabsChildren
-        .removeClass('active')
-        .each(function () {
-          $($(this).data('href')).hide();
-        });
+      $tabsChildren.removeClass('active').each(function () {
+        $($(this).data('href')).hide();
+      });
 
       $activeTab = $(this);
       $(href).show();
@@ -66,19 +64,19 @@ $(document).ready(function () {
 
     const title = updateTitle(href);
     const path = `/legal/${href}`;
-    history.pushState({urlPath: path}, title, path)
+    history.pushState({ urlPath: path }, title, path);
   });
 
   $tabsChildren.on('touchend', function (event) {
     const changes = event.changedTouches[0];
-    const $endElement = $(document.elementFromPoint(changes.pageX, changes.pageY));
+    const $endElement = $(
+      document.elementFromPoint(changes.pageX, changes.pageY),
+    );
 
     if ($endElement.parent('.tabs').length) {
-      $tabsChildren
-        .removeClass('active')
-        .each(function () {
-          $($(this).data('href')).hide();
-        });
+      $tabsChildren.removeClass('active').each(function () {
+        $($(this).data('href')).hide();
+      });
 
       $activeTab = $endElement;
       $endElement.addClass('active');
@@ -87,10 +85,10 @@ $(document).ready(function () {
     }
   });
 
-  $tabs.mouseenter(function () {
+  $tabs.on('mouseenter', () => {
     $activeTab.removeClass('active');
   });
-  $tabs.mouseleave(function () {
+  $tabs.on('mouseleave', () => {
     $activeTab.addClass('active');
   });
 

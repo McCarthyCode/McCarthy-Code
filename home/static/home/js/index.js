@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(() => {
   function adjustTitle() {
     let width = $(this).width();
     let $title = $('header .h1');
@@ -103,7 +103,7 @@ $(document).ready(() => {
   adjust();
 
   let navHeight = 56;
-  $('header .chevron').click(() => {
+  $('header .chevron').on('click', () => {
     $('html, body').animate(
       {
         scrollTop: $('#icons').offset().top - navHeight,

@@ -1,8 +1,8 @@
-$(document).ready(() => {
+$(() => {
   const navHeight = $('#navbar').outerHeight();
 
   // contents
-  $('.contents a').click(function (event) {
+  $('.contents a').on('click', function (event) {
     event.preventDefault();
     history.pushState({}, '', this.href);
 

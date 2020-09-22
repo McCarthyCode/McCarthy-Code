@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(() => {
   // external link icon
   $('a.external-link').after(
     ' <i class="fas fa-external-link-alt" title="External Link"></i>',
@@ -32,7 +32,7 @@ $(document).ready(() => {
   });
 
   // adjust navbar menu visibility and dynamic brand length/visibility
-  $('#navbarMenuButton').click(() => {
+  $('#navbarMenuButton').on('click', () => {
     $('#navbarCollapse').slideToggle();
   });
 
