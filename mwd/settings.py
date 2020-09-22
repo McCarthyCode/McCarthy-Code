@@ -53,10 +53,13 @@ if STAGE == 'development':
     ]
 elif STAGE == 'staging':
     ALLOWED_HOSTS = [
+        'staging.mccarthycode.com',
         'staging.mccarthywebdesign.com',
     ]
 elif STAGE == 'production':
     ALLOWED_HOSTS = [
+        'mccarthycode.com',
+        'www.mccarthycode.com',
         'mccarthywebdesign.com',
         'www.mccarthywebdesign.com',
     ]
