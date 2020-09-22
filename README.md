@@ -1,6 +1,6 @@
-# McCarthy Web Design
+# McCarthy Code
 
-A portfolio page for Matt McCarthy, a Web design contractor.
+A portfolio page for Matt McCarthy, a Web and mobile development contractor.
 
 ## Installation
 
