@@ -4,6 +4,9 @@ $(() => {
     ' <i class="fas fa-external-link-alt" title="External Link"></i>',
   );
 
+  // stylized checkboxes
+  $('input[type="checkbox"]').after('<span class="checkbox"></span>');
+
   // adjust .navbarBrand breakpoints with scrollbar
   const breakpointsBrand = {
     min: 308,
