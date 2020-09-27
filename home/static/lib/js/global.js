@@ -1,22 +1,30 @@
-$(document).ready(() => {
+$(() => {
   // external link icon
-  $('a.external-link')
-    .after(' <i class="fas fa-external-link-alt" title="External Link"></i>');
+  $('a.external-link').after(
+    ' <i class="fas fa-external-link-alt" title="External Link"></i>',
+  );
+
+  // stylized checkboxes
+  $('input[type="checkbox"]').after('<span class="checkbox"></span>');
 
   // adjust .navbarBrand breakpoints with scrollbar
-  let breakpointsBrand = {
-    'min': 360,
-    'full': 519,
+  const breakpointsBrand = {
+    min: 308,
+    full: 403,
   };
 
   const scrollBarWidth = (function () {
-    const $outer = $('<div>').css({
-      visibility: 'hidden',
-      width: 100,
-      overflow: 'scroll'
-    }).appendTo('body')
-    const widthWithScroll =
-      $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
+    const $outer = $('<div>')
+      .css({
+        visibility: 'hidden',
+        width: 100,
+        overflow: 'scroll',
+      })
+      .appendTo('body');
+    const widthWithScroll = $('<div>')
+      .css({ width: '100%' })
+      .appendTo($outer)
+      .outerWidth();
 
     $outer.remove();
     return 100 - widthWithScroll;
@@ -27,7 +35,7 @@ $(document).ready(() => {
   });
 
   // adjust navbar menu visibility and dynamic brand length/visibility
-  $('#navbarMenuButton').click(() => {
+  $('#navbarMenuButton').on('click', () => {
     $('#navbarCollapse').slideToggle();
   });
 
@@ -35,12 +43,6 @@ $(document).ready(() => {
     const windowWidth = $(this).width();
     const $navbarBrand = $('.navbar-brand');
     const $navbarCollapse = $('#navbarCollapse');
-
-    if (windowWidth < breakpointsBrand['min']) {
-      $navbarBrand.hide();
-    } else {
-      $navbarBrand.css('display', 'inline');
-    }
 
     if (windowWidth < 992) {
       $navbarCollapse.hide();
@@ -51,9 +53,11 @@ $(document).ready(() => {
     if (windowWidth < breakpointsBrand['min']) {
       $navbarBrand.hide();
     } else if (windowWidth < breakpointsBrand['full']) {
-      $navbarBrand.css('display', 'inline').attr('data-content', 'MWD');
+      $navbarBrand.css('display', 'inline').attr('data-content', 'M. C.');
     } else {
-      $navbarBrand.css('display', 'inline').attr('data-content', 'McCarthy Web Design');
+      $navbarBrand
+        .css('display', 'inline')
+        .attr('data-content', 'McCarthy Code');
     }
   }
 

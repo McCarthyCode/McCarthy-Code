@@ -22,7 +22,7 @@ nav
     &:hover
       color: $blue !important
 
-    &:after
+    &::after
       display: inline
       line-height: 28px
       vertical-align: -1px
@@ -42,12 +42,6 @@ nav
       color: red !important
       justify-content: flex-start
       flex-grow: 1
-
-    @media (min-width: $lg)
-      justify-content: center
-
-    @media (min-width: $xl)
-      justify-content: flex-start
 
     a
       color: $emerald !important

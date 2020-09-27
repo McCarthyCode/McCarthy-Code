@@ -34,7 +34,7 @@ def index(request):
             quote_request.contact = form.cleaned_data['contact']
             quote_request.save()
 
-            messages.success(request, 'Thank you for submitting a quote request. McCarthy Web Design will contact you via phone or email within 1-3 business days.')
+            messages.success(request, 'Thank you for submitting a quote request. McCarthy Code will contact you via phone or email within 1-3 business days.')
 
             return redirect('quotes:index')
 
