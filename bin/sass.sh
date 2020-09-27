@@ -1,6 +1,6 @@
 #!/bin/bash
 
-project_dir="$HOME/Repositories/McCarthy-Web-Design"
+project_dir="$HOME/Repositories/McCarthy-Code"
 
 sass_input_home="$project_dir/home/static/home/sass/base.sass"
 sass_output_home="$project_dir/home/static/home/css/home.css"
