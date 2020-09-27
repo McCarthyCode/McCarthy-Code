@@ -62,7 +62,7 @@ class QuoteRequestForm(forms.ModelForm):
         max_length=500,
         widget=forms.Textarea(attrs={
             'class': 'form-control',
-            'placeholder': 'Summary of Site Contents (optional)\nBe as detailed or as general as you like.',
+            'placeholder': 'Summary of Site/App Contents (optional)\nBe as detailed or as general as you like.',
             'rows': 6,
         }),
     )
