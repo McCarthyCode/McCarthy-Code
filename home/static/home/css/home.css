@@ -9928,9 +9928,9 @@ em {
 }
 
 body a, body a:hover, body .fa-external-link-alt {
+  color: #97d5f7;
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
-  color: #97d5f7;
 }
 body .btn {
   height: 2.25rem;
@@ -10531,6 +10531,13 @@ form > :last-child {
 }
 #index header h1.h1 {
   color: #1e1e1e;
+}
+#index header h1.h1::after {
+  content: "TM";
+  position: absolute;
+  top: 2rem;
+  font-size: 0.25em;
+  color: #333333;
 }
 #index #icons {
   position: relative;
