@@ -131,11 +131,13 @@ ul
     position: relative
 
     .chevron
+      display: block
+      width: 100%
       position: absolute
-      right: 0
       bottom: 0
-      left: 0
+      border: none
       padding: 0.5rem 0
+      background-color: transparent
       font-size: 2rem
       cursor: pointer
 
@@ -143,8 +145,8 @@ ul
         vertical-align: -4px
 
 .page
-  min-height: calc(100vh - 56px - 91px)
-  margin-top: 56px
+  min-height: calc(100vh - 52px - 91px)
+  margin-top: 52px
   padding: 2rem 0
   background-color: $mid-gray
 
@@ -156,6 +158,21 @@ $max-widths: 480, 320
 
 .grecaptcha-badge
   bottom: 105px !important
+
+.brand
+  position: relative
+
+  &::after
+    content: 'TM'
+    position: absolute
+    top: .5em
+    font-size: .25em
+
+    small &
+      font-size: .5em
+
+span.brand
+  margin-right: .5rem
 
 @include media-breakpoint-up(sm)
   .content

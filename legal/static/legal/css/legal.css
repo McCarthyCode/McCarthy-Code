@@ -10033,11 +10033,13 @@ ul.grid .empty {
   position: relative;
 }
 #index header .chevron, #index section .chevron, #portfolio header .chevron, #portfolio section .chevron {
+  display: block;
+  width: 100%;
   position: absolute;
-  right: 0;
   bottom: 0;
-  left: 0;
+  border: none;
   padding: 0.5rem 0;
+  background-color: transparent;
   font-size: 2rem;
   cursor: pointer;
 }
@@ -10046,8 +10048,8 @@ ul.grid .empty {
 }
 
 .page {
-  min-height: calc(100vh - 56px - 91px);
-  margin-top: 56px;
+  min-height: calc(100vh - 52px - 91px);
+  margin-top: 52px;
   padding: 2rem 0;
   background-color: #333333;
 }
@@ -10062,6 +10064,23 @@ ul.grid .empty {
 
 .grecaptcha-badge {
   bottom: 105px !important;
+}
+
+.brand {
+  position: relative;
+}
+.brand::after {
+  content: "TM";
+  position: absolute;
+  top: 0.5em;
+  font-size: 0.25em;
+}
+small .brand::after {
+  font-size: 0.5em;
+}
+
+span.brand {
+  margin-right: 0.5rem;
 }
 
 @media (min-width: 576px) {
@@ -10086,16 +10105,18 @@ nav {
   background-color: #1e1e1e;
 }
 nav .container {
-  padding: 0 !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex: 1 0 auto;
+  align-items: center;
+  max-width: 100%;
+  padding: 0 !important;
   gap: 1rem;
 }
 @media (min-width: 768px) {
   nav .container {
     gap: 1.5rem;
+    max-width: 720px;
   }
 }
 nav .navbar-brand {
@@ -10119,7 +10140,6 @@ nav .profiles {
   flex-direction: row;
   justify-content: space-evenly;
   margin: 0 -0.5rem;
-  padding: 2px 0;
   font-size: 1.5em;
   flex: 0 0 auto;
 }

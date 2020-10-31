@@ -10033,11 +10033,13 @@ ul.grid .empty {
   position: relative;
 }
 #index header .chevron, #index section .chevron, #portfolio header .chevron, #portfolio section .chevron {
+  display: block;
+  width: 100%;
   position: absolute;
-  right: 0;
   bottom: 0;
-  left: 0;
+  border: none;
   padding: 0.5rem 0;
+  background-color: transparent;
   font-size: 2rem;
   cursor: pointer;
 }
@@ -10046,8 +10048,8 @@ ul.grid .empty {
 }
 
 .page {
-  min-height: calc(100vh - 56px - 91px);
-  margin-top: 56px;
+  min-height: calc(100vh - 52px - 91px);
+  margin-top: 52px;
   padding: 2rem 0;
   background-color: #333333;
 }
@@ -10062,6 +10064,23 @@ ul.grid .empty {
 
 .grecaptcha-badge {
   bottom: 105px !important;
+}
+
+.brand {
+  position: relative;
+}
+.brand::after {
+  content: "TM";
+  position: absolute;
+  top: 0.5em;
+  font-size: 0.25em;
+}
+small .brand::after {
+  font-size: 0.5em;
+}
+
+span.brand {
+  margin-right: 0.5rem;
 }
 
 @media (min-width: 576px) {
@@ -10086,16 +10105,18 @@ nav {
   background-color: #1e1e1e;
 }
 nav .container {
-  padding: 0 !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex: 1 0 auto;
+  align-items: center;
+  max-width: 100%;
+  padding: 0 !important;
   gap: 1rem;
 }
 @media (min-width: 768px) {
   nav .container {
     gap: 1.5rem;
+    max-width: 720px;
   }
 }
 nav .navbar-brand {
@@ -10119,7 +10140,6 @@ nav .profiles {
   flex-direction: row;
   justify-content: space-evenly;
   margin: 0 -0.5rem;
-  padding: 2px 0;
   font-size: 1.5em;
   flex: 0 0 auto;
 }
@@ -10507,96 +10527,13 @@ form > :last-child {
   color: white;
 }
 
-#index header h1.h1, #index #contact > div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 288px;
-  padding: 2rem;
+#index > * {
   margin: 0;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 0.5rem;
-  text-align: center;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-#index header {
-  position: relative;
-  height: 100vh;
-  background-image: -webkit-linear-gradient(150deg, #34c865, #485bc4, #cc65fc);
-  background-image: -moz-linear-gradient(150deg, #34c865, #485bc4, #cc65fc);
-  background-image: -o-linear-gradient(150deg, #34c865, #485bc4, #cc65fc);
-  background-image: linear-gradient(150deg, #34c865, #485bc4, #cc65fc);
-}
-#index header h1.h1 {
-  color: #1e1e1e;
-}
-#index header h1.h1::after {
-  content: "TM";
-  position: absolute;
-  top: 2rem;
-  font-size: 0.25em;
-  color: #333333;
-}
-#index #icons {
-  position: relative;
-  background: #333333;
-  padding-top: 1rem;
-  min-height: calc(100vh - 56px);
-}
-#index #icons .container {
-  min-height: calc(100vh - 64px - 56px);
-  position: relative;
-  padding: 0 1rem;
-}
-#index #icons .container #options {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  padding: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-bottom: 0;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-#index #icons .container #options li {
-  cursor: pointer;
-  display: inline;
-  width: 150px;
-  margin: 0 0.5rem 0.5rem 0.5rem;
-}
-#index #icons .container #options li .option-icon {
-  position: relative;
-  border-radius: 75px;
-  width: 150px;
-  height: 150px;
-  background-color: #569cd6;
-  margin: 0 auto 1rem auto;
-}
-#index #icons .container #options li .option-icon i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  color: #333333;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-#index #icons .container #options li h5.h5 {
-  color: #bb846e;
-}
-#index #icons .container #options li a:hover {
-  text-decoration-color: #bb846e;
-}
-#index #icons .chevron {
-  color: #569cd6;
 }
 #index > :nth-child(odd) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -10605,32 +10542,132 @@ form > :last-child {
 #index > :nth-child(odd) .chevron {
   color: maroon;
 }
+#index > :nth-child(even) .chevron {
+  color: #569cd6;
+  outline-color: #bb846e;
+}
+#index header {
+  flex-direction: column;
+  height: 100vh;
+  background-image: -webkit-linear-gradient(150deg, #34c865, #485bc4, #cc65fc);
+  background-image: -moz-linear-gradient(150deg, #34c865, #485bc4, #cc65fc);
+  background-image: -o-linear-gradient(150deg, #34c865, #485bc4, #cc65fc);
+  background-image: linear-gradient(150deg, #34c865, #485bc4, #cc65fc);
+}
+#index header h1.h1 {
+  font-family: "Baloo", Helvetica, Arial, sans-serif;
+  color: white;
+  padding: 0 1px;
+  text-shadow: 0px 1px #333333, 0px 1px #333333, 0px -1px #333333, 0px -1px #333333, 1px 0px #333333, -1px 0px #333333, 1px 0px #333333, -1px 0px #333333;
+}
+#index #icons {
+  position: relative;
+  background: #333333;
+  min-height: calc(100vh - 52px);
+}
+#index #icons .container {
+  min-height: calc(100vh - 64px - 52px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 64px;
+  padding: 1rem !important;
+  max-width: 720px;
+}
+#index #icons .container #options {
+  width: 100%;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+#index #icons .container #options li {
+  cursor: pointer;
+  display: inline;
+  width: 150px;
+  margin: 0;
+}
+#index #icons .container #options li a {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin: -0.5rem;
+  padding: 0.5rem;
+  color: #bb846e;
+}
+#index #icons .container #options li a * {
+  cursor: pointer;
+}
+#index #icons .container #options li a button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 75px;
+  margin: 0 auto;
+  padding: 0;
+  width: 150px;
+  height: 150px;
+  background-color: #569cd6;
+}
+#index #icons .container #options li a button i {
+  color: #333333;
+}
+#index #icons .container #options li a label {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  text-decoration: underline solid #333333;
+  line-height: 1;
+  -webkit-transition: text-decoration-color 0.075s ease-in-out;
+  transition: text-decoration-color 0.075s ease-in-out;
+}
+#index #icons .container #options li a:hover {
+  text-decoration: none;
+}
+#index #icons .container #options li a:hover label {
+  text-decoration-color: #bb846e;
+}
 #index #contact {
   min-height: calc(248.8px + 32px);
-  height: calc(100vh - 91px - 56px);
+  height: calc(100vh - 91px - 52px);
   background-image: -webkit-linear-gradient(210deg, #996f6f, #d2d06a, #2e829b);
   background-image: -moz-linear-gradient(210deg, #996f6f, #d2d06a, #2e829b);
   background-image: -o-linear-gradient(210deg, #996f6f, #d2d06a, #2e829b);
   background-image: linear-gradient(210deg, #996f6f, #d2d06a, #2e829b);
 }
 #index #contact > div {
-  min-width: 288px;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
 }
-#index #contact > div h3.h3 {
+#index #contact > div > * {
+  text-align: center;
+  white-space: nowrap;
+}
+#index #contact > div h2.h2 {
   margin-bottom: 0.5rem;
   color: #996f6f;
   font-weight: bold;
 }
-#index #contact > div h5.h5, #index #contact > div h6.h6 {
-  color: black;
+#index #contact > div h3.h3 {
+  font-size: 1.25rem;
 }
-#index #contact > div p {
+#index #contact > div h4.h4 {
+  font-size: 1rem;
+}
+#index #contact > div h3.h3, #index #contact > div h4.h4 {
+  color: black;
+  margin-bottom: 0.5rem;
+}
+#index #contact > div li {
   margin-bottom: 0.25rem;
 }
-#index #contact > div p a, #index #contact > div p .fa-external-link-alt {
+#index #contact > div li a, #index #contact > div li .fa-external-link-alt {
   color: #007bff;
 }
-#index #contact > div p .fa-external-link-alt {
+#index #contact > div li .fa-external-link-alt {
   margin-left: 0.5em;
 }
 #index #contact > div > :last-child {
@@ -10684,7 +10721,7 @@ form > :last-child {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 56px);
+  min-height: calc(100vh - 52px);
   padding: 1rem 0 4rem 0;
   background-attachment: fixed;
   background-position: center;
@@ -10692,18 +10729,18 @@ form > :last-child {
   background-size: cover;
 }
 #portfolio header:first-child:last-child, #portfolio section:first-child:last-child {
-  min-height: calc(100vh - 56px - 91px);
+  min-height: calc(100vh - 52px - 91px);
   margin-bottom: 0;
 }
 #portfolio header:first-child:last-child .container, #portfolio section:first-child:last-child .container {
-  min-height: calc(100vh - 56px - 91px - 2rem);
+  min-height: calc(100vh - 52px - 91px - 2rem);
 }
 #portfolio header:first-child, #portfolio section:first-child {
-  margin-top: 56px;
-  min-height: calc(100vh - 56px);
+  margin-top: 52px;
+  min-height: calc(100vh - 52px);
 }
 #portfolio header:first-child .container, #portfolio section:first-child .container {
-  min-height: calc(100vh - 56px - 5rem);
+  min-height: calc(100vh - 52px - 5rem);
 }
 #portfolio header:nth-child(odd), #portfolio section:nth-child(odd) {
   background-image: -webkit-linear-gradient(150deg, #004a0f, #2d4888, #48006a);
@@ -10724,11 +10761,11 @@ form > :last-child {
   grid-template-columns: auto 300px;
 }
 #portfolio header:last-child, #portfolio section:last-child {
-  min-height: calc(100vh - 56px - 91px);
+  min-height: calc(100vh - 52px - 91px);
   padding-bottom: 1rem;
 }
 #portfolio header:last-child .container, #portfolio section:last-child .container {
-  min-height: calc(100vh - 56px - 91px - 2rem - .25rem);
+  min-height: calc(100vh - 52px - 91px - 2rem - .25rem);
 }
 #portfolio header:not(:last-child), #portfolio section:not(:last-child) {
   margin-bottom: 0.25rem;
@@ -10805,7 +10842,7 @@ form > :last-child {
 
 @media (min-width: 768px) {
   #portfolio header:last-child, #portfolio section:last-child {
-    min-height: calc(100vh - 56px - 91px);
+    min-height: calc(100vh - 52px - 91px);
   }
   #portfolio header .container, #portfolio section .container {
     margin: 0 auto;

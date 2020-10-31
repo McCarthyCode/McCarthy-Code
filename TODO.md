@@ -2,6 +2,13 @@
 
 ## High priorities
 
+- Read from paths rather than specific files in `compress_js.sh`
+- Make `sass.sh` a background process
+- Navbar
+  - Move logic from global.js to new file
+  - Add brand to the DOM
+- Add info to index header
+- Add .brand across site
 - Fix duplicate screenshot deletion bug
 
 ## Medium priorities

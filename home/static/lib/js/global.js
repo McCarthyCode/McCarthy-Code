@@ -1,4 +1,7 @@
 $(() => {
+  // add content to .brand elements
+  $('.brand').text('McCarthy Code');
+
   // external link icon
   $('a.external-link').after(
     ' <i class="fas fa-external-link-alt" title="External Link"></i>',
