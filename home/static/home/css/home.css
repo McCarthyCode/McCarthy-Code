@@ -10557,8 +10557,9 @@ form > :last-child {
 #index header h1.h1 {
   font-family: "Baloo", Helvetica, Arial, sans-serif;
   color: white;
+  margin: 0;
   padding: 0 1px;
-  text-shadow: 0px 1px #333333, 0px 1px #333333, 0px -1px #333333, 0px -1px #333333, 1px 0px #333333, -1px 0px #333333, 1px 0px #333333, -1px 0px #333333;
+  text-shadow: 0px 1px #333333, 1px 0px #333333, 0px -1px #333333, -1px 0px #333333;
 }
 #index #icons {
   position: relative;

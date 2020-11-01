@@ -33,37 +33,5 @@
   background-repeat: no-repeat
   background-size: cover
 
-@function outline($color, $radius)
-  $result: ''
-  $x: 0
-  $y: $radius
-  $diff: 3 - 2 * $radius
-
-  $begin_str: true
-  @while $x <= $y
-    @if $begin_str
-      $result: $x + 'px ' + $y + 'px ' + $color
-      $begin_str: false
-    @else
-      $result: $result + ', ' + $x + 'px ' + $y + 'px ' + $color
-
-    $result: $result + ', ' + -$x + 'px ' + $y + 'px ' + $color
-    $result: $result + ', ' + $x + 'px ' + -$y + 'px ' + $color
-    $result: $result + ', ' + -$x + 'px ' + -$y + 'px ' + $color
-    $result: $result + ', ' + $y + 'px ' + $x + 'px ' + $color
-    $result: $result + ', ' + -$y + 'px ' + $x + 'px ' + $color
-    $result: $result + ', ' + $y + 'px ' + -$x + 'px ' + $color
-    $result: $result + ', ' + -$y + 'px ' + -$x + 'px ' + $color
-
-    @if $diff < 0
-      $diff: $diff + 4 * $x + 6
-      $x: $x + 1
-    @else
-      $diff: $diff + 4 * ($x - $y) + 10
-      $x: $x + 1
-      $y: $y - 1
-
-  @return unquote($result)
-
-@mixin outline($color, $radius: 1)
-  text-shadow: outline($color, $radius)
+@mixin outline($color)
+  text-shadow: 0px 1px $color, 1px 0px $color, 0px -1px $color, -1px 0px $color

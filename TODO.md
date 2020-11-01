@@ -2,20 +2,20 @@
 
 ## High priorities
 
-- Read from paths rather than specific files in `compress_js.sh`
-- Make `sass.sh` a background process
 - Navbar
-  - Move logic from global.js to new file
-  - Add brand to the DOM
+  - Move logic from `global.js` to new file
+  - Add `.navbar-brand` to the DOM
+  - Resize and fix expansion on larger viewports
+  - Change `.nav-item` background to none
 - Add info to index header
-- Add .brand across site
+- Add `.brand` across site
 - Fix duplicate screenshot deletion bug
 
 ## Medium priorities
 
 - Order Sites by positional value
   - Create front end for ordering system
-    - Copy JS from reorder_screenshots.js and edit
+    - Copy JS from `reorder_screenshots.js` and edit
     - Copy HTML and Sass from Edit Site page and edit
   - Order by/update positional values
     - Add position field to model
@@ -23,12 +23,12 @@
     - Update positional values
       - URL
       - View
-- Make home code segments their own app
+- Make Home code segments their own app
   - Dashboard
     - Quotes (done)
     - Sites
   - Errors
-- Scale/wrap thumbnail in Edit Site .screenshot-list
+- Scale/wrap thumbnail in Edit Site `.screenshot-list`
 - Create Contact Manager
   - Create
     - Create form
@@ -53,5 +53,3 @@
 - Rebuild front end in Angular
 - Create ad graphics
 - Create code background graphic on homepage
-- Replace transform(translate(-50%, -50%)) with flex centering
-- Change .nav-item background to none

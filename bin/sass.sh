@@ -17,10 +17,25 @@ declare -a args=(
   "--style=compressed $sass_input_legal:$sass_output_legal_compressed"
 )
 
+declare -a path=(
+  "home/static/global/sass"
+  "node_modules/bootstrap/scss"
+  "home/static/home/sass"
+  "legal/static/legal/sass"
+)
+
+includes=$(printf -- " -I $project_dir/%s" ${path[@]})
+includes=${includes:1}
+
 cd $project_dir
 
 for i in "${args[@]}"; do
-  sass --watch -I home/static/lib/sass -I node_modules/bootstrap/scss $i &
+  cmd="sass --watch $includes $i"
+
+  echo $cmd >&2
+  $cmd &
 done
 
-clear
+trap 'echo -e "\nExiting…" >&2; pkill $$' SIGINT
+
+wait
