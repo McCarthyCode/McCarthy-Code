@@ -2,11 +2,7 @@
 
 ## High priorities
 
-- Navbar
-  - Resize and fix expansion on larger viewports
-  - Change `.nav-item` background to none
 - Add info to index header
-- Add `.brand` across site
 - Fix duplicate screenshot deletion bug
 
 ## Medium priorities

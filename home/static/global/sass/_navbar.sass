@@ -7,13 +7,13 @@ nav
     flex-direction: row
     justify-content: space-between
     align-items: center
-    max-width: 100%
+    // max-width: 100%
     padding: 0 !important
     gap: 1rem
 
     @media (min-width: $md)
       gap: 1.5rem
-      max-width: 720px
+      // max-width: 720px
 
   .navbar-brand
     display: none
@@ -33,7 +33,7 @@ nav
     font-size: 1.5em
     flex: 0 0 auto
 
-    @media (min-width: $md)
+    @media (min-width: $sm)
       color: red !important
       justify-content: flex-start
       flex-grow: 1
@@ -88,7 +88,7 @@ nav
   nav #navbarCollapse a.nav-link
     margin-top: 0
     padding: 0
-    background-color: $darker-gray
+    background-color: unset
 
     .nav-item
       display: inline

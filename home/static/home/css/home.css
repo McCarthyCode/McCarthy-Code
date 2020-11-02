@@ -10102,14 +10102,12 @@ nav .container {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 100%;
   padding: 0 !important;
   gap: 1rem;
 }
 @media (min-width: 768px) {
   nav .container {
     gap: 1.5rem;
-    max-width: 720px;
   }
 }
 nav .navbar-brand {
@@ -10130,7 +10128,7 @@ nav .profiles {
   font-size: 1.5em;
   flex: 0 0 auto;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   nav .profiles {
     color: red !important;
     justify-content: flex-start;
@@ -10191,7 +10189,7 @@ nav #navbarCollapse a.nav-link .nav-item {
   nav #navbarCollapse a.nav-link {
     margin-top: 0;
     padding: 0;
-    background-color: #1e1e1e;
+    background-color: unset;
   }
   nav #navbarCollapse a.nav-link .nav-item {
     display: inline;
