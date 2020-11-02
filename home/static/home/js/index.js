@@ -7,7 +7,7 @@ $(() => {
 
     (function adjustTitle() {
       const $title = $('header .h1');
-      const breakpoint = 275 + 32;
+      const breakpoint = 298 + 32;
       const scale = windowWidth / breakpoint;
 
       if (windowWidth < breakpoint) {

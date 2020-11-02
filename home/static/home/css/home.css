@@ -10070,17 +10070,12 @@ ul.grid .empty {
   position: relative;
 }
 .brand::after {
-  content: "TM";
-  position: absolute;
-  top: 0.5em;
-  font-size: 0.25em;
+  content: "™";
+  vertical-align: top;
+  font-size: 0.75em;
 }
 small .brand::after {
-  font-size: 0.5em;
-}
-
-span.brand {
-  margin-right: 0.5rem;
+  font-size: 1em;
 }
 
 @media (min-width: 576px) {
@@ -10127,12 +10122,6 @@ nav .navbar-brand {
 }
 nav .navbar-brand:hover {
   color: #569cd6 !important;
-}
-nav .navbar-brand::after {
-  display: inline;
-  line-height: 28px;
-  vertical-align: -1px;
-  content: attr(data-content);
 }
 nav .profiles {
   display: flex;

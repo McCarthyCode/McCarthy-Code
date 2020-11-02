@@ -1,4 +1,4 @@
-# McCarthy Code
+# McCarthy Code™
 
 A portfolio page for Matt McCarthy, a Web and mobile development contractor.
 

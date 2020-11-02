@@ -8,7 +8,7 @@ $(() => {
 
   function updateTitle(href) {
     let title;
-    const suffix = ' - McCarthy Code';
+    const suffix = ' - McCarthy Code™';
 
     switch (href) {
       case '#tos':

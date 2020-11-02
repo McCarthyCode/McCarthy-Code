@@ -3,7 +3,7 @@
 {% block content %}
 <section id="about" class="page">
   <div class="container">
-    <h3 class="h3">{% block title %}About{% endblock %} Matt McCarthy and McCarthy Code</h3>
+    <h3 class="h3">{% block title %}About{% endblock %} Matt McCarthy and <span class="brand"></span></h3>
     <div class="body">
       <div class="img-container float-md-left d-inline-block">
         <a data-fancybox="gallery" href="{% static 'home/img/Canadas_Wonderland.png' %}">
@@ -14,7 +14,7 @@
         <a href="{% static 'home/img/general_kenobi.png' %}" title="General Kenobi!">Hello, there!</a>
       </p>
       <p>
-        My name is Matt McCarthy and I am a full-stack Web and mobile app developer. I completed coursework at the University of Illinois at Chicago (UIC) and graduated from the Coding Dojo, a 14-week bootcamp. My hobbies include <a class="external-link" href="http://www.coastercounter.com/mattmc318">scoring rollercoaster credits</a>, singing karaoke (mostly alt-rock and classic rock), and tinkering with Linux systems (currently Arch). Ever since the days of MySpace and the transition from dial-up to broadband Internet, I have been constantly intrigued by how computers and the Web have worked, and have always made an effort to understand new technologies as best I could. As a middle school student, I would analyze HTML code copy-and-pasted to my MySpace page, and would use Web resources to build my first, rudimentary Web page.
+        My name is Matt McCarthy and I am a full-stack Web and mobile app developer. I completed coursework at the University of Illinois at Chicago (UIC) and graduated from the Coding Dojo, a 14-week bootcamp. My hobbies include <a class="external-link" href="http://www.coastercounter.com/mattmc318">scoring rollercoaster credits</a>, singing karaoke (mostly alt-rock and classic rock), and tinkering with Linux systems. Ever since the days of MySpace and the transition from dial-up to broadband Internet, I have been constantly intrigued by how computers and the Web have worked, and have always made an effort to understand new technologies as best I could. As a middle school student, I would analyze HTML code copy-and-pasted to my MySpace page, and would use Web resources to build my first, rudimentary Web page.
       </p>
       <p>
         During my time at UIC (2011&ndash;2014), I majored in computer science and upheld an A average in my major coursework. While there, I was a member of the robotics team in the school's IEEE chapter. At the University of Illinois Urbana-Champaign (UIUC), I competed in both the Jerry Sanders Design Competition (JSDC), a robotics competition, and HackIllinois (also at UIUC), a software and hardware hackathon. At HackIllinois, I was a top-10 finalist in the hardware category, with roughly 200 contestants total at the time. Along with one other UIC student and IEEE robotics member, I designed and built <a class="external-link" href="https://devpost.com/software/redbull-robot-checkers-player">a robotic arm</a> using empty RedBull cans, a few servos, and an Electric Imp (IoT-connected processor). I chose not to finish my degree due to financial constraints in conjunction with a years-long period of struggle with medical issues, which I eventually overcame.
@@ -25,7 +25,7 @@
         </a>
       </div>
       <p>
-        From 2017 to 2018, I ended my educational hiatus by attending coursework at the Coding Dojo, where I reviewed Web fundamentals (HTML, CSS, JavaScript/jQuery) and learned three new software stacks: Django, .NET, and MEAN. Of the three, I strongly favored Django due to Python's syntactic ease and Django's core framework. It was upon graduating from the bootcamp that I decided to program in Python under Django full-time as a freelance developer, and thus McCarthy Code (MC), known then as McCarthy Web Design, was born.
+        From 2017 to 2018, I ended my educational hiatus by attending coursework at the Coding Dojo, where I reviewed Web fundamentals (HTML, CSS, JavaScript/jQuery) and learned three new software stacks: Django, .NET, and MEAN. Of the three, I strongly favored Django due to Python's syntactic ease and Django's core framework. It was upon graduating from the bootcamp that I decided to program in Python under Django full-time as a freelance developer, and thus <span class="brand"></span> (MC), known then as McCarthy Web Design, was born.
       </p>
       <p>
         It took months of constant preparations and fruitless interviews, but before the end of the year, I was able to land my first client, Coolwater Creations (CWC), under the name MWD. This was not my first-ever client&mdash;I had been hired in 2014 for Susan Kill Kegan & Associates (SKK&A) with a PHP back-end&mdash;but it was my first paid project using a more organized, streamlined <a class="external-link" href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC framework</a>. Later, I would design, develop, and host five more sites, including a redesign of SKK&A and the site you are viewing right now. All of these sites are available to view on <a href="{% url 'home:portfolio' %}">the portfolio page</a>.
@@ -34,7 +34,7 @@
         In my business, and in my general computing practices, I adhere to <a class="external-link" href="https://en.wikipedia.org/wiki/KISS_principle">the KISS principle ("Keep it simple, stupid.")</a>. For all of my sites, this may mean more whitespace, vibrant, yet subdued color palettes, and basic functionality tied together in a way that is still appealing and functional to administrators and end users alike. I am constantly learning how to keep my software <a class="external-link" href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY ("Don't repeat yourself")</a>, and have improved on this concept quite a bit over the years, allowing myself to become a faster and more efficient developer.
       </p>
       <p>
-        To learn more about me, McCarthy Code, or how to obtain a site for yourself, check out <a href="{% url 'home:index' %}#contact">the contact page</a>. Thank you for taking the time to read about me and my business!
+        To learn more about me, <span class="brand"></span>, or how to obtain a site for yourself, check out <a href="{% url 'home:index' %}#contact">the contact page</a>. Thank you for taking the time to read about me and my business!
       </p>
       <p>
         Best,<br>
