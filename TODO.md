@@ -2,10 +2,7 @@
 
 ## High priorities
 
-- Adjust headers that break hierarchy across site
 - Navbar
-  - Move logic from `global.js` to new file
-  - Add `.navbar-brand` to the DOM
   - Resize and fix expansion on larger viewports
   - Change `.nav-item` background to none
 - Add info to index header

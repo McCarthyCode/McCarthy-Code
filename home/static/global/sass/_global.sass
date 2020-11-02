@@ -4,21 +4,20 @@
 @import 'variables'
 @import 'mixins'
 
-h1.h1, h2.h2, h3.h3
-  margin-bottom: 1rem
+h1.h1, h2.h2, h3.h3, h4.h4, h5.h5, h6.h6
+  & > a:not(.btn)
+    text-decoration: underline
 
+h1.h1
   &, & > a
     font-family: $font-title
     color: $yellow
 
-  & > a:not(.btn)
-    text-decoration: underline
-
-h4.h4, h5.h5, h6.h6
+h2.h2, h3.h3, h4.h4, h5.h5, h6.h6
   &, & > a
     font-family: $font-body
 
-h4.h4, h5.h5
+h2.h2, h3.h3, h4.h4, h5.h5
   &, & > a
     color: $orange
 

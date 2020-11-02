@@ -9894,22 +9894,20 @@ h3 {
     border-color: #dee2e6;
   }
 }
-h1.h1, h2.h2, h3.h3 {
-  margin-bottom: 1rem;
-}
-h1.h1, h1.h1 > a, h2.h2, h2.h2 > a, h3.h3, h3.h3 > a {
-  font-family: "Varela Round", Helvetica, Arial, sans-serif;
-  color: #dcdcaa;
-}
-h1.h1 > a:not(.btn), h2.h2 > a:not(.btn), h3.h3 > a:not(.btn) {
+h1.h1 > a:not(.btn), h2.h2 > a:not(.btn), h3.h3 > a:not(.btn), h4.h4 > a:not(.btn), h5.h5 > a:not(.btn), h6.h6 > a:not(.btn) {
   text-decoration: underline;
 }
 
-h4.h4, h4.h4 > a, h5.h5, h5.h5 > a, h6.h6, h6.h6 > a {
+h1.h1, h1.h1 > a {
+  font-family: "Varela Round", Helvetica, Arial, sans-serif;
+  color: #dcdcaa;
+}
+
+h2.h2, h2.h2 > a, h3.h3, h3.h3 > a, h4.h4, h4.h4 > a, h5.h5, h5.h5 > a, h6.h6, h6.h6 > a {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-h4.h4, h4.h4 > a, h5.h5, h5.h5 > a {
+h2.h2, h2.h2 > a, h3.h3, h3.h3 > a, h4.h4, h4.h4 > a, h5.h5, h5.h5 > a {
   color: #bb846e;
 }
 

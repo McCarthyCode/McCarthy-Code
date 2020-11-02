@@ -12,10 +12,10 @@
   <header>
     <div class="container">
       <div class="text card">
-        <h3 class="h3 text-center">{% block title %}Portfolio{% endblock %}</h3>
+        <h1 class="h1 text-center">{% block title %}Portfolio{% endblock %}</h1>
         <div class="content">
           <div>
-            <h5 class="h5">Table of Contents</h5>
+            <h2 class="h2">Table of Contents</h2>
             <ul class="ul contents">
               {% for site in sites %}
               <li><a href="#{{ site.data.slug }}" data-slug="{{ site.data.slug }}">{{ site.data.name }}</a></li>

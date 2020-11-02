@@ -8,9 +8,9 @@
   </div>
   {% endif %}
   <div class="container max-w-320px">
-    <h3 class="h3">{% block title %}Dashboard{% endblock %}</h3>
+    <h1 class="h1">{% block title %}Dashboard{% endblock %}</h1>
     <div class="card">
-      <h5 class="h5">Manage:</h5>
+      <h2 class="h2">Manage:</h2>
       <ul class="ul">
         <li><a href="{% url 'home:sites' %}{% comment %}
           Change to: {% url 'sites:manager' %}{% endcomment %}">Sites</a></li>

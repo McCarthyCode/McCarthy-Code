@@ -17,8 +17,8 @@
   {% endif %}
   <div class="container max-w-480px">
     <form method="POST" enctype="multipart/form-data">
-      <h3 class="h3">Edit Site</h3>
-      <h5 class="h5">{{ site.name }}</h5>
+      <h1 class="h1">Edit Site</h1>
+      <h2 class="h2">{{ site.name }}</h2>
       {% csrf_token %}
       {{ form }}
       <input type="hidden" name="order" value="[{% for screenshot in screenshots %}{{ screenshot.id}}{% if screenshot != screenshots|last %}, {% endif %}{% endfor %}]">

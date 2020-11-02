@@ -10,13 +10,13 @@
   {% endif %}
   <div class="container max-w-480px">
     <div class="header">
-      <h3 class="h3">{% block title %}Edit Sites{% endblock %}</h3>
+      <h1 class="h1">{% block title %}Edit Sites{% endblock %}</h1>
       <a class="btn btn-primary" href="{% url 'home:add-site' %}">Add Site</a>
     </div>
     <ul>
       {% for site in sites %}
       <li>
-        <h5 class="h5 text-center">{{ site.data.name }}</h5>
+        <h2 class="h2 text-center">{{ site.data.name }}</h2>
         <div class="btn-container text-center">
           <a class="btn btn-secondary" href="{% url 'home:edit-site' site.data.id %}">Edit</a>
           <a class="btn btn-danger" href="{% url 'home:delete-site' site.data.id %}">Delete</a>

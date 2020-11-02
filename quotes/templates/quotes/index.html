@@ -13,7 +13,7 @@
   {% endif %}
   <div class="container max-w-480px">
     <form method="POST">
-      <h3 class="h3">{% block title %}Request a Quote{% endblock %}</h3>
+      <h1 class="h1">{% block title %}Request a Quote{% endblock %}</h1>
       {% csrf_token %}
       {{ form.non_field_errors }}
       {% for field in form.visible_fields %}
