@@ -9930,10 +9930,6 @@ body a, body a:hover, body .fa-external-link-alt {
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
 }
-body .btn {
-  height: 2.25rem;
-  line-height: 1;
-}
 body .card {
   border: none;
   border-radius: 0.5rem;
@@ -10062,18 +10058,6 @@ ul.grid .empty {
 
 .grecaptcha-badge {
   bottom: 105px !important;
-}
-
-.brand {
-  position: relative;
-}
-.brand::after {
-  content: "™";
-  vertical-align: top;
-  font-size: 0.75em;
-}
-small .brand::after {
-  font-size: 1em;
 }
 
 @media (min-width: 576px) {
@@ -10287,6 +10271,17 @@ nav #navbarCollapse a.nav-link .nav-item {
 
 .legal {
   color: white;
+}
+.legal .brand {
+  position: relative;
+}
+.legal .brand::after {
+  content: "™";
+  vertical-align: top;
+  font-size: 0.75em;
+}
+small .legal .brand::after {
+  font-size: 1em;
 }
 .legal section {
   display: none;

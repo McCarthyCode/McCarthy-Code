@@ -38,10 +38,6 @@ body
     color: $cyan
     @include transition(color)
 
-  .btn
-    height: 2.25rem
-    line-height: 1
-
   .card
     border: none
     border-radius: .5rem
@@ -157,17 +153,6 @@ $max-widths: 480, 320
 
 .grecaptcha-badge
   bottom: 105px !important
-
-.brand
-  position: relative
-
-  &::after
-    content: '\2122'
-    vertical-align: top
-    font-size: .75em
-
-    small &
-      font-size: 1em
 
 @include media-breakpoint-up(sm)
   .content

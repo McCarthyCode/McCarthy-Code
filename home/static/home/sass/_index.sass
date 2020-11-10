@@ -15,9 +15,15 @@
     color: $blue
     outline-color: $orange
 
+  h2.h2
+    font-family: $font-title
+
   header
     flex-direction: column
-    height: 100vh
+    gap: 1rem
+    min-height: calc(100vh - 52px)
+    margin-top: 52px
+    padding: 1rem 1rem 5rem 1rem
     @include gradient(150deg, $cold-colors-light)
 
     h1.h1
@@ -25,7 +31,46 @@
       color: $white
       margin: 0
       padding: 0 1px
-      @include outline($mid-gray)
+      text-shadow: 2px 2px $mid-gray
+
+    h2.h2
+      font-size: 1.75rem
+
+    h3.h3
+      color: $emerald
+      font-size: 1.5rem
+      font-weight: bold
+
+    em
+      color: $lighter-gray
+
+    .btn
+      vertical-align: baseline
+
+    .container
+      padding: 0 !important
+      flex-shrink: 1
+      max-width: 720px
+
+      .card
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 1rem
+
+        img
+          flex-shrink: 1
+          max-width: 128px
+          max-height: 128px
+
+        @media (min-width: $sm)
+          gap: 2rem
+          flex-direction: row
+
+          img
+            flex-shrink: 1
+            max-width: 256px
+            max-height: 256px
 
   #icons
     position: relative

@@ -2,7 +2,7 @@ $(() => {
   // adjust .navbarBrand breakpoints with scrollbar
   const breakpointsBrand = {
     min: 308,
-    full: 414,
+    full: 403,
   };
 
   const scrollBarWidth = (function () {

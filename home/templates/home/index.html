@@ -1,17 +1,25 @@
-{% extends 'home/base.html' %}
-{% load static %}
-
-{% block title %}Home and Contact{% endblock %}
-
-{% block js %}
+{% extends 'home/base.html' %} {% load static %} {% block title %}Home and
+Contact{% endblock %} {% block js %}
 <!-- Home App JS -->
 <script src="{% static 'home/js/index.min.js' %}"></script>
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 <div id="index">
   <header>
     <h1 class="h1 text-nowrap brand"></h1>
+    <div class="container">
+      <div class="card">
+        <img src="{% static 'global/img/favicon.png' %}" alt="MC Logo" />
+        <div>
+          <h2 class="h2">
+            Professional, Fully Featured Web Sites and Mobile Apps
+          </h2>
+          <h3 class="h3">Billed at $25/hour</h3>
+          <a class="btn btn-primary form-control" href="{% url 'quotes:index' %}">
+            Request a Free Quote
+          </a>
+        </div>
+      </div>
+    </div>
     <button class="chevron text-center">
       <i class="fas fa-chevron-down"></i>
     </button>
@@ -53,16 +61,18 @@
     <div>
       <h2 class="h2">Contact</h2>
       <h3 class="h3">Matt McCarthy</h3>
-      <h4 class="h4">Owner, Full Stack Developer</h4>
+      <h4 class="h4">Full Stack Developer</h4>
       <ul>
-        <li>
-          Mobile: <a href="tel:+17736123678">773 612 3678</a>
-        </li>
+        <li>Mobile: <a href="tel:+17736123678">773 612 3678</a></li>
         <li>
           <a href="mailto:info@mccarthycode.com">info@mccarthycode.com</a>
         </li>
         <li>
-          <a class="external-link" href="https://www.google.com/maps/place/Rogers+Park,+Chicago,+IL">Rogers Park, Chicago, IL</a>
+          <a
+            class="external-link"
+            href="https://www.google.com/maps/place/Rogers+Park,+Chicago,+IL"
+            >Rogers Park, Chicago, IL</a
+          >
         </li>
       </ul>
     </div>

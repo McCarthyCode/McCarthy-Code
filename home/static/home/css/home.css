@@ -9930,10 +9930,6 @@ body a, body a:hover, body .fa-external-link-alt {
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
 }
-body .btn {
-  height: 2.25rem;
-  line-height: 1;
-}
 body .card {
   border: none;
   border-radius: 0.5rem;
@@ -10062,18 +10058,6 @@ ul.grid .empty {
 
 .grecaptcha-badge {
   bottom: 105px !important;
-}
-
-.brand {
-  position: relative;
-}
-.brand::after {
-  content: "™";
-  vertical-align: top;
-  font-size: 0.75em;
-}
-small .brand::after {
-  font-size: 1em;
 }
 
 @media (min-width: 576px) {
@@ -10531,9 +10515,15 @@ form > :last-child {
   color: #569cd6;
   outline-color: #bb846e;
 }
+#index h2.h2 {
+  font-family: "Varela Round", Helvetica, Arial, sans-serif;
+}
 #index header {
   flex-direction: column;
-  height: 100vh;
+  gap: 1rem;
+  min-height: calc(100vh - 52px);
+  margin-top: 52px;
+  padding: 1rem 1rem 5rem 1rem;
   background-image: -webkit-linear-gradient(150deg, #34c865, #485bc4, #cc65fc);
   background-image: -moz-linear-gradient(150deg, #34c865, #485bc4, #cc65fc);
   background-image: -o-linear-gradient(150deg, #34c865, #485bc4, #cc65fc);
@@ -10544,7 +10534,48 @@ form > :last-child {
   color: white;
   margin: 0;
   padding: 0 1px;
-  text-shadow: 0px 1px #333333, 1px 0px #333333, 0px -1px #333333, -1px 0px #333333;
+  text-shadow: 2px 2px #333333;
+}
+#index header h2.h2 {
+  font-size: 1.75rem;
+}
+#index header h3.h3 {
+  color: #34c865;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+#index header em {
+  color: #525252;
+}
+#index header .btn {
+  vertical-align: baseline;
+}
+#index header .container {
+  padding: 0 !important;
+  flex-shrink: 1;
+  max-width: 720px;
+}
+#index header .container .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+#index header .container .card img {
+  flex-shrink: 1;
+  max-width: 128px;
+  max-height: 128px;
+}
+@media (min-width: 576px) {
+  #index header .container .card {
+    gap: 2rem;
+    flex-direction: row;
+  }
+  #index header .container .card img {
+    flex-shrink: 1;
+    max-width: 256px;
+    max-height: 256px;
+  }
 }
 #index #icons {
   position: relative;

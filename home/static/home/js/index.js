@@ -1,27 +1,55 @@
 $(() => {
+  const $header = $('header');
+  const $h1 = $header.children('h1');
+  const $img = $header.find('img');
+
+  // must be defined statically b/c icons aren't loaded right away
   const navbarHeight = 52;
 
   function adjust() {
     const windowWidth = $(window).width();
     const windowHeight = $(window).height();
 
-    (function adjustTitle() {
-      const $title = $('header .h1');
-      const breakpoint = 298 + 32;
-      const scale = windowWidth / breakpoint;
+    (function adjustLogo() {
+      const headerPaddingTop = 16; // 1rem
+      const headerPaddingBottom = 5 * 16; // 5rem
+      const h1Height = $h1.outerHeight();
+      const headerGap = 16; // 1rem
+      const cardPadding = 16; // 1rem
+      const cardGap = 16; // 1rem
+      const initImgHeight = 128;
+      const textHeight = $header.find('.card > div').outerHeight();
 
-      if (windowWidth < breakpoint) {
-        $title.css({
-          '-webkit-transform': `scale(${scale})`,
-          '-ms-transform': `scale(${scale})`,
-          transform: `scale(${scale})`,
-        });
+      const breakpoint =
+        navbarHeight +
+        headerPaddingTop +
+        h1Height +
+        headerGap +
+        cardPadding +
+        initImgHeight +
+        cardGap +
+        textHeight +
+        cardPadding +
+        headerPaddingBottom;
+      const scale = Math.min(
+        1,
+        (windowHeight - breakpoint + initImgHeight) / initImgHeight,
+      );
+
+      if (scale < 0.5) {
+        $img.hide();
       } else {
-        $title.prop('style', false);
+        $img.show();
       }
 
-      const height = $title.outerHeight();
-      $('header').prop('min-height', `${height * scale + 32}px`);
+      if (windowWidth < breakpoint) {
+        $img.css({
+          width: `${initImgHeight * scale}px`,
+          height: `${initImgHeight * scale}px`,
+        });
+      } else {
+        $img.prop('style', false);
+      }
     })();
 
     (function adjustIcons() {
@@ -58,11 +86,12 @@ $(() => {
       };
 
       let scale;
+      let scales;
 
       if (windowWidth >= windowHeight) {
         $options.css({ 'flex-direction': 'row' });
 
-        const scales = {
+        scales = {
           x:
             (windowWidth - breakpoints.row.width + 3 * initDiameter) /
             (3 * initDiameter),
@@ -70,21 +99,19 @@ $(() => {
             (windowHeight - breakpoints.row.height + initDiameter) /
             initDiameter,
         };
-
-        scale = Math.min(scales.x, scales.y, 1);
       } else {
         $options.css({ 'flex-direction': 'column' });
 
-        const scales = {
+        scales = {
           x:
             (windowWidth - breakpoints.col.width + initDiameter) / initDiameter,
           y:
             (windowHeight - breakpoints.col.height + 3 * initDiameter) /
             (3 * initDiameter),
         };
-
-        scale = Math.min(scales.x, scales.y, 1);
       }
+
+      scale = Math.min(scales.x, scales.y, 1);
 
       if (scale < 0.25) {
         $buttons.hide();

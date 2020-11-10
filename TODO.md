@@ -2,11 +2,15 @@
 
 ## High priorities
 
-- Add info to index header
-- Fix duplicate screenshot deletion bug
+- Remove "External Link" from copied text
+- About page
+  - Change "my general computing practices" to "all my computing practices"
+  - Profile photo
+- Update portfolio images
 
 ## Medium priorities
 
+- Fix duplicate screenshot deletion bug
 - Order Sites by positional value
   - Create front end for ordering system
     - Copy JS from `reorder_screenshots.js` and edit
