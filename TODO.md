@@ -2,9 +2,7 @@
 
 ## High priorities
 
-- About page
-  - Change "my general computing practices" to "all my computing practices"
-  - Profile photo
+- Update grayscale/B&W colors
 - Update portfolio images
 
 ## Medium priorities

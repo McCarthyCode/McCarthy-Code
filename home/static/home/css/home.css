@@ -10033,6 +10033,10 @@ ul.grid .empty {
   grid-column-end: -1;
 }
 
+abbr[title] {
+  text-decoration: underline dotted #97d5f7 !important;
+}
+
 #index header, #index section, #portfolio header, #portfolio section {
   position: relative;
 }
@@ -10719,13 +10723,17 @@ form > :last-child {
   text-align: center;
   display: inline-block;
 }
-#about .body .img-container:first-child {
-  margin-top: 0;
-}
-#about .body .img-container img {
+#about .body .img-container a {
+  margin: 0;
   width: 100%;
   max-width: 266px;
-  border: 0.5rem solid #617275;
+  display: inline-block;
+  background-color: #a6a6a6;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+#about .body .img-container a img {
+  width: 100%;
   border-radius: 50%;
 }
 

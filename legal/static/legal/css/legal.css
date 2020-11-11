@@ -10033,6 +10033,10 @@ ul.grid .empty {
   grid-column-end: -1;
 }
 
+abbr[title] {
+  text-decoration: underline dotted #97d5f7 !important;
+}
+
 #index header, #index section, #portfolio header, #portfolio section {
   position: relative;
 }
