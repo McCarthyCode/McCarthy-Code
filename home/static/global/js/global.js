@@ -4,7 +4,7 @@ $(() => {
 
   // external link icon
   $('a.external-link').after(
-    ' <i class="fas fa-external-link-alt" title="External Link"></i>',
+    '<span class="user-select-none"> <i class="fas fa-external-link-alt" title="External Link"></i></span>',
   );
 
   // stylized checkboxes

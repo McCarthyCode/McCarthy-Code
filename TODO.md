@@ -2,7 +2,7 @@
 
 ## High priorities
 
-- Remove "External Link" from copied text
+- Update navbar link addresses
 - About page
   - Change "my general computing practices" to "all my computing practices"
   - Profile photo
