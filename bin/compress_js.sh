@@ -2,7 +2,7 @@
 
 set -e
 
-closure_compiler="bin/closure-compiler-v20200504.jar"
+closure_compiler="bin/closure-compiler-v20201102.jar"
 
 declare -a path=(
   "home/static/global/js"
