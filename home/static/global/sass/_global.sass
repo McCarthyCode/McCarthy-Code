@@ -42,7 +42,7 @@ body
     border: none
     border-radius: .5rem
     padding: 1rem
-    background-color: $dark-gray
+    background-color: $gray-15
     color: $white
     position: relative
 
@@ -58,7 +58,7 @@ body
       right: 1rem
       width: 1rem
       height: 1rem
-      color: $lightest-gray
+      color: $gray-60
       text-shadow: unset
       @include transition(color)
 
@@ -104,7 +104,7 @@ ul
       margin-left: 1.25rem
 
       &::marker
-        color: $lightest-gray
+        color: $gray-60
 
   &.grid
     display: grid
@@ -120,7 +120,7 @@ ul
 
     .empty
       text-align: center
-      color: $lightest-gray
+      color: $gray-60
       grid-column-start: 1
       grid-column-end: -1
 
@@ -149,7 +149,7 @@ abbr[title]
   min-height: calc(100vh - 52px - 91px)
   margin-top: 52px
   padding: 2rem 0
-  background-color: $mid-gray
+  background-color: $gray-20
 
 $max-widths: 480, 320
 @for $i from 1 through length($max-widths)

@@ -2,7 +2,6 @@
 
 ## High priorities
 
-- Update grayscale/B&W colors
 - Update portfolio images
 
 ## Medium priorities

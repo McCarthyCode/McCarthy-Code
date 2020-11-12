@@ -9934,8 +9934,8 @@ body .card {
   border: none;
   border-radius: 0.5rem;
   padding: 1rem;
-  background-color: #222222;
-  color: white;
+  background-color: #262626;
+  color: #e6e6e6;
   position: relative;
 }
 body .card p {
@@ -9956,7 +9956,7 @@ body .card .close {
   transition: color 0.15s ease-in-out;
 }
 body .card .close:hover, body .card .close:focus {
-  color: white !important;
+  color: #e6e6e6 !important;
 }
 body .card .close ~ h5 {
   margin-right: 1rem;
@@ -10093,7 +10093,7 @@ abbr[title] {
 }
 nav {
   font-family: "Baloo", Helvetica, Arial, sans-serif;
-  background-color: #1e1e1e;
+  background-color: #1a1a1a;
 }
 nav .container {
   display: flex;
@@ -10149,8 +10149,8 @@ nav #navbarMenuButton {
   width: 44px;
   margin: 0 -8px;
   border: none !important;
-  color: white !important;
-  background-color: #1e1e1e;
+  color: #e6e6e6 !important;
+  background-color: #1a1a1a;
   cursor: pointer;
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
@@ -10172,7 +10172,7 @@ nav #navbarCollapse a.nav-link {
   margin-top: 0.5rem;
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
-  color: white !important;
+  color: #e6e6e6 !important;
 }
 nav #navbarCollapse a.nav-link:hover {
   color: #569cd6 !important;
@@ -10198,8 +10198,8 @@ nav #navbarCollapse a.nav-link .nav-item {
 }
 #footer {
   padding: 0.625rem 0 1rem 0;
-  background-color: #1e1e1e;
-  color: white;
+  background-color: #1a1a1a;
+  color: #e6e6e6;
 }
 #footer a, #footer .fa-external-link-alt {
   color: aqua;
@@ -10284,20 +10284,20 @@ form input[type=text], form input[type=number], form input[type=password], form 
 }
 form input[type=text].form-control, form input[type=text].form-control:focus, form input[type=number].form-control, form input[type=number].form-control:focus, form input[type=password].form-control, form input[type=password].form-control:focus, form textarea.form-control, form textarea.form-control:focus, form select.form-control, form select.form-control:focus, form label.form-control, form label.form-control:focus {
   border-radius: 3px;
-  border-color: #525252;
-  background-color: #222222;
+  border-color: #595959;
+  background-color: #262626;
 }
 form input[type=text].form-control, form input[type=text].form-control:focus, form input[type=number].form-control, form input[type=number].form-control:focus, form input[type=password].form-control, form input[type=password].form-control:focus, form textarea.form-control, form textarea.form-control:focus, form select.form-control, form select.form-control:focus {
-  color: white;
+  color: #e6e6e6;
 }
 form label, form label:focus {
-  color: white;
+  color: #e6e6e6;
 }
 form label.form-control, form label:focus.form-control {
   cursor: pointer;
 }
 form label.form-control, form label.form-control:focus, form label:focus.form-control, form label:focus.form-control:focus {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(230, 230, 230, 0.5);
 }
 form textarea {
   margin-bottom: 0;
@@ -10312,41 +10312,41 @@ form .g-recaptcha-container {
   margin-bottom: 0.5rem;
 }
 form .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(230, 230, 230, 0.5);
 }
 form .form-control::-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(230, 230, 230, 0.5);
 }
 form select option {
   padding: 0;
 }
 form select:invalid, form select option[value=""] {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(230, 230, 230, 0.5) !important;
 }
 form select.form-control, form select.form-control:focus {
   padding: 0 0.5rem;
   border-radius: 3px;
-  color: white;
-  border-color: #525252;
-  background-color: #222222;
+  color: #e6e6e6;
+  border-color: #595959;
+  background-color: #262626;
 }
 form input[type=file] {
   width: 100%;
-  color: white;
+  color: #e6e6e6;
 }
 form .input-group {
   border-radius: 3px;
-  color: white;
-  border-color: #525252;
-  background-color: #222222;
+  color: #e6e6e6;
+  border-color: #595959;
+  background-color: #262626;
   margin-bottom: 0.5rem;
 }
 form .input-group label {
   cursor: pointer;
 }
 form .input-group .input-group-append {
-  border-color: #525252;
-  background-color: #525252;
+  border-color: #595959;
+  background-color: #595959;
   width: 40px;
   height: 38px;
   border-top-right-radius: 3px;
@@ -10355,7 +10355,7 @@ form .input-group .input-group-append {
 }
 form .input-group .input-group-append input[type=radio], form .input-group .input-group-append input[type=checkbox], form .input-group .input-group-append .calendar {
   cursor: pointer;
-  color: white;
+  color: #e6e6e6;
 }
 form .input-group .input-group-append input[type=radio] {
   width: 16px;
@@ -10374,7 +10374,7 @@ form .input-group .input-group-append input[type=checkbox] ~ .checkbox {
   width: 16px;
   height: 16px;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(230, 230, 230, 0.75);
   border-radius: 2px;
   -webkit-transition: background-color 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out;
@@ -10387,7 +10387,7 @@ form .input-group .input-group-append input[type=checkbox] ~ .checkbox::after {
   transition: opacity 0.15s ease-in-out;
 }
 form .input-group .input-group-append input[type=checkbox]:hover ~ .checkbox {
-  background-color: white;
+  background-color: #e6e6e6;
   -webkit-transition: background-color 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out;
 }
@@ -10403,16 +10403,16 @@ form .input-group .input-group-append input[type=checkbox]:checked ~ .checkbox::
   left: 5px;
   width: 7px;
   height: 12px;
-  border: solid #222222;
+  border: solid #262626;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 form .input-group .input-group-append .input-group-text {
-  color: white;
-  border-color: #525252;
-  background-color: #525252;
+  color: #e6e6e6;
+  border-color: #595959;
+  background-color: #595959;
 }
 form .input-group .input-group-append .input-group-text i {
   min-width: 14px;
@@ -10507,7 +10507,7 @@ form > :last-child {
 #page .container {
   max-width: 720px;
   text-align: center;
-  color: white;
+  color: #e6e6e6;
 }
 
 #index > * {
@@ -10545,7 +10545,7 @@ form > :last-child {
 }
 #index header h1.h1 {
   font-family: "Baloo", Helvetica, Arial, sans-serif;
-  color: white;
+  color: #e6e6e6;
   margin: 0;
   padding: 0 1px;
   text-shadow: 2px 2px #333333;
@@ -10559,7 +10559,7 @@ form > :last-child {
   font-weight: bold;
 }
 #index header em {
-  color: #525252;
+  color: #595959;
 }
 #index header .btn {
   vertical-align: baseline;
@@ -10670,7 +10670,7 @@ form > :last-child {
 }
 #index #contact > div {
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(230, 230, 230, 0.5);
   border-radius: 0.5rem;
 }
 #index #contact > div > * {
@@ -10708,8 +10708,8 @@ form > :last-child {
 #about .body {
   border-radius: 0.5rem;
   padding: 1rem;
-  background-color: #222222;
-  color: white;
+  background-color: #262626;
+  color: #e6e6e6;
 }
 #about .body p {
   text-align: justify;
@@ -10750,7 +10750,7 @@ form > :last-child {
   }
 }
 #portfolio {
-  background: radial-gradient(#7f7f7f, #525252);
+  background: radial-gradient(gray, #595959);
 }
 #portfolio h1.h1 {
   font-size: 1.75rem;
@@ -10837,7 +10837,7 @@ form > :last-child {
   margin: 0;
 }
 #portfolio header .container .content, #portfolio section .container .content {
-  color: white;
+  color: #e6e6e6;
   width: 100%;
   align-items: center;
 }
@@ -10928,10 +10928,10 @@ form > :last-child {
 }
 #sites .container:last-child li:not(.empty) {
   margin-bottom: 0.5rem;
-  border: 1px solid #525252;
+  border: 1px solid #595959;
   border-radius: 3px;
   padding: 1rem;
-  background-color: #222222;
+  background-color: #262626;
 }
 #sites .container:last-child li h5.h5 {
   margin: -5px 0 12px 0;
@@ -10957,10 +10957,10 @@ form > :last-child {
   list-style: none;
   display: flex;
   position: relative;
-  background-color: #222222;
+  background-color: #262626;
   width: 100%;
   min-width: 290px;
-  border: 1px solid #525252;
+  border: 1px solid #595959;
   border-radius: 3px;
   margin: 0 auto 0.5rem auto;
   padding: 0.5rem 0;
@@ -10977,7 +10977,7 @@ form > :last-child {
 #edit_site form .screenshot-list li .controls i {
   display: inline-block;
   cursor: pointer;
-  color: #444444;
+  color: #4d4d4d;
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
 }
