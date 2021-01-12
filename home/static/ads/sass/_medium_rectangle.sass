@@ -1,0 +1,32 @@
+#ad
+  background-color: black
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+
+  .medium-rectangle
+    width: 600px
+    height: 500px
+    padding: 2rem
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    @include gradient(to bottom right, #057a2b, #0a1a76, #56027d)
+
+    .h1, h1
+      font-family: $font-display
+      background-color: $white-50
+      padding: 1.5rem
+      width: unset
+      font-size: 3.75rem
+
+    div p
+      color: white
+      line-height: 1
+      font-size: 2rem
+      font-family: $font-body
+
+      &:last-child
+        margin-bottom: 0

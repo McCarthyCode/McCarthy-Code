@@ -29,7 +29,7 @@ def index(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
 
-    return render(request, 'home/index.html')
+    return render(request, 'ads/medium_rectangle.html')
 
 def legal(request):
     if request.method != 'GET':
