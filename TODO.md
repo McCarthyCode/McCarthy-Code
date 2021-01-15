@@ -2,6 +2,7 @@
 
 ## High priorities
 
+- Fix navbar bug
 - Order Sites by positional value
   - Create front end for ordering system
     - Copy JS from `reorder_screenshots.js` and edit
