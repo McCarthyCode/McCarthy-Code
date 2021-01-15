@@ -2,11 +2,6 @@
 
 ## High priorities
 
-- Update portfolio images
-
-## Medium priorities
-
-- Fix duplicate screenshot deletion bug
 - Order Sites by positional value
   - Create front end for ordering system
     - Copy JS from `reorder_screenshots.js` and edit
@@ -17,6 +12,11 @@
     - Update positional values
       - URL
       - View
+- Update portfolio images
+
+## Medium priorities
+
+- Fix duplicate screenshot deletion bug
 - Make Home code segments their own app
   - Dashboard
     - Quotes (done)
