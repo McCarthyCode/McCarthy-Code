@@ -124,8 +124,8 @@ PGPASSWORD = content[12:-1]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mwd',
-        'USER': 'postgres',
+        'NAME': 'mc',
+        'USER': 'mc',
         'PASSWORD': PGPASSWORD,
         'HOST': 'localhost',
         'PORT': '',
