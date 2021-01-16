@@ -119,13 +119,13 @@ WSGI_APPLICATION = 'mwd.wsgi.application'
 PGPASSWORD_FILE = '%s/auth/.pgpass' % BASE_DIR
 with open(PGPASSWORD_FILE, 'r', encoding='utf8') as f:
     content = f.readline()
-PGPASSWORD = content[12:-1]
+PGPASSWORD = content[10:-1]
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mwd',
-        'USER': 'postgres',
+        'NAME': 'mc',
+        'USER': 'mc',
         'PASSWORD': PGPASSWORD,
         'HOST': 'localhost',
         'PORT': '',
