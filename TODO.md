@@ -4,7 +4,6 @@
 
 - Fix gap bug
   - Messages
-  - Navbar
   - Portfolio
 - Change color of footer dividers
 - Fix iOS background bug

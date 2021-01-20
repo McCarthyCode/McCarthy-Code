@@ -1,27 +1,37 @@
 .alert
-  display: flex
+  display: grid
   gap: 1rem
+  grid-gap: 1rem
+  grid-template-columns: [start] 1rem [msg-start] auto [msg-end] 1rem [end]
   justify-content: space-between
 
   & > div:first-child
+    grid-column-start: start
+    grid-column-end: msg-start
     display: flex
-    align-items: center
+    flex-direction: column
+    justify-content: center
 
   p
-    flex-grow: 1
+    grid-column-start: msg-start
+    grid-column-end: msg-end
     margin: 0
 
-    a:not(.close)
+    a
       text-decoration: underline
 
-.alert-danger
-  p, a
-    color: #721c24
+  .close
+    grid-column-start: msg-end
+    grid-column-end: end
 
-.alert-success
-  p, a
-    color: #155724
+  &-danger
+    p, a
+      color: #721c24
 
-.alert-info
-  p, a
-    color: #0c5460
+  &-success
+    p, a
+      color: #155724
+
+  &-info
+    p, a
+      color: #0c5460

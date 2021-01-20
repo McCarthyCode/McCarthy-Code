@@ -10251,30 +10251,37 @@ nav #navbarCollapse a.nav-link .nav-item {
 }
 
 .alert {
-  display: flex;
+  display: grid;
   gap: 1rem;
+  grid-gap: 1rem;
+  grid-template-columns: [start] 1rem [msg-start] auto [msg-end] 1rem [end];
   justify-content: space-between;
 }
 .alert > div:first-child {
+  grid-column-start: start;
+  grid-column-end: msg-start;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .alert p {
-  flex-grow: 1;
+  grid-column-start: msg-start;
+  grid-column-end: msg-end;
   margin: 0;
 }
-.alert p a:not(.close) {
+.alert p a {
   text-decoration: underline;
 }
-
+.alert .close {
+  grid-column-start: msg-end;
+  grid-column-end: end;
+}
 .alert-danger p, .alert-danger a {
   color: #721c24;
 }
-
 .alert-success p, .alert-success a {
   color: #155724;
 }
-
 .alert-info p, .alert-info a {
   color: #0c5460;
 }
