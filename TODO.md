@@ -2,7 +2,14 @@
 
 ## High priorities
 
-- Fix navbar bug
+- Fix gap bug
+  - Messages
+  - Navbar
+  - Portfolio
+- Change color of footer dividers
+- Fix iOS background bug
+- Change font weight to normal on homepage
+- Redesign screenshot cards on edit page
 - Order Sites by positional value
   - Create front end for ordering system
     - Copy JS from `reorder_screenshots.js` and edit
@@ -17,6 +24,7 @@
 
 ## Medium priorities
 
+- Update dark color values to match ad
 - Fix duplicate screenshot deletion bug
 - Make Home code segments their own app
   - Dashboard
