@@ -2,7 +2,7 @@
 
 ## High priorities
 
-- Change font weight to normal on homepage
+- Fix main logo reponsiveness
 - Redesign screenshot cards on edit page
 - Order Sites by positional value
   - Create front end for ordering system
