@@ -2,7 +2,9 @@
 
 ## High priorities
 
-- Fix main logo reponsiveness
+- Update GitHub URLs
+  - Footer
+  - Portfolio
 - Redesign screenshot cards on edit page
 - Order Sites by positional value
   - Create front end for ordering system

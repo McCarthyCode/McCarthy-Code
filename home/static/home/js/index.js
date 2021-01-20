@@ -10,48 +10,6 @@ $(() => {
     const windowWidth = $(window).width();
     const windowHeight = $(window).height();
 
-    (function adjustLogo() {
-      const headerPaddingTop = 16; // 1rem
-      const headerPaddingBottom = 5 * 16; // 5rem
-      const h1Height = $h1.outerHeight();
-      const headerGap = 16; // 1rem
-      const cardPadding = 16; // 1rem
-      const cardGap = 16; // 1rem
-      const initImgHeight = 128;
-      const textHeight = $header.find('.card > div').outerHeight();
-
-      const breakpoint =
-        navbarHeight +
-        headerPaddingTop +
-        h1Height +
-        headerGap +
-        cardPadding +
-        initImgHeight +
-        cardGap +
-        textHeight +
-        cardPadding +
-        headerPaddingBottom;
-      const scale = Math.min(
-        1,
-        (windowHeight - breakpoint + initImgHeight) / initImgHeight,
-      );
-
-      if (scale < 0.5) {
-        $img.hide();
-      } else {
-        $img.show();
-      }
-
-      if (windowWidth < breakpoint) {
-        $img.css({
-          width: `${initImgHeight * scale}px`,
-          height: `${initImgHeight * scale}px`,
-        });
-      } else {
-        $img.prop('style', false);
-      }
-    })();
-
     (function adjustIcons() {
       const $container = $('#icons .container');
       const $options = $container.children('#options');
