@@ -2,11 +2,6 @@
 
 ## High priorities
 
-- Fix gap bug
-  - Messages
-  - Portfolio
-- Change color of footer dividers
-- Fix iOS background bug
 - Change font weight to normal on homepage
 - Redesign screenshot cards on edit page
 - Order Sites by positional value
@@ -19,7 +14,10 @@
     - Update positional values
       - URL
       - View
-- Update portfolio images
+- Fix iOS background bug
+- Update portfolio
+  - Images
+  - URLs
 
 ## Medium priorities
 
