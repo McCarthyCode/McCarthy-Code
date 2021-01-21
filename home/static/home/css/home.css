@@ -10938,9 +10938,6 @@ form > :last-child {
   display: inline-block;
   margin-bottom: 1rem;
 }
-#sites .container:last-child .header > .btn {
-  padding: 9px 10px 0px 11px;
-}
 #sites .container:last-child li:not(.empty) {
   margin-bottom: 0.5rem;
   border: 1px solid #595959;
@@ -10950,9 +10947,6 @@ form > :last-child {
 }
 #sites .container:last-child li h5.h5 {
   margin: -5px 0 12px 0;
-}
-#sites .container:last-child li .btn {
-  padding: 8px 11px 2px 10px;
 }
 #sites .container:last-child li:last-child {
   margin-bottom: 0;
@@ -10985,9 +10979,7 @@ form > :last-child {
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;
-  height: 96px;
   width: 30px;
-  margin-top: 4.5px;
 }
 #edit_site form .screenshot-list li .controls i {
   display: inline-block;
@@ -10997,34 +10989,25 @@ form > :last-child {
   transition: color 0.15s ease-in-out;
 }
 #edit_site form .screenshot-list li .controls i, #edit_site form .screenshot-list li .controls i::before {
-  height: 48px;
+  height: 50px;
   line-height: 1;
 }
 #edit_site form .screenshot-list li .controls i:hover {
   color: #569cd6;
 }
-#edit_site form .screenshot-list li .controls i:last-child {
-  margin-top: 1px;
+#edit_site form .screenshot-list li .thumbnail-container {
+  display: flex;
+  justify-content: center;
+  width: 179px;
+  height: 100px;
 }
-#edit_site form .screenshot-list li img {
-  height: 108px;
+#edit_site form .screenshot-list li .thumbnail-container img {
+  height: 100px;
 }
 #edit_site form .screenshot-list li .btn-container {
   display: flex;
   align-items: center;
-  height: 108px;
-}
-#edit_site form .screenshot-list li .btn-container > .btn {
-  padding: 9px 11px 9px 9px;
-}
-#edit_site form .screenshot-list li:nth-child(3n+1) a img {
-  border: 0.25rem solid #bb846e;
-}
-#edit_site form .screenshot-list li:nth-child(3n+2) a img {
-  border: 0.25rem solid #dcdcaa;
-}
-#edit_site form .screenshot-list li:nth-child(3n) a img {
-  border: 0.25rem solid #97d5f7;
+  height: 100px;
 }
 #edit_site form .screenshot-list li:last-child a img {
   margin-bottom: 0;
