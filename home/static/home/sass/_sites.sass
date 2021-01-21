@@ -9,12 +9,41 @@
       margin-bottom: 1rem
 
   li
+    display: flex
+    justify-content: space-between
+    align-content: center
+    gap: 1rem
+    position: relative
+
     &:not(.empty)
       margin-bottom: .5rem
       border: 1px solid $gray-35
       border-radius: 3px
       padding: 1rem
       background-color: $gray-15
+
+    .controls
+      flex: 0 0 auto
+      display: flex
+      flex-wrap: wrap
+      align-content: center
+      width: 30px
+
+      i
+        display: inline-block
+        cursor: pointer
+        color: $gray-30
+        @include transition(color)
+
+        &, &::before
+          height: 50px
+          line-height: 1
+
+        &:hover
+          color: $blue
+
+    .content
+      flex: 1 1 auto
 
     h5.h5
       margin: -5px 0 12px 0

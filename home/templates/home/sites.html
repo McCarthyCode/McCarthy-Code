@@ -1,25 +1,42 @@
-{% extends 'home/base.html' %}
-{% load static %}
-
-{% block content %}
+{% extends 'home/base.html' %} {% load static %} {% block js %}
+<!-- Home App JS -->
+<script src="{% static 'home/js/reorder_sites.min.js' %}"></script>
+{% endblock %} {% block content %}
 <section id="sites" class="page">
   {% if messages %}
-  <div class="container">
-    {% include 'home/messages.html' %}
-  </div>
+  <div class="container">{% include 'home/messages.html' %}</div>
   {% endif %}
   <div class="container max-w-480px">
     <div class="header">
       <h1 class="h1">{% block title %}Edit Sites{% endblock %}</h1>
-      <a class="btn btn-primary" href="{% url 'home:add-site' %}">Add Site</a>
+      <div class="btn-container">
+        <button class="btn btn-secondary" form="reorder_sites">Reorder</button>
+        <a class="btn btn-primary" href="{% url 'home:add-site' %}">Add Site</a>
+      </div>
     </div>
-    <ul>
+    <ul class="sites-list">
       {% for site in sites %}
-      <li>
-        <h2 class="h2 text-center">{{ site.data.name }}</h2>
-        <div class="btn-container text-center">
-          <a class="btn btn-secondary" href="{% url 'home:edit-site' site.data.id %}">Edit</a>
-          <a class="btn btn-danger" href="{% url 'home:delete-site' site.data.id %}">Delete</a>
+      <li data-id="{{ site.id }}">
+        <div class="controls">
+          <i class="fas fa-caret-up fa-3x"></i>
+          <i class="fas fa-caret-down fa-3x"></i>
+        </div>
+        <div class="content">
+          <h2 class="h2 text-center">{{ site.name }}</h2>
+          <div class="btn-container text-center">
+            <a
+              class="btn btn-secondary"
+              href="{% url 'home:edit-site' site.id %}"
+            >
+              Edit
+            </a>
+            <a
+              class="btn btn-danger"
+              href="{% url 'home:delete-site' site.id %}"
+            >
+              Delete
+            </a>
+          </div>
         </div>
       </li>
       {% empty %}
@@ -28,4 +45,8 @@
     </ul>
   </div>
 </section>
+<form id="reorder_sites" action="{% url 'home:reorder-sites' %}" method="POST">
+  {% csrf_token %}
+  <input type="hidden" name="order" />
+</form>
 {% endblock %}

@@ -10938,12 +10938,43 @@ form > :last-child {
   display: inline-block;
   margin-bottom: 1rem;
 }
+#sites .container:last-child li {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  gap: 1rem;
+  position: relative;
+}
 #sites .container:last-child li:not(.empty) {
   margin-bottom: 0.5rem;
   border: 1px solid #595959;
   border-radius: 3px;
   padding: 1rem;
   background-color: #262626;
+}
+#sites .container:last-child li .controls {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  width: 30px;
+}
+#sites .container:last-child li .controls i {
+  display: inline-block;
+  cursor: pointer;
+  color: #4d4d4d;
+  -webkit-transition: color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+}
+#sites .container:last-child li .controls i, #sites .container:last-child li .controls i::before {
+  height: 50px;
+  line-height: 1;
+}
+#sites .container:last-child li .controls i:hover {
+  color: #569cd6;
+}
+#sites .container:last-child li .content {
+  flex: 1 1 auto;
 }
 #sites .container:last-child li h5.h5 {
   margin: -5px 0 12px 0;

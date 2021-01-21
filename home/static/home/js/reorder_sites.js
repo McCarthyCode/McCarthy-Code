@@ -1,7 +1,7 @@
 $(() => {
-  // reorder screenshots by clicking arrows
-  const $up = $('.screenshot-list .controls :first-child');
-  const $down = $('.screenshot-list .controls :last-child');
+  // reorder sites by clicking arrows
+  const $up = $('.sites-list .controls :first-child');
+  const $down = $('.sites-list .controls :last-child');
 
   $up.on('click', function () {
     const $li = $(this).parents('li');
@@ -40,7 +40,7 @@ $(() => {
     $('input[name="order"]').val(
       JSON.stringify(
         $.makeArray(
-          $('.screenshot-list li').map(function () {
+          $('.sites-list li').map(function () {
             return $(this).data('id');
           }),
         ),

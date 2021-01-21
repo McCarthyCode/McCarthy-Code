@@ -2,16 +2,6 @@
 
 ## High priorities
 
-- Order Sites by positional value
-  - Create front end for ordering system
-    - Copy JS from `reorder_screenshots.js` and edit
-    - Copy HTML and Sass from Edit Site page and edit
-  - Order by/update positional values
-    - Add position field to model
-    - Order by positional values in sites view
-    - Update positional values
-      - URL
-      - View
 - Fix iOS background bug
 - Update portfolio
   - Images

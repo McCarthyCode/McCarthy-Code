@@ -153,6 +153,7 @@ class Site(TimestampedModel):
     url = models.URLField()
     github = models.URLField()
     description = models.CharField(max_length=200)
+    order = models.PositiveSmallIntegerField(default=0)
 
     def __str__(self):
         return self.name
