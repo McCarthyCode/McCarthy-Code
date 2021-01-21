@@ -2,7 +2,7 @@
 
 ## High priorities
 
-- Fix iOS background bug
+- Change body background color
 - Update portfolio
   - Images
   - URLs
