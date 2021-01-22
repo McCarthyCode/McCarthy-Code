@@ -2,14 +2,17 @@
 
 ## High priorities
 
-- Change body background color
+- Clear Screenshots button
+- Update URL in Add Site form
 - Update portfolio
   - Images
-  - URLs
+- Toggle active state in Sites
+  - Add `active` field to `Site` model
+  - Update Add Site and Edit Site forms to include field
 
 ## Medium priorities
 
-- Update dark color values to match ad
+- Detect mobile browser and choose `fixed` or `scroll` `background-attachment`
 - Fix duplicate screenshot deletion bug
 - Make Home code segments their own app
   - Dashboard
@@ -34,10 +37,11 @@
   - Delete
     - Define URL
     - Create view
+- Update dark color values to match ad
 
 ## Low priorities
 
+- Adjust sizing of homepage panels
 - Move Contact model to new app
 - Rebuild front end in Angular
-- Create ad graphics
 - Create code background graphic on homepage

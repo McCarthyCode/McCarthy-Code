@@ -9928,6 +9928,9 @@ em {
   font-style: italic;
 }
 
+body {
+  background-color: #1a1a1a !important;
+}
 body a, body a:hover, body .fa-external-link-alt {
   color: #97d5f7;
   -webkit-transition: color 0.15s ease-in-out;
