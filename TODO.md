@@ -2,16 +2,12 @@
 
 ## High priorities
 
-- Clear Screenshots button
-- Update URL in Add Site form
-- Update portfolio
-  - Images
-- Toggle active state in Sites
-  - Add `active` field to `Site` model
-  - Update Add Site and Edit Site forms to include field
+- Update portfolio images
 
 ## Medium priorities
 
+- Add `.screenshot-list` to dropdown on Edit Site page to allow for easier
+  access to submit button
 - Detect mobile browser and choose `fixed` or `scroll` `background-attachment`
 - Fix duplicate screenshot deletion bug
 - Make Home code segments their own app

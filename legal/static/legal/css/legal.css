@@ -9927,6 +9927,9 @@ p, ul {
 em {
   font-style: italic;
 }
+em.inactive {
+  color: #666666;
+}
 
 body {
   background-color: #1a1a1a !important;

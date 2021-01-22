@@ -22,7 +22,7 @@
           <i class="fas fa-caret-down fa-3x"></i>
         </div>
         <div class="content">
-          <h2 class="h2 text-center">{{ site.name }}</h2>
+          <h2 class="h2 text-center">{{ site.name }}{% if not site.active %} <em class="inactive">(Defunct)</em>{% endif %}</h2>
           <div class="btn-container text-center">
             <a
               class="btn btn-secondary"

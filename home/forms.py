@@ -2,7 +2,17 @@ from django import forms
 
 from .models import Site
 
-class SiteForm(forms.ModelForm):
+class BaseForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault('label_suffix', '')  # globally override the Django >=1.6 default of ':'
+        super(BaseForm, self).__init__(*args, **kwargs)
+
+class BaseModelForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault('label_suffix', '')  # globally override the Django >=1.6 default of ':'
+        super(BaseModelForm, self).__init__(*args, **kwargs)
+
+class SiteForm(BaseModelForm):
     name = forms.CharField(
         label='',
         max_length=50,
@@ -24,9 +34,15 @@ class SiteForm(forms.ModelForm):
         max_length=200,
         widget=forms.TextInput(attrs={
             'class': 'form-control',
-            'value': 'https://github.com/mattmc318/',
+            'value': 'https://github.com/McCarthyCode/',
             'placeholder': 'GitHub URL',
         }),
+    )
+    active = forms.BooleanField(
+        initial=True,
+        required=False,
+        label='Website Is Active',
+        widget=forms.CheckboxInput()
     )
     description = forms.CharField(
         label='',
@@ -49,4 +65,4 @@ class SiteForm(forms.ModelForm):
 
     class Meta:
         model = Site
-        fields = ['name', 'url', 'github', 'description']
+        fields = ['name', 'url', 'github', 'active', 'description']

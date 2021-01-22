@@ -1,6 +1,8 @@
-<h1 class="h1 text-center">{{ site.data.name }}</h1>
+<h1 class="h1 text-center">{{ site.data.name }}{% if not site.data.active %} <em class="inactive">(Defunct)</em>{% endif %}</h1>
+{% if site.data.active %}
 <h2 class="h2">Web Address</h2>
 <h3 class="h3"><a href="{{ site.data.url }}" class="external-link">{{ site.data.url }}</a></h3>
+{% endif %}
 <h2 class="h2">Git Repository</h2>
 <h3 class="h3"><a href="{{ site.data.github }}" class="external-link">{{ site.data.github }}</a></h3>
 <h2 class="h2">Description</h2>

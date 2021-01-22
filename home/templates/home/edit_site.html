@@ -18,10 +18,22 @@
   <div class="container max-w-480px">
     <form method="POST" enctype="multipart/form-data">
       <h1 class="h1">Edit Site</h1>
-      <h2 class="h2">{{ site.name }}</h2>
+      <h2 class="h2">{{ site.name }}{% if not site.active %} <em class="inactive">(Defunct)</em>{% endif %}</h2>
       {% csrf_token %}
-      {{ form }}
+      {{ form.non_field_errors }}
+      {% for field in form.visible_fields %}
+      {{ field.errors }}
+      {% if field.name == 'active' %}
+      {% include 'fields/custom_checkbox.html' with field=form.active %}
+      {% else %}
+      {% if field.name == 'screenshots' %}
+      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+      {% endif %}
+      {{ field }}
+      {% endif %}
+      {% endfor %}
       <input type="hidden" name="order" value="[{% for screenshot in screenshots %}{{ screenshot.id}}{% if screenshot != screenshots|last %}, {% endif %}{% endfor %}]">
+      <a id="delete_screenshots" class="btn btn-danger" href="{% url 'home:delete-screenshots' site.id %}">Delete All</a>
       <ul class="screenshot-list">
         {% for screenshot in screenshots %}
         <li data-id="{{ screenshot.id }}">
