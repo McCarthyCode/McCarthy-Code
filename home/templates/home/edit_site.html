@@ -6,6 +6,7 @@
 {% block js %}
 <!-- Home App JS -->
 <script src="{% static 'home/js/reorder_screenshots.min.js' %}"></script>
+<script src="{% static 'home/js/edit_sites.min.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -33,7 +34,11 @@
       {% endif %}
       {% endfor %}
       <input type="hidden" name="order" value="[{% for screenshot in screenshots %}{{ screenshot.id}}{% if screenshot != screenshots|last %}, {% endif %}{% endfor %}]">
+      {% if screenshots %}
       <a id="delete_screenshots" class="btn btn-danger" href="{% url 'home:delete-screenshots' site.id %}">Delete All</a>
+      <button id="toggle_screenshots" class="btn btn-secondary">
+        <span>Show</span> Screenshots <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="screenshot-list">
         {% for screenshot in screenshots %}
         <li data-id="{{ screenshot.id }}">
@@ -52,6 +57,7 @@
         </li>
         {% endfor %}
       </ul>
+      {% endif %}
       <input class="btn btn-primary form-control" type="submit" value="Submit">
     </form>
   </div>

@@ -3,11 +3,25 @@
 ## High priorities
 
 - Update portfolio images
+  - MtMC
+    - MC
+    - Upwork
+  - OaW
+    - MC
+    - Upwork
+  - SKK&A
+    - MC
+  - CWC
+    - MC
+    - Upwork
+  - Pharm
+    - MC
+  - MC
+    - MC
+    - Upwork
 
 ## Medium priorities
 
-- Add `.screenshot-list` to dropdown on Edit Site page to allow for easier
-  access to submit button
 - Detect mobile browser and choose `fixed` or `scroll` `background-attachment`
 - Fix duplicate screenshot deletion bug
 - Make Home code segments their own app

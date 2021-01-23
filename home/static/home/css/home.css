@@ -10996,11 +10996,12 @@ form > :last-child {
 #edit_site form h5.h5 {
   margin-bottom: 1rem;
 }
-#edit_site form #delete_screenshots {
+#edit_site form #delete_screenshots, #edit_site form #toggle_screenshots {
   margin-bottom: 0.5rem;
   width: 100%;
 }
 #edit_site form .screenshot-list {
+  display: none;
   padding: 0;
 }
 #edit_site form .screenshot-list li {
