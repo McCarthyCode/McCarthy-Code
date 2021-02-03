@@ -1,27 +1,39 @@
 #portfolio
-  background: radial-gradient($even-lighter-gray, $lighter-gray)
+  background: radial-gradient($gray-50, $gray-35)
+
+  h1.h1
+    font-size: 1.75rem
+
+  h2.h2
+    font-size: 1.25rem
+
+  h3.h3
+    font-size: 1rem
+
+    & > a
+      color: $cyan
 
   header, section
     display: flex
     align-items: center
     justify-content: center
-    min-height: calc(100vh - 56px)
+    min-height: calc(100vh - 52px)
     padding: 1rem 0 4rem 0
     @include fixed-background
 
     &:first-child:last-child
-      min-height: calc(100vh - 56px - 91px)
+      min-height: calc(100vh - 52px - 91px)
       margin-bottom: 0
 
       .container
-        min-height: calc(100vh - 56px - 91px - 2rem)
+        min-height: calc(100vh - 52px - 91px - 2rem)
 
     &:first-child
-      margin-top: 56px
-      min-height: calc(100vh - 56px)
+      margin-top: 52px
+      min-height: calc(100vh - 52px)
 
       .container
-        min-height: calc(100vh - 56px - 5rem)
+        min-height: calc(100vh - 52px - 5rem)
 
     &:nth-child(odd)
       @include gradient(150deg, $cold-colors-dark)
@@ -36,11 +48,11 @@
         grid-template-columns: auto 300px
 
     &:last-child
-      min-height: calc(100vh - 56px - 91px)
+      min-height: calc(100vh - 52px - 91px)
       padding-bottom: 1rem
 
       .container
-        min-height: calc(100vh - 56px - 91px - 2rem - .25rem)
+        min-height: calc(100vh - 52px - 91px - 2rem - .25rem)
 
     &:not(:last-child)
       margin-bottom: .25rem
@@ -120,7 +132,7 @@
   #portfolio
     header, section
       &:last-child
-        min-height: calc(100vh - 56px - 91px)
+        min-height: calc(100vh - 52px - 91px)
 
       .container
         margin: 0 auto
@@ -128,6 +140,7 @@
         .content
           display: grid
           gap: 2rem
+          grid-gap: 2rem
 
           .screenshot-list img
             max-height: 176px

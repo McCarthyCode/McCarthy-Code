@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Baloo|Open+Sans|Roboto+Mono|Varela+Round");
 /*!
- * Bootstrap v4.5.2 (https://getbootstrap.com/)
+ * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -214,6 +214,7 @@ caption {
 
 th {
   text-align: inherit;
+  text-align: -webkit-match-parent;
 }
 
 label {
@@ -3444,6 +3445,7 @@ input[type=button].btn-block {
   display: block;
   min-height: 1.5rem;
   padding-left: 1.5rem;
+  color-adjust: exact;
 }
 
 .custom-control-inline {
@@ -4788,6 +4790,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 2;
   padding: 0.75rem 1.25rem;
   color: inherit;
 }
@@ -9785,7 +9788,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .text-break {
   word-break: break-word !important;
-  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
 }
 
 .text-reset {
@@ -9894,22 +9897,20 @@ h3 {
     border-color: #dee2e6;
   }
 }
-h1.h1, h2.h2, h3.h3 {
-  margin-bottom: 1rem;
-}
-h1.h1, h1.h1 > a, h2.h2, h2.h2 > a, h3.h3, h3.h3 > a {
-  font-family: "Varela Round", Helvetica, Arial, sans-serif;
-  color: #dcdcaa;
-}
-h1.h1 > a:not(.btn), h2.h2 > a:not(.btn), h3.h3 > a:not(.btn) {
+h1.h1 > a:not(.btn), h2.h2 > a:not(.btn), h3.h3 > a:not(.btn), h4.h4 > a:not(.btn), h5.h5 > a:not(.btn), h6.h6 > a:not(.btn) {
   text-decoration: underline;
 }
 
-h4.h4, h4.h4 > a, h5.h5, h5.h5 > a, h6.h6, h6.h6 > a {
+h1.h1, h1.h1 > a {
+  font-family: "Varela Round", Helvetica, Arial, sans-serif;
+  color: #dcdcaa;
+}
+
+h2.h2, h2.h2 > a, h3.h3, h3.h3 > a, h4.h4, h4.h4 > a, h5.h5, h5.h5 > a, h6.h6, h6.h6 > a {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-h4.h4, h4.h4 > a, h5.h5, h5.h5 > a {
+h2.h2, h2.h2 > a, h3.h3, h3.h3 > a, h4.h4, h4.h4 > a, h5.h5, h5.h5 > a {
   color: #bb846e;
 }
 
@@ -9926,22 +9927,24 @@ p, ul {
 em {
   font-style: italic;
 }
+em.inactive {
+  color: #666666;
+}
 
+body {
+  background-color: #1a1a1a !important;
+}
 body a, body a:hover, body .fa-external-link-alt {
+  color: #97d5f7;
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
-  color: #97d5f7;
-}
-body .btn {
-  height: 2.25rem;
-  line-height: 1;
 }
 body .card {
   border: none;
   border-radius: 0.5rem;
   padding: 1rem;
-  background-color: #222222;
-  color: white;
+  background-color: #262626;
+  color: #e6e6e6;
   position: relative;
 }
 body .card p {
@@ -9962,7 +9965,7 @@ body .card .close {
   transition: color 0.15s ease-in-out;
 }
 body .card .close:hover, body .card .close:focus {
-  color: white !important;
+  color: #e6e6e6 !important;
 }
 body .card .close ~ h5 {
   margin-right: 1rem;
@@ -9973,6 +9976,16 @@ body .card .close ~ h5 {
   vertical-align: 1px;
   font-size: 0.8em;
   cursor: pointer;
+}
+
+.user-select-none {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 a[data-fancybox=gallery] {
@@ -10009,6 +10022,7 @@ ul.ul li::marker {
 ul.grid {
   display: grid;
   grid-template-columns: 1fr;
+  grid-gap: 0.5rem;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -10029,15 +10043,21 @@ ul.grid .empty {
   grid-column-end: -1;
 }
 
+abbr[title] {
+  text-decoration: underline dotted #97d5f7 !important;
+}
+
 #index header, #index section, #portfolio header, #portfolio section {
   position: relative;
 }
 #index header .chevron, #index section .chevron, #portfolio header .chevron, #portfolio section .chevron {
+  display: block;
+  width: 100%;
   position: absolute;
-  right: 0;
   bottom: 0;
-  left: 0;
+  border: none;
   padding: 0.5rem 0;
+  background-color: transparent;
   font-size: 2rem;
   cursor: pointer;
 }
@@ -10046,8 +10066,8 @@ ul.grid .empty {
 }
 
 .page {
-  min-height: calc(100vh - 56px - 91px);
-  margin-top: 56px;
+  min-height: calc(100vh - 52px - 91px);
+  margin-top: 52px;
   padding: 2rem 0;
   background-color: #333333;
 }
@@ -10083,14 +10103,14 @@ ul.grid .empty {
 }
 nav {
   font-family: "Baloo", Helvetica, Arial, sans-serif;
-  background-color: #1e1e1e;
+  background-color: #1a1a1a;
 }
 nav .container {
-  padding: 0 !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex: 1 0 auto;
+  align-items: center;
+  padding: 0 !important;
   gap: 1rem;
 }
 @media (min-width: 768px) {
@@ -10107,23 +10127,16 @@ nav .navbar-brand {
 nav .navbar-brand:hover {
   color: #569cd6 !important;
 }
-nav .navbar-brand::after {
-  display: inline;
-  line-height: 28px;
-  vertical-align: -1px;
-  content: attr(data-content);
-}
 nav .profiles {
   display: flex;
   -ms-flex-direction: row;
   flex-direction: row;
   justify-content: space-evenly;
   margin: 0 -0.5rem;
-  padding: 2px 0;
   font-size: 1.5em;
   flex: 0 0 auto;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   nav .profiles {
     color: red !important;
     justify-content: flex-start;
@@ -10146,8 +10159,8 @@ nav #navbarMenuButton {
   width: 44px;
   margin: 0 -8px;
   border: none !important;
-  color: white !important;
-  background-color: #1e1e1e;
+  color: #e6e6e6 !important;
+  background-color: #1a1a1a;
   cursor: pointer;
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
@@ -10169,7 +10182,7 @@ nav #navbarCollapse a.nav-link {
   margin-top: 0.5rem;
   -webkit-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
-  color: white !important;
+  color: #e6e6e6 !important;
 }
 nav #navbarCollapse a.nav-link:hover {
   color: #569cd6 !important;
@@ -10184,7 +10197,7 @@ nav #navbarCollapse a.nav-link .nav-item {
   nav #navbarCollapse a.nav-link {
     margin-top: 0;
     padding: 0;
-    background-color: #1e1e1e;
+    background-color: unset;
   }
   nav #navbarCollapse a.nav-link .nav-item {
     display: inline;
@@ -10195,8 +10208,8 @@ nav #navbarCollapse a.nav-link .nav-item {
 }
 #footer {
   padding: 0.625rem 0 1rem 0;
-  background-color: #1e1e1e;
-  color: white;
+  background-color: #1a1a1a;
+  color: #e6e6e6;
 }
 #footer a, #footer .fa-external-link-alt {
   color: aqua;
@@ -10234,7 +10247,7 @@ nav #navbarCollapse a.nav-link .nav-item {
   margin: 0.25em 0;
   padding: 0 0.5rem;
   text-align: center;
-  border-left: 1px solid white;
+  border-left: 1px solid #404040;
 }
 #footer .footer-list ul li a {
   vertical-align: 2px;
@@ -10269,7 +10282,7 @@ nav #navbarCollapse a.nav-link .nav-item {
 .tabs li {
   cursor: pointer;
   border-radius: 4px;
-  background-color: #444444;
+  background-color: #4d4d4d;
   padding: 0.5rem;
   touch-action: none;
   color: white;
@@ -10281,7 +10294,18 @@ nav #navbarCollapse a.nav-link .nav-item {
 }
 
 .legal {
-  color: white;
+  color: #e6e6e6;
+}
+.legal .brand {
+  position: relative;
+}
+.legal .brand::after {
+  content: "™";
+  vertical-align: top;
+  font-size: 0.75em;
+}
+small .legal .brand::after {
+  font-size: 1em;
 }
 .legal section {
   display: none;

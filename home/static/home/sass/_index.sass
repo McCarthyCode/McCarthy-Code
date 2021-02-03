@@ -1,100 +1,177 @@
 #index
-  header h1.h1, #contact > div
-    position: absolute
-    top: 50%
-    left: 50%
-    min-width: 320px - (2 * 16px)
-    padding: 2rem
+  & > *
     margin: 0
-    background-color: $white-50
-    border-radius: .5rem
-    text-align: center
-    @include transform(translate(-50%, -50%))
-
-  header
-    position: relative
-    height: 100vh
-    @include gradient(150deg, $cold-colors-light)
-
-    h1.h1
-      color: $darker-gray
-
-  #icons
-    position: relative
-    background: $mid-gray
-    padding-top: 1rem
-    min-height: calc(100vh - 56px)
-
-    .container
-      min-height: calc(100vh - 64px - 56px)
-      position: relative
-      padding: 0 1rem
-
-      #options
-        position: absolute
-        top: 50%
-        left: 50%
-        width: 100%
-        padding: 1rem
-        display: flex
-        flex-wrap: wrap
-        justify-content: space-evenly
-        margin-bottom: 0
-        @include transform(translate(-50%, -50%))
-
-        li
-          cursor: pointer
-          display: inline
-          width: 150px
-          margin: 0 .5rem .5rem .5rem
-
-          .option-icon
-            position: relative
-            border-radius: 75px
-            width: 150px
-            height: 150px
-            background-color: $blue
-            margin: 0 auto 1rem auto
-
-            i
-              position: absolute
-              top: 50%
-              left: 50%
-              color: $mid-gray
-              @include transform(translate(-50%, -50%))
-
-          h5.h5
-            color: $orange
-
-          a:hover
-            text-decoration-color: $orange
-
-    .chevron
-      color: $blue
 
   & > :nth-child(odd)
+    display: flex
+    justify-content: center
+    align-items: center
     @include fixed-background
 
     .chevron
       color: $maroon
 
+  & > :nth-child(even) .chevron
+    color: $blue
+    outline-color: $orange
+
+  h2.h2
+    font-family: $font-title
+
+  header
+    flex-direction: column
+    min-height: calc(100vh - 52px)
+    margin-top: 52px
+    padding: 1rem 1rem 5rem 1rem
+    @include gradient(150deg, $cold-colors-light)
+
+    h1.h1
+      font-family: $font-display
+      color: $white
+      margin: 0
+      margin-bottom: 1rem
+      padding: 0 1px
+      text-shadow: 2px 2px $gray-20
+
+    h2.h2
+      font-size: 1.75rem
+
+    h3.h3
+      color: $emerald
+      font-size: 1.5rem
+
+    em
+      color: $gray-35
+
+    .btn
+      vertical-align: baseline
+
+    .container
+      padding: 0 !important
+      flex-shrink: 1
+      max-width: 720px
+
+      .card
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        img
+          flex-shrink: 1
+          width: 128px
+          height: 128px
+          margin-bottom: 2rem
+
+        .btn
+          margin-top: 1rem
+
+        @media (min-width: $sm)
+          flex-direction: row
+
+          img
+            margin-right: 2rem
+            margin-bottom: 0
+
+        @media (min-width: $md)
+          img
+            width: 256px
+            height: 256px
+
+  #icons
+    position: relative
+    background: $gray-20
+    min-height: calc(100vh - 52px)
+
+    .container
+      min-height: calc(100vh - 64px - 52px)
+      display: flex
+      justify-content: center
+      align-items: center
+      margin-bottom: 64px
+      padding: 1rem !important
+      max-width: 720px
+
+      #options
+        width: 100%
+        margin-bottom: 0
+        display: flex
+        justify-content: space-around
+        align-items: center
+
+        li
+          cursor: pointer
+          display: inline
+          width: 150px
+          margin: .5rem
+
+          a
+            display: flex
+            justify-content: center
+            flex-direction: column
+            color: $orange
+
+            *
+              cursor: pointer
+
+            button
+              display: flex
+              justify-content: center
+              align-items: center
+              border: none
+              border-radius: 75px
+              margin: 0 auto
+              margin-bottom: 1rem
+              padding: 0
+              width: 150px
+              height: 150px
+              background-color: $blue
+
+              i
+                color: $gray-20
+
+            label
+              margin-bottom: 0
+              font-size: 1.25rem
+              text-decoration: underline solid $gray-20
+              line-height: 1
+              @include transition(text-decoration-color, .075s)
+
+            &:hover
+              text-decoration: none
+
+              label
+                text-decoration-color: $orange
+
   #contact
     min-height: calc(248.8px + 32px)
-    height: calc(100vh - 91px - 56px)
+    height: calc(100vh - 91px - 52px)
     @include gradient(210deg, $warm-colors-light)
 
     & > div
-      min-width: 320px - (2 * 16px)
+      padding: 2rem
+      background-color: $white-50
+      border-radius: .5rem
 
-      h3.h3
+      & > *
+        text-align: center
+        white-space: nowrap
+
+      h2.h2
         margin-bottom: .5rem
         color: $copper-rose
         font-weight: bold
 
-      h5.h5, h6.h6
-        color: $black
+      h3.h3
+        font-size: 1.25rem
 
-      p
+      h4.h4
+        font-size: 1rem
+
+      h3.h3, h4.h4
+        color: $black
+        margin-bottom: 0.5rem
+
+      li
         margin-bottom: 0.25rem
 
         a, .fa-external-link-alt

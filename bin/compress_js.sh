@@ -1,23 +1,31 @@
 #!/bin/bash
 
-closure_compiler="bin/closure-compiler-v20200504.jar"
+set -e
 
-declare -a files=(
-  "home/static/lib/js/global"
-  "home/static/home/js/index"
-  "home/static/home/js/portfolio"
-  "home/static/home/js/reorder_screenshots"
-  "legal/static/legal/js/tabs"
+closure_compiler="bin/closure-compiler-v20201102.jar"
+
+declare -a path=(
+  "home/static/global/js"
+  "home/static/home/js"
+  "legal/static/legal/js"
 )
 
-for i in "${files[@]}" ; do
-  input="$i.js"
-  output="$i.min.js"
+trap 'echo -e "\nExiting…" >&2; pkill $$; exit' SIGINT
 
-  cmd="java -jar $closure_compiler --language_in=STABLE --js $input --js_output_file $output"
+while true; do
+  for dir in ${path[@]}; do
+    files=$(ls -1 $dir/*.js | sed '/.*\.min\.js/d')
 
-  if [ $input -nt $output ] ; then
-    echo "$cmd"
-    $cmd
-  fi
+    for input in $files; do
+      output=$(echo $input | sed -r 's/(.*)\.js/\1\.min\.js/')
+      cmd="java -jar $closure_compiler --language_in=STABLE --js $input --js_output_file $output"
+
+      if [ $input -nt $output ]; then
+        echo "[$(date -Iseconds)] $cmd" >&2
+        $cmd
+      fi
+    done
+  done
+
+  sleep 1
 done

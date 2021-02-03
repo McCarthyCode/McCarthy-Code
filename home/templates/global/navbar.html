@@ -1,0 +1,46 @@
+  <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home:index' %}" title="McCarthy Code"></a>
+      <ul class="profiles navbar-nav">
+        <a href="https://www.facebook.com/McCarthyCode">
+          <li class="nav-item"><i class="fab fa-facebook" title="Facebook" target="_blank"></i></li>
+        </a>
+        <a href="https://github.com/McCarthyCode">
+          <li class="nav-item"><i class="fab fa-github" title="GitHub" target="_blank"></i></li>
+        </a>
+        <a href="https://www.hackerrank.com/McCarthyCode">
+          <li class="nav-item"><i class="fab fa-hackerrank" title="HackerRank" target="_blank"></i></li>
+        </a>
+        <a href="https://www.linkedin.com/in/McCarthyCode">
+          <li class="nav-item"><i class="fab fa-linkedin" title="LinkedIn" target="_blank"></i></li>
+        </a>
+        <a href="https://stackoverflow.com/users/2858094/matt-mccarthy?tab=profile">
+          <li class="nav-item"><i class="fab fa-stack-overflow" title="Stack Overflow" target="_blank"></i></li>
+        </a>
+      </ul>
+      <button id="navbarMenuButton" class="d-lg-none" type="button">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <a class="nav-link" href="{% url 'home:index' %}">
+            <li class="nav-item">Home/Contact</li>
+          </a>
+          <a class="nav-link" href="{% url 'home:about' %}">
+            <li class="nav-item">About</li>
+          </a>
+          <a class="nav-link" href="{% url 'home:portfolio' %}">
+            <li class="nav-item">Portfolio</li>
+          </a>
+          <a class="nav-link" href="{% url 'quotes:index' %}">
+            <li class="nav-item"><span class="text-nowrap">Request a Quote</span></li>
+          </a>
+          {% if request.user.is_superuser %}
+          <a class="nav-link" href="{% url 'home:dashboard' %}">
+            <li class="nav-item">Dashboard</li>
+          </a>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -2,17 +2,22 @@
   h5.h5
     margin-bottom: 1rem
 
+  #delete_screenshots, #toggle_screenshots
+    margin-bottom: .5rem
+    width: 100%
+
   .screenshot-list
+    display: none
     padding: 0
 
     li
       list-style: none
       display: flex
       position: relative
-      background-color: $dark-gray
+      background-color: $gray-15
       width: 100%
       min-width: 290px
-      border: 1px solid $lighter-gray
+      border: 1px solid $gray-35
       border-radius: 3px
       margin: 0 auto .5rem auto
       padding: .5rem 0
@@ -22,45 +27,34 @@
         display: flex
         flex-wrap: wrap
         align-content: space-around
-        height: 96px
         width: 30px
-        margin-top: 4.5px
 
         i
           display: inline-block
           cursor: pointer
-          color: $light-gray
+          color: $gray-30
           @include transition(color)
 
           &, &::before
-            height: 48px
+            height: 50px
             line-height: 1
 
           &:hover
             color: $blue
 
-          &:last-child
-            margin-top: 1px
+      .thumbnail-container
+        display: flex
+        justify-content: center
+        width: 179px
+        height: 100px
 
-      img
-        height: 108px
+        img
+          height: 100px
 
       .btn-container
         display: flex
         align-items: center
-        height: 108px
-
-        & > .btn
-          padding: 9px 11px 9px 9px
-
-    li:nth-child(3n + 1) a img
-      border: .25rem solid $orange
-
-    li:nth-child(3n + 2) a img
-      border: .25rem solid $yellow
-
-    li:nth-child(3n) a img
-      border: .25rem solid $cyan
+        height: 100px
 
     li:last-child a img
       margin-bottom: 0

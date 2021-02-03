@@ -1,5 +1,16 @@
 .legal
   color: $white
 
+  .brand
+    position: relative
+
+    &::after
+      content: '\2122'
+      vertical-align: top
+      font-size: .75em
+
+      small &
+        font-size: 1em
+
   section
     display: none

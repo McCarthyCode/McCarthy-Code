@@ -6,6 +6,7 @@
 {% block js %}
 <!-- Home App JS -->
 <script src="{% static 'home/js/reorder_screenshots.min.js' %}"></script>
+<script src="{% static 'home/js/edit_sites.min.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -17,11 +18,27 @@
   {% endif %}
   <div class="container max-w-480px">
     <form method="POST" enctype="multipart/form-data">
-      <h3 class="h3">Edit Site</h3>
-      <h5 class="h5">{{ site.name }}</h5>
+      <h1 class="h1">Edit Site</h1>
+      <h2 class="h2">{{ site.name }}{% if not site.active %} <em class="inactive">(Defunct)</em>{% endif %}</h2>
       {% csrf_token %}
-      {{ form }}
+      {{ form.non_field_errors }}
+      {% for field in form.visible_fields %}
+      {{ field.errors }}
+      {% if field.name == 'active' %}
+      {% include 'fields/custom_checkbox.html' with field=form.active %}
+      {% else %}
+      {% if field.name == 'screenshots' %}
+      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+      {% endif %}
+      {{ field }}
+      {% endif %}
+      {% endfor %}
       <input type="hidden" name="order" value="[{% for screenshot in screenshots %}{{ screenshot.id}}{% if screenshot != screenshots|last %}, {% endif %}{% endfor %}]">
+      {% if screenshots %}
+      <a id="delete_screenshots" class="btn btn-danger" href="{% url 'home:delete-screenshots' site.id %}">Delete All</a>
+      <button id="toggle_screenshots" class="btn btn-secondary">
+        <span>Show</span> Screenshots <i class="fas fa-chevron-down"></i>
+      </button>
       <ul class="screenshot-list">
         {% for screenshot in screenshots %}
         <li data-id="{{ screenshot.id }}">
@@ -40,6 +57,7 @@
         </li>
         {% endfor %}
       </ul>
+      {% endif %}
       <input class="btn btn-primary form-control" type="submit" value="Submit">
     </form>
   </div>

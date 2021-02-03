@@ -153,6 +153,8 @@ class Site(TimestampedModel):
     url = models.URLField()
     github = models.URLField()
     description = models.CharField(max_length=200)
+    order = models.PositiveSmallIntegerField(default=0)
+    active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
@@ -162,9 +164,12 @@ class Site(TimestampedModel):
 
         super().save(*args, **kwargs)
 
-    def delete(self, *args, **kwargs):
+    def delete_screenshots(self, *args, **kwargs):
         for screenshot in Screenshot.objects.filter(site=self):
             screenshot.delete(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        self.delete_screenshots(*args, **kwargs)
 
         return super().delete(*args, **kwargs)
 

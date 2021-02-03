@@ -89,7 +89,7 @@ def portfolio(request):
         return HttpResponseBadRequest()
 
     sites = []
-    for site in Site.objects.all().order_by('-date_updated'):
+    for site in Site.objects.all().order_by('order'):
         sites.append({
             'data': site,
             'screenshots': Screenshot.objects.filter(site=site).order_by('date_updated'),
@@ -119,14 +119,30 @@ def sites(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
 
-    sites = []
-    for site in Site.objects.all().order_by('-date_updated'):
-        sites.append({
-            'data': site,
-            'screenshots': Screenshot.objects.filter(site=site).order_by('date_updated')[:3],
-        })
+    return render(request, 'home/sites.html', {
+        'sites': Site.objects.all().order_by('order'),
+    })
 
-    return render(request, 'home/sites.html', {'sites': sites})
+def reorder_sites(request):
+    if not request.user.is_superuser:
+        return HttpResponseForbidden()
+
+    if request.method != 'POST':
+        return HttpResponseBadRequest()
+
+    order = json.loads(request.POST.get('order'))
+
+    position = 0
+    for site_id in order:
+        site = get_object_or_404(Site, id=site_id)
+        if site.order != position:
+            site.order = position
+            site.save()
+        position += 1
+
+    return render(request, 'home/sites.html', {
+        'sites': Site.objects.all().order_by('order'),
+    })
 
 def add_site(request):
     if not request.user.is_superuser:
@@ -197,6 +213,9 @@ def edit_site(request, site_id):
     return HttpResponseBadRequest()
 
 def delete_site(request, site_id):
+    if not request.user.is_superuser:
+        return HttpResponseForbidden()
+
     if request.method != 'GET':
         return HttpResponseBadRequest()
 
@@ -208,6 +227,9 @@ def delete_site(request, site_id):
     return redirect('home:sites')
 
 def delete_screenshot(request, site_id, screenshot_id):
+    if not request.user.is_superuser:
+        return HttpResponseForbidden()
+
     if request.method != 'GET':
         return HttpResponseBadRequest()
 
@@ -219,6 +241,22 @@ def delete_screenshot(request, site_id, screenshot_id):
     screenshot.delete()
 
     messages.success(request, 'Screenshot successfully deleted.')
+
+    return HttpResponseRedirect(
+        reverse('home:edit-site', args=[site_id])
+    )
+
+def delete_screenshots(request, site_id):
+    if not request.user.is_superuser:
+        return HttpResponseForbidden()
+
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
+
+    site = get_object_or_404(Site, id=site_id)
+    site.delete_screenshots()
+
+    messages.success(request, 'Screenshots successfully deleted.')
 
     return HttpResponseRedirect(
         reverse('home:edit-site', args=[site_id])

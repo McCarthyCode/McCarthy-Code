@@ -1,122 +1,106 @@
 $(() => {
-  function adjustTitle() {
-    let width = $(this).width();
-    let $title = $('header .h1');
+  const $header = $('header');
+  const $h1 = $header.children('h1');
+  const $img = $header.find('img');
 
-    const breakpoint = 360 + 32;
-    const scale = width / breakpoint;
-    if (width < breakpoint) {
-      $title.css({
-        '-webkit-transform': `translate(-50%, -50%) scale(${scale})`,
-        '-ms-transform': `translate(-50%, -50%) scale(${scale})`,
-        transform: `translate(-50%, -50%) scale(${scale})`,
-      });
-    } else {
-      $title.css({
-        '-webkit-transform': `translate(-50%, -50%)`,
-        '-ms-transform': `translate(-50%, -50%)`,
-        transform: `translate(-50%, -50%)`,
-      });
-    }
-
-    const height = $title.outerHeight();
-    $('header').prop('min-height', `${height * scale + 32}px`);
-  }
-
-  function adjustIcons() {
-    let windowWidth = $(window).width();
-    let windowHeight = $(window).height();
-    let $icons = $('#options li .option-icon');
-
-    let breakpoint = 0;
-    let scale = 1;
-
-    if (windowWidth < 364) {
-      breakpoint = 754;
-      scale = (windowHeight - 304) / 450 > 1 ? 1 : (windowHeight - 304) / 450;
-    } else if (windowWidth < 530) {
-      breakpoint = 548;
-      scale = (windowHeight - 248) / 300 > 1 ? 1 : (windowHeight - 248) / 300;
-    } else {
-      breakpoint = 342;
-      scale = (windowHeight - 192) / 150 > 1 ? 1 : (windowHeight - 192) / 150;
-    }
-
-    if (windowHeight < breakpoint) {
-      const diameter = 150 * scale;
-
-      $icons.css({
-        height: `${diameter}px`,
-        width: `${diameter}px`,
-      });
-
-      $icons.find('i').css({
-        'font-size': `${5 * scale}em`,
-      });
-    } else {
-      $('.option-icon, .option-icon i').prop('style', false);
-    }
-  }
-
-  function adjustContact() {
-    let width = $(this).width();
-    let $contact = $('#contact > div');
-
-    const breakpoint = 359;
-    const scale = width / breakpoint;
-
-    if (width < breakpoint) {
-      $contact.css({
-        '-webkit-transform': `translate(-50%, -50%) scale(${scale})`,
-        '-ms-transform': `translate(-50%, -50%) scale(${scale})`,
-        transform: `translate(-50%, -50%) scale(${scale})`,
-      });
-    } else {
-      $contact.css({
-        '-webkit-transform': `translate(-50%, -50%)`,
-        '-ms-transform': `translate(-50%, -50%)`,
-        transform: `translate(-50%, -50%)`,
-      });
-    }
-
-    const winHeight = $(window).outerHeight();
-    const navbarHeight = $('#navbar').outerHeight();
-    const footerHeight = $('#footer').outerHeight();
-    const contactHeight = $contact.outerHeight();
-
-    $('section:nth-child(4)').css(
-      'min-height',
-      `${Math.max(
-        winHeight - navbarHeight - footerHeight,
-        contactHeight * Math.min(1, scale) + 32,
-      )}px`,
-    );
-  }
+  // must be defined statically b/c icons aren't loaded right away
+  const navbarHeight = 52;
 
   function adjust() {
-    adjustTitle();
-    adjustIcons();
-    adjustContact();
+    const windowWidth = $(window).width();
+    const windowHeight = $(window).height();
+
+    (function adjustIcons() {
+      const $container = $('#icons .container');
+      const $options = $container.children('#options');
+      const $buttons = $options.find('button');
+      const $icons = $buttons.children('i');
+
+      const initDiameter = 150;
+      const ulGap = 16;
+      const containerPadding = 16;
+      const aGap = 16;
+      const labelHeight = 20;
+      const chevron = 64;
+
+      const breakpoints = {
+        row: {
+          width: 3 * initDiameter + 4 * ulGap + 2 * containerPadding,
+          height:
+            navbarHeight +
+            1 * (initDiameter + aGap + labelHeight) +
+            2 * containerPadding +
+            chevron,
+        },
+        col: {
+          width: initDiameter + 2 * containerPadding,
+          height:
+            navbarHeight +
+            3 * (initDiameter + aGap + labelHeight) +
+            2 * ulGap +
+            2 * containerPadding +
+            chevron,
+        },
+      };
+
+      let scale;
+      let scales;
+
+      if (windowWidth >= windowHeight) {
+        $options.css({ 'flex-direction': 'row' });
+
+        scales = {
+          x:
+            (windowWidth - breakpoints.row.width + 3 * initDiameter) /
+            (3 * initDiameter),
+          y:
+            (windowHeight - breakpoints.row.height + initDiameter) /
+            initDiameter,
+        };
+      } else {
+        $options.css({ 'flex-direction': 'column' });
+
+        scales = {
+          x:
+            (windowWidth - breakpoints.col.width + initDiameter) / initDiameter,
+          y:
+            (windowHeight - breakpoints.col.height + 3 * initDiameter) /
+            (3 * initDiameter),
+        };
+      }
+
+      scale = Math.min(scales.x, scales.y, 1);
+
+      if (scale < 0.25) {
+        $buttons.hide();
+      } else {
+        $buttons.show();
+
+        const diameter = initDiameter * scale;
+
+        $buttons.css({
+          height: `${diameter}px`,
+          width: `${diameter}px`,
+        });
+
+        $icons.css({ 'font-size': `${5 * scale}em` });
+      }
+    })();
   }
 
   $(window).on('resize orientationchange', adjust);
   adjust();
 
-  let navHeight = 56;
   $('header .chevron').on('click', () => {
     $('html, body').animate(
-      {
-        scrollTop: $('#icons').offset().top - navHeight,
-      },
+      { scrollTop: $('#icons').offset().top - navbarHeight },
       1000,
     );
   });
 
-  $('#icons .chevron, #options li:nth-child(3) a').click(() => {
+  $('#icons .chevron, #options li:nth-child(3) a').on('click', () => {
     $('html, body').animate(
-      {
-        scrollTop: $('#contact').offset().top - navHeight,
-      },
+      { scrollTop: $('#contact').offset().top - navbarHeight },
       1000,
     );
   });

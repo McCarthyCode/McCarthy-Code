@@ -9,7 +9,7 @@
 
   <!-- Title & Favicon -->
   <title>{% block title %}{% endblock %} - McCarthy Code</title>{% load static %}
-  <link rel="icon" type="image/png" href="{% static 'lib/img/favicon.png' %}">
+  <link rel="icon" type="image/png" href="{% static 'global/img/favicon.png' %}">
 
   <!-- ############### -->
   <!-- # Stylesheets # -->
@@ -158,14 +158,17 @@
   <!-- Internal Scripts -->
 
   <!-- Cross-App JS -->
-  <script src="{% static 'lib/js/global.min.js' %}"></script>
+  <script src="{% static 'global/js/global.min.js' %}"></script>
+
+  <!-- Navbar JS -->
+  <script src="{% static 'global/js/navbar.min.js' %}"></script>
 
 {% block js %}{% endblock %}</head>
 <body>
 {% block body %}
-{% include 'lib/navbar.html' %}
+{% include 'global/navbar.html' %}
 {% block content %}{% endblock %}
-{% include 'lib/footer.html' %}
+{% include 'global/footer.html' %}
 {% endblock %}
 </body>
 </html>

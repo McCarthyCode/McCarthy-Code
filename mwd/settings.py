@@ -116,29 +116,21 @@ WSGI_APPLICATION = 'mwd.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-if STAGE == 'development':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-else:
-    PGPASSWORD_FILE = '%s/auth/.pgpass' % BASE_DIR
-    with open(PGPASSWORD_FILE, 'r', encoding='utf8') as f:
-        content = f.readline()
-    PGPASSWORD = content[12:-1]
+PGPASSWORD_FILE = '%s/auth/.pgpass' % BASE_DIR
+with open(PGPASSWORD_FILE, 'r', encoding='utf8') as f:
+    content = f.readline()
+PGPASSWORD = content[10:-1]
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'mwd',
-            'USER': 'mwd',
-            'PASSWORD': PGPASSWORD,
-            'HOST': 'localhost',
-            'PORT': '',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mc',
+        'USER': 'mc',
+        'PASSWORD': PGPASSWORD,
+        'HOST': 'localhost',
+        'PORT': '',
     }
+}
 
 
 # Password validation

@@ -1,0 +1,97 @@
+nav
+  font-family: $font-display
+  background-color: $gray-10
+
+  .container
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    // max-width: 100%
+    padding: 0 !important
+    gap: 1rem
+
+    @media (min-width: $md)
+      gap: 1.5rem
+      // max-width: 720px
+
+  .navbar-brand
+    display: none
+    margin-right: -.5rem
+    margin-left: -.5rem
+    padding: 0 .5rem
+
+    &:hover
+      color: $blue !important
+
+  .profiles
+    display: flex
+    -ms-flex-direction: row
+    flex-direction: row
+    justify-content: space-evenly
+    margin: 0 -.5rem
+    font-size: 1.5em
+    flex: 0 0 auto
+
+    @media (min-width: $sm)
+      color: red !important
+      justify-content: flex-start
+      flex-grow: 1
+
+    a
+      color: $emerald !important
+      @include transition(color)
+
+      &:hover
+        color: $heliotrope !important
+
+      li
+        display: inline
+        padding: 0 .5rem
+
+  #navbarMenuButton
+    width: 44px
+    margin: 0 -8px
+    border: none !important
+    color: $white !important
+    background-color: $gray-10
+    cursor: pointer
+    @include transition(color)
+
+    &:hover
+      color: $blue !important
+
+    i
+      font-size: 1.8em
+      vertical-align: -5px
+
+  #navbarCollapse
+    flex-grow: 0
+
+    a.nav-link
+      text-align: center
+      background-color: $gray-20
+      border-radius: 0.25rem
+      margin-top: .5rem
+      @include transition(color)
+      color: $white !important
+
+      &:hover
+        color: $blue !important
+
+      .nav-item
+        display: inline
+        line-height: 22px
+        vertical-align: 1px
+
+@include media-breakpoint-up(lg)
+  nav #navbarCollapse a.nav-link
+    margin-top: 0
+    padding: 0
+    background-color: unset
+
+    .nav-item
+      display: inline
+      line-height: 28px
+      padding: 0 0.5rem
+      vertical-align: 3px

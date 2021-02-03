@@ -3,53 +3,49 @@ $(() => {
   const $up = $('.screenshot-list .controls :first-child');
   const $down = $('.screenshot-list .controls :last-child');
 
-  $up.on('click', () => {
+  $up.on('click', function () {
     const $li = $(this).parents('li');
 
     if (!$li.is(':first-of-type')) {
       const $prev = $li.prev();
 
-      $li.animate({'bottom': `${$prev.outerHeight() + 8}px`}, 500, function () {
+      $li.animate({ bottom: `${$prev.outerHeight() + 8}px` }, 500, function () {
         $(this).after($prev.detach()).prop('style', '');
       });
 
-      $prev.animate({'top': `${$li.outerHeight() + 8}px`}, 500, function () {
+      $prev.animate({ top: `${$li.outerHeight() + 8}px` }, 500, function () {
         $(this).prop('style', '');
       });
     }
   });
 
-  $down.on('click', () => {
+  $down.on('click', function () {
     const $li = $(this).parents('li');
 
     if (!$li.is(':last-of-type')) {
       const $next = $li.next();
 
-      $li.animate({'top': `${$next.outerHeight() + 8}px`}, 500, function () {
+      $li.animate({ top: `${$next.outerHeight() + 8}px` }, 500, function () {
         $(this).before($next.detach()).prop('style', '');
       });
 
-      $next.animate({'bottom': `${$li.outerHeight() + 8}px`}, 500, function () {
+      $next.animate({ bottom: `${$li.outerHeight() + 8}px` }, 500, function () {
         $(this).prop('style', '');
       });
     }
   });
 
   // update value of hidden order field on submit
-  $('form').submit(function () {
-    let order = "[";
-
-    $('.screenshot-list li').each(function () {
-      order += `${$(this).data('id')}`;
-
-      if (!$(this).is('.screenshot-list li:last-child')) {
-        order += ", ";
-      }
-    });
-
-    order += "]";
-
-    $('input[name="order"]').val(order);
+  $('form').on('submit', function () {
+    $('input[name="order"]').val(
+      JSON.stringify(
+        $.makeArray(
+          $('.screenshot-list li').map(function () {
+            return $(this).data('id');
+          }),
+        ),
+      ),
+    );
 
     return true;
   });
